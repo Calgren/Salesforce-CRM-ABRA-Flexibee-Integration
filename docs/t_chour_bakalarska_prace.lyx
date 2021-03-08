@@ -28,7 +28,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\paperfontsize default
+\paperfontsize 12
 \spacing single
 \use_hyperref false
 \papersize default
@@ -210,8 +210,13 @@ literal "false"
  s využitím verzovacího systému a vytvořených Java scriptů.
  Popisuje technologii SFDX, Salesforce metadata a způsob práce s nimi.
  Z této práce je hlavně důležitá část, která se zabývá práce s metadaty,
- jejich exportování z vývojového prostředí, ukládání a migrace do konkrétních
+ jejich exportem z vývojového prostředí, ukládáním a migrací do konkrétních
  Salesforce instancí.
+\end_layout
+
+\begin_layout Standard
+Další kniha Clean architecture: a craftsman's guide to software structure
+ and design
 \end_layout
 
 \begin_layout Subsection
