@@ -174,6 +174,25 @@ Rešerše zdrojů
 Odborné knihy a akademické práce
 \end_layout
 
+\begin_layout Standard
+Kniha 
+\shape italic
+Tvorba informačních systémů: principy, metodiky, architektury
+\shape default
+ 
+\begin_inset CommandInset citation
+LatexCommand keyonly
+key "(Bruckner,  Voříšek,  Buchalcevová a kolektiv,  2012)"
+literal "false"
+
+\end_inset
+
+ dává dohromady poznatky v analýze a návrhu podnikových informačních systémů.
+ Nabízí seznam metodik a způsobu jejich uplatnění při řešení jednotlivých
+ částí analýzy a návrhu IS.
+ Dále také shrnuje jednotlivé notace pro modelování částí IS.
+\end_layout
+
 \begin_layout Paragraph
 Baklářská práce 
 \shape italic
@@ -224,11 +243,17 @@ MARTIN, Robert C.
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "key-4"
+key "(Bruckner,  Voříšek,  Buchalcevová a kolektiv,  2012)"
+literal "false"
 
 \end_inset
 
-
+BRUCKNER, Tomáš, VOŘÍŠEK, Jiří, BUCHALCEVOVÁ, Alena, STANOVSKÁ, Iva, CHLAPEK,
+ Dušan, ŘEPA, Václav.
+ Tvorba informačních systémů: principy, metodiky, architektury.
+ Praha: Grada, 2012.
+ Management v informační společnosti.
+ ISBN 978-80-247-4153-6.
 \end_layout
 
 \begin_layout Bibliography
