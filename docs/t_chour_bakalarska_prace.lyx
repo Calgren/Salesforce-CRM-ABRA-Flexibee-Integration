@@ -7,7 +7,7 @@
 \textclass article
 \use_default_options false
 \maintain_unincluded_children false
-\language english
+\language czech
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -63,7 +63,7 @@
 \paragraph_indentation default
 \is_math_indent 0
 \math_numbering_side default
-\quotes_style english
+\quotes_style german
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
@@ -97,6 +97,15 @@ Autor: Tomáš Chour
 Vedoucí bakalářské práce: doc.
  Ing.
  Alena Buchalcevová, Ph.D.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -165,6 +174,27 @@ Rešerše zdrojů
 Odborné knihy a akademické práce
 \end_layout
 
+\begin_layout Paragraph
+Baklářská práce 
+\shape italic
+Continuous Delivery on the Salesforce Platform
+\shape default
+ 
+\begin_inset CommandInset citation
+LatexCommand keyonly
+key "(Kratochvíl,  2019)"
+literal "false"
+
+\end_inset
+
+ se zybývá vývojem a jeho automatizací na cloudové platformě Salesforce
+ s využitím verzovacího systému a vytvořených Java scriptů.
+ Popisuje technologii SFDX, Salesforce metadata a způsob práce s nimi.
+ Z této práce je hlavně důležitá část, která se zabývá práce s metadaty,
+ jejich exportování z vývojového prostředí, ukládání a migrace do konkrétních
+ Salesforce instancí.
+\end_layout
+
 \begin_layout Subsection
 Internetové zdroje
 \end_layout
@@ -175,6 +205,60 @@ Legislativní normy
 
 \begin_layout Section
 Zdroje
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "(Martin,  2018)"
+literal "false"
+
+\end_inset
+
+MARTIN, Robert C.
+ Clean architecture: a craftsman's guide to software structure and design.
+ London, England: Prentice Hall, [2018].
+ ISBN 978-0134494166.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "(Koelsch,  2016)"
+literal "false"
+
+\end_inset
+
+KOELSCH, George.
+ Requirements Writing for System Engineering.
+ Apress, Berkeley, CA, 2016.
+ ISBN 978-1-4842-2098-6.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "(Kratochvíl,  2019)"
+literal "false"
+
+\end_inset
+
+KRATOCHVÍL, Ondřej.
+ Continuous Delivery on the Salesforce Platform.
+ Praha, 2019.
+ Bachelor’s thesis.
+ Czech Technical University in Prague, Faculty of Electrical Engineering.
+ Vedoucí práce ŠEBEK Jiří.
 \end_layout
 
 \end_body
