@@ -99,8 +99,62 @@ Vedoucí bakalářské práce: doc.
  Alena Buchalcevová, Ph.D.
 \end_layout
 
+\begin_layout Section*
+Úvod
+\end_layout
+
+\begin_layout Subsection*
+Cíle práce
+\end_layout
+
 \begin_layout Standard
-U
+Cílem bakalářské práce je na základě základě BRD (Business Requirement Document)
+ navrhnout datový model, architekturu a webové služby pro integraci Salesforce
+ Sales Cloud (dále jen SFSC) s účetním systémem ABRA Flexibee.
+ Řešení je postaveno na standardním datovém modelu a automatizačních nástrojů
+ SFSC s minimálními nutnýmy rozšířeními pro potřeby integrace.
+ Dílčí cíle práce: Analýza dat, která účetní systém potřebuje získávat.
+ Zanalyzovat a popsat část standartního datového modelu SFSC obsahujícího
+ data potřebná pro účetní systém.
+ Navrhnout datový model pro data, která nejsou pokryta ve standardním modelu.
+ Navrhnout webové služby pro integraci dat mezi systémy.
+ Automatizovat integraci pomocí vhodných nástrojů.
+ Vytvoření SFSC aplikace s uživatelským rozhraním pro konfiguraci integrace
+\end_layout
+
+\begin_layout Subsection*
+Očekávané přínosy
+\end_layout
+
+\begin_layout Standard
+Přínosem práce je zefektivnění a zlevnění vývojové části implementace SFSC
+ s integrací na účetní systém ABRA Flexibee.
+ Po úpravách zdrojového kódu lze tuto práci použít i pro integraci s jinými
+ podobnými účetnímy systémy.
+ Z důvodu využití standardních SFSC objektů a automatizančích nástrojů lze
+ toto řešení implementovat bez dodatečných úprav v instancích SFSC, které
+ využívají standardní datový model.
+\end_layout
+
+\begin_layout Subsection*
+Omezení
+\end_layout
+
+\begin_layout Standard
+Kvůli využití standartních objektů nelze bez nutnosti úpravy kódu implementovat
+ pro instance SFSC, které využívají nestandardní datový model.
+\end_layout
+
+\begin_layout Subsection*
+Výstupy
+\end_layout
+
+\begin_layout Standard
+Hlavním výstupem práce je aplikace pro SFSC, která umožňuje jednoduchou
+ konfiguraci integrace SFSC na ABRA Flexibee skrze UI.
+ Aplikace je veřejně dostupná jako open source metadata a zdrojový kód ve
+ verzovacím systému na platformě GitHub.
+ Metadata a zdrojový jsou uloženy ve formátu pro práci se SFDX.
 \end_layout
 
 \begin_layout Section
@@ -117,6 +171,10 @@ Internetové zdroje
 
 \begin_layout Subsection
 Legislativní normy
+\end_layout
+
+\begin_layout Section
+Zdroje
 \end_layout
 
 \end_body
