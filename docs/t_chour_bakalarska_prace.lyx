@@ -118,8 +118,12 @@ Poslední dobou v České Republice výrazně narůstá počet implementací clo
  Jednou velkou kapitolou během vývojové fáze implementace je integrace na
  ostatní systémy, které daná firma pro svou činnost provoz používá.
  Integrace s ostatními systémy bývá naročná na analýzu i vývoj, protože
- musí běžet bezchybně zvládat výkyvy v objemu dat i dočasné výpadky jednoho
- nebo obou systémů.
+ musí běžet bezchybně, zvládat výkyvy v objemu dat i dočasné výpadky jednoho
+ nebo obou systémů a zajistit bezpečnost přenosu.
+ Jedna z nejčastějších integrací bývá na účetní systém.
+ Z toho důvodu jsem se rozhodl vytvořit open source Salesforce aplikaci,
+ která umožní jednoduchou konfiguraci integrace dat mezi Salesforce a ABRA
+ Flexibee.
 \end_layout
 
 \begin_layout Subsection*
@@ -146,8 +150,8 @@ Očekávané přínosy
 \end_layout
 
 \begin_layout Standard
-Přínosem práce je zefektivnění a zlevnění vývojové části implementace SFSC
- s integrací na účetní systém ABRA Flexibee.
+Přínosem práce má být zefektivnění a zlevnění vývojové fáze implementace
+ SFSC s integrací na účetní systém ABRA Flexibee.
  Po úpravách zdrojového kódu lze tuto práci použít i pro integraci s jinými
  podobnými účetnímy systémy.
  Z důvodu využití standardních SFSC objektů a automatizančích nástrojů lze
@@ -233,6 +237,21 @@ Další kniha Clean architecture: a craftsman's guide to software structure
 Internetové zdroje
 \end_layout
 
+\begin_layout Standard
+ABRA poskytuje ke svému produktu Flexibee přehlednou dokumentaci Dokumentace
+ REST API: Dokumentace a referenční příručka FlexiBee REST API 
+\begin_inset CommandInset citation
+LatexCommand keyonly
+key "(FlexiBee REST API)"
+literal "false"
+
+\end_inset
+
+, ze které lze vycházet při samotné implementaci integrace dat.
+ Lze z ní vyčíst jednotlivé webové služby pro import a export dat a samotnou
+ strukturu dat pro komunikaci mezi systémy.
+\end_layout
+
 \begin_layout Subsection
 Legislativní normy
 \end_layout
@@ -299,6 +318,22 @@ KRATOCHVÍL, Ondřej.
  Bachelor’s thesis.
  Czech Technical University in Prague, Faculty of Electrical Engineering.
  Vedoucí práce ŠEBEK Jiří.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "(FlexiBee REST API)"
+literal "false"
+
+\end_inset
+
+Dokumentace REST API: Dokumentace a referenční příručka FlexiBee REST API
+ [online].
+ [cit.
+ 2021-03-09].
+ Dostupné z: https://intercom.help/podpora-flexi/cs/collections/2592813-dokumenta
+ce-rest-api
 \end_layout
 
 \end_body
