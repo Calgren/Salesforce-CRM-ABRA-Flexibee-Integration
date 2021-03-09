@@ -112,6 +112,16 @@ LatexCommand tableofcontents
 Úvod
 \end_layout
 
+\begin_layout Standard
+Poslední dobou v České Republice výrazně narůstá počet implementací cloudových
+ služeb na platformě Salesforce.
+ Jednou velkou kapitolou během vývojové fáze implementace je integrace na
+ ostatní systémy, které daná firma pro svou činnost provoz používá.
+ Integrace s ostatními systémy bývá naročná na analýzu i vývoj, protože
+ musí běžet bezchybně zvládat výkyvy v objemu dat i dočasné výpadky jednoho
+ nebo obou systémů.
+\end_layout
+
 \begin_layout Subsection*
 Cíle práce
 \end_layout
