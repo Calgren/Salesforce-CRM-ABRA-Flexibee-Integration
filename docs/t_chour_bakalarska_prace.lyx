@@ -234,7 +234,7 @@ Další kniha Clean architecture: a craftsman's guide to software structure
 \end_layout
 
 \begin_layout Subsection
-Internetové zdroje
+Internetové zdroje a odborné články
 \end_layout
 
 \begin_layout Standard
@@ -250,6 +250,47 @@ literal "false"
 , ze které lze vycházet při samotné implementaci integrace dat.
  Lze z ní vyčíst jednotlivé webové služby pro import a export dat a samotnou
  strukturu dat pro komunikaci mezi systémy.
+\end_layout
+
+\begin_layout Standard
+Na straně Salesforce také existuje rozsáhlá dokumentace, která pokrývá oblasti
+ datového modelování, psaní kódu pomocí jazyku Apex a vytváření uživatelského
+ rozhraní pomocí LWC a standartdních salesforce nástrojů a komponent.
+\end_layout
+
+\begin_layout Standard
+Oblastí bezpečnosti se zabývá práce 
+\shape italic
+Web Services Attacks and Security- A Systematic Literature Review 
+\shape default
+
+\begin_inset CommandInset citation
+LatexCommand keyonly
+key "(Varsha,  Jevitha,  2016)"
+literal "false"
+
+\end_inset
+
+, která shrnuje možné typy útoků na webové služby a které se budou muset
+ brát v potaz při návrhu webových služeb v této práci.
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+On the Need for a General REST-Security Framework
+\shape default
+ 
+\begin_inset CommandInset citation
+LatexCommand keyonly
+key "(Iacono,  Gorski,  2019)"
+literal "false"
+
+\end_inset
+
+ analyzuje bezpečnostní slabiny architektury rozhraní REST, uvadí jeho slabiny
+ a navrhuje metodiku, jak zabezpečit služby, které jsou na REST založeny.
+ Dále také porovnává jednotlivé metody autentizace webových služeb.
 \end_layout
 
 \begin_layout Subsection
@@ -334,6 +375,39 @@ Dokumentace REST API: Dokumentace a referenční příručka FlexiBee REST API
  2021-03-09].
  Dostupné z: https://intercom.help/podpora-flexi/cs/collections/2592813-dokumenta
 ce-rest-api
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "(Varsha,  Jevitha,  2016)"
+literal "false"
+
+\end_inset
+
+VARSHA, Mouli Ravichandra a K.
+ P.
+ JEVITHA.
+ Web Services Attacks and Security- A Systematic Literature Review [online].
+ 2016 [cit.
+ 2021-03-11].
+ Dostupné z: doi:10.1016/j.procs.2016.07.265
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "(Iacono,  Gorski,  2019)"
+literal "false"
+
+\end_inset
+
+IACONO, Luigi Lo a Peter Leo GORSKI.
+ On the Need for a General REST-Security Framework.
+ Future Internet [online].
+ 2019 [cit.
+ 2021-03-11].
+ Dostupné z: doi:10.3390/fi11030056
 \end_layout
 
 \end_body
