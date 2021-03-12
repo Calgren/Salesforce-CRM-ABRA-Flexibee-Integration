@@ -253,9 +253,28 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Na straně Salesforce také existuje rozsáhlá dokumentace, která pokrývá oblasti
- datového modelování, psaní kódu pomocí jazyku Apex a vytváření uživatelského
- rozhraní pomocí LWC a standartdních salesforce nástrojů a komponent.
+Na straně Salesforce také existuje rozsáhlá dokumentace Salesforce Developer
+ Documentation 
+\begin_inset CommandInset citation
+LatexCommand keyonly
+key "(Salesforce Dev.  Doc.)"
+literal "false"
+
+\end_inset
+
+, která pokrývá oblasti datového modelování, psaní kódu pomocí jazyku Apex
+ a vytváření uživatelského rozhraní pomocí LWC a standartdních salesforce
+ nástrojů a komponent.
+ Oblasti, které nepokrývá dokumentace lze dohledat na Salesforce vývojářských
+ fórech 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://trailblazers.salesforce.com/answers"
+
+\end_inset
+
+, ovšem zde je nutno být opatrný a skeptický, jelikož se nejedná o officiální
+ řešení problému a je nutné si navrhovaný postup ověřit i z jiného zdroje.
 \end_layout
 
 \begin_layout Standard
@@ -408,6 +427,20 @@ IACONO, Luigi Lo a Peter Leo GORSKI.
  2019 [cit.
  2021-03-11].
  Dostupné z: doi:10.3390/fi11030056
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "(Salesforce Dev.  Doc.)"
+literal "false"
+
+\end_inset
+
+Salesforce Developer Documentation [online].
+ [cit.
+ 2021-03-12].
+ Dostupné z: https://developer.salesforce.com/docs
 \end_layout
 
 \end_body
