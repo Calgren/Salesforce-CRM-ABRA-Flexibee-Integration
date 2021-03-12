@@ -11,11 +11,11 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "palatino" "default"
+\font_roman "times" "default"
 \font_sans "helvet" "default"
 \font_typewriter "courier" "default"
 \font_math "auto" "auto"
-\font_default_family default
+\font_default_family rmdefault
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -29,10 +29,10 @@
 \bibtex_command default
 \index_command default
 \paperfontsize 12
-\spacing single
+\spacing other 1.5
 \use_hyperref false
-\papersize default
-\use_geometry false
+\papersize a4paper
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -57,10 +57,14 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 35mm
+\topmargin 25mm
+\rightmargin 10mm
+\bottommargin 15mm
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\paragraph_separation skip
+\defskip bigskip
 \is_math_indent 0
 \math_numbering_side default
 \quotes_style german
@@ -109,6 +113,9 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Section*
+\begin_inset Newpage newpage
+\end_inset
+
 Úvod
 \end_layout
 
@@ -136,13 +143,35 @@ Cílem bakalářské práce je na základě základě BRD (Business Requirement 
  Sales Cloud (dále jen SFSC) s účetním systémem ABRA Flexibee.
  Řešení je postaveno na standardním datovém modelu a automatizačních nástrojů
  SFSC s minimálními nutnýmy rozšířeními pro potřeby integrace.
- Dílčí cíle práce: Analýza dat, která účetní systém potřebuje získávat.
- Zanalyzovat a popsat část standartního datového modelu SFSC obsahujícího
+\end_layout
+
+\begin_layout Standard
+Dílčí cíle práce: 
+\end_layout
+
+\begin_layout Itemize
+Analýza dat, která účetní systém potřebuje získávat.
+ 
+\end_layout
+
+\begin_layout Itemize
+Zanalyzovat a popsat část standartního datového modelu SFSC obsahujícího
  data potřebná pro účetní systém.
- Navrhnout datový model pro data, která nejsou pokryta ve standardním modelu.
- Navrhnout webové služby pro integraci dat mezi systémy.
+ 
+\end_layout
+
+\begin_layout Itemize
+Navrhnout datový model pro data, která nejsou pokryta ve standardním modelu.
+ 
+\end_layout
+
+\begin_layout Itemize
+Navrhnout webové služby pro integraci dat mezi systémy.
  Automatizovat integraci pomocí vhodných nástrojů.
- Vytvoření SFSC aplikace s uživatelským rozhraním pro konfiguraci integrace
+\end_layout
+
+\begin_layout Itemize
+Vytvoření SFSC aplikace s uživatelským rozhraním pro konfiguraci integrace
 \end_layout
 
 \begin_layout Subsection*
@@ -164,8 +193,8 @@ Omezení
 \end_layout
 
 \begin_layout Standard
-Kvůli využití standartních objektů nelze bez nutnosti úpravy kódu implementovat
- pro instance SFSC, které využívají nestandardní datový model.
+Z důvodu využití standartních objektů nelze bez nutnosti úpravy kódu implementov
+at pro instance SFSC, které využívají nestandardní datový model.
 \end_layout
 
 \begin_layout Subsection*
@@ -178,6 +207,10 @@ Hlavním výstupem práce je aplikace pro SFSC, která umožňuje jednoduchou
  Aplikace je veřejně dostupná jako open source metadata a zdrojový kód ve
  verzovacím systému na platformě GitHub.
  Metadata a zdrojový jsou uloženy ve formátu pro práci se SFDX.
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -207,7 +240,7 @@ literal "false"
  Dále také shrnuje jednotlivé notace pro modelování částí IS.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Baklářská práce 
 \shape italic
 Continuous Delivery on the Salesforce Platform
@@ -221,7 +254,7 @@ literal "false"
 \end_inset
 
  se zybývá vývojem a jeho automatizací na cloudové platformě Salesforce
- s využitím verzovacího systému a vytvořených Java scriptů.
+ s využitím verzovacího systému a vytvořených Javovských scriptů.
  Popisuje technologii SFDX, Salesforce metadata a způsob práce s nimi.
  Z této práce je hlavně důležitá část, která se zabývá práce s metadaty,
  jejich exportem z vývojového prostředí, ukládáním a migrací do konkrétních
@@ -310,10 +343,6 @@ literal "false"
  analyzuje bezpečnostní slabiny architektury rozhraní REST, uvadí jeho slabiny
  a navrhuje metodiku, jak zabezpečit služby, které jsou na REST založeny.
  Dále také porovnává jednotlivé metody autentizace webových služeb.
-\end_layout
-
-\begin_layout Subsection
-Legislativní normy
 \end_layout
 
 \begin_layout Section
