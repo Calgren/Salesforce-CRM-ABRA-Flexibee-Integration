@@ -266,6 +266,14 @@ Další kniha
 \shape italic
 Clean architecture: a craftsman's guide to software structure and design
  
+\shape default
+je teoretický souhrn z oblasti architektury a designu softwaru pro jeho
+ jednoduchou čitelnost a škálovatelnost.
+ Pokrývá jak funčkní, tak objektově orientované programování.
+ Zabývá se vhodnosti použití dědičnosti, rozhraní a polymorphismem v určitých
+ situacích, jak navrhovat strukturu dat pro přenos v rámci systému a mimo
+ něj.
+ Popisuje hlavní best practices pro škálovatelnost softwaru a jeho komponent.
 \end_layout
 
 \begin_layout Standard
@@ -370,6 +378,23 @@ literal "false"
  analyzuje bezpečnostní slabiny architektury rozhraní REST, uvadí jeho slabiny
  a navrhuje metodiku, jak zabezpečit služby, které jsou na REST založeny.
  Dále také porovnává jednotlivé metody autentizace webových služeb.
+\end_layout
+
+\begin_layout Standard
+Pro oblast designu UI vycházím hlavně ze standardů 
+\shape italic
+Salesforce Lightning Design System
+\shape default
+ 
+\begin_inset CommandInset citation
+LatexCommand keyonly
+key "(SLDS)"
+literal "false"
+
+\end_inset
+
+, kde jsou k dispozici officiální nástroje, návody a blueprinty pro návrh
+ a implementaci UI v prostředí Salesforce Lightning.
 \end_layout
 
 \begin_layout Section
@@ -497,6 +522,20 @@ Salesforce Developer Documentation [online].
  [cit.
  2021-03-12].
  Dostupné z: https://developer.salesforce.com/docs
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "(SLDS)"
+literal "false"
+
+\end_inset
+
+Salesforce Lightning Design System [online].
+ [cit.
+ 2021-03-12].
+ Dostupné z: https://www.lightningdesignsystem.com/
 \end_layout
 
 \end_body
