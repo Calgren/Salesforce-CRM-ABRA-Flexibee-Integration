@@ -9,7 +9,7 @@
 \maintain_unincluded_children false
 \language czech
 \language_package default
-\inputencoding utf8-platex
+\inputencoding auto
 \fontencoding global
 \font_roman "times" "default"
 \font_sans "helvet" "default"
@@ -83,21 +83,27 @@
 
 \begin_layout Title
 Vysoká škola ekonomická v Praze
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Title
 Fakulta informatiky a statistiky 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Title
+Analýza a implementace Salesforce CRM s integrací na účetní systém pro střední
+ firmu nebo neziskovou organizaci
+\begin_inset Newline newline
+\end_inset
+
 Salesforce-CRM-ABRA-Flexibee-Integrace
 \end_layout
 
 \begin_layout Author
+\noindent
 Autor: Tomáš Chour
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Author
 Vedoucí bakalářské práce: doc.
  Ing.
  Alena Buchalcevová, Ph.D.
@@ -123,7 +129,7 @@ LatexCommand tableofcontents
 Poslední dobou v České Republice výrazně narůstá počet implementací cloudových
  služeb na platformě Salesforce.
  Jednou velkou kapitolou během vývojové fáze implementace je integrace na
- ostatní systémy, které daná firma pro svou činnost provoz používá.
+ ostatní systémy, které daná firma pro svou činnost a provoz používá.
  Integrace s ostatními systémy bývá naročná na analýzu i vývoj, protože
  musí běžet bezchybně, zvládat výkyvy v objemu dat i dočasné výpadky jednoho
  nebo obou systémů a zajistit bezpečnost přenosu.
@@ -141,7 +147,7 @@ Cíle práce
 Cílem bakalářské práce je na základě základě BRD (Business Requirement Document)
  navrhnout datový model, architekturu a webové služby pro integraci Salesforce
  Sales Cloud (dále jen SFSC) s účetním systémem ABRA Flexibee.
- Řešení je postaveno na standardním datovém modelu a automatizačních nástrojů
+ Řešení je postaveno na standardním datovém modelu a automatizačních nástrojích
  SFSC s minimálními nutnýmy rozšířeními pro potřeby integrace.
 \end_layout
 
@@ -171,7 +177,7 @@ Navrhnout webové služby pro integraci dat mezi systémy.
 \end_layout
 
 \begin_layout Itemize
-Vytvoření SFSC aplikace s uživatelským rozhraním pro konfiguraci integrace
+Vytvoření SFSC aplikace s uživatelským rozhraním pro konfiguraci integrace.
 \end_layout
 
 \begin_layout Subsection*
@@ -195,6 +201,9 @@ Omezení
 \begin_layout Standard
 Z důvodu využití standartních objektů nelze bez nutnosti úpravy kódu implementov
 at pro instance SFSC, které využívají nestandardní datový model.
+ Ovládání skrze custom UI je omezeno pouze na Salesforce Lightning, použití
+ v Classic není podporováno, i v něm ale lze využít datový model, automatizace
+ a webové služby.
 \end_layout
 
 \begin_layout Subsection*
