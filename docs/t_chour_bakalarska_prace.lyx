@@ -9,7 +9,7 @@
 \maintain_unincluded_children false
 \language czech
 \language_package default
-\inputencoding auto
+\inputencoding utf8-platex
 \fontencoding global
 \font_roman "times" "default"
 \font_sans "helvet" "default"
@@ -229,7 +229,7 @@ Tvorba informačních systémů: principy, metodiky, architektury
  
 \begin_inset CommandInset citation
 LatexCommand keyonly
-key "(Bruckner,  Voříšek,  Buchalcevová a kolektiv,  2012)"
+key "(Bruckner,  Vorisek,  Buchalcevova a kolektiv,  2012)"
 literal "false"
 
 \end_inset
@@ -248,7 +248,7 @@ Continuous Delivery on the Salesforce Platform
  
 \begin_inset CommandInset citation
 LatexCommand keyonly
-key "(Kratochvíl,  2019)"
+key "(Kratochvil,  2019)"
 literal "false"
 
 \end_inset
@@ -262,8 +262,29 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Další kniha Clean architecture: a craftsman's guide to software structure
- and design
+Další kniha 
+\shape italic
+Clean architecture: a craftsman's guide to software structure and design
+ 
+\end_layout
+
+\begin_layout Standard
+Kniha 
+\shape italic
+Requirements Writing for System Engineering 
+\begin_inset CommandInset citation
+LatexCommand keyonly
+key "(Koelsch,  2016)"
+literal "false"
+
+\end_inset
+
+
+\shape default
+ pokrývá oblast analýzy požadavků.
+ Seznamuje s principy, jak sesbírat všechny funkční i nefunkční poožadavky,
+ které bude v projektu potřeba brát na vědomí a implementovat, jejich znázornění
+ pomocí modelování a převedení na use cases a user stories pro agilní vývoj.
 \end_layout
 
 \begin_layout Subsection
@@ -271,8 +292,11 @@ Internetové zdroje a odborné články
 \end_layout
 
 \begin_layout Standard
-ABRA poskytuje ke svému produktu Flexibee přehlednou dokumentaci Dokumentace
- REST API: Dokumentace a referenční příručka FlexiBee REST API 
+ABRA poskytuje ke svému produktu Flexibee přehlednou dokumentaci 
+\shape italic
+Dokumentace REST API: Dokumentace a referenční příručka FlexiBee REST API
+\shape default
+ 
 \begin_inset CommandInset citation
 LatexCommand keyonly
 key "(FlexiBee REST API)"
@@ -286,8 +310,11 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Na straně Salesforce také existuje rozsáhlá dokumentace Salesforce Developer
- Documentation 
+Na straně Salesforce také existuje rozsáhlá dokumentace 
+\shape italic
+Salesforce Developer Documentation
+\shape default
+ 
 \begin_inset CommandInset citation
 LatexCommand keyonly
 key "(Salesforce Dev.  Doc.)"
@@ -366,7 +393,7 @@ MARTIN, Robert C.
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "(Bruckner,  Voříšek,  Buchalcevová a kolektiv,  2012)"
+key "(Bruckner,  Vorisek,  Buchalcevova a kolektiv,  2012)"
 literal "false"
 
 \end_inset
@@ -396,7 +423,7 @@ KOELSCH, George.
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "(Kratochvíl,  2019)"
+key "(Kratochvil,  2019)"
 literal "false"
 
 \end_inset
