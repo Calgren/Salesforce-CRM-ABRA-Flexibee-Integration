@@ -81,32 +81,256 @@
 
 \begin_body
 
-\begin_layout Title
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\size giant
 Vysoká škola ekonomická v Praze
 \begin_inset Newline newline
 \end_inset
 
-Fakulta informatiky a statistiky 
-\begin_inset Newline newline
-\end_inset
-
-Analýza a implementace Salesforce CRM s integrací na účetní systém pro střední
- firmu nebo neziskovou organizaci
-\begin_inset Newline newline
-\end_inset
-
-Salesforce-CRM-ABRA-Flexibee-Integrace
+Fakulta informatiky a statistiky
 \end_layout
 
-\begin_layout Author
-\noindent
-Autor: Tomáš Chour
-\begin_inset Newline newline
+\begin_layout Standard
+\align center
+
+\family sans
+\size giant
+\lang english
+\begin_inset Graphics
+	filename ../../../Downloads/Sablona-BP-DP-FIS/SablonaBP-DP/img/logo-FIS.pdf
+	width 30text%
+
 \end_inset
 
-Vedoucí bakalářské práce: doc.
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family sans
+\series bold
+\size giant
+Analýza a implementace Salesforce CRM s integrací na účetní systém pro střední
+ firmu nebo neziskovou organizaci
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family sans
+\series bold
+\size giant
+\lang english
+\begin_inset VSpace 8mm
+\end_inset
+
+
+\series default
+\lang czech
+Bakalářská Práce
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family sans
+\series medium
+\size giant
+\lang english
+\begin_inset VSpace 8mm
+\end_inset
+
+ 
+\size large
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="right" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series medium
+\size large
+\lang english
+Studijní program:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aplikovaná Informatika
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series medium
+\size large
+\lang english
+\begin_inset VSpace 2mm
+\end_inset
+
+Studijní obor:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aplikovaná informatika 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family sans
+\series medium
+\size large
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{
+\backslash
+stretch{8}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family sans
+\series medium
+\size large
+\lang english
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="right" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series medium
+\size large
+\lang english
+Autor:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tomáš Chour
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series medium
+\size large
+\lang english
+\begin_inset VSpace 2mm
+\end_inset
+
+Vedoucí práce:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+prof.
  Ing.
  Alena Buchalcevová, Ph.D.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family sans
+\series medium
+\size large
+\lang english
+\begin_inset VSpace 8mm
+\end_inset
+
+ Praha, Duben 2021 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -126,7 +350,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
-Poslední dobou v České Republice výrazně narůstá počet implementací cloudových
+Poslední dobou v České republice výrazně narůstá počet implementací cloudových
  služeb na platformě Salesforce.
  Jednou velkou kapitolou během vývojové fáze implementace je integrace na
  ostatní systémy, které daná firma pro svou činnost a provoz používá.
@@ -149,6 +373,8 @@ Cílem bakalářské práce je na základě základě BRD (Business Requirement 
  Sales Cloud (dále jen SFSC) s účetním systémem ABRA Flexibee.
  Řešení je postaveno na standardním datovém modelu a automatizačních nástrojích
  SFSC s minimálními nutnýmy rozšířeními pro potřeby integrace.
+ Součástí práce je také ověření funkčnosti pomocí testovacích dat a vytvoření
+ regresních testů.
 \end_layout
 
 \begin_layout Standard
@@ -156,28 +382,33 @@ Dílčí cíle práce:
 \end_layout
 
 \begin_layout Itemize
-Analýza dat, která účetní systém potřebuje získávat.
+DC1: Analyzovat data, která účetní systém potřebuje získávat.
  
 \end_layout
 
 \begin_layout Itemize
-Zanalyzovat a popsat část standartního datového modelu SFSC obsahujícího
+DC2: Zanalyzovat a popsat část standartního datového modelu SFSC obsahujícího
  data potřebná pro účetní systém.
  
 \end_layout
 
 \begin_layout Itemize
-Navrhnout datový model pro data, která nejsou pokryta ve standardním modelu.
+DC3: Navrhnout datový model pro data, která nejsou pokryta ve standardním
+ modelu.
  
 \end_layout
 
 \begin_layout Itemize
-Navrhnout webové služby pro integraci dat mezi systémy.
+DC4: Navrhnout webové služby pro integraci dat mezi systémy.
  Automatizovat integraci pomocí vhodných nástrojů.
 \end_layout
 
 \begin_layout Itemize
-Vytvoření SFSC aplikace s uživatelským rozhraním pro konfiguraci integrace.
+DC5: Vytvořit SFSC aplikaci s uživatelským rozhraním pro konfiguraci integrace.
+\end_layout
+
+\begin_layout Itemize
+DC6: Ověřit funkčnost pomocí testovacích dat a unit testů
 \end_layout
 
 \begin_layout Subsection*
@@ -254,16 +485,8 @@ Baklářská práce
 \shape italic
 Continuous Delivery on the Salesforce Platform
 \shape default
- 
-\begin_inset CommandInset citation
-LatexCommand keyonly
-key "(Kratochvil,  2019)"
-literal "false"
-
-\end_inset
-
- se zybývá vývojem a jeho automatizací na cloudové platformě Salesforce
- s využitím verzovacího systému a vytvořených Javovských scriptů.
+ (Kratochvíl, 2019) se zabývá vývojem a jeho automatizací na cloudové platformě
+ Salesforce s využitím verzovacího systému a vytvořených Javovských scriptů.
  Popisuje technologii SFDX, Salesforce metadata a způsob práce s nimi.
  Z této práce je hlavně důležitá část, která se zabývá práce s metadaty,
  jejich exportem z vývojového prostředí, ukládáním a migrací do konkrétních
@@ -274,6 +497,10 @@ literal "false"
 Další kniha 
 \shape italic
 Clean architecture: a craftsman's guide to software structure and design
+ 
+\shape default
+(Martin, 2018)
+\shape italic
  
 \shape default
 je teoretický souhrn z oblasti architektury a designu softwaru pro jeho
@@ -289,16 +516,8 @@ je teoretický souhrn z oblasti architektury a designu softwaru pro jeho
 Kniha 
 \shape italic
 Requirements Writing for System Engineering 
-\begin_inset CommandInset citation
-LatexCommand keyonly
-key "(Koelsch,  2016)"
-literal "false"
-
-\end_inset
-
-
 \shape default
- pokrývá oblast analýzy požadavků.
+(Koelsch, 2016) pokrývá oblast analýzy požadavků.
  Seznamuje s principy, jak sesbírat všechny funkční i nefunkční poožadavky,
  které bude v projektu potřeba brát na vědomí a implementovat, jejich znázornění
  pomocí modelování a převedení na use cases a user stories pro agilní vývoj.
@@ -313,15 +532,8 @@ ABRA poskytuje ke svému produktu Flexibee přehlednou dokumentaci
 \shape italic
 Dokumentace REST API: Dokumentace a referenční příručka FlexiBee REST API
 \shape default
- 
-\begin_inset CommandInset citation
-LatexCommand keyonly
-key "(FlexiBee REST API)"
-literal "false"
-
-\end_inset
-
-, ze které lze vycházet při samotné implementaci integrace dat.
+ (Abra, nedatováno), ze které lze vycházet při samotné implementaci integrace
+ dat.
  Lze z ní vyčíst jednotlivé webové služby pro import a export dat a samotnou
  strukturu dat pro komunikaci mezi systémy.
 \end_layout
@@ -331,17 +543,9 @@ Na straně Salesforce také existuje rozsáhlá dokumentace
 \shape italic
 Salesforce Developer Documentation
 \shape default
- 
-\begin_inset CommandInset citation
-LatexCommand keyonly
-key "(Salesforce Dev.  Doc.)"
-literal "false"
-
-\end_inset
-
-, která pokrývá oblasti datového modelování, psaní kódu pomocí jazyku Apex
- a vytváření uživatelského rozhraní pomocí LWC a standartdních salesforce
- nástrojů a komponent.
+ (Salesforce, nedatováno), která pokrývá oblasti datového modelování, psaní
+ kódu pomocí jazyku Apex a vytváření uživatelského rozhraní pomocí LWC a
+ standartdních salesforce nástrojů a komponent.
  Oblasti, které nepokrývá dokumentace lze dohledat na Salesforce vývojářských
  fórech 
 \begin_inset CommandInset href
@@ -359,16 +563,8 @@ Oblastí bezpečnosti se zabývá práce
 \shape italic
 Web Services Attacks and Security- A Systematic Literature Review 
 \shape default
-
-\begin_inset CommandInset citation
-LatexCommand keyonly
-key "(Varsha,  Jevitha,  2016)"
-literal "false"
-
-\end_inset
-
-, která shrnuje možné typy útoků na webové služby a které se budou muset
- brát v potaz při návrhu webových služeb v této práci.
+(Varsha, Jevitha, 2016), která shrnuje možné typy útoků na webové služby
+ a které se budou muset brát v potaz při návrhu webových služeb v této práci.
 \end_layout
 
 \begin_layout Standard
@@ -376,16 +572,9 @@ literal "false"
 \shape italic
 On the Need for a General REST-Security Framework
 \shape default
- 
-\begin_inset CommandInset citation
-LatexCommand keyonly
-key "(Iacono,  Gorski,  2019)"
-literal "false"
-
-\end_inset
-
- analyzuje bezpečnostní slabiny architektury rozhraní REST, uvadí jeho slabiny
- a navrhuje metodiku, jak zabezpečit služby, které jsou na REST založeny.
+ (Iacono, Gorski, 2019) analyzuje bezpečnostní slabiny architektury rozhraní
+ REST, uvadí jeho slabiny a navrhuje metodiku, jak zabezpečit služby, které
+ jsou na REST založeny.
  Dále také porovnává jednotlivé metody autentizace webových služeb.
 \end_layout
 
@@ -394,91 +583,50 @@ Pro oblast designu UI vycházím hlavně ze standardů
 \shape italic
 Salesforce Lightning Design System
 \shape default
- 
-\begin_inset CommandInset citation
-LatexCommand keyonly
-key "(SLDS)"
-literal "false"
-
-\end_inset
-
-, kde jsou k dispozici officiální nástroje, návody a blueprinty pro návrh
- a implementaci UI v prostředí Salesforce Lightning.
+ (Slds, nedatováno), kde jsou k dispozici officiální nástroje, návody a
+ blueprinty pro návrh a implementaci UI v prostředí Salesforce Lightning.
 \end_layout
 
 \begin_layout Section
 Zdroje
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "(Martin,  2018)"
-literal "false"
-
-\end_inset
-
-MARTIN, Robert C.
+\begin_layout Standard
+MARTIN, C.
+ Robert, 2018.
  Clean architecture: a craftsman's guide to software structure and design.
- London, England: Prentice Hall, [2018].
+ London, England: Prentice Hall.
  ISBN 978-0134494166.
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "(Bruckner,  Vorisek,  Buchalcevova a kolektiv,  2012)"
-literal "false"
-
-\end_inset
-
+\begin_layout Standard
 BRUCKNER, Tomáš, VOŘÍŠEK, Jiří, BUCHALCEVOVÁ, Alena, STANOVSKÁ, Iva, CHLAPEK,
- Dušan, ŘEPA, Václav.
+ Dušan, ŘEPA, Václav, 2012.
  Tvorba informačních systémů: principy, metodiky, architektury.
- Praha: Grada, 2012.
+ Praha: Grada.
  Management v informační společnosti.
  ISBN 978-80-247-4153-6.
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "(Koelsch,  2016)"
-literal "false"
-
-\end_inset
-
-KOELSCH, George.
+\begin_layout Standard
+KOELSCH, George, 2016.
  Requirements Writing for System Engineering.
- Apress, Berkeley, CA, 2016.
+ Apress, Berkeley, CA.
  ISBN 978-1-4842-2098-6.
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "(Kratochvil,  2019)"
-literal "false"
-
-\end_inset
-
-KRATOCHVÍL, Ondřej.
+\begin_layout Standard
+KRATOCHVÍL, Ondřej, 2019.
  Continuous Delivery on the Salesforce Platform.
- Praha, 2019.
+ Praha.
  Bachelor’s thesis.
  Czech Technical University in Prague, Faculty of Electrical Engineering.
  Vedoucí práce ŠEBEK Jiří.
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "(FlexiBee REST API)"
-literal "false"
-
-\end_inset
-
-Dokumentace REST API: Dokumentace a referenční příručka FlexiBee REST API
+\begin_layout Standard
+ABRA, nedatováno.
+ Dokumentace REST API: Dokumentace a referenční příručka FlexiBee REST API
  [online].
  [cit.
  2021-03-09].
@@ -486,62 +634,36 @@ Dokumentace REST API: Dokumentace a referenční příručka FlexiBee REST API
 ce-rest-api
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "(Varsha,  Jevitha,  2016)"
-literal "false"
-
-\end_inset
-
+\begin_layout Standard
 VARSHA, Mouli Ravichandra a K.
  P.
- JEVITHA.
+ JEVITHA, 2016.
  Web Services Attacks and Security- A Systematic Literature Review [online].
- 2016 [cit.
+ [cit.
  2021-03-11].
  Dostupné z: doi:10.1016/j.procs.2016.07.265
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "(Iacono,  Gorski,  2019)"
-literal "false"
-
-\end_inset
-
-IACONO, Luigi Lo a Peter Leo GORSKI.
+\begin_layout Standard
+IACONO, Luigi Lo a Peter Leo GORSKI, 2019.
  On the Need for a General REST-Security Framework.
  Future Internet [online].
- 2019 [cit.
+ [cit.
  2021-03-11].
  Dostupné z: doi:10.3390/fi11030056
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "(Salesforce Dev.  Doc.)"
-literal "false"
-
-\end_inset
-
-Salesforce Developer Documentation [online].
+\begin_layout Standard
+SALESFORCE, nedatováno.
+ Salesforce Developer Documentation [online].
  [cit.
  2021-03-12].
  Dostupné z: https://developer.salesforce.com/docs
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "(SLDS)"
-literal "false"
-
-\end_inset
-
-Salesforce Lightning Design System [online].
+\begin_layout Standard
+SLDS, nedatováno.
+ Salesforce Lightning Design System [online].
  [cit.
  2021-03-12].
  Dostupné z: https://www.lightningdesignsystem.com/
