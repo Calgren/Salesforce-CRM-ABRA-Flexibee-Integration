@@ -354,17 +354,48 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
-Poslední dobou v České republice výrazně narůstá počet implementací cloudových
- služeb na platformě Salesforce.
+V posledních letech v České republice výrazně narůstá počet implementací
+ CRM cloudových služeb (ČSÚ, 2016), (ČSÚ, 2019), (ČSÚ, 2021).
+ Největším cloudovým CRM řešením na světě je Salesforce CRM od Salesforce.com
+ s podílem na trhu 19,5% (Gartner, 2019).
  Jednou velkou kapitolou během vývojové fáze implementace je integrace na
  ostatní systémy, které daná firma pro svou činnost a provoz používá.
  Integrace s ostatními systémy bývá naročná na analýzu i vývoj, protože
  musí běžet bezchybně, zvládat výkyvy v objemu dat i dočasné výpadky jednoho
  nebo obou systémů a zajistit bezpečnost přenosu.
  Jedna z nejčastějších integrací bývá na účetní systém.
- Z toho důvodu jsem se rozhodl vytvořit open source Salesforce aplikaci,
- která umožní jednoduchou konfiguraci integrace dat mezi Salesforce a ABRA
- Flexibee.
+\end_layout
+
+\begin_layout Standard
+Další obsáhlou fází implementace je samotné nasazení celého systému nebo
+ jeho části.
+ Běžně dostupné komponenty systému by měly být snadno nasaditelné ideálně
+ pomocí jedné akce, případně přesně popsaného souboru navazujících akcí.
+ Komponenty systému, které vyžadují velké množství dalších částí třetích
+ stran jsou složitější na nasazení, než komponenty, které využívají pouze
+ standardní funkcionality a technologie daného systému.
+ Ideálním stavem pak je, když můžeme do systému přidávat komponenty bez
+ nutnosti zásahu do stávající architektury.
+ (Martin, 2018)
+\end_layout
+
+\begin_layout Standard
+Pro to, aby informační systém dokázal pružně a rychle reagovat na změny
+ v jeho okolí - změny ve vstupech a výstupech či v legislativě, je potřeba,
+ aby s těmito změnami dokázaly pracovat jeho jednotlivé komponenty.
+ Pokud firma používá řešení, které si sama vyvinula, nebo používá proprietárního
+ software od svého dodavatele, je za podmínky, že dojde ke změně okolí jejího
+ IS, v prvním případě odkázána na své kapacity, v druhém případě na kapacity
+ svého dodavatele.
+ V případě veřejně využívaného open source řešení je možnost zvýšit flexibilitu
+ a snížit náklady díky komunitnímu vývoji.
+ (VonFange a Lavigne 2011)
+\end_layout
+
+\begin_layout Standard
+Z důvodů popsaných v předchozích odstavcích jsem se rozhodl vytvořit open
+ source Salesforce aplikaci, která umožní jednoduchou konfiguraci integrace
+ dat mezi Salesforce a ABRA Flexibee.
 \end_layout
 
 \begin_layout Subsection*
@@ -373,8 +404,9 @@ Cíle práce
 
 \begin_layout Standard
 Cílem bakalářské práce je na základě základě BRD (Business Requirement Document)
- navrhnout datový model, architekturu a webové služby pro integraci Salesforce
- Sales Cloud (dále jen SFSC) s účetním systémem ABRA Flexibee.
+ navrhnout datový model, architekturu a webové služby pro obecně použitelnou
+ integraci Salesforce Sales Cloud (dále jen SFSC) s účetním systémem ABRA
+ Flexibee.
  Řešení je postaveno na standardním datovém modelu a automatizačních nástrojích
  SFSC s minimálními nutnýmy rozšířeními pro potřeby integrace.
  Součástí práce je také ověření funkčnosti pomocí testovacích dat a vytvoření
@@ -674,11 +706,52 @@ SALESFORCE, nedatováno.
 \end_layout
 
 \begin_layout Standard
+GARTNER, 2019.
+ Market Share: Customer Experience and Relationship Management, Worldwide,
+ 2018 [online].
+ Dostupné z: https://www.gartner.com/en/documents/3984886/market-share-customer-ex
+perience-and-relationship-manage
+\end_layout
+
+\begin_layout Standard
 Anon, nedatováno.
  Salesforce Lightning Design System [online].
  [cit.
  2021-03-12].
  Dostupné z: https://www.lightningdesignsystem.com/
+\end_layout
+
+\begin_layout Standard
+ČSÚ, 2016 [Český statistický úřad].
+ Firmy využívající cloudové CRM aplikace pro správu a využití informací
+ o zákaznících [tabulka].
+ 22.12.2016.
+ Dostupné z: https://www.czso.cz/documents/10180/32961948/06200516_104.pdf
+\end_layout
+
+\begin_layout Standard
+ČSÚ, 2019 [Český statistický úřad].
+ Firmy využívající cloudové CRM aplikace pro správu a využití informací
+ o zákaznících, [tabulka].
+ 11.01.2019.
+ Dostupné z: https://www.czso.cz/documents/10180/61601888/0620051843.pdf
+\end_layout
+
+\begin_layout Standard
+ČSÚ, 2021 [Český statistický úřad].
+ Firmy využívající cloudové CRM aplikace pro správu a využití informací
+ o zákaznících [tabulka].
+ 07.01.2021 .
+ Dostupné z: https://www.czso.cz/documents/10180/122362688/06200520077.pdf
+\end_layout
+
+\begin_layout Standard
+VONFANGE, M.
+ a LAVIGNE, D, 2011.
+ IT cost optimization through open source software.
+ The Open Source Business Resource, , 5-10.
+ Dostupné z: https://search-proquest-com.zdroje.vse.cz/scholarly-journals/cost-opti
+mization-through-open-source-software/docview/1695043191/se-2
 \end_layout
 
 \end_body
