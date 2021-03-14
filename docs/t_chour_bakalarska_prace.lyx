@@ -342,10 +342,14 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
+
+\end_layout
+
+\begin_layout Section
 Úvod
 \end_layout
 
@@ -457,6 +461,20 @@ Hlavním výstupem práce je aplikace pro SFSC, která umožňuje jednoduchou
 Rešerše zdrojů
 \end_layout
 
+\begin_layout Standard
+Tato kapitola má za cíl zmapovat a prostudovat relevantní zdroje k práci.
+ Integrace dat mezi systémy je obsáhlé téma, které čerpá znalosti z mnoha
+ částí IT, proto zde jsou uvedeny zdroje, které se týkají architektury a
+ návrhu softwaru a informačních systémů, bezpečnosti webových služeb a vývoji
+ na platformě Salesforce.
+ Platfroma Salesforce i systém ABRA Flexibee mají na webu veřejně dostupné
+ podrobné dokumentace.
+ Salesforce navíc nabízí komunitní fóra, kde je možné dohledat konkrétní
+ specifické nebo výjimečné problémy, které nejsou popsány v dokumentaci
+ a již se s nimi někdo jiný setkal.
+ 
+\end_layout
+
 \begin_layout Subsection
 Odborné knihy a akademické práce
 \end_layout
@@ -466,15 +484,8 @@ Kniha
 \shape italic
 Tvorba informačních systémů: principy, metodiky, architektury
 \shape default
- 
-\begin_inset CommandInset citation
-LatexCommand keyonly
-key "(Bruckner,  Vorisek,  Buchalcevova a kolektiv,  2012)"
-literal "false"
-
-\end_inset
-
- dává dohromady poznatky v analýze a návrhu podnikových informačních systémů.
+ (Bruckner et al., 2012) dává dohromady poznatky v analýze a návrhu podnikových
+ informačních systémů.
  Nabízí seznam metodik a způsobu jejich uplatnění při řešení jednotlivých
  částí analýzy a návrhu IS.
  Dále také shrnuje jednotlivé notace pro modelování částí IS.
@@ -583,12 +594,13 @@ Pro oblast designu UI vycházím hlavně ze standardů
 \shape italic
 Salesforce Lightning Design System
 \shape default
- (Slds, nedatováno), kde jsou k dispozici officiální nástroje, návody a
- blueprinty pro návrh a implementaci UI v prostředí Salesforce Lightning.
+ (Salesforce Lightning Design System , nedatováno), kde jsou k dispozici
+ officiální nástroje, návody a blueprinty pro návrh a implementaci UI v
+ prostředí Salesforce Lightning.
 \end_layout
 
-\begin_layout Section
-Zdroje
+\begin_layout Section*
+Použitá literatura
 \end_layout
 
 \begin_layout Standard
@@ -662,7 +674,7 @@ SALESFORCE, nedatováno.
 \end_layout
 
 \begin_layout Standard
-SLDS, nedatováno.
+Anon, nedatováno.
  Salesforce Lightning Design System [online].
  [cit.
  2021-03-12].
