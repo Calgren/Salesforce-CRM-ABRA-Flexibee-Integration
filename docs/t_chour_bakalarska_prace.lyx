@@ -444,17 +444,17 @@ DC5: Vytvořit SFSC aplikaci s uživatelským rozhraním pro konfiguraci integra
 \end_layout
 
 \begin_layout Itemize
-DC6: Ověřit funkčnost pomocí testovacích dat a unit testů
+DC6: Ověřit funkčnost pomocí testovacích dat a regresních testů
 \end_layout
 
 \begin_layout Subsection*
-Metoda dosažení cíle
+Metoda dosažení cílů
 \end_layout
 
 \begin_layout Standard
-Pro teoretickou část práce byla provedena rešerše zdrojů, které jsou relevantní
- pro návrh a implementaci informačních systémů a architekturu čitelného
- a škálovatelného software.
+Pro zpracování teoretické části práce byla provedena rešerše zdrojů, které
+ jsou relevantní pro návrh a implementaci informačních systémů a architekturu
+ čitelného a škálovatelného software.
  V praktické části jsem analyzoval datový model a webové služby systému
  Flexibee, poté analyzoval část datového modelu SFSC, která je relevantní
  pro účetní systém, pomocí modelování zmapoval uchovávaná data v jednotlivých
