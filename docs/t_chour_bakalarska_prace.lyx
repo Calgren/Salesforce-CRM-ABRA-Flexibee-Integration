@@ -334,8 +334,23 @@ prof.
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tableofcontents 
+\backslash
+addtocontents{toc}{~
+\backslash
+hfill
+\backslash
+textbf{Strana}
+\backslash
+par}
+\end_layout
 
 \end_inset
 
@@ -349,8 +364,26 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Section
-Úvod
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+section*{Úvod} 
+\backslash
+label{sec:uvod} 
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+nameref{sec:uvod}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -398,8 +431,26 @@ Z důvodů popsaných v předchozích odstavcích jsem se rozhodl vytvořit open
  dat mezi Salesforce a ABRA Flexibee.
 \end_layout
 
-\begin_layout Subsection*
-Cíle práce
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection*{Cíle práce} 
+\backslash
+label{sec:cile} 
+\backslash
+addcontentsline{toc}{subsection}{
+\backslash
+nameref{sec:cile}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -447,8 +498,26 @@ DC5: Vytvořit SFSC aplikaci s uživatelským rozhraním pro konfiguraci integra
 DC6: Ověřit funkčnost pomocí testovacích dat a regresních testů
 \end_layout
 
-\begin_layout Subsection*
-Metoda dosažení cílů
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection*{Metoda dosažení cílů} 
+\backslash
+label{sec:metoda} 
+\backslash
+addcontentsline{toc}{subsection}{
+\backslash
+nameref{sec:metoda}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -466,8 +535,26 @@ Pro zpracování teoretické části práce byla provedena rešerše zdrojů, kt
  a best practices z teoretické části.
 \end_layout
 
-\begin_layout Subsection*
-Očekávané přínosy
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection*{Očekávané přínosy} 
+\backslash
+label{sec:prinosy} 
+\backslash
+addcontentsline{toc}{subsection}{
+\backslash
+nameref{sec:prinosy}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -480,8 +567,26 @@ Přínosem práce má být zefektivnění a zlevnění vývojové fáze implemen
  využívají standardní datový model.
 \end_layout
 
-\begin_layout Subsection*
-Omezení
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection*{Omezení} 
+\backslash
+label{sec:omezeni} 
+\backslash
+addcontentsline{toc}{subsection}{
+\backslash
+nameref{sec:omezeni}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -492,8 +597,26 @@ at pro instance SFSC, které využívají nestandardní datový model.
  a webové služby.
 \end_layout
 
-\begin_layout Subsection*
-Výstupy
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection*{Výstupy} 
+\backslash
+label{sec:vystupy} 
+\backslash
+addcontentsline{toc}{subsection}{
+\backslash
+nameref{sec:vystupy}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -650,8 +773,26 @@ Salesforce Lightning Design System
  prostředí Salesforce Lightning.
 \end_layout
 
-\begin_layout Section*
-Použitá literatura
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+section*{Seznam použité literatury} 
+\backslash
+label{sec:literatura} 
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+nameref{sec:literatura}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
