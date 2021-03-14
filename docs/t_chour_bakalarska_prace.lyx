@@ -403,7 +403,7 @@ Cíle práce
 \end_layout
 
 \begin_layout Standard
-Cílem bakalářské práce je na základě základě BRD (Business Requirement Document)
+Cílem bakalářské práce je vytvořit business požadavky a na jejich základě
  navrhnout datový model, architekturu a webové služby pro obecně použitelnou
  integraci Salesforce Sales Cloud (dále jen SFSC) s účetním systémem ABRA
  Flexibee.
@@ -445,6 +445,25 @@ DC5: Vytvořit SFSC aplikaci s uživatelským rozhraním pro konfiguraci integra
 
 \begin_layout Itemize
 DC6: Ověřit funkčnost pomocí testovacích dat a unit testů
+\end_layout
+
+\begin_layout Subsection*
+Metoda dosažení cíle
+\end_layout
+
+\begin_layout Standard
+Pro teoretickou část práce byla provedena rešerše zdrojů, které jsou relevantní
+ pro návrh a implementaci informačních systémů a architekturu čitelného
+ a škálovatelného software.
+ V praktické části jsem analyzoval datový model a webové služby systému
+ Flexibee, poté analyzoval část datového modelu SFSC, která je relevantní
+ pro účetní systém, pomocí modelování zmapoval uchovávaná data v jednotlivých
+ systémech a poté na základě komparace těchto modelů namapoval přenos dat
+ mezi systémy, díky komparaci modelů je také zjištěno, jestli je potřeba
+ datový model SFSC rozšířit.
+ Samotný vývoj webových služeb, uživatelské aplikace a vytvoření testů je
+ pak dosaženo pomocí vlastních zkušeností a využitím získaných poznatků
+ a best practices z teoretické části.
 \end_layout
 
 \begin_layout Subsection*
