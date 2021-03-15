@@ -9,7 +9,7 @@
 \maintain_unincluded_children false
 \language czech
 \language_package default
-\inputencoding auto
+\inputencoding utf8
 \fontencoding global
 \font_roman "times" "default"
 \font_sans "helvet" "default"
@@ -416,10 +416,11 @@ Další obsáhlou fází implementace je samotné nasazení celého systému neb
 Pro to, aby informační systém dokázal pružně a rychle reagovat na změny
  v jeho okolí - změny ve vstupech a výstupech či v legislativě, je potřeba,
  aby s těmito změnami dokázaly pracovat jeho jednotlivé komponenty.
- Pokud firma používá řešení, které si sama vyvinula, nebo používá proprietárního
+ Pokud firma používá řešení, které si sama vyvinula, nebo používá proprietární
  software od svého dodavatele, je za podmínky, že dojde ke změně okolí jejího
  IS, v prvním případě odkázána na své kapacity, v druhém případě na kapacity
- svého dodavatele.
+ svého dodavatele, aby dané změny zapracoval do systému a jeho konkrétní
+ komponenty.
  V případě veřejně využívaného open source řešení je možnost zvýšit flexibilitu
  a snížit náklady díky komunitnímu vývoji.
  (VonFange a Lavigne 2011)
@@ -480,13 +481,13 @@ DC2: Zanalyzovat a popsat část standartního datového modelu SFSC obsahujíc�
 \end_layout
 
 \begin_layout Itemize
-DC3: Navrhnout datový model pro data, která nejsou pokryta ve standardním
- modelu.
+DC3: Navrhnout a realizovat datový model pro data, která nejsou pokryta
+ ve standardním modelu.
  
 \end_layout
 
 \begin_layout Itemize
-DC4: Navrhnout webové služby pro integraci dat mezi systémy.
+DC4: Navrhnout a realizovat webové služby pro integraci dat mezi systémy.
  Automatizovat integraci pomocí vhodných nástrojů.
 \end_layout
 
@@ -525,7 +526,7 @@ Pro zpracování teoretické části práce byla provedena rešerše zdrojů, kt
  jsou relevantní pro návrh a implementaci informačních systémů a architekturu
  čitelného a škálovatelného software.
  V praktické části jsem analyzoval datový model a webové služby systému
- Flexibee, poté analyzoval část datového modelu SFSC, která je relevantní
+ ABRA Flexibee, poté analyzoval část datového modelu SFSC, která je relevantní
  pro účetní systém, pomocí modelování zmapoval uchovávaná data v jednotlivých
  systémech a poté na základě komparace těchto modelů namapoval přenos dat
  mezi systémy, díky komparaci modelů je také zjištěno, jestli je potřeba
