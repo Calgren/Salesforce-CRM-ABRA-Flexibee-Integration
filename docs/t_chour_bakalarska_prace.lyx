@@ -774,6 +774,108 @@ Salesforce Lightning Design System
  prostředí Salesforce Lightning.
 \end_layout
 
+\begin_layout Section
+Teoretická východiska práce
+\end_layout
+
+\begin_layout Standard
+Účelem této sekce práce je popsat teoretické podklady a vysvětlit základní
+ termíny, na jejichž základě bude implementováno řešení v praktické části.
+ První část se zabývá informačním systémem jako takovým, jeho definicí,
+ využitím a životním cyklem.
+\end_layout
+
+\begin_layout Standard
+Další části se zabývají konkrétními systémy Salesforce CRM a ABRA Flexibee,
+ jde o jejich představení a základních charakteristiky.
+ Následně představuji technologie na kterých bude řešení postaveno.
+\end_layout
+
+\begin_layout Subsection
+Informační systém
+\end_layout
+
+\begin_layout Standard
+Informační sytém je soubor technologií, lidí, dat a prostředků jehož cílem
+ je zajištění správných informací ve správný čas na správném místě.
+ Správným místem je myšlena osoba, jiný systém nebo jiná část systému, která
+ tu konkrétní informaci využívá k podpoře svých rozhodovacích a řídících
+ procesů.
+ (Bruckner et al., 2012)
+\end_layout
+
+\begin_layout Standard
+Pro grafické znázornění komponent informačního systému a toku dat mezi nimi
+ přikládám níže jednoduché schéma (Obrázek 1).
+\end_layout
+
+\begin_layout Subsection
+Customer Relationship Management System
+\end_layout
+
+\begin_layout Subsubsection
+Salesforce CRM
+\end_layout
+
+\begin_layout Subsection
+Ekonomický systém
+\end_layout
+
+\begin_layout Subsubsection
+Abra Flexibee
+\end_layout
+
+\begin_layout Section
+Analýza požadavků
+\end_layout
+
+\begin_layout Standard
+Na základě rešerše TODO byly definovány požadavky na výsledné řešení.
+ Požadavky jsou rozděleny do skupin na funkční a nefunkční.
+ Všechny požadavky jsou znázorněny na Obrázku TODO
+\end_layout
+
+\begin_layout Standard
+Všechny požadavky jsou následně samostatně popsány.
+\end_layout
+
+\begin_layout Enumerate
+Pravidelná automatická synchronizace uzavřených objednávek a jejich faktur
+ ze SFSC do ABRA Flexibee
+\end_layout
+
+\begin_layout Enumerate
+Možnost přidávat, odebírat data k synchronizaci přes UI
+\end_layout
+
+\begin_layout Enumerate
+Možnost spustit synchronizaci okamžitě skrze UI
+\end_layout
+
+\begin_layout Enumerate
+Možnost parametrizovat automatickou synchronizaci skrze UI
+\end_layout
+
+\begin_layout Enumerate
+Logování
+\end_layout
+
+\begin_layout Subsection
+Funkční požadavky
+\end_layout
+
+\begin_layout Subsection
+Nefunkční požadavky
+\end_layout
+
+\begin_layout Standard
+Analýza datových modelů
+\end_layout
+
+\begin_layout Standard
+Datový model ABRA Flexibee
+\end_layout
+
 \begin_layout Standard
 \begin_inset ERT
 status open
