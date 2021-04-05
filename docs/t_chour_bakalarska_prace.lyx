@@ -809,19 +809,175 @@ Pro grafické znázornění komponent informačního systému a toku dat mezi ni
  přikládám níže jednoduché schéma (Obrázek 1).
 \end_layout
 
-\begin_layout Subsection
-Customer Relationship Management System
+\begin_layout Subsubsection
+Systém pro řízení vztahů se zákazníky
+\end_layout
+
+\begin_layout Standard
+Systém pro řízení vztahů se zákazníky (CRM z anglického názvu Customer Relations
+hip Management) je informační systém pro podporu všech procesů, které zahrnují
+ zákazníky podniku.
+ Tím jsou myšleny procesy pro získávání nových zákazníků a poskytování služeb
+ těm stávajícím.
 \end_layout
 
 \begin_layout Subsubsection
-Salesforce CRM
-\end_layout
-
-\begin_layout Subsection
 Ekonomický systém
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
+Salesforce CRM
+\end_layout
+
+\begin_layout Standard
+Salesforce je nejrozšířenější cloudová platforma na světě, zaměřená na zajištění
+ procesů spjatých s CRM.
+ (Gartner, 2019) Skládá se z několika modulů, které si každý může uživatel
+ nakombinovat tak, aby jimi zajistil své konkrétní procesy.
+\end_layout
+
+\begin_layout Standard
+Salesforce je SaaS i PaaS zároveň, jelikož nabízí předem hotová řešení -
+ viz.
+ Sales Cloud, Marketing Cloud a další, tak umožňuje uživatelům vyvíjet své
+ vlastní aplikace, což je i předmětem této práce.
+\end_layout
+
+\begin_layout Standard
+Hlavními moduly jsou (Salesforce EMEA, Customer 360):
+\end_layout
+
+\begin_layout Itemize
+Sales Cloud - Zahrnuje podporu procesů spjatých s managementem obchodních
+ příležitostí a získáváním nových leadů
+\end_layout
+
+\begin_layout Itemize
+Service Cloud - Podporuje procesy pro řízení zákaznického servisu - dotazy,
+ reklamace, sttížnosti, zpětná vazba apod.
+\end_layout
+
+\begin_layout Itemize
+Marketing Cloud - Nástroj pro podporu procesů spojených s marketingem -
+ automatizování newsletterů, analýza marketingových kampaní, tvorba cíleného
+ obsahu na určité skupiny zákazníků
+\end_layout
+
+\begin_layout Itemize
+Commerce Cloud - Platforma pro vytváření a správu škálovatelných eshopů,
+ skládá se ze samostatných B2B a B2C částí.
+\end_layout
+
+\begin_layout Itemize
+Analytics - Nástroj pro BI
+\end_layout
+
+\begin_layout Itemize
+Experience Cloud - Nástroj, který umožňuje vystavit funkcionalitu se kterou
+ mohou přímo interagovat zákaznici a dodavatelé společnosti - typicky self-servi
+ce služby.
+\end_layout
+
+\begin_layout Itemize
+a další
+\end_layout
+
+\begin_layout Standard
+Vývoj na platformě Salesforce
+\end_layout
+
+\begin_layout Standard
+Následující kapitola se zabývá způsobem vývoje a vývojářskými nástroji,
+ které Salesforce poskytuje.
+ Popisuji zde nástroje pro tradiční i low-code vývoj, kapitola předpokládá
+ základní znalosti objektového programování a relačních databází.
+\end_layout
+
+\begin_layout Standard
+Datový model
+\end_layout
+
+\begin_layout Standard
+Salesforce poskytuje hotový datový model pro podporů procesů jednotlivých
+ modulů.
+ Tento předem hotový datový model se nazývá standardní.
+\end_layout
+
+\begin_layout Standard
+Standardní datový model pro Sales a Service Cloud zahrnuje entity (SObject
+ v Salesforce názvosloví) pro správu zákazníků a kontaktů, objednávek a
+ faktur, obchodních příležitostí, uživatelů, dokumentů a spoustu dalších
+ - všechny lze nalézt v dokumentaci : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/data_model.htm"
+literal "false"
+
+\end_inset
+
+.
+ (Salesforce, 
+\shape italic
+Salesforce Developer Documentation
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
+Datový model, který vytvoří uživatel se nazývá custom (od custom made),
+ uživatel může rozšířit standardní entity o jednotlivé atributy (pole SObjectu
+ v Salesforce názvosloví), nebo vytvářet celé entity včetně relací na standardní
+ i custom datový model.
+ V salesforce existují dva způsoby relací - lookup a master-detail.
+\end_layout
+
+\begin_layout Standard
+Lookup relace
+\end_layout
+
+\begin_layout Standard
+Lookup pole umožňuje nadefinovat relaci mezi dvěma SObjecty, funguje na
+ principu cizího klíče, relace na rodiče není povinná - může být null.
+ (Salesforce, 
+\shape italic
+Salesforce Developer Documentation
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
+Master-Detail relace
+\end_layout
+
+\begin_layout Standard
+Master-Detail je striktnější formou relace, která poskytuje funkcionality
+ navíc.
+ Umožňuje na rodiči vytvářet tzv.
+ roll-up summary fields, které poskytují kalkulaci SUM, AVG, MIN, MAX z
+ dceřinných záznamů.
+ Master-Detail ovlivňuje i CRUD práva na dceřinnou entitu - přístup na rodiče
+ uerčuje přístup na dceřinnou entitu.
+ Používá se pro vytváření M:N relací skrze junction tabulku.
+ (Salesforce, 
+\shape italic
+Salesforce Developer Documentation
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
+APEX
+\end_layout
+
+\begin_layout Standard
+Automatizační nástroje
+\end_layout
+
+\begin_layout Standard
+Omezení
+\end_layout
+
+\begin_layout Subsection
 Abra Flexibee
 \end_layout
 
@@ -1015,6 +1171,14 @@ VONFANGE, M.
  The Open Source Business Resource, , 5-10.
  Dostupné z: https://search-proquest-com.zdroje.vse.cz/scholarly-journals/cost-opti
 mization-through-open-source-software/docview/1695043191/se-2
+\end_layout
+
+\begin_layout Standard
+SALESFORCE EMEA, nedatováno.
+ Customer 360 [online].
+ [cit.
+ 2021-03-20].
+ Dostupné z: https://www.salesforce.com/products/
 \end_layout
 
 \end_body
