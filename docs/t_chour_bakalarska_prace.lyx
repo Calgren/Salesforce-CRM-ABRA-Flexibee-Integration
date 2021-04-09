@@ -1372,7 +1372,7 @@ Abra FlexiBee je ekonomický systém od firmy ABRA Flexi s.r.o., který funguje
  v cloudu i on-premise s tenkým klientem.
  Nabízí moderní přehledné prostředí se zpracováním dat do dashboardů.
  Je multiplatformní, podporuje webový přístup z webových prohlížečů, klientský
- přistup z macOS, Windows a Linux i mobilní přístup z Android a iOS zařízení.
+ přístup z macOS, Windows a Linux i mobilní přístup z Android a iOS zařízení.
  (ABRA FLEXI S.R.O., Abra Flexi)
 \end_layout
 
@@ -1387,7 +1387,50 @@ REST API
 
 \begin_layout Standard
 FlexiBee obsahuje rozhraní REST API pro integraci s externími informačními
- systémy
+ systémy, poskytuje pro něj přehlednou dokumentaci, která je dotupná na
+ : https://intercom.help/podpora-flexi/cs/collections/2592813-dokumentace-rest-ap
+i .
+ Rozhraní podporuje všechny CRUD operace a základním formátem dat pro komunikaci
+ je JSON a XML, mimo to dokáže importovat a exportovat data i v CSV a XLS.
+\end_layout
+
+\begin_layout Standard
+WebHooks
+\end_layout
+
+\begin_layout Standard
+WebHooks je způsob automatického propojení systému / aplikace (publisher)
+ s několika externími systémy / aplikacemi (subscribers).
+ Při použití WebHooks se zpráva posílá z publisher systému při nějaké události
+ v něm (např.
+ změna záznamu v databázi nebo vnitřní event) na všechny zaregistrované
+ subscriber URL.
+ (Guay, 2020)
+\end_layout
+
+\begin_layout Standard
+FlexiBee má možnost implementace WebHooks, kdy se HTTP POST request posílá
+ při změně obsahu databáze ABRA Flexi a obsahem jeho zprávy je výpis všech
+ změn od posledního zavolání hooku.
+ Pokud nastane chyba při doručování zprávy, je zpráva odesílána opakovaně
+ v postupně se prodlužujících intervalech.
+ Aby FlexiBee považovalo zprávu za úspěšně doručenou, nesmí její zpracování
+ v cílovém systému přesáhnout 30 vteřin, respektive musí do 30 vteřin subscriber
+ odpovědět se status kódem 2xx.
+ Ideální implementací je pak, že subscriber odpoví úspěšným statusem 2xx
+ okamžitě poté, co obdrží zprávu se změnami a samotné jejich zpracování
+ probíhá asynchroně.
+ (Abra, Dokumentace REST API).
+\end_layout
+
+\begin_layout Standard
+V případě výše zmíněného navrhovaného způsobu implementace WebHooks podotýkám,
+ že je nutné ošetřit případ, kdy subscriber odpoví úspěšným statusem a pak
+ dojde k chybě v asynchroním zpracování dat.
+ V takovém případě je nutné, aby se daný systém dotázal dodatečně na data,
+ která nedokázal zpracovat, zalogoval chybu a takový záznam označil, pokud
+ je ani po dodatečném dotazu nelze zpracovat, aby nebyla porušována integrita
+ dat mezi systémy.
 \end_layout
 
 \begin_layout Section
@@ -1622,6 +1665,14 @@ SYSTEM ONLINE.
  2021-04-09].
  Dostupné z: https://www.systemonline.cz/prehled-informacnich-systemu/ekonomicke-s
 ystemy/abra-flexibee-1.htm
+\end_layout
+
+\begin_layout Standard
+GUAY, Matthew.
+ What are webhooks? [online].
+ 2020 [cit.
+ 2021-04-09].
+ Dostupné z: https://zapier.com/blog/what-are-webhooks/
 \end_layout
 
 \end_body
