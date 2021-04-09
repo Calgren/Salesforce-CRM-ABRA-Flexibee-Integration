@@ -825,6 +825,18 @@ hip Management) je informační systém pro podporu všech procesů, které zahr
 Ekonomický systém
 \end_layout
 
+\begin_layout Standard
+Ekonomický / účetní systém je dnes již součástí většiny firem,
+\end_layout
+
+\begin_layout Standard
+Hlavními úkoly ekonomického informačního systému je evidence dokladů spojených
+ s účetnictvím, zpracování a výpočet mezd a výkaznictví.
+ Měly by pracovat s aktuálními právními předpisy, převážně se zákonem o
+ účetnictví - Zákon č.
+ 563/1991 Sb.
+\end_layout
+
 \begin_layout Subsection
 Salesforce CRM
 \end_layout
@@ -1023,7 +1035,7 @@ Workflow - jednoduchý automatizační nástroj, používající pouze jedno if
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Následující obrázek znázorňuje porovnání automatizačních nástrojů podle
@@ -1082,9 +1094,10 @@ Mezi hlavní limity patří:
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -1336,11 +1349,8 @@ Maximální počet SOQL dotazů
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hlavní limity pro operace v Salesforce (Zdroj: (Salesforce, 
-\shape italic
-Salesforce Developer Documentation
-\shape default
-)
+Hlavní limity pro operace v Salesforce (Zdroj: (Salesforce, Execution Governors
+ and Limits)
 \end_layout
 
 \end_inset
@@ -1355,6 +1365,29 @@ Salesforce Developer Documentation
 
 \begin_layout Subsection
 Abra Flexibee
+\end_layout
+
+\begin_layout Standard
+Abra FlexiBee je ekonomický systém od firmy ABRA Flexi s.r.o., který funguje
+ v cloudu i on-premise s tenkým klientem.
+ Nabízí moderní přehledné prostředí se zpracováním dat do dashboardů.
+ Je multiplatformní, podporuje webový přístup z webových prohlížečů, klientský
+ přistup z macOS, Windows a Linux i mobilní přístup z Android a iOS zařízení.
+ (ABRA FLEXI S.R.O., Abra Flexi)
+\end_layout
+
+\begin_layout Standard
+V současnosti používá FlexiBee přes 6500 zákazníků.
+ (System Online, Abra FlexiBee)
+\end_layout
+
+\begin_layout Standard
+REST API
+\end_layout
+
+\begin_layout Standard
+FlexiBee obsahuje rozhraní REST API pro integraci s externími informačními
+ systémy
 \end_layout
 
 \begin_layout Section
@@ -1501,6 +1534,15 @@ SALESFORCE, nedatováno.
 \end_layout
 
 \begin_layout Standard
+SALESFORCE.
+ Execution Governors and Limits [online].
+ [cit.
+ 2021-04-09].
+ Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
+/apex_gov_limits.htm
+\end_layout
+
+\begin_layout Standard
 GARTNER, 2019.
  Market Share: Customer Experience and Relationship Management, Worldwide,
  2018 [online].
@@ -1563,6 +1605,23 @@ LIU, David.
  2018 [cit.
  2021-04-09].
  Dostupné z: https://www.sfdc99.com/2018/01/22/workflow-process-builder-flow-apex/
+\end_layout
+
+\begin_layout Standard
+ABRA FLEXI S.R.O.
+ ABRA Flexi [online].
+ [cit.
+ 2021-04-09].
+ Dostupné z: https://www.flexibee.eu/
+\end_layout
+
+\begin_layout Standard
+SYSTEM ONLINE.
+ ABRA FLEXIBEE [online].
+ [cit.
+ 2021-04-09].
+ Dostupné z: https://www.systemonline.cz/prehled-informacnich-systemu/ekonomicke-s
+ystemy/abra-flexibee-1.htm
 \end_layout
 
 \end_body
