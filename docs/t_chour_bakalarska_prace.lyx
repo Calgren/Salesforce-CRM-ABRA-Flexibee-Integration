@@ -970,11 +970,103 @@ APEX
 \end_layout
 
 \begin_layout Standard
+APEX je objektově orientovaný programovací jazyk, který byl vyvinut přimo
+ pro platformu Salesforce.
+ Má syntaxe podobné jazyku Java a využívá se pro psaní logiky všech server
+ - side operací.
+ Zahrnuje v sobě podporů pro práci s databází, jako je psaní DML operací
+ (insert, update, delete, select, upsert) a triggerů včetně jejich logiky.
+ Dále se pomocí něj také píší webové služby a API callouty.
+ (Salesforce, 
+\shape italic
+Salesforce Developer Documentation
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
 Automatizační nástroje
 \end_layout
 
 \begin_layout Standard
+Salesforce nabízí svým uživatelům širokou škálu automatizačních nástrojů,
+ jejichž spouštěčem může být událost nad záznamem v databázi nebo mohou
+ být spouštěny pravidelně v nějakém časovém intervalu.
+\end_layout
+
+\begin_layout Standard
+Dostupnými automatizačními nástroji jsou:
+\end_layout
+
+\begin_layout Itemize
+Apex - Umožňuje psaní after a before triggerů nad objekty (insert, update,
+ delete undelete) a časově spustitelných událostí.
+\end_layout
+
+\begin_layout Itemize
+Flow - komplexní grafický automatizační nástroj, který se skládá z mnoha
+ jednotlivých komponent, umožňuje kombinaci s apexem
+\end_layout
+
+\begin_layout Itemize
+Process Builder - jednoduchý grafický nástroj, funguje na principu několika
+ na sebe navazující if / then tvrzení
+\end_layout
+
+\begin_layout Itemize
+Workflow - jednoduchý automatizační nástroj, používající pouze jedno if
+ / then tvrzení 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+Následující obrázek znázorňuje porovnání automatizačních nástrojů podle
+ jednoduchosti na použití, škály případů použití, možnost narazení na limity
+ a schopnost je obejít, škálovatelnosti, schopnosti daný nástroj debuggovat,
+ uživatelské přívětivosti v případě chyby, možnosti testování daného nástroje,
+ rychlosti exekuce, jednoduchosti nasazení a jak moc je nástroj odolný proti
+ riziku, že kvůli němu rozbijem již existující funkcionalitu.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/tomaschour/Desktop/Screenshot 2021-04-09 at 10.53.32.png
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Porovnání automatizačních nástrojů (Zdroj: Liu, 2018)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Omezení
+\end_layout
+
+\begin_layout Standard
+fsafsafsafsafsafas
 \end_layout
 
 \begin_layout Subsection
@@ -1179,6 +1271,14 @@ SALESFORCE EMEA, nedatováno.
  [cit.
  2021-03-20].
  Dostupné z: https://www.salesforce.com/products/
+\end_layout
+
+\begin_layout Standard
+LIU, David.
+ Clicks versus Code! [online].
+ 2018 [cit.
+ 2021-04-09].
+ Dostupné z: https://www.sfdc99.com/2018/01/22/workflow-process-builder-flow-apex/
 \end_layout
 
 \end_body
