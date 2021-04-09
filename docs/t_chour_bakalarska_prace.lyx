@@ -564,7 +564,7 @@ Přínosem práce má být zefektivnění a zlevnění vývojové fáze implemen
  Po úpravách zdrojového kódu lze tuto práci použít i pro integraci s jinými
  podobnými účetnímy systémy.
  Z důvodu využití standardních SFSC objektů a automatizančích nástrojů lze
- toto řešení implementovat bez dodatečných úprav v instancích SFSC, které
+ toto řešení implementovat bez dodatečných úprav v organizacích SFSC, které
  využívají standardní datový model.
 \end_layout
 
@@ -592,7 +592,7 @@ nameref{sec:omezeni}}
 
 \begin_layout Standard
 Z důvodu využití standartních objektů nelze bez nutnosti úpravy kódu implementov
-at pro instance SFSC, které využívají nestandardní datový model.
+at pro organizace SFSC, které využívají nestandardní datový model.
  Ovládání skrze custom UI je omezeno pouze na Salesforce Lightning, použití
  v Classic není podporováno, i v něm ale lze využít datový model, automatizace
  a webové služby.
@@ -676,7 +676,7 @@ Continuous Delivery on the Salesforce Platform
  Popisuje technologii SFDX, Salesforce metadata a způsob práce s nimi.
  Z této práce je hlavně důležitá část, která se zabývá práce s metadaty,
  jejich exportem z vývojového prostředí, ukládáním a migrací do konkrétních
- Salesforce instancí.
+ Salesforce organizací.
 \end_layout
 
 \begin_layout Standard
@@ -894,18 +894,7 @@ ce služby.
 a další
 \end_layout
 
-\begin_layout Standard
-Vývoj na platformě Salesforce
-\end_layout
-
-\begin_layout Standard
-Následující kapitola se zabývá způsobem vývoje a vývojářskými nástroji,
- které Salesforce poskytuje.
- Popisuji zde nástroje pro tradiční i low-code vývoj, kapitola předpokládá
- základní znalosti objektového programování a relačních databází.
-\end_layout
-
-\begin_layout Standard
+\begin_layout Subsubsection
 Datový model
 \end_layout
 
@@ -975,6 +964,17 @@ Master-Detail je striktnější formou relace, která poskytuje funkcionality
 Salesforce Developer Documentation
 \shape default
 )
+\end_layout
+
+\begin_layout Subsubsection
+Vývoj na platformě Salesforce
+\end_layout
+
+\begin_layout Standard
+Následující kapitola se zabývá způsobem vývoje a vývojářskými nástroji,
+ které Salesforce poskytuje.
+ Popisuji zde nástroje pro tradiční i low-code vývoj, kapitola předpokládá
+ základní znalosti objektového programování a algoritmizace.
 \end_layout
 
 \begin_layout Standard
@@ -1078,10 +1078,11 @@ Omezení
 \end_layout
 
 \begin_layout Standard
-Jelikož Salesforce instance běží na multitenantním prostředí - skupina instancí
- sdílí zdroje jednoho serveru, tak aby nedocházelo k výkyvům výkonu, Salesforce
- vynucuje limity pro operace v rámci jedné transakce, které čerpají serverové
- zdroje, které nesmějí jednotlivé instance překročit.
+Jelikož Salesforce organizace je součástí multitenantního prostředí - skupina
+ organizací sdílí zdroje jednoho serveru (instance), tak aby nedocházelo
+ k výkyvům výkonu, Salesforce vynucuje limity pro operace v rámci jedné
+ transakce, které čerpají serverové zdroje, které nesmějí jednotlivé organizace
+ překročit.
  Operace která takový limit překročí je ukončena vyjímkou.
  Při psaní kódu a vytváření automatizací je tedy potřeba aby byla daná operace
  co nejvíce optimalizovaná.
@@ -1363,6 +1364,56 @@ Hlavní limity pro operace v Salesforce (Zdroj: (Salesforce, Execution Governors
 
 \end_layout
 
+\begin_layout Subsubsection
+Customizace a nasazení do prostředí
+\end_layout
+
+\begin_layout Standard
+Všechny součásti systému (datový model, profily, triggery, automatizace,
+ UI, webové služby a další) jsou v Salesforce reprezentovány metadata soubory.
+ Vytváření některých metadata souborů je, aby se předešlo rozbití současného
+ řešení, v produkčním prostředí zakázáno a proto musí být tato metadata
+ vytvořena na nižším prostředí (sandbox, developer edition) a následně zmigrován
+a do produkce.
+ Existuje několik základních způsoby nazení: (Kratochvíl, 2019)
+\end_layout
+
+\begin_layout Itemize
+Change set - Jde o přímé přetažení dat mezi dvěmi propojenými prostředími
+ bez nutnosti vytváření kopie metadat na lokálním zařízení.
+ Change set se vytváří pomocí deklarativního nástroje, který je součástí
+ Salesforce.
+ Nevýhodou tohoto řešení je absence verzovacího systému a absence SSOT
+\end_layout
+
+\begin_layout Itemize
+Unmanaged package - Je balíček metadat, který je vytvořený v libovolném
+ prostředí a může být nainstalován na kterékoliv nepropojené prostředí,
+ používá se k distribuci open source funkcionalit.
+\end_layout
+
+\begin_layout Itemize
+Managed package - Podobný jako unmanaged package s tím rozdílem, že jde
+ o closed source, po nainstalování balíčku, nemá uživatel možnost zobrazit
+ ani upravovat daná metadata.
+ Použivá se pro distribuci placených funkcionalit nezávislými vývojářskými
+ společnostmi nebo Salesforce partnery.
+\end_layout
+
+\begin_layout Itemize
+Metadata API - Rozhraní, které umžňuje CRUD nad metadata soubory v daném
+ prostředí, narozdíl od change setů umožňuje použít jako zdroj souborů i
+ jiné možnosti než Salesforce organizaci - např.
+ lokální strom souborů, nebo verzovací systém.
+ K využití Metadata API se používají další nástroje, které soubory zpracují
+ a odešlou HTPP request - např.
+ Ant Migration Tool nebo Salesforce CLI.
+ Výhodou využití takového middlewaru je to, že pro práci s metadaty můžeme
+ využít formát SFDX, který je pro člověka lépe čitelný a snadněji se v něm
+ sledují změny oproti klasickému Metadata formátu.
+ (Kratochvíl, 2019)
+\end_layout
+
 \begin_layout Subsection
 Abra Flexibee
 \end_layout
@@ -1381,7 +1432,7 @@ V současnosti používá FlexiBee přes 6500 zákazníků.
  (System Online, Abra FlexiBee)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection
 REST API
 \end_layout
 
@@ -1394,7 +1445,7 @@ i .
  je JSON a XML, mimo to dokáže importovat a exportovat data i v CSV a XLS.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection
 WebHooks
 \end_layout
 
@@ -1431,6 +1482,10 @@ V případě výše zmíněného navrhovaného způsobu implementace WebHooks po
  která nedokázal zpracovat, zalogoval chybu a takový záznam označil, pokud
  je ani po dodatečném dotazu nelze zpracovat, aby nebyla porušována integrita
  dat mezi systémy.
+\end_layout
+
+\begin_layout Subsection
+Integrace dat mezi systémy
 \end_layout
 
 \begin_layout Section
