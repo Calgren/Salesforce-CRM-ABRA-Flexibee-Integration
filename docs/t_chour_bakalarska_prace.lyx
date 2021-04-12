@@ -1486,7 +1486,116 @@ V případě výše zmíněného navrhovaného způsobu implementace WebHooks po
 \end_layout
 
 \begin_layout Subsection
-Integrace dat mezi systémy
+Datová integrace v informačním systému
+\end_layout
+
+\begin_layout Standard
+Cílem této kapitoly je prozkoumat a zmapovat způsoby integrace dat mezi
+ komponentami informačního systému podniku.
+ Druhá část kapitoly se zabývá zabezpečením přenosu a přístupu k datům.
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+\begin_inset Quotes gld
+\end_inset
+
+Integrace softwarového produktu je proces, kterým se softwarový produkt
+ propojuje s ostatními softwarovými komponentami informačního systému podniku
+ (sdílení společných dat, využívání funkcionality komponenty jinou komponentou
+ apod.).
+\begin_inset Quotes grd
+\end_inset
+
+ 
+\shape default
+(Bruckner et al., 2012)
+\end_layout
+
+\begin_layout Subsubsection
+Typy datové integrace podle práce s daty
+\end_layout
+
+\begin_layout Standard
+Konsolidace
+\end_layout
+
+\begin_layout Standard
+Konsolidace dat je způsob integrace, kdy data získaná z několika různých
+ zdrojů jsou převedena do jednotného formátu, očištěna od duplicit a nahrána
+ do jednoho zdrojového systému / databáze.
+ Cílem konsolidace je zredukovat počet různých míst, na kterém jsou data
+ uložena a tím snížit nároky na úložný prostor a údržbu jejich integrity.
+ Datová konsolidace využívá nástrojů pro ETL (extract, transform, load).
+\end_layout
+
+\begin_layout Standard
+Propagace
+\end_layout
+
+\begin_layout Standard
+Propagace dat se používá k přenesení dat z jednoho systému (nebo jeho komponenty
+) do jiného, který tato data využívá k zajištění svých procesů.
+ Může být řešena synchronně i asynchronně Často se používá v případě, že
+ jako uživatel zdrojového systému potřebuji získat near-realtime odpověď
+ na základě zpracovných odeslaných dat.
+\end_layout
+
+\begin_layout Standard
+Virtualizace
+\end_layout
+
+\begin_layout Standard
+Federace
+\end_layout
+
+\begin_layout Standard
+Warehousing
+\end_layout
+
+\begin_layout Subsubsection
+Typy datové integrace podle spouštěče
+\end_layout
+
+\begin_layout Standard
+Event-driven
+\end_layout
+
+\begin_layout Standard
+Data-driven
+\end_layout
+
+\begin_layout Subsubsection
+Způsoby integrace dat
+\end_layout
+
+\begin_layout Standard
+Manuální
+\end_layout
+
+\begin_layout Standard
+Middleware
+\end_layout
+
+\begin_layout Standard
+Appliaction-Based
+\end_layout
+
+\begin_layout Standard
+UA
+\end_layout
+
+\begin_layout Subsubsection
+Bezpečnost
+\end_layout
+
+\begin_layout Standard
+Autentizace
+\end_layout
+
+\begin_layout Standard
+Autorizace
 \end_layout
 
 \begin_layout Section
