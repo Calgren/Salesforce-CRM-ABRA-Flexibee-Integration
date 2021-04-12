@@ -1383,7 +1383,8 @@ Change set - Jde o přímé přetažení dat mezi dvěmi propojenými prostřed�
  bez nutnosti vytváření kopie metadat na lokálním zařízení.
  Change set se vytváří pomocí deklarativního nástroje, který je součástí
  Salesforce.
- Nevýhodou tohoto řešení je absence verzovacího systému a absence SSOT
+ Nevýhodou tohoto řešení je absence verzovacího systému a absence SSOT při
+ použití více vývojových prostředí.
 \end_layout
 
 \begin_layout Itemize
