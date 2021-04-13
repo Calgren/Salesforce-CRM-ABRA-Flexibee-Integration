@@ -1542,6 +1542,7 @@ Propagace dat se používá k přenesení dat z jednoho systému (nebo jeho komp
  (Foote, 2019) Často se používá v případě, že jako uživatel zdrojového systému
  potřebuji získat near-realtime odpověď na základě zpracovných odeslaných
  dat.
+ (Foote, 2019)
 \end_layout
 
 \begin_layout Standard
@@ -1555,6 +1556,7 @@ Datová virtualizace využívá rozhraní mezi místy, kde jsou data fyzicky ulo
  různých zdrojů do jednoho formátu, tím pádem se během přístupu k datům
  nemusí odlišovat formát při přístupu k rozdílným zdrojům.
  Při virtualizaci nedochází k dlouhodobému ukládání transformovaných dat.
+ (Foote, 2019)
 \end_layout
 
 \begin_layout Standard
@@ -1570,6 +1572,7 @@ Datová federace je způsob abstrakce dat, při kterém je využívána virtuál
  To umožňuje například získat v rámci jednoho dotazu data o entitě zákazník,
  jejichž jedna část je uložena v databázi pro CRM a druhá v databázi pro
  ERP.
+ (Foote, 2019)
 \end_layout
 
 \begin_layout Subsubsection
@@ -1609,7 +1612,7 @@ Integrace řízená na základě změny v datech jsou spouštěny událostí v j
 
 \begin_layout Standard
 Jak v případě event-driven, tak data-driven spouštěčů může výměna zpráv
- probíhat několika způsoby:
+ probíhat několika způsoby (Hohpe, 2017):
 \end_layout
 
 \begin_layout Itemize
@@ -1644,6 +1647,7 @@ Jedná se o dotazování žadatele poskytovatele v pravidelných časových inte
  Nevýhodou tohoto řešení je, že dotazy jsou realizovány i v případě, že
  nedošlo k žádné změně v datech a data mohou být v mezičase mezi jednotlivými
  dotazy desynchronizována.
+ (Hohpe, 2017)
 \end_layout
 
 \begin_layout Subsubsection
@@ -1721,12 +1725,36 @@ Funkční požadavky
 Nefunkční požadavky
 \end_layout
 
-\begin_layout Standard
+\begin_layout Section
 Analýza datových modelů
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection
 Datový model ABRA Flexibee
+\end_layout
+
+\begin_layout Subsection
+Datový model Salesforce CRM
+\end_layout
+
+\begin_layout Subsection
+Propojení datových modelů a customizace
+\end_layout
+
+\begin_layout Section
+Návrh datové integrace
+\end_layout
+
+\begin_layout Section
+Uživatelská aplikace
+\end_layout
+
+\begin_layout Section
+Testování
+\end_layout
+
+\begin_layout Section
+Distribuce
 \end_layout
 
 \begin_layout Standard
@@ -1926,6 +1954,15 @@ FOOTE, Keith D.
  2019 [cit.
  2021-04-09].
  Dostupné z: https://www.dataversity.net/the-fundamentals-of-data-integration/
+\end_layout
+
+\begin_layout Standard
+HOHPE, Gregor.
+ Conversation Patterns [online].
+ 2017 [cit.
+ 2021-04-09].
+ Dostupné z: https://www.enterpriseintegrationpatterns.com/patterns/conversation/i
+ndex.html
 \end_layout
 
 \end_body
