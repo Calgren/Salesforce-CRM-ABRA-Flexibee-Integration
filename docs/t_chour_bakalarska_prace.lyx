@@ -1572,12 +1572,15 @@ Datová federace je způsob abstrakce dat, při kterém je využívána virtuál
  ERP.
 \end_layout
 
-\begin_layout Standard
-Warehousing
-\end_layout
-
 \begin_layout Subsubsection
 Typy datové integrace podle spouštěče
+\end_layout
+
+\begin_layout Standard
+Přenos dat v informačním systému může být iniciován na základě různých typů
+ spouštěčů.
+ Každý druh spouštěče je vhodný pro jiný případ užití a lze je v rámci informačn
+ího dystému kombinovat.
 \end_layout
 
 \begin_layout Standard
@@ -1585,7 +1588,62 @@ Event-driven
 \end_layout
 
 \begin_layout Standard
+O událostí řízenou integraci jde v případě, že přenos dat je spouštěn jakoukoliv
+ předem definovanou událostí (event).
+ Může jít o kliknutí uživatelem na tlačítko, načtení čipové karty.
+ Na událost z výchozího systému je vždy navázána událost v cílových systémech.
+ Používá se především v případech, kdy nedochází ve výchozím sýstému ke
+ změně v datech, ale chceme z něj pouze dát vědět jinému systému, že má
+ něco udělat.
+\end_layout
+
+\begin_layout Standard
 Data-driven
+\end_layout
+
+\begin_layout Standard
+Integrace řízená na základě změny v datech jsou spouštěny událostí v jedné
+ z databází v systému (create, update, delete, undelete).
+ Je vhodná v případě, že data nebo jejich část uchováváme v obou systémech.
+\end_layout
+
+\begin_layout Standard
+Jak v případě event-driven, tak data-driven spouštěčů může výměna zpráv
+ probíhat několika způsoby:
+\end_layout
+
+\begin_layout Itemize
+Fire-and-Forget: Výchozí systém vyšle zprávu a nezajímá se o to, jestli
+ byla zpracována.
+\end_layout
+
+\begin_layout Itemize
+Request-Response: Žadatel pošle dotaz a čeká na odpověď, uživatel mezitím
+ nemůže nic dělat, po získání odpovědi je zpracována a uživatel může pokračovat.
+\end_layout
+
+\begin_layout Itemize
+Request-Delayed Response: Asynchronní způsob request-response, žadatel pošle
+ dotaz, ale nečeká na odpověď, uživatel může v systému dále pracovat a ten
+ mezitím poslouchá na asynchronním vlákně na odpověď, kterou zpracuje poté,
+ co dorazí.
+\end_layout
+
+\begin_layout Itemize
+Data Enrichment: Výchozí systém vyšle neúplnou zprávu (například pouze identifik
+ační číslo objednávky) a cílové systémy se poté samostnatně dotazují na
+ pro ně relevantní data.
+\end_layout
+
+\begin_layout Standard
+Poling
+\end_layout
+
+\begin_layout Standard
+Jedná se o dotazování žadatele poskytovatele v pravidelných časových intervalech.
+ Nevýhodou tohoto řešení je, že dotazy jsou realizovány i v případě, že
+ nedošlo k žádné změně v datech a data mohou být v mezičase mezi jednotlivými
+ dotazy desynchronizována.
 \end_layout
 
 \begin_layout Subsubsection
