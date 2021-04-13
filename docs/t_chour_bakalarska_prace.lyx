@@ -1639,7 +1639,7 @@ ační číslo objednávky) a cílové systémy se poté samostnatně dotazují 
 \end_layout
 
 \begin_layout Standard
-Poling
+Polling
 \end_layout
 
 \begin_layout Standard
@@ -1659,7 +1659,13 @@ Manuální
 \end_layout
 
 \begin_layout Standard
-Middleware
+Manuální způsob integrace dat vyžaduje po osobě, která je za danou integraci
+ nebo její část zodpovědná, ručně sesbírat relevantní data ze všech zdrojů,
+ následně tato data očistit a uložit do společné databáze.
+ Přitom není zaručena konzistence dat a nabízí se široký prostor pro chyby.
+ Tento způsob se téměř nevyužívá a dává smysl jen pro malé jednorázové integrace
+ - např.
+ zanesení málo často se neměnných číselníků o malém množství záznamů.
 \end_layout
 
 \begin_layout Standard
@@ -1667,7 +1673,37 @@ Appliaction-Based
 \end_layout
 
 \begin_layout Standard
-UA
+Softwarová aplikace se stará o vyzvednutí, transformování a přenesení dat.
+ Tyto aplikace jsou náročné na vývoj, ale nabízí vysokou míru customizace
+ a škálovatelnosti,
+\end_layout
+
+\begin_layout Standard
+Middleware
+\end_layout
+
+\begin_layout Standard
+Middleware je software, který funguje jako prostředník pro předávání dat
+ mezi aplikacemi.
+ Často se používá pro integraci zastaralých aplikací, které nemají moderní
+ API a vývoj integračního softwaru by pro ně byl velmi náročný, nad těmito
+ legacy aplikacemi poskytuje abstrakci, díky níž je práce s nimi jednodušší.
+ Middleware má v sobě často zabudovány nástroje pro logování a debugging.
+\end_layout
+
+\begin_layout Standard
+Jednotný přístup k datům
+\end_layout
+
+\begin_layout Standard
+Jednotný přístup k datům (Uniform data access) je metoda, kdy data jsou
+ uložena v původním formátu ze zdrojových databází, ale při jejich vyzvednutí
+ jsou přeloženy do jednotného formátu.
+ Nabízí jednotný pohled na data, která jsou z několika různých databází.
+\end_layout
+
+\begin_layout Standard
+Common Storage
 \end_layout
 
 \begin_layout Subsubsection
@@ -1687,7 +1723,11 @@ Analýza požadavků
 \end_layout
 
 \begin_layout Standard
-Na základě rešerše TODO byly definovány požadavky na výsledné řešení.
+TODO
+\end_layout
+
+\begin_layout Standard
+Na základě rešerše byly definovány požadavky na výsledné řešení.
  Požadavky jsou rozděleny do skupin na funkční a nefunkční.
  Všechny požadavky jsou znázorněny na Obrázku TODO
 \end_layout
