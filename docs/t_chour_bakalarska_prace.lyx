@@ -1528,6 +1528,7 @@ Konsolidace dat je způsob integrace, kdy data získaná z několika různých
  Cílem konsolidace je zredukovat počet různých míst, na kterém jsou data
  uložena a tím snížit nároky na úložný prostor a údržbu jejich integrity.
  Datová konsolidace využívá nástrojů pro ETL (extract, transform, load).
+ (Foote, 2019)
 \end_layout
 
 \begin_layout Standard
@@ -1537,9 +1538,10 @@ Propagace
 \begin_layout Standard
 Propagace dat se používá k přenesení dat z jednoho systému (nebo jeho komponenty
 ) do jiného, který tato data využívá k zajištění svých procesů.
- Může být řešena synchronně i asynchronně Často se používá v případě, že
- jako uživatel zdrojového systému potřebuji získat near-realtime odpověď
- na základě zpracovných odeslaných dat.
+ Může být řešena synchronně i asynchronně.
+ (Foote, 2019) Často se používá v případě, že jako uživatel zdrojového systému
+ potřebuji získat near-realtime odpověď na základě zpracovných odeslaných
+ dat.
 \end_layout
 
 \begin_layout Standard
@@ -1547,7 +1549,27 @@ Virtualizace
 \end_layout
 
 \begin_layout Standard
+Datová virtualizace využívá rozhraní mezi místy, kde jsou data fyzicky uložena
+ a a systémem nebo jeho částí, který k daným datům přistupuje.
+ Rozhraní slouží jako abstrakční vrstva a stará se o transformaci dat z
+ různých zdrojů do jednoho formátu, tím pádem se během přístupu k datům
+ nemusí odlišovat formát při přístupu k rozdílným zdrojům.
+ Při virtualizaci nedochází k dlouhodobému ukládání transformovaných dat.
+\end_layout
+
+\begin_layout Standard
 Federace
+\end_layout
+
+\begin_layout Standard
+Datová federace je způsob abstrakce dat, při kterém je využívána virtuální
+ databáze, která sjednocuje data z mnoha databází do jednoho datového modelu.
+ Data jsou uložena samostatně v jednodlivých databázích a při dotazu virtuální
+ databáze řeší, ze kterých konkrétních databázích má data získat a sjednotit
+ do společného předem nadefinovaného datového modelu.
+ To umožňuje například získat v rámci jednoho dotazu data o entitě zákazník,
+ jejichž jedna část je uložena v databázi pro CRM a druhá v databázi pro
+ ERP.
 \end_layout
 
 \begin_layout Standard
@@ -1838,6 +1860,14 @@ GUAY, Matthew.
  2020 [cit.
  2021-04-09].
  Dostupné z: https://zapier.com/blog/what-are-webhooks/
+\end_layout
+
+\begin_layout Standard
+FOOTE, Keith D.
+ The Fundamentals of Data Integration [online].
+ 2019 [cit.
+ 2021-04-09].
+ Dostupné z: https://www.dataversity.net/the-fundamentals-of-data-integration/
 \end_layout
 
 \end_body
