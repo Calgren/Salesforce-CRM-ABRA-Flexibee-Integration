@@ -1675,7 +1675,7 @@ Appliaction-Based
 \begin_layout Standard
 Softwarová aplikace se stará o vyzvednutí, transformování a přenesení dat.
  Tyto aplikace jsou náročné na vývoj, ale nabízí vysokou míru customizace
- a škálovatelnosti,
+ a škálovatelnosti.
 \end_layout
 
 \begin_layout Standard
@@ -1704,6 +1704,12 @@ Jednotný přístup k datům (Uniform data access) je metoda, kdy data jsou
 
 \begin_layout Standard
 Common Storage
+\end_layout
+
+\begin_layout Standard
+Jde o způsob, kdy data jsou vyzvednuta z různých databází očištěna od duplicit
+ a sjednocena do jedné databáze.
+ Aplikace poté přistupu pouze do této databáze.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1737,8 +1743,8 @@ Všechny požadavky jsou následně samostatně popsány.
 \end_layout
 
 \begin_layout Enumerate
-Pravidelná automatická synchronizace uzavřených objednávek a jejich faktur
- ze SFSC do ABRA Flexibee
+Pravidelná automatická synchronizace uzavřených objednávek SFSC do ABRA
+ Flexibee
 \end_layout
 
 \begin_layout Enumerate
@@ -1761,8 +1767,97 @@ Logování
 Funkční požadavky
 \end_layout
 
+\begin_layout Subsubsection
+F1 Automatická synchronizace uzavřených objednávek ze SFSC do ABRA Flexibee
+\end_layout
+
+\begin_layout Standard
+Aplikace bude umožňovat jednostranou synchronizaci uzavřených objednávek
+ ze systému Salesforce do systému ABRA Flexibee.
+ Tato synchronizace bude probíhat automaticky v pravidelných intervalech.
+ Data nebudou odesílána vícekrát, pokud nedojde k jejich změně.
+\end_layout
+
+\begin_layout Subsubsection
+F2 Automatická synchronizace synchronizace faktur a dobropisů ze SFSC do
+ ABRA Flexibee
+\end_layout
+
+\begin_layout Standard
+Společně s objednávkami bude aplikace synchronizovat všechny faktury a dobropisy
+, které se k nim vážou.
+ Tato synchronizace musí proběhnout i poté co již objednávka byla propsána
+ do systému Flexibee, ale poté k ní přibyl další dokument.
+\end_layout
+
+\begin_layout Subsubsection
+F3 Parametrizování synchronizace skrze UI
+\end_layout
+
+\begin_layout Standard
+Aplikace bude poskytovat uživatelské rozhraní pro parametrizaci synchronizace
+ dat.
+ Tato parametrizace bude zahrnovat:
+\end_layout
+
+\begin_layout Itemize
+Nastavení intervalu synchronizace
+\end_layout
+
+\begin_layout Itemize
+Definice mapování atributů mezi systémy
+\end_layout
+
+\begin_layout Itemize
+Možnost přidat či odebrat atribut pro synchronizaci
+\end_layout
+
+\begin_layout Itemize
+Možnost vypnutí / zapnutí synchronizace
+\end_layout
+
+\begin_layout Subsubsection
+F4 Přehled aktuálního nastavení synchronizace
+\end_layout
+
+\begin_layout Subsubsection
+F6 Možnost okamžitého spuštení synchronizace skrze UI
+\end_layout
+
+\begin_layout Subsubsection
+F7 Logování
+\end_layout
+
 \begin_layout Subsection
 Nefunkční požadavky
+\end_layout
+
+\begin_layout Subsubsection
+NF1 Zabezpečení přístupu k aplikaci
+\end_layout
+
+\begin_layout Subsubsection
+NF2 Zabezpečení přístupových údajů do systémů
+\end_layout
+
+\begin_layout Subsubsection
+NF3 Možnost lokalizace
+\end_layout
+
+\begin_layout Subsubsection
+NF4 Podpora Salesforce LEX
+\end_layout
+
+\begin_layout Subsubsection
+NF5 Škálovatelnost
+\end_layout
+
+\begin_layout Subsubsection
+NF6 Open-source
+\end_layout
+
+\begin_layout Subsubsection
+NF7 Nezávislost na licencích třetích stran
 \end_layout
 
 \begin_layout Section
