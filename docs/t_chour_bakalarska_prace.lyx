@@ -1820,8 +1820,20 @@ Možnost vypnutí / zapnutí synchronizace
 F4 Přehled aktuálního nastavení synchronizace
 \end_layout
 
+\begin_layout Standard
+Aplikace bude nabízet přehled aktuálního nastavení synchronizace včetně
+ mapování dat, času poslední proběhlé a následující synchronizace
+\end_layout
+
 \begin_layout Subsubsection
 F6 Možnost okamžitého spuštení synchronizace skrze UI
+\end_layout
+
+\begin_layout Standard
+V aplikaci bude možnost spustit synchronizaci okamžitě a nečekat tak na
+ pravidelný interval.
+ Pravidelná synchronizace nebude tímto okamžitým spuštěním ovlivněna a proběhne
+ podle stávajícího nastavení.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1846,6 +1858,30 @@ NF3 Možnost lokalizace
 
 \begin_layout Subsubsection
 NF4 Podpora Salesforce LEX
+\end_layout
+
+\begin_layout Standard
+Aplikaci bude možné používat v prostředí Salesforce Lightning Experience
+ a bude podporovat všechny desktopové webové prohlížeče, které jsou aktuálně
+ podporovány Salesforce LEX.
+ Těmito prohlížeči jsou (jde o poslední stabilní verzi k datu 1.4.2020 - Salesforc
+e Spring '21 release):
+\end_layout
+
+\begin_layout Itemize
+Microsoft® Edge Chromium
+\end_layout
+
+\begin_layout Itemize
+Google Chrome™
+\end_layout
+
+\begin_layout Itemize
+Mozilla® Firefox®
+\end_layout
+
+\begin_layout Itemize
+Apple® Safari®
 \end_layout
 
 \begin_layout Subsubsection
