@@ -28,8 +28,8 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\paperfontsize 12
-\spacing other 1.5
+\paperfontsize 11
+\spacing other 1.2
 \use_hyperref false
 \papersize a4paper
 \use_geometry true
@@ -57,9 +57,9 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 35mm
+\leftmargin 25mm
 \topmargin 25mm
-\rightmargin 10mm
+\rightmargin 25mm
 \bottommargin 15mm
 \secnumdepth 3
 \tocdepth 3
@@ -3243,7 +3243,7 @@ Aktéři
 \begin_inset Text
 
 \begin_layout Plain Layout
-Stadartní uživatel
+Stadardní uživatel
 \end_layout
 
 \end_inset
