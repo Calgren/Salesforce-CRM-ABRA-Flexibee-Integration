@@ -1980,6 +1980,10 @@ V aplikaci bude možnost spustit synchronizaci okamžitě a nečekat tak na
 F7 Logování
 \end_layout
 
+\begin_layout Standard
+Aplikace bude zaznamenávat logy o všech chybách a proběhlých synchronizacích.
+\end_layout
+
 \begin_layout Subsection
 Nefunkční požadavky
 \end_layout
@@ -1988,12 +1992,33 @@ Nefunkční požadavky
 NF1 Zabezpečení přístupu k aplikaci
 \end_layout
 
+\begin_layout Standard
+Je nutné zabezpečit aby pouze určití uživatelé měli k aplikaci přístup pro
+ čtení a úpravu dat.
+ Budou tři úrovně přístupu: nemá přístup k aplikaci vůbec, přístup pro čtení
+ dat a spouštění synchronizace a přístup pro čtení, úpravu dat a spuštění
+ syncrhonizace.
+\end_layout
+
 \begin_layout Subsubsection
 NF2 Zabezpečení přístupových údajů do systémů
 \end_layout
 
+\begin_layout Standard
+Přihlašovací údaje z externího systému musí být vhodně zabezpečena proti
+ zneužití.
+\end_layout
+
 \begin_layout Subsubsection
 NF3 Možnost lokalizace
+\end_layout
+
+\begin_layout Standard
+Všechen text, názvy entit a jejích atributů musí být možné lokalizovat do
+ jazyka, který dané uživatel chce používat.
+ Aplikace bude vyvinuta pouze v anglickém jazyce, ale musí být možné vše
+ přeložit bez zásahu do kódu a a aplikace musí být o tento překlad jednoduše
+ rozšiřitelná.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2028,12 +2053,31 @@ Apple® Safari®
 NF5 Škálovatelnost
 \end_layout
 
+\begin_layout Standard
+Aplikace bude umožňovat škálovatelnost pro synchronizaci dalších entit a
+ atributů jež nejsou pokryty v aktuálním rozsahu práce.
+ Dále musí umožňovat škálovatelnost překladů viz NF3 a možnost rožšíření
+ o synchronizaci dat z ABRA Flexibee do SFSC, což není v rozsahu této práce.
+\end_layout
+
 \begin_layout Subsubsection
 NF6 Open-source
 \end_layout
 
+\begin_layout Standard
+Všechny části aplikace včetně datového modelu pro data a metadata budou
+ open-source ve formátu SFDX.
+\end_layout
+
 \begin_layout Subsubsection
 NF7 Nezávislost na licencích třetích stran a speciálních Salesforce licencích
+\end_layout
+
+\begin_layout Standard
+Aplikace musí být nezávislá na všech licencích třetích stran vyjma Salesforce
+ (nutná pouze standardní Salesforce licence) a ABRA Flexi s jedním API uživatele
+m.
+ Pro její používání nebude potřeba žádná Salesforce speciální licence.
 \end_layout
 
 \begin_layout Subsection
