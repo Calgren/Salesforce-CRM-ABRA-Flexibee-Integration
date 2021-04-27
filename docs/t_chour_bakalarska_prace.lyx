@@ -3504,6 +3504,7 @@ s atributy popsanými v následující tabulce.
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -3823,6 +3824,7 @@ ABRA Flexi Data Integration Settings
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -4145,6 +4147,7 @@ Pro entity faktur a dobropisů byl vytvořen jeden SObject Invoice (API název
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -4344,6 +4347,7 @@ Z důvodu přehlednosti, škálovatelnosti a oddělení aplikace od konkrétní
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -4742,6 +4746,21 @@ SALESFORCE [online]: Docs Permission Set Groups.
  [cit.
  2021-04-20].
  Dostupné z: https://help.salesforce.com/articleView?id=sf.perm_set_groups.htm
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs Custom Settings.
+ [cit.
+ 2021-04-20].
+ Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
+/apex_customsettings.htm
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs What are Custom Metadata Types? [cit.
+ 2021-04-20].
+ Dostupné z: https://help.salesforce.com/articleView?id=sf.custommetadatatypes_abou
+t.htm
 \end_layout
 
 \begin_layout Standard
