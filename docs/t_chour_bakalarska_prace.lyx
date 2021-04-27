@@ -1897,7 +1897,7 @@ NF6 Open-source
 \end_layout
 
 \begin_layout Subsubsection
-NF7 Nezávislost na licencích třetích stran
+NF7 Nezávislost na licencích třetích stran a speciálních Salesforce licencích
 \end_layout
 
 \begin_layout Subsection
@@ -3423,16 +3423,43 @@ Případ užití - Manuální spuštění synchronizace dat
 Analýza datových modelů
 \end_layout
 
-\begin_layout Subsection
-Datový model ABRA Flexibee
+\begin_layout Standard
+Následující kapitola se zabývá částí datových modelů v obou systémech, která
+ je relevantní pro požadavky z předchozí kapitoly.
+ Pro splnění požadavků na přenos objednávek, faktur a dobropisů je potřeba
+ identifikovat a případně doplnit datové modely v obou systémech.
+ Dále je potřeba navrhnout a zvolit vhodný způsob pro ukládání nastavení
+ aplikace a mapování datových modelů.
 \end_layout
 
 \begin_layout Subsection
 Datový model Salesforce CRM
 \end_layout
 
+\begin_layout Standard
+Salesforce ve standardním datovém modelu obsahuje entity pro Objednávku
+ a Produkty, jež jsou ve vztahu M:N propojené přes mezilehlou tabulku OrderItem.
+ Faktury a dobropisy nejsou ve standardním datovém modelu pro základní licence
+ obsaženy.
+ Tyto entity jsou zpřístupněny pouze pokud má organizace zakoupenou licenci
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Salesforce Order Management
+\begin_inset Quotes grd
+\end_inset
+
+, pro splnění nefunkčního požadavku NF7 bude proto potřeba pro tyto objekty
+ vytvořit kustomizovanou část datového modelu.
+\end_layout
+
 \begin_layout Subsection
-Propojení datových modelů a customizace
+Datový model ABRA Flexibee
+\end_layout
+
+\begin_layout Subsection
+Propojení datových modelů a kustomizace
 \end_layout
 
 \begin_layout Section
