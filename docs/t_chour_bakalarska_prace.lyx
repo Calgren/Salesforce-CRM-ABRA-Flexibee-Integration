@@ -3463,6 +3463,319 @@ Propojení datových modelů a kustomizace
 \end_layout
 
 \begin_layout Section
+Uživatelské skupiny a práva
+\end_layout
+
+\begin_layout Standard
+Je potřeba zajistit jednoduché přiřazování skupin oprávnění k odlišení administr
+átorských a standardních uživatelů pro práci s aplikací a daty a systémového
+ uživatele, pod kterým poběží automatická synchronizace dat.
+ 
+\end_layout
+
+\begin_layout Standard
+Salesforce nabízí dva základní způsoby správy oprávnění - přes 
+\begin_inset Quotes gld
+\end_inset
+
+Profiles
+\begin_inset Quotes grd
+\end_inset
+
+ a přes 
+\begin_inset Quotes gld
+\end_inset
+
+Permission Set
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Permission sety mohou být přímo přiřazeny uživateli nebo shlukovány do
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Permission Set Groups
+\begin_inset Quotes grd
+\end_inset
+
+, která je pak přiřazena uživateli.
+ Zatímco profil může mít uživatel pouze jeden, permission setů a permission
+ set group může mít přiřazeno více.
+ Dále je možné profilům a permission setům přiřadit 
+\begin_inset Quotes gld
+\end_inset
+
+Custom Permission
+\begin_inset Quotes grd
+\end_inset
+
+, kterou lze využít v logice aplikací a chová se jako jednoduchý Boolean
+ - má / nemá.
+\end_layout
+
+\begin_layout Standard
+Z důvodu přehlednosti, škálovatelnosti a oddělení aplikace od konkrétní
+ organizace Salesforce, do které bude nainstalována a aby nebylo potřeba
+ zasahovat do stávajících profilů jse se rozhodl využít kombinaci permission
+ setů a permission set group.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+Následující tabulka zobrazuje obsah Permission Set Group pro standardního
+ uživatele a společné skupiny pro Administrátora a systémováho uživatele.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="20page%">
+<column alignment="center" valignment="top" width="25page%">
+<column alignment="center" valignment="top" width="25page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Oblast oprávnění
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Standardní Uživatel
+\end_layout
+
+\begin_layout Plain Layout
+(ABRA Flexi Integration Standard)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administrátor aplikace a systémový uživatel
+\end_layout
+
+\begin_layout Plain Layout
+(ABRA Flexi Integration Admin)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Objednávky
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Order Standard Permission Set
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Order Admin Permission Set
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Produkty
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Product Standard Permission Set
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Product Admin Permission Set
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Faktury a dobropisy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Invoice Standard Permission Set
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Invoice Admin Permission Set
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Právo na administrátorský přístup do aplikace
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+——
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ABRA Flexi App Admin (Custom Permission)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Přehled oprávnění podle skupin uživatelů
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Návrh datové integrace
 \end_layout
 
