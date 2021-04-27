@@ -3474,52 +3474,23 @@ Je potřeba zajistit jednoduché přiřazování skupin oprávnění k odlišen�
 \end_layout
 
 \begin_layout Standard
-Salesforce nabízí dva základní způsoby správy oprávnění - přes 
-\begin_inset Quotes gld
-\end_inset
-
-Profiles
-\begin_inset Quotes grd
-\end_inset
-
- a přes 
-\begin_inset Quotes gld
-\end_inset
-
-Permission Set
-\begin_inset Quotes grd
-\end_inset
-
-.
+Salesforce nabízí dva základní způsoby správy oprávnění - přes Profile (Salesfor
+ce, Docs Profiles) a Permission Set (Salesforce, Docs Permission Sets).
  Permission sety mohou být přímo přiřazeny uživateli nebo shlukovány do
- 
-\begin_inset Quotes gld
-\end_inset
-
-Permission Set Groups
-\begin_inset Quotes grd
-\end_inset
-
-, která je pak přiřazena uživateli.
+ Permission Set Groups (Salesforce, Docs Permission Set Groups), která je
+ pak přiřazena uživateli.
  Zatímco profil může mít uživatel pouze jeden, permission setů a permission
  set group může mít přiřazeno více.
- Dále je možné profilům a permission setům přiřadit 
-\begin_inset Quotes gld
-\end_inset
-
-Custom Permission
-\begin_inset Quotes grd
-\end_inset
-
-, kterou lze využít v logice aplikací a chová se jako jednoduchý Boolean
- - má / nemá.
+ Dále je možné profilům a permission setům přiřadit Custom Permission (Salesforc
+e, Docs Custom Permissions), kterou lze využít v logice aplikací a chová
+ se jako jednoduchý Boolean - má / nemá.
 \end_layout
 
 \begin_layout Standard
 Z důvodu přehlednosti, škálovatelnosti a oddělení aplikace od konkrétní
  organizace Salesforce, do které bude nainstalována a aby nebylo potřeba
- zasahovat do stávajících profilů jse se rozhodl využít kombinaci permission
- setů a permission set group.
+ zasahovat do stávajících profilů jsem se rozhodl využít kombinaci permission
+ setů, custom permission a permission set group.
 \end_layout
 
 \begin_layout Standard
@@ -3881,6 +3852,37 @@ SALESFORCE, nedatováno.
  [cit.
  2021-03-12].
  Dostupné z: https://developer.salesforce.com/docs
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs Profiles.
+ [cit.
+ 2021-04-20].
+ Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta
+/securityImplGuide/admin_userprofiles.htm
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs Permission Sets.
+ [cit.
+ 2021-04-20].
+ Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta
+/securityImplGuide/perm_sets_overview.htm
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs Custom Permissions.
+ [cit.
+ 2021-04-20].
+ Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta
+/securityImplGuide/custom_perms_overview.htm
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs Permission Set Groups.
+ [cit.
+ 2021-04-20].
+ Dostupné z: https://help.salesforce.com/articleView?id=sf.perm_set_groups.htm
 \end_layout
 
 \begin_layout Standard
