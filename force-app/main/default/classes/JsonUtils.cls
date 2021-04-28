@@ -82,13 +82,13 @@ public with sharing class JsonUtils {
 
     /**
      * @description This method create string object map using patched data so later it can be serialized to JSON.
-     * @param patchDataMap mad with data for update
+     * @param sobjectToConvert sobject to convert to json map
      * @param objectName api name of SObject
      * @return map with CC attribute name as key and value from SF
      */
-    public static Map<String, Object> initializeJsonObject(Map<String, Object> patchDataMap, String objectName) {
+    public static Map<String, Object> initializeJsonObject(SObject sobjectToConvert, Map<String, SObject> fieldMappings) {
+        Map<String, Object> patchDataMap = (Map<String, Object>) JSON.deserializeUntyped(JSON.serialize(sobjectToConvert));
         Map<String, Object> jsonObject = new Map<String, Object>();
-        Map<String, SObject> fieldMappings = IntegrationSObjectUtils.getExportMappingsByAbraAttributeName(objectName, true);
         Set<String> patchDataMapKeySet = patchDataMap.keySet();
         String objectMappingvalue;
         for (String key : fieldMappings.keySet()) {
