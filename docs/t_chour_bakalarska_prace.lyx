@@ -3637,6 +3637,24 @@ Salesforce Order Management
 Datový model ABRA Flexibee
 \end_layout
 
+\begin_layout Standard
+Datový model ABRA Flexi má již připravené entity pro objednávky, faktury
+ a dobropisy.
+ Entity pro přijaté a vydané faktury jsou různé, stejně tak pro přijaté
+ a vydané objednávky.
+ Pro získání datových schémat nabízí 
+\begin_inset CommandInset href
+LatexCommand href
+name "XSD schémata"
+target "https://www.flexibee.eu/api/dokumentace/ref/xsd"
+literal "false"
+
+\end_inset
+
+, pomocí nich bude možné docílit interaktivního mapování atributů v aplikaci
+ 
+\end_layout
+
 \begin_layout Subsection
 Ukládání mapování a parametrizace
 \end_layout
@@ -3740,7 +3758,7 @@ Popis
 \begin_inset Text
 
 \begin_layout Plain Layout
-SFCC SObject Name
+SFSC SObject Name
 \end_layout
 
 \end_inset
@@ -3749,7 +3767,7 @@ SFCC SObject Name
 \begin_inset Text
 
 \begin_layout Plain Layout
-SFCC_SObject_Name__c
+SFSC_SObject_Name__c
 \end_layout
 
 \end_inset
@@ -3816,7 +3834,7 @@ Specifikuje název entity v ABRA Flexi kterého se záznam mapování týká.
 \begin_inset Text
 
 \begin_layout Plain Layout
-SFCC Field Name
+SFSC Field Name
 \end_layout
 
 \end_inset
@@ -3825,7 +3843,7 @@ SFCC Field Name
 \begin_inset Text
 
 \begin_layout Plain Layout
-SFCC_Field_Name__c
+SFSC_Field_Name__c
 \end_layout
 
 \end_inset
@@ -3892,7 +3910,7 @@ Název atributu v ABRA Flexi
 \begin_inset Text
 
 \begin_layout Plain Layout
-SFCC To ABRA Flexi Sync
+SFSC To ABRA Flexi Sync
 \end_layout
 
 \end_inset
@@ -3901,7 +3919,7 @@ SFCC To ABRA Flexi Sync
 \begin_inset Text
 
 \begin_layout Plain Layout
-SFCC_To_ABRA_Flexi_Sync__c
+SFSC_To_ABRA_Flexi_Sync__c
 \end_layout
 
 \end_inset
@@ -3931,7 +3949,7 @@ Udává, jestli je přenos dat pro tento atribut aktivní pro směr ze Salesforc
 \begin_inset Text
 
 \begin_layout Plain Layout
-ABRA Flexi To SFCC Sync
+ABRA Flexi To SFSC Sync
 \end_layout
 
 \end_inset
@@ -3940,7 +3958,7 @@ ABRA Flexi To SFCC Sync
 \begin_inset Text
 
 \begin_layout Plain Layout
-ABRA_Flexi_To_SFCC_Sync__c
+ABRA_Flexi_To_SFSC_Sync__c
 \end_layout
 
 \end_inset
@@ -4373,7 +4391,7 @@ Výsledný datový model Salesforce CRM
 \end_layout
 
 \begin_layout Subsubsection
-Ukládání 
+Ukládání
 \end_layout
 
 \begin_layout Subsubsection

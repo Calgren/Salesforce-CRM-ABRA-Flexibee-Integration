@@ -6,6 +6,7 @@
  */
 public with sharing class AbraUtils {
     public final static String EXPORT_ROOT_ATTRIBUTE = 'winstrom';
+    public final static String ABRA_OBJECT_NAME_PARAM = 'abraObjectName';
 
     private static String getUpsertJsonForEntities(List<SObject> sObjects, String abraObjectName, Map<String, SObject> fieldMappings) {
         Map<String, Map<String, List<Map<String, Object>>>> mapJsonStructure = new Map<String, Map<String, List<Map<String, Object>>>>();

@@ -12,6 +12,8 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
     private Set<Id> objectIdsToSync;
     private String recordUpdatedFlag;
     private String sfccIdentificationField;
+    private String additionalCondition;
+    private String normalizedSObjectApiName;
 
     /**
      * @description batch constructor
@@ -21,12 +23,14 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
      * @param sfccIdentificationField API name of field on SObject that is used for selection in SFCC
      */
     public AbraSobjectExportBatch(String objectApiName, String abraObjectName, Set<Id> objectIdsToSync, String recordUpdatedFlag,
-            String sfccIdentificationField) {
+            String sfccIdentificationField, String additionalCondition) {
         this.objectIdsToSync = objectIdsToSync;
         this.recordUpdatedFlag = recordUpdatedFlag;
         this.sfccIdentificationField = sfccIdentificationField;
         this.objectApiName = objectApiName;
         this.abraObjectName = abraObjectName;
+        this.additionalCondition = additionalCondition;
+        this.normalizedSObjectApiName = objectApiName.replace('__c', '').replace('_', '');
     }
 
     /**
@@ -43,6 +47,9 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
                         + recordUpdatedFlag + ' = FALSE AND ' + sfccIdentificationField + ' != NULL';
             } else {
                 soqlQuery = 'SELECT Id FROM ' + objectApiName + ' WHERE Id IN :objectIdsToSync';
+            }
+            if (additionalCondition != null) {
+                soqlQuery += ' AND ' + additionalCondition;
             }
             return Database.getQueryLocator(soqlQuery);
         } catch (Exception e) {
@@ -61,7 +68,8 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
     public void execute(Database.BatchableContext bc, List<SObject> scope) {
         for (SObject theSObject : scope) {
             try {
-                AbraUtils.exportSObjects(scope, abraObjectName);
+                AbraSynchronizationInterface handler = (AbraSynchronizationInterface) Type.forName('Abra' + this.normalizedSObjectApiName + 'DataSyncService').newInstance();
+                handler.exportRecords(scope, new Map<String, Object>{AbraUtils.ABRA_OBJECT_NAME_PARAM => this.abraObjectName});
             } catch (Exception e) {
                 System.debug('Error ' + e.getMessage());
                 //LOG.error('Error during object synchronization from SFCC. ' + theSObject?.Id, e);
