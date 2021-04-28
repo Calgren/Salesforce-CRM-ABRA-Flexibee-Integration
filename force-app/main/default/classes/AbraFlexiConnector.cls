@@ -13,7 +13,7 @@ public without sharing class AbraFlexiConnector {
      * @param invoiceId customer identification in SFCC
      * @return Map representing JSON response from ABRA Flexi
      */
-    public static Map<String, Object> getInvoiceDetailById(String invoiceId) {
+    public static Map<String, Object> getEntityDetailById(String invoiceId) {
         HttpRequest req = RestIntegrationService.getHttpRequest(
                 RestIntegrationService.HttpMethod.GET,
                 null,
