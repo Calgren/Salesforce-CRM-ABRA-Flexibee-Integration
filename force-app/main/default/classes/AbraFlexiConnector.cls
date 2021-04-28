@@ -1,9 +1,30 @@
 /**
- * 
+ * @description Provides methods for connecting to Abra Flexi according to ABRA_Flexi_Data_Integration_Settings__c
+ * and for data import and export
  *
- * @author  tomaschour - Aspectworks
- * @date    2021-04-28
+ * @author  tomaschour
+ * @date    2021-04-25
  */
-public with sharing class AbraFlexiConnector {
+public without sharing class AbraFlexiConnector {
 
+
+    /**
+     * @description pulls selected invoice detail from ABRA Flexi by invoice id
+     * @param invoiceId customer identification in SFCC
+     * @return Map representing JSON response from ABRA Flexi
+     */
+    public static Map<String, Object> getInvoiceDetailById(String invoiceId) {
+        HttpRequest req = RestIntegrationService.getHttpRequest(
+                RestIntegrationService.HttpMethod.GET,
+                null,
+                null,
+                'callout:ABRA_Flexi' + '/c/demo/faktura-vydana/' + invoiceId +'.json'
+        );
+        HttpResponse res = RestIntegrationService.callWebService(req);
+        System.debug('TTT xD1 ' + res.getBody());
+        Map<String, Object> customerDetailMap = RestIntegrationService.convertJsonStringUntyped(res.getBody());
+        System.debug('TTT xD2 ' + customerDetailMap);
+        return customerDetailMap;
+
+    }
 }
