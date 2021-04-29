@@ -4521,13 +4521,19 @@ Faktury
 \end_layout
 
 \begin_layout Standard
-Pro entity faktur byl vytvořen jeden SObject Invoice (API název Invoice__c)
- z toho důvodu že mají společné datové atributy.
+Pro entity přijatých a vydaných faktur byl vytvořen jeden SObject Invoice
+ (API název Invoice__c) z toho důvodu že mají společné datové atributy.
  Rozlišení mezi fakturou.
  Vztah k objednávce je 1:N (faktura je navázaná na jednu objednávku, jedna
  objednávka může mít více faktur).
  Vztah k produktu je M:N a je řešen pomocí mezilehlé tabulky Invoice Item
- (API název Invoice_Item__c).
+ (API název Invoice_Item__c) tento SObject odpovídá entitam faktura-vydana-poloz
+ka a faktura-prijata-polozka.
+\end_layout
+
+\begin_layout Standard
+Na objektu Account, který reprezentuje zákazníka nebo dodavatele musely
+ být vytvořeny atributy pro IČO - Identification_Number__c a DIČ - VAT_Id__c.
 \end_layout
 
 \begin_layout Standard
@@ -5085,7 +5091,7 @@ Mapování Invoice na faktura_vydana a faktura_prijata
 
 
 \begin_inset Tabular
-<lyxtabular version="3" rows="14" columns="3">
+<lyxtabular version="3" rows="19" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -5433,6 +5439,151 @@ nazFirmy
 
 \begin_layout Plain Layout
 Název firmy nebo jméno osoby
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reference_Order__r.BillingAddress.Street
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ulice
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ulice
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reference_Order__r.BillingAddress.City
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+mesto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Město
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reference_Order__r.BillingAddress.PostalCode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+psc
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PSČ
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Billing_Account__r.Identification_Number__c
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IČO
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Billing_Account__r.VAT_Id__c
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DIČ
 \end_layout
 
 \end_inset
