@@ -4948,7 +4948,265 @@ Přehled oprávnění podle skupin uživatelů
 \end_layout
 
 \begin_layout Section
-Návrh datové integrace
+Datová integrace
+\end_layout
+
+\begin_layout Standard
+Následující kapitola popisuje jakým způsobem a za pomocí jakých technologií
+ byl implementován export dat ze SFSC do ABRA Flexi.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Diagram tříd
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/tomaschour/Downloads/Class Diagram (1).png
+	height 80pheight%
+	rotateAngle 90
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+UML diagram tříd logiky datové integrace
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Automatizace
+\end_layout
+
+\begin_layout Standard
+O automatické naplánování dalšího exportu se stará třída AbraDataExportScheduler
+, která implementuje rozhraní Schedulable.
+ Po prvním spuštění AbraDataExportScheduler, které je nutné provést ručně
+ po nasazení kódu se další průběhy plánují automaticky podle hodnoty zadané
+ v ABRA Flexi Data Integration Settings - Integration Interval In Minutes.
+ 
+\end_layout
+
+\begin_layout Standard
+Schedulable rozhraní umožňuje vykonat logiku kódu za nějaký určitý čas a
+ nebo tuto logiku opakovat pravidelně v určitém intervalu.
+ Čas průběhu se plánuje pomocí cron nástroje.
+ (Salesforce, Docs Apex Scheduler)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,numbers=left,caption={Classe java Tripla},emph={subject,predicate,object},emphstyle={\color{blue}},frame=shadowbox"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+	/**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @description executes sync batches for each object defined in
+\end_layout
+
+\begin_layout Plain Layout
+
+     * batchRunsConfigurations and schedules next run
+\end_layout
+
+\begin_layout Plain Layout
+
+     *
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param ctx SchedulableContext
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @author tomaschour
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @date 2021-04-25
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    public void execute(SchedulableContext ctx) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        // run batch export for every supported object
+\end_layout
+
+\begin_layout Plain Layout
+
+        executeBatchForEveryObject();
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Delete old scheduled jobs
+\end_layout
+
+\begin_layout Plain Layout
+
+        clearOldScheduledApexJobs();
+\end_layout
+
+\begin_layout Plain Layout
+
+        // schedule next run
+\end_layout
+
+\begin_layout Plain Layout
+
+        scheduleNext();
+\end_layout
+
+\begin_layout Plain Layout
+
+        // TODO commit logs
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+	/**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @description Schedules next run of SfccSObjectSyncScheduler
+\end_layout
+
+\begin_layout Plain Layout
+
+     *
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @author tomaschour
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @date 2021-04-25
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    private void scheduleNext() {
+\end_layout
+
+\begin_layout Plain Layout
+
+        Integer scheduleInterval =
+\end_layout
+
+\begin_layout Plain Layout
+
+                ((Decimal) AbraFlexiDataIntegrationSettings.getAttributeValue(
+\end_layout
+
+\begin_layout Plain Layout
+
+                        ABRA_Flexi_Data_Integration_Settings__c.Integration_Inter
+val_In_Minutes__c
+\end_layout
+
+\begin_layout Plain Layout
+
+                )).intValue();
+\end_layout
+
+\begin_layout Plain Layout
+
+        Datetime nextTime = System.now();
+\end_layout
+
+\begin_layout Plain Layout
+
+        nextTime = nextTime.addMinutes(scheduleInterval);
+\end_layout
+
+\begin_layout Plain Layout
+
+        String strJobName = JOB_NAME + System.now().getTime();
+\end_layout
+
+\begin_layout Plain Layout
+
+        String strSchedule = nextTime.format('0 m H d MM ? yyyy');
+\end_layout
+
+\begin_layout Plain Layout
+
+        System.schedule(strJobName, strSchedule, new AbraDataExportScheduler());
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -5114,6 +5372,13 @@ SALESFORCE [online]: Docs What are Custom Metadata Types? [cit.
  2021-04-20].
  Dostupné z: https://help.salesforce.com/articleView?id=sf.custommetadatatypes_abou
 t.htm
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs Apex Scheduler [cit.
+ 2021-04-20].
+ Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
+/apex_scheduler.htm
 \end_layout
 
 \begin_layout Standard

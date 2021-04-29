@@ -24,10 +24,13 @@ public with sharing class AbraDataExportScheduler implements Schedulable {
      * @date 2021-04-25
      */
     public void execute(SchedulableContext ctx) {
+        // run batch export for every supported object
         executeBatchForEveryObject();
+        // Delete old scheduled jobs
         clearOldScheduledApexJobs();
+        // schedule next run
         scheduleNext();
-        //awsp.LoggerFactory.saveLogs();
+        // TODO commit logs
     }
 
     /**
@@ -44,7 +47,8 @@ public with sharing class AbraDataExportScheduler implements Schedulable {
                 AbraSobjectExportBatch syncBatch = new AbraSobjectExportBatch(null, batchRunCongfig);
                 Database.executeBatch(syncBatch, 1);
             } catch (Exception e) {
-                //LOG.error('Error during SfccSObjectSyncBatch schedule for: ' + batchRunCongfig.sObjectApiName);
+                System.debug('Error during AbraSobjectExportBatch schedule for: ' + batchRunCongfig.abraObjectName);
+                //TODO Logging
             }
         }
     }
@@ -56,7 +60,10 @@ public with sharing class AbraDataExportScheduler implements Schedulable {
      * @date 2021-04-25
      */
     private void scheduleNext() {
-        Integer scheduleInterval = ((Decimal) AbraFlexiDataIntegrationSettings.getAttributeValue(ABRA_Flexi_Data_Integration_Settings__c.Integration_Interval_In_Minutes__c)).intValue();
+        Integer scheduleInterval =
+                ((Decimal) AbraFlexiDataIntegrationSettings.getAttributeValue(
+                        ABRA_Flexi_Data_Integration_Settings__c.Integration_Interval_In_Minutes__c
+                )).intValue();
         Datetime nextTime = System.now();
         nextTime = nextTime.addMinutes(scheduleInterval);
         String strJobName = JOB_NAME + System.now().getTime();
