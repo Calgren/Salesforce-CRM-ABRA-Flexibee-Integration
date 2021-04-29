@@ -12,24 +12,19 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Canceled</fullName>
+                <fullName>castUhr</fullName>
                 <default>false</default>
-                <label>Canceled</label>
+                <label>Částečně uhrazeno</label>
             </value>
             <value>
-                <fullName>Draft</fullName>
+                <fullName>uhrazeno</fullName>
                 <default>false</default>
-                <label>Draft</label>
+                <label>Uhrazeno</label>
             </value>
             <value>
-                <fullName>Pending</fullName>
+                <fullName>uhrazenoRucne</fullName>
                 <default>false</default>
-                <label>Pending</label>
-            </value>
-            <value>
-                <fullName>Posted</fullName>
-                <default>false</default>
-                <label>Posted</label>
+                <label>Uhrazeno (ručně)</label>
             </value>
         </valueSetDefinition>
     </valueSet>
