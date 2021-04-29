@@ -11,7 +11,6 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
     private String abraObjectName;
     private Set<Id> objectIdsToSync;
     private String recordExportedFlag;
-    private String abraIdField;
     private String additionalCondition;
     private String normalizedSObjectApiName;
 
@@ -23,7 +22,6 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
     public AbraSobjectExportBatch(Set<Id> objectIdsToSync, ExportBatchRunConfiguration configuration) {
         this.objectIdsToSync = objectIdsToSync;
         this.recordExportedFlag = configuration.recordExportedFlag;
-        this.abraIdField = configuration.abraIdField;
         this.objectApiName = configuration.sObjectApiName;
         this.abraObjectName = configuration.abraObjectName;
         this.additionalCondition = configuration.additionalCondition;
@@ -92,7 +90,6 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
         public String sObjectApiName;
         public String abraObjectName;
         public String recordExportedFlag;
-        public String abraIdField;
         public String additionalCondition;
 
         /**
@@ -103,11 +100,10 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
          * @param recordExportedFlag API name of field that indicates whether record relevant data has been exported to ABRA
          * @param abraIdField API name of external id field that is used as ID in ABRA
          */
-        public ExportBatchRunConfiguration(String sObjectApiName, String abraObjectName, String recordExportedFlag, String abraIdField) {
+        public ExportBatchRunConfiguration(String sObjectApiName, String abraObjectName, String recordExportedFlag) {
             this.sObjectApiName = sObjectApiName;
             this.abraObjectName = abraObjectName;
             this.recordExportedFlag = recordExportedFlag;
-            this.abraIdField = abraIdField;
         }
 
         /**
@@ -116,15 +112,13 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
          * @param sObjectApiName SObject api name to synchronize
          * @param abraObjectName API name of ABRA entity
          * @param recordExportedFlag API name of field that indicates whether record relevant data has been exported to ABRA
-         * @param abraIdField API name of external id field that is used as ID in ABRA
          * @param additionalCondition additional condition to filter records to export by
          */
         public ExportBatchRunConfiguration(String sObjectApiName, String abraObjectName, String recordExportedFlag,
-                String abraIdField, String additionalCondition) {
+                String additionalCondition) {
             this.sObjectApiName = sObjectApiName;
             this.abraObjectName = abraObjectName;
             this.recordExportedFlag = recordExportedFlag;
-            this.abraIdField = abraIdField;
             this.additionalCondition = additionalCondition;
         }
     }

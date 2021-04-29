@@ -5231,6 +5231,147 @@ status open
 Asynchronní hromadný export
 \end_layout
 
+\begin_layout Standard
+Jelikož může docházet k tomu, že v rámci jednoho běhu exportu bude potřeba
+ odeslat velké množství záznamů, je potřeba toto množství dávkovat, aby
+ nedocházelo k přetečení limitů.
+ Tohoto dávkování je v Salesforce možné docílit pomocí implementace interface
+ Database.Batchable.
+ Třída poté zpracovává záznamy po dávkách, jejichž velikost se specifikuje
+ při spuštění dané třídy.
+ (Salesforce, Docs Using Batch Apex) Batch se skládá ze třech hlavních metod
+ - start , execute a finish.
+ (viz Výpis)
+\begin_inset listings
+lstparams "numbers=left,showstringspaces=false,caption={Ukázka batch třídy},emph={subject,predicate,object},emphstyle={\color{blue}},frame=box,keywordstyle={\color{violet}},columns=fullflexible"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public class BatchClass implements Database.Batchable<SObject>{
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    public Database.QueryLocator start(Database.BatchableContext BC){
+\end_layout
+
+\begin_layout Plain Layout
+
+       // načte záznamy ke zpracování
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    public void execute(Database.BatchableContext BC, List<SObject> scope){
+\end_layout
+
+\begin_layout Plain Layout
+
+        // zpracuje záznamy
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    public void finish(Database.BatchableContext BC) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        // logika po tom, co doběhnou všechny dávky, např.
+ log
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nejdříve batch skrze metodu start načte všechny záznamy ke zpracování a
+ vrací je ve fromě Iterable třídy nebo Database.QueryLocator.
+ Následuje několik průběhů metody execute, počet průběhů lze dopočítat vzorcem
+ 
+\begin_inset Formula $celkovýPočetZáznamůKeZpracování/velikostDávky$
+\end_inset
+
+ se zaokrouhlením na celá čísla směrem nahoru.
+ Jednotlivé průběhy běží asynchronně v samostatných transakcích.
+ Po zpracování všech dávek se zavolá metoda finish.
+ Pokud chceme v rámci batch třídy prováděd volání ven ze systému, je potřeba
+ implementovat rozhraní Database.AllowsCallouts.
+ (Salesforce, Docs Using Batch Apex)
+\end_layout
+
+\begin_layout Standard
+Třída AbraSobjectExportBatch po dávkách exportuje objekty stejného typu.
+ Jaké objekty se mají exportovat se parametrizuje skrze proměnnou typu ExportBat
+chRunConfiguration, což je třída, která má atributy pro:
+\end_layout
+
+\begin_layout Itemize
+API název SObjectu v SFSC - např.
+ Order nebo Invoice__c
+\end_layout
+
+\begin_layout Itemize
+API název entity v ABRA Flexi - např.
+ faktura-vydana
+\end_layout
+
+\begin_layout Itemize
+Název SFSC pole na objektu, který udává, zda již byl záznam exportován -
+ podle něho se filtrují záznamy ve start metodě
+\end_layout
+
+\begin_layout Itemize
+Dodatečné podmínky pro filtraci záznamů ke zpracování - např.
+ pokud je potřeba rozlišit mezi vydanými a přijatými fakturami - nepovinný
+ atribut
+\end_layout
+
+\begin_layout Standard
+V execute metodě se poté volá implementace AbraSynchronizationInterface
+ rozhraní pro konkrétní SObject, ve které dochází k odeslání dat a zpracování
+ odpovědi - uložení vygenerovaného ABRA Flexi Id na záznamy a označení jako
+ synchronizovaných v případě úspěšného vytvoření.
+ Pokud ve kterékoliv fázi exportu dojde k vyjímce, je tato vyjímka zalogována.
+\end_layout
+
 \begin_layout Subsection
 Struktura přenášených dat
 \end_layout
@@ -5336,9 +5477,9 @@ status open
 
 \begin_layout Standard
 Odpověď poté obsahuje ve stejném kořenovém atributu informaci o úspěšnosti
- zpracování, sumarizaci provedených operací - kolik záznamů bylo vytvořeno,
- aktualizováno, vymázáno, vynecháno a skončilo neuspěchem a následně atribut
- s detailem výsledků (viz )
+ zpracování, sumarizaci provedených operací - počeet vytvořených, aktualizovánýc
+h, vymázáných, vynecháných záznamů a kolik záznamů skončilo neuspěchem a
+ následně atribut s detailem výsledků (viz )
 \begin_inset listings
 lstparams "numbers=left,showstringspaces=false,caption={JSON odpověď z ABRA Flexi},emph={subject,predicate,object},emphstyle={\color{blue}},frame=box,keywordstyle={\color{violet}},columns=fullflexible"
 inline false
@@ -5666,6 +5807,13 @@ SALESFORCE [online]: Docs Apex Scheduler [cit.
  2021-04-20].
  Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
 /apex_scheduler.htm
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs Using Batch Apex [cit.
+ 2021-04-20].
+ Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
+/apex_batch_interface.htm
 \end_layout
 
 \begin_layout Standard
