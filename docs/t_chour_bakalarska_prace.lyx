@@ -3638,21 +3638,206 @@ Datový model ABRA Flexibee
 \end_layout
 
 \begin_layout Standard
+ABRA nabízí na jednom serveru spravovat více firem, pro integraci je tedy
+ nutné specifikovat pro jakou firmu má integrace fungovat.
+\end_layout
+
+\begin_layout Subsubsection
+Datové schéma entit
+\end_layout
+
+\begin_layout Standard
+ABRA Flexi umožňuje v rámci REST API načtení datového modelu jednotlivých
+ entit ve formátu XSD.
+ Schémata jsou rozdělena na verze pro export a import dat a je možné je
+ získat pomocí webové služby na adrese 
+\begin_inset listings
+lstparams "numbers=left,showstringspaces=false,columns=fullflexible"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+/c/<identifikátor firmy>/<evidence>/<typ schématu.xsd>
+\end_layout
+
+\end_inset
+
+ (ABRA, Dokumentace XML Schéma)
+\end_layout
+
+\begin_layout Standard
+konkrétní relativní adresa pak může vypadat například takto:
+\begin_inset listings
+lstparams "columns=fullflexible"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+/c/demo/faktura-vydana/schema-import.xsd
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+XML Schema Definition (XSD) popisuje strukturu XML dokumentu nebo jeho JSON
+ varianty, definuje podporované elementy, atributy a datové typy s povolenými
+ hodnotami.
+ (W3Schools, XML Schema Tutorial)
+\end_layout
+
+\begin_layout Standard
+Pomocí nich bude možné docílit interaktivního mapování atributů v aplikaci.
+\end_layout
+
+\begin_layout Subsubsection
+Objednávky a faktury
+\end_layout
+
+\begin_layout Standard
 Datový model ABRA Flexi má již připravené entity pro objednávky, faktury
  a dobropisy.
  Entity pro přijaté a vydané faktury jsou různé, stejně tak pro přijaté
  a vydané objednávky.
- Pro získání datových schémat nabízí 
-\begin_inset CommandInset href
-LatexCommand href
-name "XSD schémata"
-target "https://www.flexibee.eu/api/dokumentace/ref/xsd"
-literal "false"
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ABRA Flexi API názvy entit pro objednávky a faktury
+\end_layout
 
 \end_inset
 
-, pomocí nich bude možné docílit interaktivního mapování atributů v aplikaci
- 
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Název
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+API název
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Přijatá objednávka
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+objednavka-prijata
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vydaná faktura
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+faktura-vydana
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vydaná objednávka
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+objednavka-vydana
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Přijatá faktura
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+faktura-prijata
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -3706,6 +3891,18 @@ placement H
 wide false
 sideways false
 status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Specifikace ABRA Flexi Data Mappings metada atributů
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -3990,18 +4187,6 @@ Udává, jestli je přenos dat pro tento atribut aktivní pro směr z ABRA Flexi
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Specifikace ABRA Flexi Data Mappings metada atributů
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -4028,8 +4213,20 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Specifikace ABRA Flexi Data Integration Settings custom settings atributů
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="4">
+<lyxtabular version="3" rows="6" columns="4">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -4078,7 +4275,7 @@ Popis
 \begin_inset Text
 
 \begin_layout Plain Layout
-Data Integration Is Active
+Order Data Integration Is Active
 \end_layout
 
 \end_inset
@@ -4087,7 +4284,7 @@ Data Integration Is Active
 \begin_inset Text
 
 \begin_layout Plain Layout
-Data_Integration_Is_Active__c
+Order_Data_Integration_Is_Active__c
 \end_layout
 
 \end_inset
@@ -4105,7 +4302,45 @@ Boolean
 \begin_inset Text
 
 \begin_layout Plain Layout
-Udává jestli je integrace dat zapnuta.
+Udává jestli je integrace objednávek zapnuta.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Invoice Data Integration Is Active
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Invoice_Data_Integration_Is_Active__c
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Boolean
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Udavá jestli je integrace faktur zapnuta.
 \end_layout
 
 \end_inset
@@ -4134,7 +4369,7 @@ Integration_Interval_In_Minutes__c
 \begin_inset Text
 
 \begin_layout Plain Layout
-Number
+Number(5, 0)
 \end_layout
 
 \end_inset
@@ -4150,7 +4385,7 @@ Specifikuje interval v minutách po kterém je synchronizace spouštěna.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4159,7 +4394,7 @@ Records In One Batch
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4168,11 +4403,50 @@ Records_In_One_Batch__c
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number(3, 0)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Specifikuje počet záznamů synchronizavoných v jedné transakci, maximální
+ počet je 200.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Number
+Company Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Company_Name__c
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text(255)
 \end_layout
 
 \end_inset
@@ -4181,25 +4455,13 @@ Number
 \begin_inset Text
 
 \begin_layout Plain Layout
-Specifikuje počet záznamů synchronizavoných v jedné transakci.
+Specifikuje API název firmy v ABRA Flexi, pro kterou se data mají synchronizovat.
 \end_layout
 
 \end_inset
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Specifikace ABRA Flexi Data Integration Settings custom settings atributů
-\end_layout
 
 \end_inset
 
@@ -4775,6 +5037,13 @@ ce-rest-api
 \end_layout
 
 \begin_layout Standard
+ABRA [online]: Dokumentace XML Schéma.
+ [cit.
+ 2021-04-21].
+ Dostupné z :https://www.flexibee.eu/api/dokumentace/ref/xsd
+\end_layout
+
+\begin_layout Standard
 VARSHA, Mouli Ravichandra a K.
  P.
  JEVITHA, 2016.
@@ -4961,6 +5230,14 @@ HOHPE, Gregor.
  2021-04-09].
  Dostupné z: https://www.enterpriseintegrationpatterns.com/patterns/conversation/i
 ndex.html
+\end_layout
+
+\begin_layout Standard
+W3SCHOOLS.
+ XML Schema Tutorial [online].
+ [cit.
+ 2021-4-21].
+ Dostupné z: https://www.w3schools.com/xml/schema_intro.asp
 \end_layout
 
 \end_body
