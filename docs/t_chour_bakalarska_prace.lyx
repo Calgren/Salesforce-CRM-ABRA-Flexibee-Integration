@@ -5,6 +5,9 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+\usepackage{xcolor}
+\end_preamble
 \use_default_options false
 \maintain_unincluded_children false
 \language czech
@@ -5015,9 +5018,10 @@ Automatizace
 O automatické naplánování dalšího exportu se stará třída AbraDataExportScheduler
 , která implementuje rozhraní Schedulable.
  Po prvním spuštění AbraDataExportScheduler, které je nutné provést ručně
- po nasazení kódu se další průběhy plánují automaticky podle hodnoty zadané
- v ABRA Flexi Data Integration Settings - Integration Interval In Minutes.
- 
+ nebo za pomoci post-install scriptu po nasazení kódu, se další průběhy
+ plánují automaticky podle hodnoty zadané v ABRA Flexi Data Integration
+ Settings - Integration Interval In Minutes.
+ (viz Výpis1)
 \end_layout
 
 \begin_layout Standard
@@ -5029,13 +5033,13 @@ Schedulable rozhraní umožňuje vykonat logiku kódu za nějaký určitý čas 
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,numbers=left,caption={Classe java Tripla},emph={subject,predicate,object},emphstyle={\color{blue}},frame=shadowbox"
+lstparams "language=Java,numbers=left,showstringspaces=false,caption={Plánování dalšího exportu dat},emph={subject,predicate,object},emphstyle={\color{blue}},frame=shadowbox,keywordstyle={\color{violet}},rulesepcolor={\color{gray}}"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-	/**
+/**
 \end_layout
 
 \begin_layout Plain Layout
@@ -5120,7 +5124,7 @@ status open
 
 \begin_layout Plain Layout
 
-	/**
+/**
 \end_layout
 
 \begin_layout Plain Layout
@@ -5160,18 +5164,22 @@ status open
 
 \begin_layout Plain Layout
 
-                ((Decimal) AbraFlexiDataIntegrationSettings.getAttributeValue(
+        ((Decimal) AbraFlexiDataIntegrationSettings.getAttributeValue(
 \end_layout
 
 \begin_layout Plain Layout
 
-                        ABRA_Flexi_Data_Integration_Settings__c.Integration_Inter
-val_In_Minutes__c
+        ABRA_Flexi_Data_Integration_Settings__c
 \end_layout
 
 \begin_layout Plain Layout
 
-                )).intValue();
+		.Integration_Interval_In_Minutes__c
+\end_layout
+
+\begin_layout Plain Layout
+
+        )).intValue();
 \end_layout
 
 \begin_layout Plain Layout
@@ -5196,7 +5204,17 @@ val_In_Minutes__c
 
 \begin_layout Plain Layout
 
-        System.schedule(strJobName, strSchedule, new AbraDataExportScheduler());
+        System.schedule(strJobName,
+\end_layout
+
+\begin_layout Plain Layout
+
+		strSchedule,
+\end_layout
+
+\begin_layout Plain Layout
+
+		new AbraDataExportScheduler());
 \end_layout
 
 \begin_layout Plain Layout
@@ -5207,6 +5225,32 @@ val_In_Minutes__c
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Rozšíření o podporu dalších entit
+\end_layout
+
+\begin_layout Standard
+Pro rozšíření logiky o export dalších entit je nutné pro tyto entity, pokud
+ již neexistuje, vytvořit třídu s názvoslovím Abra<API název SFSC SObjectu
+ bez '_' a '__c'>DataSyncService, která implementuje rozhraní AbraSynchronizatio
+nInterface.
+ V této vytvořené třídě je pak implementována metoda exportRecords, která
+ obsahuje logiku pro přípravu dat, volání exportu, a zpracování výsledku.
+ (viz Výpis2)
+\end_layout
+
+\begin_layout Standard
+Dále je potřeba pro danou entitu přidat instanci konfigurace batche do AbraDataE
+xportScheduler.batchRunsConfigurations.
+ (viz Výpis3) TODO
+\end_layout
+
+\begin_layout Standard
+Daná entita musí mít alespoň jeden odpovídající záznam v ABRA Flexi Data
+ Mappings, pokud takový záznam neexistuje, asyncrhonní process pro danou
+ entitu skončí výjimkou.
 \end_layout
 
 \begin_layout Section

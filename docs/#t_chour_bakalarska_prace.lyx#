@@ -5,6 +5,9 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+\usepackage{xcolor}
+\end_preamble
 \use_default_options false
 \maintain_unincluded_children false
 \language czech
@@ -5015,9 +5018,10 @@ Automatizace
 O automatické naplánování dalšího exportu se stará třída AbraDataExportScheduler
 , která implementuje rozhraní Schedulable.
  Po prvním spuštění AbraDataExportScheduler, které je nutné provést ručně
- po nasazení kódu se další průběhy plánují automaticky podle hodnoty zadané
- v ABRA Flexi Data Integration Settings - Integration Interval In Minutes.
- 
+ nebo za pomoci post-install scriptu po nasazení kódu, se další průběhy
+ plánují automaticky podle hodnoty zadané v ABRA Flexi Data Integration
+ Settings - Integration Interval In Minutes.
+ (viz Výpis1)
 \end_layout
 
 \begin_layout Standard
@@ -5029,7 +5033,7 @@ Schedulable rozhraní umožňuje vykonat logiku kódu za nějaký určitý čas 
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,numbers=left,caption={Classe java Tripla},emph={subject,predicate,object},emphstyle={\color{blue}},frame=shadowbox"
+lstparams "language=Java,numbers=left,showstringspaces=false,caption={Plánování dalšího exportu dat},emph={subject,predicate,object},emphstyle={\color{blue}},frame=shadowbox,keywordstyle={\color{violet}},rulesepcolor={\color{gray}}"
 inline false
 status open
 
@@ -5040,13 +5044,12 @@ status open
 
 \begin_layout Plain Layout
 
-     * @description executes sync batches for each object defined in batchRunsCo
-nfigurations and schedules
+     * @description executes sync batches for each object defined in
 \end_layout
 
 \begin_layout Plain Layout
 
-     * next run
+     * batchRunsConfigurations and schedules next run
 \end_layout
 
 \begin_layout Plain Layout
@@ -5119,9 +5122,127 @@ nfigurations and schedules
     }
 \end_layout
 
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @description Schedules next run of SfccSObjectSyncScheduler
+\end_layout
+
+\begin_layout Plain Layout
+
+     *
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @author tomaschour
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @date 2021-04-25
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    private void scheduleNext() {
+\end_layout
+
+\begin_layout Plain Layout
+
+        Integer scheduleInterval =
+\end_layout
+
+\begin_layout Plain Layout
+
+        ((Decimal) AbraFlexiDataIntegrationSettings.getAttributeValue(
+\end_layout
+
+\begin_layout Plain Layout
+
+        ABRA_Flexi_Data_Integration_Settings__c
+\end_layout
+
+\begin_layout Plain Layout
+
+		.Integration_Interval_In_Minutes__c
+\end_layout
+
+\begin_layout Plain Layout
+
+        )).intValue();
+\end_layout
+
+\begin_layout Plain Layout
+
+        Datetime nextTime = System.now();
+\end_layout
+
+\begin_layout Plain Layout
+
+        nextTime = nextTime.addMinutes(scheduleInterval);
+\end_layout
+
+\begin_layout Plain Layout
+
+        String strJobName = JOB_NAME + System.now().getTime();
+\end_layout
+
+\begin_layout Plain Layout
+
+        String strSchedule = nextTime.format('0 m H d MM ? yyyy');
+\end_layout
+
+\begin_layout Plain Layout
+
+        System.schedule(strJobName,
+\end_layout
+
+\begin_layout Plain Layout
+
+		strSchedule,
+\end_layout
+
+\begin_layout Plain Layout
+
+		new AbraDataExportScheduler());
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Rozšíření o podporu dalších entit
+\end_layout
+
+\begin_layout Standard
+Pro rozšíření logiky o export dalších entit je nutné pro tyto entity, pokud
+ již neexistuje, vytvořit třídu s názvoslovím Abra<API název SFSC SObjectu
+ bez '_' a '__c'>DataSyncService, která implementuje rozhraní AbraSynchronizatio
+nInterface.
+ V této vytvořené třídě je pak implementována metoda exportRecords, která
+ obsahuje logiku pro přípravu dat, volání exportu, a zpracování výsledku.
+ (viz Výpis2)
+\end_layout
+
+\begin_layout Standard
+Dále je potřeba přidat instanci konfigurace batche do 
 \end_layout
 
 \begin_layout Section
