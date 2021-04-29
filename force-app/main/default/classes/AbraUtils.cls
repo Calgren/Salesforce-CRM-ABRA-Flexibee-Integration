@@ -28,7 +28,8 @@ public with sharing class AbraUtils {
         }
         String query = buildQueryFromMapping(sobjectIds, fieldMappings);
         List<SObject> sObjectsWithAllValuesFromMappings = Database.query(query);
-        getUpsertJsonForEntities(sObjectsWithAllValuesFromMappings, abraEntity, fieldMappings);
+        String upsertJson = getUpsertJsonForEntities(sObjectsWithAllValuesFromMappings, abraEntity, fieldMappings);
+        AbraFlexiConnector.upsertEntities(upsertJson, abraEntity);
     }
 
     private static String buildQueryFromMapping(Set<Id> sObjectIds, Map<String, SObject> fieldMappings) {

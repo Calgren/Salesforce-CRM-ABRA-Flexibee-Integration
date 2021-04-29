@@ -7,15 +7,6 @@
 public with sharing class JsonUtils {
 
     /**
-     * @description deserializes json into Map<String, Object>
-     * @param jsonBody JSON to deserialize
-     * @return deserialized JSON
-     */
-    public static Object deserializeUntyped(String jsonBody) {
-        return (Map<String, Object>) System.JSON.deserializeUntyped(jsonBody);
-    }
-
-    /**
      * @description retrieves value in correct format from JSON by attribute name
      * @param keyString name of CC object attribute
      * @param jsonObject json response from CC
@@ -92,7 +83,7 @@ public with sharing class JsonUtils {
         Set<String> patchDataMapKeySet = patchDataMap.keySet();
         String objectMappingvalue;
         for (String key : fieldMappings.keySet()) {
-            objectMappingvalue = ((String) fieldMappings.get(key).get('Field_API_Name__c')).toLowerCase();
+            objectMappingvalue = ((String) fieldMappings.get(key).get('SFSC_Field_Name__c')).toLowerCase();
             if (patchDataMapKeySet.contains(objectMappingvalue) && !key.contains('[')) {
                 List<String> keyElements = key.split('\\.');
                 if (keyElements.size() > 1) {

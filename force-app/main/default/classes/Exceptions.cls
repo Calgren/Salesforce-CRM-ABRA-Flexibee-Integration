@@ -23,4 +23,13 @@ public with sharing class Exceptions {
      */
     public with sharing class BadDataException extends Exception {
     }
+
+    /**
+     * @description REST integration exception to be thrown in case of errors.
+     *
+     * @author tomaschour
+     * @date 2021-04-20
+     */
+    public with sharing class RestIntegrationServiceException extends Exception {
+    }
 }

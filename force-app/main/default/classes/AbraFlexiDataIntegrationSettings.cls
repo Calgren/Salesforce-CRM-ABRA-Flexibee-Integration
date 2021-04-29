@@ -9,7 +9,7 @@ public with sharing class AbraFlexiDataIntegrationSettings {
     /**
      * @description gets org defaults of SFCC_Configuration__c only once for one apex transaction
      */
-    public static ABRA_Flexi_Data_Integration_Settings__c orgDefaults {
+    private static ABRA_Flexi_Data_Integration_Settings__c orgDefaults {
         get {
             if (orgDefaults == null) {
                 orgDefaults = ABRA_Flexi_Data_Integration_Settings__c.getOrgDefaults();

@@ -1,7 +1,7 @@
 /**
  * 
  *
- * @author  tomaschour - Aspectworks
+ * @author  tomaschour
  * @date    2021-04-28
  */
 public with sharing class AbraSobjectExportBatch implements Database.Batchable<SObject>, Database.AllowsCallouts{
@@ -10,27 +10,24 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
     private String objectApiName;
     private String abraObjectName;
     private Set<Id> objectIdsToSync;
-    private String recordUpdatedFlag;
-    private String sfccIdentificationField;
+    private String recordExportedFlag;
+    private String abraIdField;
     private String additionalCondition;
     private String normalizedSObjectApiName;
 
     /**
      * @description batch constructor
-     * @param objectApiName api name of SObjects to export to ABRA Flexi
      * @param objectIdsToSync Set of Ids of Objects to Sync
-     * @param recordUpdatedFlag API name of fields on SObject that indicates that record data has been updated with data from SFCC
-     * @param sfccIdentificationField API name of field on SObject that is used for selection in SFCC
+     * @param configuration batch configuration DTO
      */
-    public AbraSobjectExportBatch(String objectApiName, String abraObjectName, Set<Id> objectIdsToSync, String recordUpdatedFlag,
-            String sfccIdentificationField, String additionalCondition) {
+    public AbraSobjectExportBatch(Set<Id> objectIdsToSync, ExportBatchRunConfiguration configuration) {
         this.objectIdsToSync = objectIdsToSync;
-        this.recordUpdatedFlag = recordUpdatedFlag;
-        this.sfccIdentificationField = sfccIdentificationField;
-        this.objectApiName = objectApiName;
-        this.abraObjectName = abraObjectName;
-        this.additionalCondition = additionalCondition;
-        this.normalizedSObjectApiName = objectApiName.replace('__c', '').replace('_', '');
+        this.recordExportedFlag = configuration.recordExportedFlag;
+        this.abraIdField = configuration.abraIdField;
+        this.objectApiName = configuration.sObjectApiName;
+        this.abraObjectName = configuration.abraObjectName;
+        this.additionalCondition = configuration.additionalCondition;
+        this.normalizedSObjectApiName = configuration.sObjectApiName.replace('__c', '').replace('_', '');
     }
 
     /**
@@ -42,9 +39,9 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
     public Database.QueryLocator start(Database.BatchableContext bc) {
         try {
             String soqlQuery;
-            if (this.objectIdsToSync == null && recordUpdatedFlag != null) {
+            if (this.objectIdsToSync == null && recordExportedFlag != null) {
                 soqlQuery = 'SELECT Id FROM ' + objectApiName + ' WHERE '
-                        + recordUpdatedFlag + ' = FALSE AND ' + sfccIdentificationField + ' != NULL';
+                        + recordExportedFlag + ' = FALSE';
             } else {
                 soqlQuery = 'SELECT Id FROM ' + objectApiName + ' WHERE Id IN :objectIdsToSync';
             }
@@ -85,5 +82,50 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
      */
     public void finish(Database.BatchableContext bc) {
 
+    }
+
+
+    /**
+     * @description class used as dto for export batch configuration
+     */
+    public class ExportBatchRunConfiguration {
+        public String sObjectApiName;
+        public String abraObjectName;
+        public String recordExportedFlag;
+        public String abraIdField;
+        public String additionalCondition;
+
+        /**
+         * @description constructor
+         *
+         * @param sObjectApiName SObject api name to synchronize
+         * @param abraObjectName API name of ABRA entity
+         * @param recordExportedFlag API name of field that indicates whether record relevant data has been exported to ABRA
+         * @param abraIdField API name of external id field that is used as ID in ABRA
+         */
+        public ExportBatchRunConfiguration(String sObjectApiName, String abraObjectName, String recordExportedFlag, String abraIdField) {
+            this.sObjectApiName = sObjectApiName;
+            this.abraObjectName = abraObjectName;
+            this.recordExportedFlag = recordExportedFlag;
+            this.abraIdField = abraIdField;
+        }
+
+        /**
+         * @description constructor
+         *
+         * @param sObjectApiName SObject api name to synchronize
+         * @param abraObjectName API name of ABRA entity
+         * @param recordExportedFlag API name of field that indicates whether record relevant data has been exported to ABRA
+         * @param abraIdField API name of external id field that is used as ID in ABRA
+         * @param additionalCondition additional condition to filter records to export by
+         */
+        public ExportBatchRunConfiguration(String sObjectApiName, String abraObjectName, String recordExportedFlag,
+                String abraIdField, String additionalCondition) {
+            this.sObjectApiName = sObjectApiName;
+            this.abraObjectName = abraObjectName;
+            this.recordExportedFlag = recordExportedFlag;
+            this.abraIdField = abraIdField;
+            this.additionalCondition = additionalCondition;
+        }
     }
 }
