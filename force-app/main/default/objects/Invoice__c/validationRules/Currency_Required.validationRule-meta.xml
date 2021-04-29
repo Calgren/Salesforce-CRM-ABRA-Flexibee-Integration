@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Currency_Required</fullName>
+    <active>true</active>
+    <description>Currency is required.</description>
+    <errorConditionFormula>AND(
+            NOT($Permission.Bypass_Validation_Rules),
+            ISBLANK(TEXT(CurrencyIsoCode))
+        )</errorConditionFormula>
+    <errorMessage>Currency is required.</errorMessage>
+</ValidationRule>

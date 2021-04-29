@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Debit_Note__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is checked when this is considered as a Debit Note.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is checked when this is considered as a Debit Note.</inlineHelpText>
+    <label>Debit Note</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
