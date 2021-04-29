@@ -4492,6 +4492,30 @@ Pro možnost aktualizace záznamu v systému ABRA Flexi je potřeba poskytnout
  Musí být unikátní a rozlišuje velká a malá písmena.
 \end_layout
 
+\begin_layout Standard
+Dále je potřeba na záznamu evidovat informaci o tom, jestli byl již exportován,
+ nebo ne.
+ K tomuto účelu byl vytvořen na každém podporovaném SObjectu pro export
+ atribut ABRA_Flexi_Data_Exported__c, datového typu boolean, který se po
+ úspešném exportu nastaví na hodnotu 
+\begin_inset Quotes gld
+\end_inset
+
+true
+\begin_inset Quotes grd
+\end_inset
+
+ a při změně relevantních dat na záznamu na 
+\begin_inset Quotes gld
+\end_inset
+
+false
+\begin_inset Quotes grd
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsubsection
 Faktury
 \end_layout
@@ -5994,7 +6018,51 @@ status open
 \end_layout
 
 \begin_layout Subsection
-Rozšíření o podporu dalších entit
+Autentizace
+\end_layout
+
+\begin_layout Standard
+Pro autorizaci do externích systémů poskytuje Salesforce doporučuje využití
+ Named Credentials.
+ Named Credentials umožňují specifikovat url adresu pro HTTP dotazy a parametry
+ autentizace v jednom.
+ Výhoda tohoto je, že nemusíme přístupové údaje ukládat někam mimo a nebo
+ při nejhorším je držet v kódu.
+ Salesforce také tyto přistupové údaje šifruje.
+ (Salesforce, Docs Named Credentials)
+\end_layout
+
+\begin_layout Standard
+Pro autentizaci dotazů do ABRA Flexi byly vytvořeny ABRA_Flexi Named Credentials
+ odkazující na url cloudové demo instance, na které byla tato práce vyvíjena:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://demo.flexibee.eu"
+
+\end_inset
+
+.
+ Byla zvolena basic autentizace pomocí přihlašovacího jména a hesla, které
+ ABRA pro demo poskytuje.
+ Uživatel, kterého 
+\end_layout
+
+\begin_layout Standard
+Do ABRA Flexi je možné se mimo jednoduchou HTTP autentizaci autentizovat
+ pomocí JSON autentizace, SAMLv2 a OpenId.
+ Bohužel poslední dvě zmiňované jsou podporovány pouze na lokální stanici.
+ (ABRA, Dokumentace Autentizace)
+\end_layout
+
+\begin_layout Standard
+Named Credentials také nabízí možnost autentizace pomocí OpenId a jde z
+ hlediska bezpečnosti o preferovanou variantu před základní HTTP autentizací.
+ Pokud je to tedy možné, je vhodné použít OpenId.
+\end_layout
+
+\begin_layout Subsection
+Rozšíření o podporu dalších entit 
 \end_layout
 
 \begin_layout Standard
@@ -6109,7 +6177,14 @@ ce-rest-api
 ABRA [online]: Dokumentace XML Schéma.
  [cit.
  2021-04-21].
- Dostupné z :https://www.flexibee.eu/api/dokumentace/ref/xsd
+ Dostupné z https://www.flexibee.eu/api/dokumentace/ref/xsd
+\end_layout
+
+\begin_layout Standard
+ABRA [online]: Dokumentace Autentizace.
+ [cit.
+ 2021-04-21].
+ Dostupné z: https://www.flexibee.eu/api/dokumentace/ref/login/
 \end_layout
 
 \begin_layout Standard
@@ -6197,6 +6272,13 @@ SALESFORCE [online]: Docs Using Batch Apex [cit.
  2021-04-20].
  Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
 /apex_batch_interface.htm
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs Named Credentials [cit.
+ 2021-04-20].
+ Dostupné z: https://help.salesforce.com/articleView?id=sf.named_credentials_about.h
+tm
 \end_layout
 
 \begin_layout Standard
