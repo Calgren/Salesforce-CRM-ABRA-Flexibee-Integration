@@ -5059,15 +5059,11 @@ Popis
 \end_layout
 
 \begin_layout Subsubsection
-Výsledný datový model Salesforce CRM
-\end_layout
-
-\begin_layout Subsubsection
-Ukládání
-\end_layout
-
-\begin_layout Subsubsection
 Mapování entit
+\end_layout
+
+\begin_layout Subsubsection
+Výsledný datový model Salesforce CRM
 \end_layout
 
 \begin_layout Section
@@ -6045,7 +6041,9 @@ target "https://demo.flexibee.eu"
 .
  Byla zvolena basic autentizace pomocí přihlašovacího jména a hesla, které
  ABRA pro demo poskytuje.
- Uživatel, kterého 
+ Uživatel, který je používán pro integraci dat by měl mít v ABRA Flexi systému
+ dostatečná oprávnění na úpravu a zakládání všech podporovaných entit a
+ na čtení jejich XSD schématu.
 \end_layout
 
 \begin_layout Standard

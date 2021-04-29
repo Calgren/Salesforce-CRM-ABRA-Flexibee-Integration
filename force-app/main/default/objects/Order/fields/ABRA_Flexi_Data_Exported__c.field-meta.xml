@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ABRA_Flexi_Data_Exported__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Specifies whether all record data have been exported into ABRA Flexi.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Specifies whether all record data have been exported into ABRA Flexi.</inlineHelpText>
+    <label>ABRA Flexi Data Exported</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

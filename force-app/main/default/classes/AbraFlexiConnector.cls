@@ -29,26 +29,6 @@ public inherited sharing class AbraFlexiConnector {
      * @param invoiceId customer identification in SFCC
      * @return Map representing JSON response from ABRA Flexi
      */
-    public static Map<String, Object> getEntityDetailById(String invoiceId) {
-        HttpRequest req = RestIntegrationService.getHttpRequest(
-                RestIntegrationService.HttpMethod.GET,
-                null,
-                null,
-                'callout:ABRA_Flexi' + '/c/demo/faktura-vydana/' + invoiceId +'.json'
-        );
-        HttpResponse res = RestIntegrationService.callWebService(req);
-        System.debug('TTT xD1 ' + res.getBody());
-        Map<String, Object> customerDetailMap = RestIntegrationService.convertJsonStringUntyped(res.getBody());
-        System.debug('TTT xD2 ' + customerDetailMap);
-        return customerDetailMap;
-
-    }
-
-    /**
-     * @description pulls selected invoice detail from ABRA Flexi by invoice id
-     * @param invoiceId customer identification in SFCC
-     * @return Map representing JSON response from ABRA Flexi
-     */
     public static Map<String, Object> upsertEntities(String body, String abraEntityName) {
         HttpRequest req = RestIntegrationService.getHttpRequest(
                 RestIntegrationService.HttpMethod.POST,
@@ -62,5 +42,23 @@ public inherited sharing class AbraFlexiConnector {
         System.debug('TTT xD2 ' + customerDetailMap);
         return customerDetailMap;
 
+    }
+
+    public static List<Dom.XmlNode> getImportSchema(String abraEntityName) {
+        HttpRequest req = RestIntegrationService.getHttpRequest(
+                RestIntegrationService.HttpMethod.GET,
+                null,
+                null,
+                'callout:ABRA_Flexi' + apiUrlPath + abraEntityName + '/schema-import.xsd'
+        );
+        HttpResponse res = RestIntegrationService.callWebService(req);
+        Dom.Document doc = res.getBodyDocument();
+        String ns = XmlUtils.ABRA_XSD_NAMESPACE;
+        //Retrieve the root element for this document.
+        Dom.XmlNode root = doc.getRootElement();
+        Map<String, String> tempMap = new Map<String, String>();
+        Dom.XmlNode elementNode = root.getChildElement('element', ns).getChildElement('complexType', ns).getChildElement('sequence', ns);
+        List<Dom.XmlNode> entitiesNodes = elementNode.getChildElements();
+        return entitiesNodes;
     }
 }
