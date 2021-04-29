@@ -3880,7 +3880,7 @@ Struktura pro mapování dat mezi systémy
 \end_layout
 
 \begin_layout Standard
-Pro mapování jsem zvolil využití Custom Metadat.
+Pro mapování yly na základě dokumentace využity Custom Metadata Types.
  Byly vytvořeny metadata s názvem 
 \series bold
 ABRA Flexi Data Mappings 
@@ -4200,8 +4200,8 @@ Struktura pro ukládání parametrizace
 \end_layout
 
 \begin_layout Standard
-Pro ukládání nastavení aplikace jsem zvolil hiearchické custom settings
- s názvem 
+Pro ukládání nastavení aplikace byly na základě dokumentace zvoleny hiearchické
+ custom settings s názvem 
 \series bold
 ABRA Flexi Data Integration Settings
 \series default
@@ -4481,17 +4481,53 @@ Propojení datových modelů a kustomizace
 \end_layout
 
 \begin_layout Subsubsection
-Faktury a dobropisy
+Externí identifikátor a příznak pro export
 \end_layout
 
 \begin_layout Standard
-Pro entity faktur a dobropisů byl vytvořen jeden SObject Invoice (API název
- Invoice__c) z toho důvodu že mají společné datové atributy.
- Rozlišení mezi fakturou a dobropisem je řešen typem záznamu, díky němuž
- můžeme faktuře a dobropisu přiřadit jinou stránku pro detail záznamu, validační
- pravidla a sety hodnot pro číselníky.
- Vztah k objednávce je M:N a je řešen pomocí mezilehlé tabulky Order Invoice
- (API název Order_Invoice__c).
+Pro možnost aktualizace záznamu v systému ABRA Flexi je potřeba poskytnout
+ jeho Id.
+ Toto Id je evidováno na každém podporovaném SObjectu pro export v atributu
+ ABRA_Flexi_Id__c a je vedeno jako Id z externího systému.
+ Musí být unikátní a rozlišuje velká a malá písmena.
+\end_layout
+
+\begin_layout Standard
+Dále je potřeba na záznamu evidovat informaci o tom, jestli byl již exportován,
+ nebo ne.
+ K tomuto účelu byl vytvořen na každém podporovaném SObjectu pro export
+ atribut ABRA_Flexi_Data_Exported__c, datového typu boolean, který se po
+ úspešném exportu nastaví na hodnotu 
+\begin_inset Quotes gld
+\end_inset
+
+true
+\begin_inset Quotes grd
+\end_inset
+
+ a při změně relevantních dat na záznamu na 
+\begin_inset Quotes gld
+\end_inset
+
+false
+\begin_inset Quotes grd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Faktury
+\end_layout
+
+\begin_layout Standard
+Pro entity faktur byl vytvořen jeden SObject Invoice (API název Invoice__c)
+ z toho důvodu že mají společné datové atributy.
+ Rozlišení mezi fakturou.
+ Vztah k objednávce je 1:N (faktura je navázaná na jednu objednávku, jedna
+ objednávka může mít více faktur).
+ Vztah k produktu je M:N a je řešen pomocí mezilehlé tabulky Invoice Item
+ (API název Invoice_Item__c).
 \end_layout
 
 \begin_layout Standard
@@ -4502,9 +4538,20 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Specifikace atributů Invoice SObjectu
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="2">
+<lyxtabular version="3" rows="6" columns="4">
 <features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -4517,18 +4564,7 @@ Název
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Invoice
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4537,11 +4573,20 @@ API název
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Invoice__c
+Datový typ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Popis
 \end_layout
 
 \end_inset
@@ -4552,7 +4597,25 @@ Invoice__c
 \begin_inset Text
 
 \begin_layout Plain Layout
-Record Types
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -4561,7 +4624,7 @@ Record Types
 \begin_inset Text
 
 \begin_layout Plain Layout
-Invoice, Credit Note
+
 \end_layout
 
 \end_inset
@@ -4572,7 +4635,25 @@ Invoice, Credit Note
 \begin_inset Text
 
 \begin_layout Plain Layout
-Stránky pro detail
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -4581,7 +4662,7 @@ Stránky pro detail
 \begin_inset Text
 
 \begin_layout Plain Layout
-Invoice, Credit Note
+
 \end_layout
 
 \end_inset
@@ -4592,7 +4673,25 @@ Invoice, Credit Note
 \begin_inset Text
 
 \begin_layout Plain Layout
-Validační pravidla
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -4608,6 +4707,62 @@ Validační pravidla
 </cell>
 </row>
 <row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -4634,12 +4789,264 @@ Validační pravidla
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Specifikace Invoice SObjectu
+Specifikace atributů Invoice Item SObjectu
 \end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Název
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+API název
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Datový typ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Popis
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
@@ -5622,7 +6029,7 @@ nInterface.
  V této vytvořené třídě je pak implementována metoda exportRecords, která
  obsahuje logiku pro přípravu dat, volání export HTPP dotazu, a zpracování
  výsledku.
- (viz Výpis5) TODO
+ (viz Výpis5)
 \end_layout
 
 \begin_layout Standard
