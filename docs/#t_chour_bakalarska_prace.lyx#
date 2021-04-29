@@ -5033,7 +5033,7 @@ Schedulable rozhraní umožňuje vykonat logiku kódu za nějaký určitý čas 
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=Java,numbers=left,showstringspaces=false,caption={Plánování dalšího exportu dat},emph={subject,predicate,object},emphstyle={\color{blue}},frame=shadowbox,keywordstyle={\color{violet}},rulesepcolor={\color{gray}}"
+lstparams "language=Java,numbers=left,showstringspaces=false,caption={Plánování dalšího exportu dat},emph={subject,predicate,object},emphstyle={\color{blue}},frame=box,keywordstyle={\color{violet}},columns=fullflexible"
 inline false
 status open
 
@@ -5228,6 +5228,248 @@ status open
 \end_layout
 
 \begin_layout Subsection
+Asynchronní hromadný export
+\end_layout
+
+\begin_layout Subsection
+Struktura přenášených dat
+\end_layout
+
+\begin_layout Standard
+Tělo HTTP dotazu, které obsahuje data pro upsert (insert nebo update) je
+ ve fromátu JSON.
+ Celý objekt má kořenový atribut 
+\begin_inset Quotes gld
+\end_inset
+
+winstrom
+\begin_inset Quotes grd
+\end_inset
+
+, který obsahuje vnořený objekt s atributem api názvu entity, jenž obsahuje
+ list záznamů pro upsert.
+ (viz )
+\begin_inset listings
+lstparams "numbers=left,showstringspaces=false,caption={JSON pro import dat do ABRA Flexi},emph={subject,predicate,object},emphstyle={\color{blue}},frame=box,keywordstyle={\color{violet}},columns=fullflexible"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    "winstrom": {
+\end_layout
+
+\begin_layout Plain Layout
+
+        "faktura-vydana": [
+\end_layout
+
+\begin_layout Plain Layout
+
+            {       
+\end_layout
+
+\begin_layout Plain Layout
+
+                "kod":"KOD_FAKTURY001",
+\end_layout
+
+\begin_layout Plain Layout
+
+                "typDokl":68,
+\end_layout
+
+\begin_layout Plain Layout
+
+                "popis": "popis dokladu Salesforce updated 5"
+\end_layout
+
+\begin_layout Plain Layout
+
+            },
+\end_layout
+
+\begin_layout Plain Layout
+
+            {
+\end_layout
+
+\begin_layout Plain Layout
+
+                "id": "4228",
+\end_layout
+
+\begin_layout Plain Layout
+
+                "popis": "popis dokladu Salesforce updated 8"
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+        ]
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Odpověď poté obsahuje ve stejném kořenovém atributu informaci o úspěšnosti
+ zpracování, sumarizaci provedených operací - kolik záznamů bylo vytvořeno,
+ aktualizováno, vymázáno, vynecháno a skončilo neuspěchem a následně atribut
+ s detailem výsledků (viz )
+\begin_inset listings
+lstparams "numbers=left,showstringspaces=false,caption={JSON odpověď z ABRA Flexi},emph={subject,predicate,object},emphstyle={\color{blue}},frame=box,keywordstyle={\color{violet}},columns=fullflexible"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    "winstrom": {
+\end_layout
+
+\begin_layout Plain Layout
+
+        "@version": "1.0",
+\end_layout
+
+\begin_layout Plain Layout
+
+        "success": "true",
+\end_layout
+
+\begin_layout Plain Layout
+
+        "stats": {
+\end_layout
+
+\begin_layout Plain Layout
+
+            "created": "1",
+\end_layout
+
+\begin_layout Plain Layout
+
+            "updated": "1",
+\end_layout
+
+\begin_layout Plain Layout
+
+            "deleted": "0",
+\end_layout
+
+\begin_layout Plain Layout
+
+            "skipped": "0",
+\end_layout
+
+\begin_layout Plain Layout
+
+            "failed": "0"
+\end_layout
+
+\begin_layout Plain Layout
+
+        },
+\end_layout
+
+\begin_layout Plain Layout
+
+        "results": [
+\end_layout
+
+\begin_layout Plain Layout
+
+            {
+\end_layout
+
+\begin_layout Plain Layout
+
+                "id": "4239",
+\end_layout
+
+\begin_layout Plain Layout
+
+                "ref": "/c/demo/faktura-vydana/4239"
+\end_layout
+
+\begin_layout Plain Layout
+
+            },
+\end_layout
+
+\begin_layout Plain Layout
+
+            {
+\end_layout
+
+\begin_layout Plain Layout
+
+                "id": "4228",
+\end_layout
+
+\begin_layout Plain Layout
+
+                "request-id": "4228",
+\end_layout
+
+\begin_layout Plain Layout
+
+                "ref": "/c/demo/faktura-vydana/4228"
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+        ]
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Rozšíření o podporu dalších entit
 \end_layout
 
@@ -5237,12 +5479,21 @@ Pro rozšíření logiky o export dalších entit je nutné pro tyto entity, pok
  bez '_' a '__c'>DataSyncService, která implementuje rozhraní AbraSynchronizatio
 nInterface.
  V této vytvořené třídě je pak implementována metoda exportRecords, která
- obsahuje logiku pro přípravu dat, volání exportu, a zpracování výsledku.
- (viz Výpis2)
+ obsahuje logiku pro přípravu dat, volání export HTPP dotazu, a zpracování
+ výsledku.
+ (viz Výpis) TODO
 \end_layout
 
 \begin_layout Standard
-Dále je potřeba přidat instanci konfigurace batche do 
+Dále je potřeba pro danou entitu přidat instanci konfigurace batche do AbraDataE
+xportScheduler.batchRunsConfigurations.
+ (viz Výpis) TODO
+\end_layout
+
+\begin_layout Standard
+Daná entita musí mít alespoň jeden odpovídající záznam v ABRA Flexi Data
+ Mappings, pokud takový záznam neexistuje, asyncrhonní process pro danou
+ entitu skončí výjimkou.
 \end_layout
 
 \begin_layout Section
