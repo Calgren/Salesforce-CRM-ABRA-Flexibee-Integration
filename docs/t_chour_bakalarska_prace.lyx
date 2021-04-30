@@ -6794,6 +6794,7 @@ Komponenta pomocí které může uživatel upravovat parametry integrace se naz�
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -6829,6 +6830,7 @@ Komponenta pro úpravu parametrů v administrátorském módu
 Pokud uživatel nemá právo na úpravu aplikace, komponenta se načte pouze
  v módu pro zobrazení.
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open

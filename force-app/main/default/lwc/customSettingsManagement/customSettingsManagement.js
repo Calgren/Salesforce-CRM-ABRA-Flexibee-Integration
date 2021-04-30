@@ -25,12 +25,12 @@ export default class CustomSettingsManagement extends LightningElement {
     @track settingsObjectInfo;
 
     @wire(getObjectInfo, {objectApiName: '$settingsApiName'})
-    getOpportunityUnitObjectInfo({error, data}) {
+    getSettingsObjectInfo({error, data}) {
         if (data) {
             this.settingsObjectInfo = data;
             this.settingsCustomFields;
         } else if (error) {
-            processError(this, error);
+            //processError(this, error);
         }
     }
 
