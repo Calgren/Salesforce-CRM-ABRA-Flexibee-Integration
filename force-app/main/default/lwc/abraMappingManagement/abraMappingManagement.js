@@ -8,13 +8,13 @@ import {LightningElement, api, wire, track} from 'lwc';
 import isAbraFlexiAppAdmin from '@salesforce/customPermission/ABRA_Flexi_App_Admin';
 import {getObjectInfo} from "lightning/uiObjectInfoApi";
 import getCurrentMappings from '@salesforce/apex/AbraMappingManagementController.getCurrentMappings';
-
+import getAbraFields from '@salesforce/apex/AbraMappingManagementController.getAbraFields';
 
 export default class AbraMappingManagement extends LightningElement {
 
     @api abraEntityApiName;
     @track sfscSObjectName;
-    @track abraEntityDefinition;
+    @track abraFieldOptions;
     @track mappingDtos;
     @track mappingIdsToDelete;
 
@@ -90,8 +90,14 @@ export default class AbraMappingManagement extends LightningElement {
     async init() {
         if (this.abraEntityApiName) {
             this.mappingIdsToDelete = [];
-            this.mappingDtos = await getCurrentMappings({abraEntityName: this.abraEntityApiName});
-            console.log('TTTT HJERE00');
+            let abraFieldMappingDto;
+            [this.mappingDtos, abraFieldMappingDto] = await Promise.all([
+                getCurrentMappings({abraEntityName: this.abraEntityApiName}),
+                getAbraFields({abraEntityName: this.abraEntityApiName})
+            ])
+
+            console.log('TTTT HJERE00', JSON.parse(JSON.stringify(abraFieldMappingDto)));
+            this.abraFieldOptions = Object.keys(abraFieldMappingDto.abraEntityAttributes).map(fieldName => ({label: fieldName, value: fieldName}));
             if (this.mappingDtos.length > 0) {
                 console.log('TTTT HJERE0');
                 this.sfscSObjectName = this.mappingDtos[0].sfscSObjectName;
@@ -120,7 +126,7 @@ export default class AbraMappingManagement extends LightningElement {
             abraFieldName: null,
             sfscToAbraSync: false,
             abraToSfscSync: false,
-            ident: Math.floor(Math.random() * 10000)
+            ident: (Math.floor(Math.random() * 10000)).toString()
         };
         this.mappingDtos.push(newMappingDto);
     }
@@ -157,7 +163,7 @@ export default class AbraMappingManagement extends LightningElement {
 
     handleDisplaySfscFieldSelectionModal(evt) {
         const mappingIdent = evt.currentTarget.dataset.rowIdent;
-        this._currentlySelectedMappingIdent = Number(mappingIdent);
+        this._currentlySelectedMappingIdent = mappingIdent;
         this._currentFieldsInPath = [];
         this._isEndFieldSelected = false;
         this.displaySfscFieldSelectionModal = true;
@@ -206,19 +212,20 @@ export default class AbraMappingManagement extends LightningElement {
     }
 
     handleSfscToAbraSyncChange(evt) {
-        const mappingIdent = Number(evt.currentTarget.dataset.rowIdent);
+        const mappingIdent = evt.currentTarget.dataset.rowIdent;
         this.mappingDtos.find(mappingDto => mappingDto.ident === mappingIdent)
             .sfscToAbraSync = evt.detail.checked;
     }
 
     handleAbraToSfscSyncChange(evt) {
-        const mappingIdent = Number(evt.currentTarget.dataset.rowIdent);
+        const mappingIdent = evt.currentTarget.dataset.rowIdent;
         this.mappingDtos.find(mappingDto => mappingDto.ident === mappingIdent)
             .abraToSfscSync = evt.detail.checked;
     }
 
     handleAbraFieldChange(evt) {
-        const mappingIdent = Number(evt.currentTarget.dataset.rowIdent);
+        const mappingIdent = evt.currentTarget.dataset.rowIdent;
+        console.log('TTTT mappingIdent ' ,mappingIdent );
         this.mappingDtos.find(mappingDto => mappingDto.ident === mappingIdent)
             .abraFieldName = evt.detail.value;
     }

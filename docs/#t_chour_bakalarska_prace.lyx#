@@ -6738,9 +6738,7 @@ Uživatelská aplikace
 \begin_layout Standard
 Uživatelská aplikace umožňuje uživatelům spravovat mapování pro podporované
  entity.
- Během mapování vždy dynamicky načte názvy atributů na daném objektu v SFSC
- a ABRA Flexi, předejde se tak, že by se uživatel v názvu atributu přepsal
- a nebo zvolil neexistující atribut.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -6765,7 +6763,7 @@ Abra Integration Settings
 Stránka s nastaveními se skládá ze dvou sloupců, v levém sloupci jsou jednotlivé
  komponenty pro nastavení mapování a v pravém je pak komponenta pro parametrizac
 i aplikace.
- Stránku jsem upravovat, přídávat a odebírat její komponenty pomocí Salesforce
+ Stránku lze upravovat, přidávat a odebírat její komponenty pomocí Salesforce
  App Builder.
 \end_layout
 
@@ -6775,6 +6773,21 @@ App Builder TODO
 
 \begin_layout Subsubsection
 Komponenta pro mapování entit
+\end_layout
+
+\begin_layout Standard
+Komponenta pro mapování entit se nazývá abraMappingManagement a je tvořena
+ dynamickou tabulkou, která má čtyři sloupce pro výběr Salesforce atributu,
+ Abra Flexi atributu a dvou přepínátek na aktivaci směru synchronizace.
+ Při načtení si komponenta vždy dynamicky načte názvy atributů na daném
+ objektu v SFSC a ABRA Flexi, předejde se tak tomu, že by se uživatel v
+ názvu atributu přepsal a nebo zvolil neexistující atribut.
+ Komponenta má veřejnou proměnnou pro API název entity v ABRA Flexi, pro
+ kterou chceme mapování tvořit.
+ Pokud pro danou entitu neexistuje alespoň jeden záznam v mapování, musí
+ uživatel vybrat SObject v Salesforce na který chce danou ABRA entitu namapovat.
+ Pokud již existuje alespoň jeden záznam mapování, je SObject automaticky
+ přiřazen z onoho mapování
 \end_layout
 
 \begin_layout Subsubsection

@@ -16,6 +16,12 @@ public with sharing class AbraMappingManagementController {
         return dtos;
     }
 
+    @AuraEnabled
+    public static XmlUtils.AbraEntityDefinitionDto getAbraFields(String abraEntityName) {
+        List<Dom.XmlNode> fieldDefinitionNodes = AbraFlexiConnector.getImportSchema(abraEntityName);
+        return XmlUtils.getEntityDefinitionFromXsd(fieldDefinitionNodes, abraEntityName);
+    }
+
     public class MappingDto{
         @AuraEnabled public Id recordId;
         @AuraEnabled public String sfscSObjectName;
