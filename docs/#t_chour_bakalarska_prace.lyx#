@@ -5659,6 +5659,14 @@ Stav úhrady dokladu
 \end_layout
 
 \begin_layout Subsubsection
+Objekt pro logování
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Subsubsection
 Výsledný datový model Salesforce CRM
 \end_layout
 
@@ -6787,7 +6795,112 @@ Komponenta pro mapování entit se nazývá abraMappingManagement a je tvořena
  Pokud pro danou entitu neexistuje alespoň jeden záznam v mapování, musí
  uživatel vybrat SObject v Salesforce na který chce danou ABRA entitu namapovat.
  Pokud již existuje alespoň jeden záznam mapování, je SObject automaticky
- přiřazen z onoho mapování
+ přiřazen z onoho mapování a uživatel může rovnou mapování upravovat.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/tomaschour/Desktop/Screenshot 2021-04-30 at 16.45.06.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Komponenta pro mapování, pokud pro entitu neexistuje žádný záznam
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/tomaschour/Desktop/Screenshot 2021-04-30 at 16.46.30.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Komponenta pro mapování, pokud po výběru SObjectu nebo při existujícím mapování
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Je možné změnit SObject na který má být entita namapována, tato změna vymaže
+ všechny stávající mapování pro danou entitu a uživatel může vytvořit nové
+ záznamy s mapováním z jiného SObjectu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/tomaschour/Desktop/Screenshot 2021-04-30 at 16.50.07.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Komponenta pro mapování, dotaz na změnu SObjectu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -6815,7 +6928,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename /Users/tomaschour/Desktop/Screenshot 2021-04-30 at 11.00.21.png
-	scale 50
+	width 80text%
 
 \end_inset
 
@@ -6851,7 +6964,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename /Users/tomaschour/Desktop/Screenshot 2021-04-30 at 11.08.48.png
-	scale 50
+	width 80text%
 
 \end_inset
 
@@ -6873,6 +6986,23 @@ Komponenta pro úpravu parametrů v módu pouze pro čtení
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Aplikační logy
+\end_layout
+
+\begin_layout Standard
+Stránka pro zobrazení aplikačních logů využívat standardní zobrazení Salesforce
+ List View, které načítá seznam záznamů daného SObjectu, na které má aktuální
+ uživatel práva.
+ Nad seznamem lze provádět filtrování a řazení a je možné vytvářet předfiltrovan
+é seznamy.
+\end_layout
+
+\begin_layout Standard
+K defaultnímu seznamu se všemi logy byl vytvořen seznam s pouze chybovými
+ logy.
 \end_layout
 
 \begin_layout Subsection

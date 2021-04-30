@@ -67,7 +67,7 @@ public inherited sharing class IntegrationSObjectUtils {
     private static List<ABRA_Flexi_Data_Mapping__mdt> getFieldMappingsForAbraObject(String abraObjectName) {
         Map<String, List<ABRA_Flexi_Data_Mapping__mdt>> fieldMappingsByObjectName = getFieldMappingsByAbraObjectName();
         if (!fieldMappingsByObjectName.containsKey(abraObjectName)) {
-            throw new Exceptions.BadDataException('ABRA mappings for ' + abraObjectName + ' do not exist.');
+            return new List<ABRA_Flexi_Data_Mapping__mdt>();
         } else {
             return fieldMappingsByObjectName.get(abraObjectName);
         }

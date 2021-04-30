@@ -6788,9 +6788,70 @@ Komponenta pro mapování entit se nazývá abraMappingManagement a je tvořena
  uživatel vybrat SObject v Salesforce na který chce danou ABRA entitu namapovat.
  Pokud již existuje alespoň jeden záznam mapování, je SObject automaticky
  přiřazen z onoho mapování a uživatel může rovnou mapování upravovat.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/tomaschour/Desktop/Screenshot 2021-04-30 at 16.45.06.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Komponenta pro mapování, pokud pro entitu neexistuje žádný záznam
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/tomaschour/Desktop/Screenshot 2021-04-30 at 16.46.30.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Komponenta pro mapování, pokud po výběru SObjectu nebo při existujícím mapování
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -6798,6 +6859,40 @@ Komponenta pro mapování entit se nazývá abraMappingManagement a je tvořena
 Je možné změnit SObject na který má být entita namapována, tato změna vymaže
  všechny stávající mapování pro danou entitu a uživatel může vytvořit nové
  záznamy s mapováním z jiného SObjectu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/tomaschour/Desktop/Screenshot 2021-04-30 at 16.50.07.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Komponenta pro mapování, dotaz na změnu SObjectu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -6825,7 +6920,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename /Users/tomaschour/Desktop/Screenshot 2021-04-30 at 11.00.21.png
-	scale 50
+	width 80text%
 
 \end_inset
 
@@ -6861,7 +6956,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename /Users/tomaschour/Desktop/Screenshot 2021-04-30 at 11.08.48.png
-	scale 50
+	width 80text%
 
 \end_inset
 
