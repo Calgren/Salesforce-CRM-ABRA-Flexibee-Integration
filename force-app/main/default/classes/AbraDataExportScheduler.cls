@@ -11,7 +11,8 @@ public with sharing class AbraDataExportScheduler implements Schedulable {
     // list with batch runs configurations
     @TestVisible
     private final List<AbraSobjectExportBatch.ExportBatchRunConfiguration> batchRunsConfigurations = new List<AbraSobjectExportBatch.ExportBatchRunConfiguration>{
-            //new AbraSobjectExportBatch.ExportBatchRunConfiguration('Account', 'SFCC_Data_Obtained__c', 'SFCC_Customer_Number__c')
+            new AbraSobjectExportBatch.ExportBatchRunConfiguration('Order', 'objednavka-prijata', 'ABRA_Flexi_Data_Exported__c'),
+            new AbraSobjectExportBatch.ExportBatchRunConfiguration('Invoice__c', 'faktura-vydana', 'ABRA_Flexi_Data_Exported__c')
     };
     private static final String JOB_NAME = 'SfscToAbraExport';
 

@@ -3706,7 +3706,8 @@ Datový model ABRA Flexi má již připravené entity pro objednávky, faktury
  a dobropisy.
  Entity pro přijaté a vydané faktury jsou různé, stejně tak pro přijaté
  a vydané objednávky.
- 
+ Z hlediska integrace dat z Salesforce Sales Cloud jsou relevantní pouze
+ přijaté objednávky a vydané faktury.
 \end_layout
 
 \begin_layout Standard
@@ -4521,19 +4522,17 @@ Faktury
 \end_layout
 
 \begin_layout Standard
-Pro entity přijatých a vydaných faktur byl vytvořen jeden SObject Invoice
- (API název Invoice__c) z toho důvodu že mají společné datové atributy.
- Rozlišení mezi fakturou.
+Pro entity vydaných faktur byl vytvořen SObject Invoice (API název Invoice__c).
  Vztah k objednávce je 1:N (faktura je navázaná na jednu objednávku, jedna
  objednávka může mít více faktur).
  Vztah k produktu je M:N a je řešen pomocí mezilehlé tabulky Invoice Item
- (API název Invoice_Item__c) tento SObject odpovídá entitam faktura-vydana-poloz
-ka a faktura-prijata-polozka.
+ (API název Invoice_Item__c) tento SObject odpovídá entitám faktura-vydana-poloz
+ka .
 \end_layout
 
 \begin_layout Standard
-Na objektu Account, který reprezentuje zákazníka nebo dodavatele musely
- být vytvořeny atributy pro IČO - Identification_Number__c a DIČ - VAT_Id__c
+Na objektu Account, který reprezentuje zákazníka musely být vytvořeny atributy
+ pro IČO - Identification_Number__c a DIČ - VAT_Id__c.
 \end_layout
 
 \begin_layout Standard
@@ -5084,7 +5083,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mapování Invoice na faktura_vydana a faktura_prijata
+Mapování Invoice na faktura_vydana
 \end_layout
 
 \end_inset
@@ -6672,9 +6671,53 @@ nInterface.
 \end_layout
 
 \begin_layout Standard
-Dále je potřeba pro danou entitu přidat instanci konfigurace batche do AbraDataE
-xportScheduler.batchRunsConfigurations.
- (viz Výpis6) TODO
+Dále je potřeba pro danou entitu přidat instanci konfigurace batche do proměnné
+ batchRunsConfigurations ve třídě AbraDataExportScheduler.
+ (viz Výpis6)
+\begin_inset listings
+lstparams "numbers=left,showstringspaces=false,caption={Konfigurace exportu entit pro batch},emph={subject,predicate,object},emphstyle={\color{blue}},frame=box,keywordstyle={\color{violet}},columns=fullflexible"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+private final List<AbraSobjectExportBatch.ExportBatchRunConfiguration> batchRunsC
+onfigurations = 
+\end_layout
+
+\begin_layout Plain Layout
+
+    new List<AbraSobjectExportBatch.ExportBatchRunConfiguration> {
+\end_layout
+
+\begin_layout Plain Layout
+
+            new AbraSobjectExportBatch.ExportBatchRunConfiguration('Order',
+\end_layout
+
+\begin_layout Plain Layout
+
+                'objednavka-prijata', 'ABRA_Flexi_Data_Exported__c'),
+\end_layout
+
+\begin_layout Plain Layout
+
+            new AbraSobjectExportBatch.ExportBatchRunConfiguration('Invoice__c',
+\end_layout
+
+\begin_layout Plain Layout
+
+                'faktura-vydana', 'ABRA_Flexi_Data_Exported__c')
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
