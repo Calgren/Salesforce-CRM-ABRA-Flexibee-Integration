@@ -5881,7 +5881,7 @@ ABRA Flexi Data Mappings
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+True
 \end_layout
 
 \end_inset
@@ -6728,6 +6728,28 @@ Daná entita musí mít alespoň jeden odpovídající záznam v ABRA Flexi Data
 
 \begin_layout Section
 Uživatelská aplikace
+\end_layout
+
+\begin_layout Standard
+Uživatelská aplikace umožňuje uživatelům spravovat mapování pro podporované
+ entity.
+ Během mapování vždy dynamicky načte názvy atributů na daném objektu v SFSC
+ a ABRA Flexi, předejde se tak, že by se uživatel v názvu atributu přepsal
+ a nebo zvolil neexistující atribut.
+\end_layout
+
+\begin_layout Standard
+Byla vytvořena lightning aplikace s názvem ABRA Flexi Integration, která
+ obsahuje dvě stránky:
+\end_layout
+
+\begin_layout Itemize
+ABRA Integration Settings - aplikační stránka, která obsahuje mapování a
+ parametrizaci integrace
+\end_layout
+
+\begin_layout Itemize
+Application Logs - stránka záznamů aplikačních logů
 \end_layout
 
 \begin_layout Section
