@@ -6721,6 +6721,11 @@ onfigurations =
 \end_layout
 
 \begin_layout Standard
+Také je vhodné přidat boolean atribut do ABRA Flexi Data Integration Settings,
+ který pomocí kterého lze integraci pro daný objekt vypínat a zapínat.
+\end_layout
+
+\begin_layout Standard
 Daná entita musí mít alespoň jeden odpovídající záznam v ABRA Flexi Data
  Mappings, pokud takový záznam neexistuje, asyncrhonní process pro danou
  entitu skončí výjimkou.
@@ -6750,6 +6755,98 @@ ABRA Integration Settings - aplikační stránka, která obsahuje mapování a
 
 \begin_layout Itemize
 Application Logs - stránka záznamů aplikačních logů
+\end_layout
+
+\begin_layout Subsection
+Abra Integration Settings
+\end_layout
+
+\begin_layout Standard
+Stránka s nastaveními se skládá ze dvou sloupců, v levém sloupci jsou jednotlivé
+ komponenty pro nastavení mapování a v pravém je pak komponenta pro parametrizac
+i aplikace.
+\end_layout
+
+\begin_layout Subsubsection
+Komponenta pro parametrizaci aplikace
+\end_layout
+
+\begin_layout Standard
+Komponenta pomocí které může uživatel upravovat parametry integrace se nazývá
+ CustomSettingsManagement.
+ Logika komponenty dynamicky načítá všechny atributy obsažené v ABRA Flexi
+ Data Integration Settings custom settings a zobrazuje je ve správném html
+ prvku pro vstup dat.
+ Po najetí myší na ikonu informace u daného atributu zobrazí nápovědu, která
+ se k němu vztahuje.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/tomaschour/Desktop/Screenshot 2021-04-30 at 11.00.21.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Komponenta pro úpravu parametrů v administrátorském módu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pokud uživatel nemá právo na úpravu aplikace, komponenta se načte pouze
+ v módu pro zobrazení.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/tomaschour/Desktop/Screenshot 2021-04-30 at 11.08.48.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Komponenta pro úpravu parametrů v módu pouze pro čtení
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

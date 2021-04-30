@@ -6,6 +6,7 @@
  */
 import {LightningElement, api, wire, track} from 'lwc';
 import {getObjectInfo} from "lightning/uiObjectInfoApi";
+import {ShowToastEvent} from 'lightning/platformShowToastEvent';
 import getSettings from '@salesforce/apex/CustomSettingsManagementController.getSettings';
 import saveOrgDefaultSettings from '@salesforce/apex/CustomSettingsManagementController.saveOrgDefaultSettings';
 import isAbraFlexiAppAdmin from '@salesforce/customPermission/ABRA_Flexi_App_Admin';
@@ -151,9 +152,11 @@ export default class CustomSettingsManagement extends LightningElement {
             }
             //await showSpinner(this);
             await saveOrgDefaultSettings({customSettings: this.customSettings});
-            /*new ToastBuilder('success')
-                .setTitle(SettingsSaved)
-                .fire();*/
+            const evt = new ShowToastEvent({
+                title: SettingsSaved,
+                variant: 'success',
+            });
+            this.dispatchEvent(evt);
             await this.init();
         } catch (e) {
             //processError(this, e);
