@@ -3900,7 +3900,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Specifikace ABRA Flexi Data Mappings metada atributů
+Specifikace ABRA Flexi Data Mapping metada atributů
 \end_layout
 
 \end_inset
@@ -5083,7 +5083,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mapování Invoice na faktura_vydana
+Mapování Invoice na faktura-vydana
 \end_layout
 
 \end_inset
@@ -6765,6 +6765,16 @@ Abra Integration Settings
 Stránka s nastaveními se skládá ze dvou sloupců, v levém sloupci jsou jednotlivé
  komponenty pro nastavení mapování a v pravém je pak komponenta pro parametrizac
 i aplikace.
+ Stránku jsem upravovat, přídávat a odebírat její komponenty pomocí Salesforce
+ App Builder.
+\end_layout
+
+\begin_layout Standard
+App Builder TODO
+\end_layout
+
+\begin_layout Subsubsection
+Komponenta pro mapování entit
 \end_layout
 
 \begin_layout Subsubsection
@@ -6779,10 +6789,12 @@ Komponenta pomocí které může uživatel upravovat parametry integrace se naz�
  prvku pro vstup dat.
  Po najetí myší na ikonu informace u daného atributu zobrazí nápovědu, která
  se k němu vztahuje.
+ Po úspěšném uložení se uživateli zobrazí hláška o uložení nastavení.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -6818,6 +6830,7 @@ Komponenta pro úpravu parametrů v administrátorském módu
 Pokud uživatel nemá právo na úpravu aplikace, komponenta se načte pouze
  v módu pro zobrazení.
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -6847,6 +6860,18 @@ Komponenta pro úpravu parametrů v módu pouze pro čtení
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Lokalizace
+\end_layout
+
+\begin_layout Standard
+Všechny UI texty jsou řešeny skrze custom labels.
+ To umožňuje jejich překládání skrze nastavení Salesforce bez nutnosti zásahu
+ do kódu.
+ Label může mít překlad do všech podporovaných jazyků a použitý překlad
+ se určuje podle osobního nastavení konkrétního Salesforce uživatele.
 \end_layout
 
 \begin_layout Section

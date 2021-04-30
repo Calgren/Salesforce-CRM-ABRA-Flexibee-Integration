@@ -7,15 +7,19 @@
 import {LightningElement, api, wire, track} from 'lwc';
 import isAbraFlexiAppAdmin from '@salesforce/customPermission/ABRA_Flexi_App_Admin';
 import {getObjectInfo} from "lightning/uiObjectInfoApi";
+import getCurrentMappings from '@salesforce/apex/AbraMappingManagementController.getCurrentMappings';
+
 
 export default class AbraMappingManagement extends LightningElement {
 
     @api abraEntityApiName;
-    @track sfscSObjectName = 'Invoice__c';
+    @track sfscSObjectName;
     @track abraEntityDefinition;
     @track mappingDtos;
+    @track mappingIdsToDelete;
 
     @track displaySfscFieldSelectionModal = false;
+    @track sObjectOptions = [{label:'Invoice', value: 'Invoice__c'}, {label:'Order', value: 'Order'}]
 
     _currentlySelectedMappingIdent;
     _currentFieldsInPath;
@@ -32,7 +36,10 @@ export default class AbraMappingManagement extends LightningElement {
         Confirm: 'Confirm',
         AttributesMapping: 'Attributes Mapping',
         SFSCToABRAFlexiSync: 'SFSC To ABRA Flexi Sync',
-        ABRAFlexiToSFSCSync: 'ABRA Flexi To SFSC Sync'
+        ABRAFlexiToSFSCSync: 'ABRA Flexi To SFSC Sync',
+        ChooseSObject: 'Choose SObject',
+        ChangeSObject: 'Change SObject',
+        ConfirmSObjectChange_Msg: 'Do you really wish to change object a remove all current mappings?'
     };
 
     @track multilevelFieldsForCombobox;
@@ -43,9 +50,11 @@ export default class AbraMappingManagement extends LightningElement {
     @wire(getObjectInfo, {objectApiName: '$sfscSObjectName'})
     getSObjectInfo({error, data}) {
         if (data) {
+            console.log('TTTSAfsASFFSA ASfaFAS')
             this.sObjectInfo = data;
             this.settingsCustomFields;
         } else if (error) {
+            console.error(error);
             //processError(this, error);
         }
     }
@@ -79,9 +88,15 @@ export default class AbraMappingManagement extends LightningElement {
      * @date    2021-04-25
      */
     async init() {
-        this.mappingDtos = [];
-        if (this.settingsApiName) {
-            //this.customSettings = await getSettings({customSettingsApiName: this.settingsApiName});
+        if (this.abraEntityApiName) {
+            this.mappingIdsToDelete = [];
+            this.mappingDtos = await getCurrentMappings({abraEntityName: this.abraEntityApiName});
+            console.log('TTTT HJERE00');
+            if (this.mappingDtos.length > 0) {
+                console.log('TTTT HJERE0');
+                this.sfscSObjectName = this.mappingDtos[0].sfscSObjectName;
+                console.log('TTTT HJERE1');
+            }
         }
     }
 
@@ -92,12 +107,13 @@ export default class AbraMappingManagement extends LightningElement {
      * @date    2021-04-25
      */
     get allLoaded() {
-        return Boolean(true);
+        console.log('TTTT LALA ', Boolean(this.mappingDtos));
+        return Boolean(this.mappingDtos);
     }
 
     appendNewMapping() {
         let newMappingDto = {
-            id: null,
+            recordId: null,
             sfscSObjectName: this.sfscSObjectName,
             abraEntityApiName: this.abraEntityApiName,
             sfscFieldName: null,
@@ -195,11 +211,55 @@ export default class AbraMappingManagement extends LightningElement {
             .sfscToAbraSync = evt.detail.checked;
     }
 
+    handleAbraToSfscSyncChange(evt) {
+        const mappingIdent = Number(evt.currentTarget.dataset.rowIdent);
+        this.mappingDtos.find(mappingDto => mappingDto.ident === mappingIdent)
+            .abraToSfscSync = evt.detail.checked;
+    }
+
+    handleAbraFieldChange(evt) {
+        const mappingIdent = Number(evt.currentTarget.dataset.rowIdent);
+        this.mappingDtos.find(mappingDto => mappingDto.ident === mappingIdent)
+            .abraFieldName = evt.detail.value;
+    }
+
     async handleSave(){
         try {
             console.log('TTT SAVING ', JSON.parse(JSON.stringify(this.mappingDtos)));
         } catch(e) {
             console.error(e);
         }
+    }
+
+    handleChangeSObject(evt) {
+        this.sfscSObjectName = evt.detail.value;
+    }
+
+    async changeSObjectClick(){
+        const confirmationComponent = this.findElementByClass('confirmPopup');
+        let confirmed = await confirmationComponent.awaitConfirmation(this.labels.ConfirmSObjectChange_Msg);
+        if (!confirmed) {
+            return;
+        }
+        this.deleteAllMappings();
+        this.sfscSObjectName = null;
+        this.multilevelSfscFieldsDefinitions = null;
+    }
+
+    deleteAllMappings() {
+        this.mappingDtos.forEach(mappingDto => {
+            if(mappingDto.recordId) {
+                this.mappingIdsToDelete.push(mappingDto.recordId);
+            }
+        });
+        this.mappingDtos = [];
+    }
+
+    findElementByClass(className) {
+        return this.template.querySelector('.' + className);
+    }
+
+    get displayAttributesMappingSection(){
+        return Boolean(this.sfscSObjectName && this.multilevelSfscFieldsDefinitions);
     }
 }

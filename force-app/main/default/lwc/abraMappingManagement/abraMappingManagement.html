@@ -6,13 +6,28 @@ Date:         2021-04-25
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- Abra Mapping Management -->
 <template>
-    <template if:true={allLoaded}>
-        <lightning-card title={mappingTitle} icon-name="utility:data_mapping">
+    <lightning-card title={mappingTitle} icon-name="utility:data_mapping">
+        <template if:true={allLoaded}>
+            <lightning-button if:true={sfscSObjectName}
+                              label={labels.ChangeSObject}
+                              onclick={changeSObjectClick}
+                              slot="actions"
+                              disabled={disabledMode}
+                              class="slds-m-right_small"
+            ></lightning-button>
             <lightning-button label={labels.Save} onclick={handleSave} slot="actions"
                               disabled={disabledMode}></lightning-button>
-            <template if:true={sfscSObjectName}>
+            <template if:false={sfscSObjectName}>
+                <lightning-combobox label={labels.ChooseSObject}
+                                    options={sObjectOptions}
+                                    value={sfscSObjectName}
+                                    onchange={handleChangeSObject}
+                                    class="slds-p-around_medium"
+                ></lightning-combobox>
+            </template>
+            <template if:true={displayAttributesMappingSection}>
                 <lightning-accordion active-section-name="A" allow-multiple-sections-open>
-                    <lightning-accordion-section name="A" label={labels.AttributesMapping}>
+                    <lightning-accordion-section name="A" label={labels.AttributesMapping} class="slds-p-bottom_large">
                         <lightning-layout multiple-rows>
                             <lightning-layout-item size="4" padding="around-small">
                                 <p>{labels.SfscAttribute}</p>
@@ -40,8 +55,13 @@ Date:         2021-04-25
 
                                     </lightning-layout-item>
                                     <lightning-layout-item size="4" padding="around-small">
-                                        <p>TTTT XD2</p>
-                                        <p class="slds-m-left_medium">{mappingDto.abraFieldName}</p>
+                                        <lightning-combobox options={abraFieldOptions}
+                                                            value={mappingDto.abraFieldName}
+                                                            onchange={handleAbraFieldChange}
+                                                            variant="label-hidden"
+                                                            data-row-ident={mappingDto.ident}
+                                                            disabled={disabledMode}
+                                        ></lightning-combobox>
                                     </lightning-layout-item>
                                     <lightning-layout-item size="2" padding="around-small">
                                         <lightning-input variant="label-hidden"
@@ -74,8 +94,8 @@ Date:         2021-04-25
                     </lightning-accordion-section>
                 </lightning-accordion>
             </template>
-        </lightning-card>
-    </template>
+        </template>
+    </lightning-card>
 
 
     <template if:true={displaySfscFieldSelectionModal}>
@@ -113,4 +133,6 @@ Date:         2021-04-25
         </section>
         <div class="slds-backdrop slds-backdrop_open"></div>
     </template>
+
+    <c-confirmation-popup class="confirmPopup"></c-confirmation-popup>
 </template>
