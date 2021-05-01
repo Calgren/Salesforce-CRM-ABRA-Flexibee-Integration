@@ -5662,10 +5662,6 @@ Stav úhrady dokladu
 Objekt pro logování
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Subsubsection
 Výsledný datový model Salesforce CRM
 \end_layout
@@ -5909,7 +5905,7 @@ True
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Aplikační logy
 \end_layout
 
 \end_inset
@@ -5918,7 +5914,7 @@ True
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Application Log Standard Permission Set
 \end_layout
 
 \end_inset
@@ -5927,7 +5923,7 @@ True
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Application Log Admin Permission Set
 \end_layout
 
 \end_inset

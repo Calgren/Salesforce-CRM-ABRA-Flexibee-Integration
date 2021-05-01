@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>abraEntityApiName</name>
+                    <value>faktura-vydana</value>
+                </componentInstanceProperties>
+                <componentName>abraMappingManagement</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>abraEntityApiName</name>
+                    <value>objednavka-prijata</value>
+                </componentInstanceProperties>
+                <componentName>abraMappingManagement</componentName>
+            </componentInstance>
+        </itemInstances>
         <name>region1</name>
         <type>Region</type>
     </flexiPageRegions>
