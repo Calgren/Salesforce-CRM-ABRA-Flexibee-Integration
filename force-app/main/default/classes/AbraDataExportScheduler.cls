@@ -7,7 +7,6 @@
  */
 public with sharing class AbraDataExportScheduler implements Schedulable {
 
-    //private final static awsp.Logger LOG = awsp.LoggerFactory.getLogger(SfccSObjectSyncScheduler.class);
     // list with batch runs configurations
     @TestVisible
     private final List<AbraSobjectExportBatch.ExportBatchRunConfiguration> batchRunsConfigurations = new List<AbraSobjectExportBatch.ExportBatchRunConfiguration>{

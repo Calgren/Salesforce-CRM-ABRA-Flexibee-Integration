@@ -6,7 +6,6 @@
  */
 public with sharing class AbraSobjectExportBatch implements Database.Batchable<SObject>, Database.AllowsCallouts{
 
-    //private final static awsp.Logger LOG = awsp.LoggerFactory.getLogger(SfccSObjectSyncBatch.class);
     private String objectApiName;
     private String abraObjectName;
     private Set<Id> objectIdsToSync;
@@ -48,10 +47,17 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
             }
             return Database.getQueryLocator(soqlQuery);
         } catch (Exception e) {
-            //LOG.error('Error during object synchronization from SFCC.', e);
+            new ApexLog().createLog(
+                    new ApexLog.Error(
+                            'AbraSobjectExportBatch',
+                            'start',
+                            null,
+                            e
+                    )
+            );
             return null;
         } finally {
-            //awsp.LoggerFactory.saveLogs();
+            ApexLog.commitLogs();
         }
     }
 
@@ -67,9 +73,16 @@ public with sharing class AbraSobjectExportBatch implements Database.Batchable<S
                 handler.exportRecords(scope, new Map<String, Object>{AbraUtils.ABRA_OBJECT_NAME_PARAM => this.abraObjectName});
             } catch (Exception e) {
                 System.debug('Error ' + e.getMessage());
-                //LOG.error('Error during object synchronization from SFCC. ' + theSObject?.Id, e);
+                new ApexLog().createLog(
+                        new ApexLog.Error(
+                                'AbraSobjectExportBatch',
+                                'execute',
+                                null,
+                                e
+                        )
+                );
             } finally {
-                //awsp.LoggerFactory.saveLogs();
+                ApexLog.commitLogs();
             }
         }
     }

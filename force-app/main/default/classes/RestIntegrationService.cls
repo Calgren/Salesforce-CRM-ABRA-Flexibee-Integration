@@ -6,7 +6,6 @@
  */
 public without sharing class RestIntegrationService {
 
-    //private final static awsp.Logger LOG = awsp.LoggerFactory.getLogger(RestIntegrationService.class);
 
     private static final Integer CALLOUT_MAX_TIMEOUT_MS = 120000;
     @TestVisible
@@ -207,12 +206,26 @@ public without sharing class RestIntegrationService {
         // Setting the Request-Timeout to MAX.
         request.setTimeout(CALLOUT_MAX_TIMEOUT_MS);
         // log final request.
-        //LOG.debug('The request body be send to: ' + request.getEndpoint(), request.getBody());
+        new ApexLog().createLog(
+                new ApexLog.Debug(
+                        'RestIntegrationService',
+                        'callWebService',
+                        null,
+                        'The request body be send to: ' + request.getEndpoint() + 'Body: ' + request.getBody()
+                )
+        );
         try {
             // Sending the request and storing response.
             Http http = new Http();
             HttpResponse res = http.send(request);
-            //LOG.debug('The response body with HTTP status code: ' + res.getStatusCode() + ' - ' + res.getStatus(), res.getBody());
+            new ApexLog().createLog(
+                    new ApexLog.Debug(
+                            'RestIntegrationService',
+                            'callWebService',
+                            null,
+                            'The response body with HTTP status code: ' + res.getStatusCode() + ' - ' + res.getStatus() + 'Body: ' + res.getBody()
+                    )
+            );
             return res;
         } catch (CalloutException e) {
             throw new Exceptions.RestIntegrationServiceException('Callout failure: ' + e.getMessage());

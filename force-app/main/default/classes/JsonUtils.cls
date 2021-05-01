@@ -54,7 +54,14 @@ public with sharing class JsonUtils {
                 }
             }
         } catch (Exception e) {
-            //LOG.error('Error during getting value from json by key.', e);
+            new ApexLog().createLog(
+                    new ApexLog.Error(
+                            'JsonUtils',
+                            'getValueByKey',
+                            null,
+                            e
+                    )
+            );
         }
         return value;
     }
@@ -92,7 +99,6 @@ public with sharing class JsonUtils {
                         String keyComponent = keyElements.get(i);
                         if (keyComponent.contains('[')) {
                             //To do for later
-                            //LOG.debug('not supported keyComponent: ', keyComponent);
                         } else {
                             //If top element then add in jsonOBject
                             if (i == 0) {

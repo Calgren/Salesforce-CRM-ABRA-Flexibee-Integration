@@ -5,7 +5,6 @@
  * @date    2021-04-01
  */
 public with sharing class CustomSettingsManagementController {
-    //private final static awsp.Logger LOG = awsp.LoggerFactory.getLogger(CustomSettingsManagementController.class);
 
     /**
      * @description retrieves specified custom settings org defaults
@@ -36,9 +35,17 @@ public with sharing class CustomSettingsManagementController {
             }
             return null;
         } catch (Exception e) {
+            new ApexLog().createLog(
+                    new ApexLog.Error(
+                            'CustomSettingsManagementController',
+                            'getSettings',
+                            null,
+                            e
+                    )
+            );
             throw new AuraHandledException('Error when selecting custom settings values.');
         } finally {
-            //awsp.LoggerFactory.saveLogs();
+            ApexLog.commitLogs();
         }
     }
 
@@ -81,9 +88,17 @@ public with sharing class CustomSettingsManagementController {
             }
             return null;
         } catch (Exception e) {
+            new ApexLog().createLog(
+                    new ApexLog.Error(
+                            'CustomSettingsManagementController',
+                            'getSettingsForSpecificUser',
+                            null,
+                            e
+                    )
+            );
             throw new AuraHandledException('Error when selecting custom settings values.');
         } finally {
-            //awsp.LoggerFactory.saveLogs();
+            ApexLog.commitLogs();
         }
     }
 
@@ -108,10 +123,17 @@ public with sharing class CustomSettingsManagementController {
                 insert newSettings;
             }
         } catch (Exception e) {
-            //LOG.error('Error when saving custom settings values.', e);
+            new ApexLog().createLog(
+                    new ApexLog.Error(
+                            'CustomSettingsManagementController',
+                            'saveSettingsForCurrentUser',
+                            null,
+                            e
+                    )
+            );
             throw new AuraHandledException('Error when saving custom settings values.');
         } finally {
-            //awsp.LoggerFactory.saveLogs();
+            ApexLog.commitLogs();
         }
     }
 
@@ -130,11 +152,17 @@ public with sharing class CustomSettingsManagementController {
             customSettings.put('SetupOwnerId', UserInfo.getOrganizationId());
             update customSettings;
         } catch (Exception e) {
-            //LOG.error('Error when saving custom settings values.', e);
+            new ApexLog().createLog(
+                    new ApexLog.Error(
+                            'CustomSettingsManagementController',
+                            'saveOrgDefaultSettings',
+                            null,
+                            e
+                    )
+            );
             throw new AuraHandledException('Error when saving custom settings values.');
         } finally {
-            //awsp.LoggerFactory.saveLogs();
-            //TODO save logs
+            ApexLog.commitLogs();
         }
     }
 }
