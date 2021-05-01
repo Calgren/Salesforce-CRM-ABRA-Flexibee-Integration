@@ -355,6 +355,10 @@ label{sec:Abstrakt}
 \end_layout
 
 \begin_layout Standard
+TODO
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -400,6 +404,10 @@ label{sec:Abstract}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+TODO
 \end_layout
 
 \begin_layout Standard
@@ -494,6 +502,26 @@ label{sec:Seznam zkratek}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+SFSC - Salesforce Sales/Service Cloud
+\end_layout
+
+\begin_layout Standard
+CRM - customer relationship management
+\end_layout
+
+\begin_layout Standard
+API - application programming interface
+\end_layout
+
+\begin_layout Standard
+LEX - Lightning Experience
+\end_layout
+
+\begin_layout Standard
+LWC - lightning web components
 \end_layout
 
 \begin_layout Standard
@@ -884,15 +912,6 @@ target "https://trailblazers.salesforce.com/answers"
 \end_layout
 
 \begin_layout Standard
-Oblastí bezpečnosti se zabývá práce 
-\shape italic
-Web Services Attacks and Security- A Systematic Literature Review 
-\shape default
-(Varsha, Jevitha, 2016), která shrnuje možné typy útoků na webové služby
- a které se budou muset brát v potaz při návrhu webových služeb v této práci.
-\end_layout
-
-\begin_layout Standard
 
 \shape italic
 On the Need for a General REST-Security Framework
@@ -920,14 +939,10 @@ Teoretická východiska práce
 \begin_layout Standard
 Účelem této sekce práce je popsat teoretické podklady a vysvětlit základní
  termíny, na jejichž základě bude implementováno řešení v praktické části.
- První část se zabývá informačním systémem jako takovým, jeho definicí,
- využitím a životním cyklem.
-\end_layout
-
-\begin_layout Standard
-Další části se zabývají konkrétními systémy Salesforce CRM a ABRA Flexibee,
- jde o jejich představení a základních charakteristiky.
- Následně představuji technologie na kterých bude řešení postaveno.
+ První část se zabývá informačními systémemy Salesforce CRM a ABRA Flexibee,
+ jejich představením a základními charakteristikami.
+ Další části se zabývají integrací dat mezi systémy, způsoby a technologiemi,
+ kterými ji lze docílit.
 \end_layout
 
 \begin_layout Subsection
@@ -944,28 +959,11 @@ Informační sytém je soubor technologií, lidí, dat a prostředků jehož cí
 \end_layout
 
 \begin_layout Standard
-Pro grafické znázornění komponent informačního systému a toku dat mezi nimi
- přikládám níže jednoduché schéma (Obrázek 1).
-\end_layout
-
-\begin_layout Subsubsection
-Systém pro řízení vztahů se zákazníky
-\end_layout
-
-\begin_layout Standard
 Systém pro řízení vztahů se zákazníky (CRM z anglického názvu Customer Relations
 hip Management) je informační systém pro podporu všech procesů, které zahrnují
  zákazníky podniku.
  Tím jsou myšleny procesy pro získávání nových zákazníků a poskytování služeb
  těm stávajícím.
-\end_layout
-
-\begin_layout Subsubsection
-Ekonomický systém
-\end_layout
-
-\begin_layout Standard
-Ekonomický / účetní systém je dnes již součástí většiny firem,
 \end_layout
 
 \begin_layout Standard
@@ -1852,15 +1850,21 @@ Jde o způsob, kdy data jsou vyzvednuta z různých databází očištěna od du
 \end_layout
 
 \begin_layout Subsubsection
-Bezpečnost
+Autentizace a autorizace
 \end_layout
 
 \begin_layout Standard
-Autentizace
+Autentizace je ověření identity uživatele, může být prováděna pomocí znalosti
+ hesla, biometrických údajů, nebo hardwarových tokenů.
+ (Iacono, Gorski, 2019)
 \end_layout
 
 \begin_layout Standard
-Autorizace
+Autorizace spočívá v přiřazení a ověření uživateli určitých oprávnění v
+ systému.
+ Může jít o práva k čtení či úpravě určitých dat, zpřístupnění aplikace
+ či jejích dílčích funkcionalit.
+ (Iacono, Gorski, 2019)
 \end_layout
 
 \begin_layout Section
@@ -1868,38 +1872,210 @@ Analýza požadavků
 \end_layout
 
 \begin_layout Standard
-TODO
-\end_layout
-
-\begin_layout Standard
-Na základě rešerše byly definovány požadavky na výsledné řešení.
+Na základě rešerše a zkušeností s podobnými implementacemi byly definovány
+ požadavky na výsledné řešení.
  Požadavky jsou rozděleny do skupin na funkční a nefunkční.
- Všechny požadavky jsou znázorněny na Obrázku TODO
 \end_layout
 
 \begin_layout Standard
 Všechny požadavky jsou následně samostatně popsány.
 \end_layout
 
-\begin_layout Enumerate
-Pravidelná automatická synchronizace uzavřených objednávek SFSC do ABRA
- Flexibee
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Přehled požadavků
 \end_layout
 
-\begin_layout Enumerate
-Možnost přidávat, odebírat data k synchronizaci přes UI
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="50text%">
+<column alignment="center" valignment="top" width="50text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Funkční požadavky
 \end_layout
 
-\begin_layout Enumerate
-Možnost spustit synchronizaci okamžitě skrze UI
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nefunkční požadavky
 \end_layout
 
-\begin_layout Enumerate
-Možnost parametrizovat automatickou synchronizaci skrze UI
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F1 Automatická synchronizace uzavřených objednávek ze SFSC do ABRA Flexibee
 \end_layout
 
-\begin_layout Enumerate
-Logování
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NF1 Zabezpečení přístupu k aplikaci
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F2 Automatická synchronizace synchronizace faktur ze SFSC do ABRA Flexibee
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NF2 Zabezpečení přístupových údajů do systémů
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F3 Parametrizování synchronizace skrze UI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NF3 Možnost lokalizace
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F4 Přehled aktuálního nastavení synchronizace
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NF4 Podpora Salesforce LEX
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F5 Možnost okamžitého spuštení synchronizace skrze UI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NF5 Škálovatelnost
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F6 Logování
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NF6 Open-source
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NF7 Nezávislost na licencích třetích stran a speciálních Salesforce licencích
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1918,13 +2094,12 @@ Aplikace bude umožňovat jednostranou synchronizaci uzavřených objednávek
 \end_layout
 
 \begin_layout Subsubsection
-F2 Automatická synchronizace synchronizace faktur a dobropisů ze SFSC do
- ABRA Flexibee
+F2 Automatická synchronizace synchronizace faktur ze SFSC do ABRA Flexibee
 \end_layout
 
 \begin_layout Standard
-Společně s objednávkami bude aplikace synchronizovat všechny faktury a dobropisy
-, které se k nim vážou.
+Společně s objednávkami bude aplikace synchronizovat všechny faktury, které
+ se vážou k objednávkám.
  Tato synchronizace musí proběhnout i poté co již objednávka byla propsána
  do systému Flexibee, ale poté k ní přibyl další dokument.
 \end_layout
@@ -1969,7 +2144,7 @@ Aplikace bude nabízet přehled aktuálního nastavení synchronizace včetně
 \end_layout
 
 \begin_layout Subsubsection
-F6 Možnost okamžitého spuštení synchronizace skrze UI
+F5 Možnost okamžitého spuštení synchronizace skrze UI
 \end_layout
 
 \begin_layout Standard
@@ -1980,7 +2155,7 @@ V aplikaci bude možnost spustit synchronizaci okamžitě a nečekat tak na
 \end_layout
 
 \begin_layout Subsubsection
-F7 Logování
+F6 Logování
 \end_layout
 
 \begin_layout Standard
@@ -6885,8 +7060,8 @@ Do ABRA Flexi je možné se mimo jednoduchou HTTP autentizaci autentizovat
 
 \begin_layout Standard
 Named Credentials také nabízí možnost autentizace pomocí OpenId a jde z
- hlediska bezpečnosti o preferovanou variantu před základní HTTP autentizací.
- Pokud je to tedy možné, je vhodné použít OpenId.
+ hlediska bezpečnosti o preferovanou variantu před základní HTTP autentizací.(Iac
+ono, Gorski, 2019) Pokud je to tedy možné, je vhodné použít OpenId.
 \end_layout
 
 \begin_layout Subsection
@@ -7136,7 +7311,7 @@ Je možné změnit SObject na který má být entita namapována, tato změna vy
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7221,7 +7396,7 @@ Pokud uživatel nemá právo na úpravu aplikace, komponenta se načte pouze
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7291,7 +7466,71 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-TODO SCR
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/tomaschour/Desktop/Screenshot 2021-05-01 at 12.31.37.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Stránka se seznamem logů
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/tomaschour/Desktop/Screenshot 2021-05-01 at 12.29.12.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Detail záznamu logu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -7310,6 +7549,10 @@ Všechny UI texty jsou řešeny skrze custom labels.
 Testování
 \end_layout
 
+\begin_layout Standard
+TODO
+\end_layout
+
 \begin_layout Subsection
 Jednotkové testy
 \end_layout
@@ -7320,6 +7563,21 @@ Uživatelské testy
 
 \begin_layout Section
 Distribuce
+\end_layout
+
+\begin_layout Standard
+TODO, kod dostupny na 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/Calgren/Salesforce-CRM-ABRA-Flexibee-Integration"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Závěr
 \end_layout
 
 \begin_layout Standard
@@ -7399,16 +7657,6 @@ ABRA [online]: Dokumentace Autentizace.
  [cit.
  2021-04-21].
  Dostupné z: https://www.flexibee.eu/api/dokumentace/ref/login/
-\end_layout
-
-\begin_layout Standard
-VARSHA, Mouli Ravichandra a K.
- P.
- JEVITHA, 2016.
- Web Services Attacks and Security- A Systematic Literature Review [online].
- [cit.
- 2021-03-11].
- Dostupné z: doi:10.1016/j.procs.2016.07.265
 \end_layout
 
 \begin_layout Standard
