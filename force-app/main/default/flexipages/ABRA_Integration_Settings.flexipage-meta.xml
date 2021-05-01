@@ -7,6 +7,10 @@
                     <name>abraEntityApiName</name>
                     <value>faktura-vydana</value>
                 </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>entityNameToGetSchemaFrom</name>
+                    <value>faktura-vydana</value>
+                </componentInstanceProperties>
                 <componentName>abraMappingManagement</componentName>
             </componentInstance>
         </itemInstances>
@@ -14,6 +18,10 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>abraEntityApiName</name>
+                    <value>objednavka-prijata</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>entityNameToGetSchemaFrom</name>
                     <value>objednavka-prijata</value>
                 </componentInstanceProperties>
                 <componentName>abraMappingManagement</componentName>
@@ -36,6 +44,11 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>abraIntegrationOverview</componentName>
+            </componentInstance>
+        </itemInstances>
         <name>region3</name>
         <type>Region</type>
     </flexiPageRegions>

@@ -1,0 +1,5 @@
+Datetime nextTime = System.now();
+nextTime = nextTime.addMinutes(1);
+String strJobName = AbraDataExportScheduler.JOB_NAME + System.now().getTime();
+String strSchedule = nextTime.format('0 m H d MM ? yyyy');
+System.schedule(strJobName, strSchedule, new AbraDataExportScheduler());

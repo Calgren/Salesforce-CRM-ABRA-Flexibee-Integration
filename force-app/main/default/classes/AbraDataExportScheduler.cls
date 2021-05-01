@@ -13,7 +13,7 @@ public with sharing class AbraDataExportScheduler implements Schedulable {
             new AbraSobjectExportBatch.ExportBatchRunConfiguration('Order', 'objednavka-prijata', 'ABRA_Flexi_Data_Exported__c'),
             new AbraSobjectExportBatch.ExportBatchRunConfiguration('Invoice__c', 'faktura-vydana', 'ABRA_Flexi_Data_Exported__c')
     };
-    private static final String JOB_NAME = 'SfscToAbraExport';
+    public static final String JOB_NAME = 'SfscToAbraExport';
 
     /**
      * @description executes sync batches for each object defined in batchRunsConfigurations and schedules

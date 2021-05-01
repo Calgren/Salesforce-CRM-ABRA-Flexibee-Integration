@@ -6760,6 +6760,39 @@ Application Logs - stránka záznamů aplikačních logů
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/tomaschour/Desktop/Screenshot 2021-05-01 at 10.16.55.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Uživatelské rozhraní aplikace
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -6790,8 +6823,9 @@ Komponenta pro mapování entit se nazývá abraMappingManagement a je tvořena
  Při načtení si komponenta vždy dynamicky načte názvy atributů na daném
  objektu v SFSC a ABRA Flexi, předejde se tak tomu, že by se uživatel v
  názvu atributu přepsal a nebo zvolil neexistující atribut.
- Komponenta má veřejnou proměnnou pro API název entity v ABRA Flexi, pro
- kterou chceme mapování tvořit.
+ Komponenta má dvě veřejné proměnné pro API název entity v ABRA Flexi, pro
+ kterou chceme mapování tvořit a ze které entity se načítá schéma pro získání
+ atributů.
  Pokud pro danou entitu neexistuje alespoň jeden záznam v mapování, musí
  uživatel vybrat SObject v Salesforce na který chce danou ABRA entitu namapovat.
  Pokud již existuje alespoň jeden záznam mapování, je SObject automaticky

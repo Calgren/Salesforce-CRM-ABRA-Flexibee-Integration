@@ -40,7 +40,8 @@ export default class AbraMappingManagement extends LightningElement {
         ABRAFlexiToSFSCSync: 'ABRA Flexi To SFSC Sync',
         ChooseSObject: 'Choose SObject',
         ChangeSObject: 'Change SObject',
-        ConfirmSObjectChange_Msg: 'Do you really wish to change object a remove all current mappings?'
+        ConfirmSObjectChange_Msg: 'Do you really wish to change object a remove all current mappings?',
+        selectAbraField: 'Choose ABRA Flexi field'
     };
 
     @track multilevelFieldsForCombobox;
