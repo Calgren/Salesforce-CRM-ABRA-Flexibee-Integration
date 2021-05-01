@@ -2,6 +2,11 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Errors</fullName>
     <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Severity__c</columns>
+    <columns>Apex_Class__c</columns>
+    <columns>Method__c</columns>
+    <columns>Message__c</columns>
     <filterScope>Mine</filterScope>
     <filters>
         <field>Severity__c</field>

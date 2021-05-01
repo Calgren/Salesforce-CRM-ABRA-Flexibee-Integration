@@ -26,7 +26,7 @@ public inherited sharing class AbraFlexiConnector {
 
     /**
      * @description pulls selected invoice detail from ABRA Flexi by invoice id
-     * @param invoiceId customer identification in SFCC
+     * @param body customer identification in SFCC
      * @return Map representing JSON response from ABRA Flexi
      */
     public static Map<String, Object> upsertEntities(String body, String abraEntityName) {
@@ -37,9 +37,7 @@ public inherited sharing class AbraFlexiConnector {
                 'callout:ABRA_Flexi' + apiUrlPath + abraEntityName
         );
         HttpResponse res = RestIntegrationService.callWebService(req);
-        System.debug('TTT xD1 ' + res.getBody());
         Map<String, Object> customerDetailMap = RestIntegrationService.convertJsonStringUntyped(res.getBody());
-        System.debug('TTT xD2 ' + customerDetailMap);
         return customerDetailMap;
 
     }

@@ -6759,6 +6759,10 @@ ABRA Integration Settings - aplikační stránka, která obsahuje mapování a
 Application Logs - stránka záznamů aplikačních logů
 \end_layout
 
+\begin_layout Standard
+
+\end_layout
+
 \begin_layout Subsection
 Abra Integration Settings
 \end_layout
@@ -7022,6 +7026,10 @@ literal "false"
  Jedná se o velmi jedoduchý logger s pouze jednou třídou, byl zvolen z toho
  důvodu, aby šel jednoduše nahradit za jakýkoliv jiný logger, který by používala
  cílová organizace.
+\end_layout
+
+\begin_layout Standard
+TODO SCR
 \end_layout
 
 \begin_layout Subsection
