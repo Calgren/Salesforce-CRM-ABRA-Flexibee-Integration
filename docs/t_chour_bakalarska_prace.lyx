@@ -7189,8 +7189,8 @@ Abra Integration Settings
 
 \begin_layout Standard
 Stránka s nastaveními se skládá ze dvou sloupců, v levém sloupci jsou jednotlivé
- komponenty pro nastavení mapování a v pravém je pak komponenta pro parametrizac
-i aplikace.
+ komponenty pro nastavení mapování a v pravém jsou pak komponenty pro parametriz
+aci aplikace a manuálního spouštění exportu dat.
  Stránku lze upravovat, přidávat a odebírat její komponenty pomocí Salesforce
  App Builder.
  (Salesforce, Docs Lightning App Builder)
@@ -7377,7 +7377,7 @@ Pokud uživatel nemá právo na úpravu aplikace, komponenta se načte pouze
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
