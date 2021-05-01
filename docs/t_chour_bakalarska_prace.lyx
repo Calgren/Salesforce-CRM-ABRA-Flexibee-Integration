@@ -1235,9 +1235,19 @@ Mezi hlavní limity patří:
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hlavní limity pro operace v Salesforce (Zdroj: (Salesforce, Execution Governors
+ and Limits)
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="3">
 <features tabularvalignment="middle">
@@ -1477,19 +1487,6 @@ Maximální počet SOQL dotazů
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Hlavní limity pro operace v Salesforce (Zdroj: (Salesforce, Execution Governors
- and Limits)
-\end_layout
 
 \end_inset
 
@@ -2365,6 +2362,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Zobrazení nastavení aplikace
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="2">
 <features tabularvalignment="middle">
@@ -2572,18 +2578,6 @@ Chyba se zaloguje do aplikačních logů
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Zobrazení nastavení aplikace 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -2596,6 +2590,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Zobrazení aplikačních logů
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -2785,18 +2788,6 @@ Načtě se a zobrazí detail daného záznamu
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Zobrazení aplikačních logů 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -2809,6 +2800,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Zadaní mapování atributů
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -3012,18 +3012,6 @@ Obrazovka se vrátí na výběr entity
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Zadaní mapování atributů 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -3036,6 +3024,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Parametrizace aplikace
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -3219,18 +3216,6 @@ Metadata se uloží a uživateli se zobrazí hláška o úspěšném uložení
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Parametrizace aplikace 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -3243,6 +3228,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Synchronizace dat
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="2">
 <features tabularvalignment="middle">
@@ -3447,18 +3441,6 @@ Po dokončení synchronizace je zalogována informace o proběhnutí pro jednotl
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Synchronizace dat
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -3471,6 +3453,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Manuální spuštění synchronizace dat
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="2">
 <features tabularvalignment="middle">
@@ -3663,18 +3654,6 @@ Uživateli se zobrazí obrazovka s posledním a dalším časem synchronizace
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Manuální spuštění synchronizace dat
-\end_layout
 
 \end_inset
 
@@ -6135,6 +6114,15 @@ Následující tabulka zobrazuje obsah Permission Set Group pro standardního
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Přehled oprávnění podle skupin uživatelů
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="3">
 <features tabularvalignment="middle">
@@ -6355,18 +6343,6 @@ Apex Class Admin Permission Set
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Přehled oprávnění podle skupin uživatelů
-\end_layout
 
 \end_inset
 
