@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integration_Interval_In_Minutes__c</fullName>
+    <defaultValue>1</defaultValue>
+    <description>Interval between automatic data exports to ABRA Flexi.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Interval between automatic data exports to ABRA Flexi.</inlineHelpText>
+    <label>Integration Interval In Minutes</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

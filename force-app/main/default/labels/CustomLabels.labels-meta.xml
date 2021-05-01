@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>SettingsSaved</fullName>
+        <categories>AbraIntegration</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SettingsSaved</shortDescription>
+        <value>Settings have been successfully saved.</value>
+    </labels>
+    <labels>
+        <fullName>Confirm</fullName>
+        <categories>AbraIntegration</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Confirm</shortDescription>
+        <value>Confirm</value>
+    </labels>
+    <labels>
+        <fullName>Cancel</fullName>
+        <categories>AbraIntegration</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Confirmation</fullName>
+        <categories>AbraIntegration</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Confirmation</shortDescription>
+        <value>Confirmation</value>
+    </labels>
+</CustomLabels>

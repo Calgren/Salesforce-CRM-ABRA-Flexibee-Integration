@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Data_Integration_Is_Active__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Determines whether Invoice synchronisation is active.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Determines whether Invoice synchronisation is active.</inlineHelpText>
+    <label>Invoice Data Integration Is Active</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

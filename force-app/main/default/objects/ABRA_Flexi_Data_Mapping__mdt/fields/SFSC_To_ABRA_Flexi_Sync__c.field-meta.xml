@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFSC_To_ABRA_Flexi_Sync__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Determines whether data for this field should be synchronised from SFSC into ABRA Flexi.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Determines whether data for this field should be synchronised from SFSC into ABRA Flexi.</inlineHelpText>
+    <label>SFSC To ABRA Flexi Sync</label>
+    <type>Checkbox</type>
+</CustomField>

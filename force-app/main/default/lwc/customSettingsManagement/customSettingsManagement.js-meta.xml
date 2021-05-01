@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <description>Allows user to create/update hierarchical custom settings for current user.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Custom Settings Management</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage, lightning__HomePage">
+            <property label="Custom Settings API Name" name="settingsApiName" type="String" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

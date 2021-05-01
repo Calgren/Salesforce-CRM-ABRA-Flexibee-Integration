@@ -6131,7 +6131,7 @@ status open
 
 \begin_layout Plain Layout
 Následující tabulka zobrazuje obsah Permission Set Group pro standardního
- uživatele a společné skupiny pro Administrátora a systémového uživatele.
+ uživatele a společné skupiny pro Administrátora a systémováho uživatele.
 \end_layout
 
 \begin_layout Plain Layout
@@ -6783,7 +6783,7 @@ V execute metodě se poté volá implementace AbraSynchronizationInterface
  rozhraní pro konkrétní SObject, ve které dochází k odeslání dat a zpracování
  odpovědi - uložení vygenerovaného ABRA Flexi Id na záznamy a označení jako
  synchronizovaných v případě úspěšného vytvoření.
- Pokud ve kterékoliv fázi exportu dojde k výjimce, je tato výjimka zalogována.
+ Pokud ve kterékoliv fázi exportu dojde k vyjímce, je tato vyjímka zalogována.
 \end_layout
 
 \begin_layout Subsection
@@ -6891,8 +6891,8 @@ status open
 
 \begin_layout Standard
 Odpověď poté obsahuje ve stejném kořenovém atributu informaci o úspěšnosti
- zpracování, sumarizaci provedených operací - počeet vytvořených, aktualizovanýc
-h, vymazaných, vynechaných záznamů a kolik záznamů skončilo neúspěchem a
+ zpracování, sumarizaci provedených operací - počeet vytvořených, aktualizovánýc
+h, vymázáných, vynecháných záznamů a kolik záznamů skončilo neuspěchem a
  následně atribut s detailem výsledků (viz Výpis4)
 \begin_inset listings
 lstparams "numbers=left,showstringspaces=false,caption={JSON odpověď z ABRA Flexi},emph={subject,predicate,object},emphstyle={\color{blue}},frame=box,keywordstyle={\color{violet}},columns=fullflexible"
@@ -7035,7 +7035,7 @@ Pro autorizaci do externích systémů poskytuje Salesforce doporučuje využit�
  autentizace v jednom.
  Výhoda tohoto je, že nemusíme přístupové údaje ukládat někam mimo a nebo
  při nejhorším je držet v kódu.
- Salesforce také tyto přístupové údaje šifruje.
+ Salesforce také tyto přistupové údaje šifruje.
  (Salesforce, Docs Named Credentials)
 \end_layout
 
@@ -7082,12 +7082,13 @@ nInterface.
  V této vytvořené třídě je pak implementována metoda exportRecords, která
  obsahuje logiku pro přípravu dat, volání export HTPP dotazu, a zpracování
  výsledku.
+ (viz Výpis5)
 \end_layout
 
 \begin_layout Standard
 Dále je potřeba pro danou entitu přidat instanci konfigurace batche do proměnné
  batchRunsConfigurations ve třídě AbraDataExportScheduler.
- (viz Výpis5)
+ (viz Výpis6)
 \begin_inset listings
 lstparams "numbers=left,showstringspaces=false,caption={Konfigurace exportu entit pro batch},emph={subject,predicate,object},emphstyle={\color{blue}},frame=box,keywordstyle={\color{violet}},columns=fullflexible"
 inline false
@@ -7141,7 +7142,7 @@ Také je vhodné přidat boolean atribut do ABRA Flexi Data Integration Settings
 
 \begin_layout Standard
 Daná entita musí mít alespoň jeden odpovídající záznam v ABRA Flexi Data
- Mappings, pokud takový záznam neexistuje, asynchronní process pro danou
+ Mappings, pokud takový záznam neexistuje, asyncrhonní process pro danou
  entitu skončí výjimkou.
 \end_layout
 
@@ -7227,7 +7228,7 @@ Komponenta pro mapování entit
 \begin_layout Standard
 Komponenta pro mapování entit se nazývá abraMappingManagement a je tvořena
  dynamickou tabulkou, která má čtyři sloupce pro výběr Salesforce atributu,
- ABRA Flexi atributu a dvou přepínačů na aktivaci směru synchronizace.
+ Abra Flexi atributu a dvou přepínátek na aktivaci směru synchronizace.
  Při načtení si komponenta vždy dynamicky načte názvy atributů na daném
  objektu v SFSC a ABRA Flexi, předejde se tak tomu, že by se uživatel v
  názvu atributu přepsal a nebo zvolil neexistující atribut.
@@ -7465,9 +7466,9 @@ literal "false"
  verzí Salesforce a doplněn o podporů logů o severitě varování a debug.
  Také bylo pozměněna logika pro ukládání logů do databáze tak, aby se jednotlivé
  logy v rámci transakci neukládali postupně každý zvlášť, ale všechny najednou.
- Jedná se o velmi jednoduchý logger s pouze jednou třídou, byl zvolen z
- toho důvodu, aby šel jednoduše nahradit za jakýkoliv jiný logger, který
- by používala cílová organizace.
+ Jedná se o velmi jedoduchý logger s pouze jednou třídou, byl zvolen z toho
+ důvodu, aby šel jednoduše nahradit za jakýkoliv jiný logger, který by používala
+ cílová organizace.
 \end_layout
 
 \begin_layout Standard

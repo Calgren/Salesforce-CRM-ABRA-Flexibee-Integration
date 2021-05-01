@@ -1,0 +1,139 @@
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+Author:       tomaschour
+Date:         2021-04-25
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Abra Mapping Management -->
+<template>
+    <lightning-card title={mappingTitle} icon-name="utility:data_mapping">
+        <template if:true={allLoaded}>
+            <lightning-button if:true={sfscSObjectName}
+                              label={labels.ChangeSObject}
+                              onclick={changeSObjectClick}
+                              slot="actions"
+                              disabled={disabledMode}
+                              class="slds-m-right_small"
+            ></lightning-button>
+            <lightning-button label={labels.Save} onclick={handleSave} slot="actions"
+                              disabled={disabledMode}></lightning-button>
+            <template if:false={sfscSObjectName}>
+                <lightning-combobox label={labels.ChooseSObject}
+                                    options={sObjectOptions}
+                                    value={sfscSObjectName}
+                                    onchange={handleChangeSObject}
+                                    class="slds-p-around_medium"
+                ></lightning-combobox>
+            </template>
+            <template if:true={displayAttributesMappingSection}>
+                <lightning-accordion active-section-name="A" allow-multiple-sections-open>
+                    <lightning-accordion-section name="A" label={labels.AttributesMapping} class="slds-p-bottom_large">
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size="4" padding="around-small">
+                                <p>{labels.SfscAttribute}</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4" padding="around-small">
+                                <p>{labels.AbraAttribute}</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2" padding="around-small">
+                                <p>{labels.SFSCToABRAFlexiSync}</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2" padding="around-small">
+                                <p>{labels.ABRAFlexiToSFSCSync}</p>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <template for:each={mappingDtos} for:item="mappingDto">
+                            <div key={mappingDto.ident} class="slds-border_top">
+                                <lightning-layout multiple-rows>
+                                    <lightning-layout-item size="4" padding="around-small">
+                                        <lightning-button onclick={handleDisplaySfscFieldSelectionModal}
+                                                          data-row-ident={mappingDto.ident}
+                                                          label={labels.ChooseSfscField}
+                                                          disabled={disabledMode}
+                                        ></lightning-button>
+                                        <span class="slds-m-left_medium">{mappingDto.sfscFieldName}</span>
+
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="4" padding="around-small">
+                                        <lightning-combobox options={abraFieldOptions}
+                                                            value={mappingDto.abraFieldName}
+                                                            onchange={handleAbraFieldChange}
+                                                            variant="label-hidden"
+                                                            data-row-ident={mappingDto.ident}
+                                                            disabled={disabledMode}
+                                                            placeholder={labels.selectAbraField}
+                                        ></lightning-combobox>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="2" padding="around-small">
+                                        <lightning-input variant="label-hidden"
+                                                         type="toggle"
+                                                         checked={mappingDto.sfscToAbraSync}
+                                                         disabled={disabledMode}
+                                                         data-row-ident={mappingDto.ident}
+                                                         onchange={handleSfscToAbraSyncChange}
+                                        ></lightning-input>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="2" padding="around-small">
+                                        <lightning-input variant="label-hidden"
+                                                         type="toggle"
+                                                         checked={mappingDto.abraToSfscSync}
+                                                         disabled={disabledMode}
+                                                         data-row-ident={mappingDto.ident}
+                                                         onchange={handleAbraToSfscSyncChange}
+                                        ></lightning-input>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </div>
+                        </template>
+                        <lightning-button onclick={appendNewMapping}
+                                          label={labels.AddAttribute}
+                                          title={labels.AddAttribute}
+                                          icon-name="utility:add"
+                                          disabled={disabledMode}
+                                          class="slds-float_right slds-m-right_large"
+                        ></lightning-button>
+                    </lightning-accordion-section>
+                </lightning-accordion>
+            </template>
+        </template>
+    </lightning-card>
+
+
+    <template if:true={displaySfscFieldSelectionModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                 aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                        {labels.ChooseSfscField}
+                    </h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium modal-content" id="modal-content-id-3"
+                     style="height: 50vh">
+                    <template iterator:it={multilevelFieldsForCombobox}>
+                        <lightning-combobox key={it.value}
+                                            label=""
+                                            options={it.value}
+                                            onchange={handleSfccFieldComboSelection}
+                                            data-index={it.index}
+                        ></lightning-combobox>
+                    </template>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label={labels.Cancel} variant="neutral"
+                                      onclick={handleCancel}
+                                      class="slds-m-right--small"
+                    ></lightning-button>
+                    <lightning-button label={labels.Confirm}
+                                      onclick={handleConfirm}
+                                      variant="brand"
+                                      disabled={confirmDisabled}
+                    ></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <c-confirmation-popup class="confirmPopup"></c-confirmation-popup>
+</template>

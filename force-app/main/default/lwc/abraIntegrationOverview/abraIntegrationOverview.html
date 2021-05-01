@@ -1,0 +1,44 @@
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+Author:       tomaschour
+Date:         2021-04-25
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Abra Integration Overview -->
+<template>
+    <lightning-card title={labels.abraIntegrationOverview} icon-name="utility:screen">
+        <lightning-layout if:true={allLoaded} multiple-rows>
+            <lightning-layout-item size="6" padding="around-small">
+                <p>{labels.lastExportRun}&nbsp;:&nbsp;
+                    <lightning-formatted-date-time if:true={integrationOverviewDto.lastRunDatetime}
+                                                   value={integrationOverviewDto.lastRunDatetime}
+                                                   year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                                   minute="2-digit" hour12="false"
+                    ></lightning-formatted-date-time>
+                    <span if:false={integrationOverviewDto.lastRunDatetime}>----</span>
+                </p>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <p>{labels.nextExportRun}&nbsp;:&nbsp;
+                    <lightning-formatted-date-time if:true={integrationOverviewDto.nextRunDatetime}
+                                                   value={integrationOverviewDto.nextRunDatetime}
+                                                   year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                                   minute="2-digit" hour12="false"
+                    ></lightning-formatted-date-time>
+                    <span if:false={integrationOverviewDto.nextRunDatetime}>----</span>
+                </p>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small">
+                <lightning-button onclick={runSync}
+                                  label={labels.runSynchronizationNow}
+                                  title={labels.runSynchronizationNow}
+                                  icon-name="utility:send"
+                                  disabled={syncButtonDisabled}
+                                  variant="brand"
+                ></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+
+
+    </lightning-card>
+</template>

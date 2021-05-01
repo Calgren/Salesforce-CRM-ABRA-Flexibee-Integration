@@ -1,0 +1,33 @@
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Allows user to create/update hierarchical custom settings for current user.
+
+Author:       tomaschour - Aspectworks
+Date:         2021-04-01 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Custom Settings Management -->
+<template>
+        <template if:true={allLoaded}>
+            <lightning-card title={settingsObjectInfo.label} icon-name="utility:settings">
+                <lightning-button label={labels.Save} onclick={handleSave} slot="actions" disabled={inputsDisabled}></lightning-button>
+                <lightning-layout multiple-rows>
+                    <template for:each={settingsCustomFields} for:item="fieldDefinition">
+                        <lightning-layout-item key={fieldDefinition.apiName} size="6" padding="around-small">
+                            <lightning-input type={fieldDefinition.type}
+                                             name={fieldDefinition.apiName}
+                                             label={fieldDefinition.label}
+                                             required={fieldDefinition.required}
+                                             step={fieldDefinition.step}
+                                             max-length={fieldDefinition.maxLength}
+                                             variant="label-stacked"
+                                             field-level-help={fieldDefinition.inlineHelpText}
+                                             checked={fieldDefinition.value}
+                                             value={fieldDefinition.value}
+                                             onchange={handleFieldValueChange}
+                                             disabled={inputsDisabled}
+                            ></lightning-input>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </lightning-card>
+        </template>
+</template>
