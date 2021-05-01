@@ -5659,6 +5659,10 @@ Stav úhrady dokladu
 \end_layout
 
 \begin_layout Subsubsection
+Objekt pro logování
+\end_layout
+
+\begin_layout Subsubsection
 Výsledný datový model Salesforce CRM
 \end_layout
 
@@ -5901,7 +5905,7 @@ True
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Aplikační logy
 \end_layout
 
 \end_inset
@@ -5910,7 +5914,7 @@ True
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Application Log Standard Permission Set
 \end_layout
 
 \end_inset
@@ -5919,7 +5923,7 @@ True
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Application Log Admin Permission Set
 \end_layout
 
 \end_inset
@@ -6782,8 +6786,9 @@ Komponenta pro mapování entit se nazývá abraMappingManagement a je tvořena
  Při načtení si komponenta vždy dynamicky načte názvy atributů na daném
  objektu v SFSC a ABRA Flexi, předejde se tak tomu, že by se uživatel v
  názvu atributu přepsal a nebo zvolil neexistující atribut.
- Komponenta má veřejnou proměnnou pro API název entity v ABRA Flexi, pro
- kterou chceme mapování tvořit.
+ Komponenta má dvě veřejné proměnné pro API název entity v ABRA Flexi, pro
+ kterou chceme mapování tvořit a ze které entity se načítá schéma pro získání
+ atributů.
  Pokud pro danou entitu neexistuje alespoň jeden záznam v mapování, musí
  uživatel vybrat SObject v Salesforce na který chce danou ABRA entitu namapovat.
  Pokud již existuje alespoň jeden záznam mapování, je SObject automaticky
@@ -6978,6 +6983,50 @@ Komponenta pro úpravu parametrů v módu pouze pro čtení
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Aplikační logy
+\end_layout
+
+\begin_layout Standard
+Stránka pro zobrazení aplikačních logů využívá standardní zobrazení Salesforce
+ List View, které načítá seznam záznamů daného SObjectu, na které má aktuální
+ uživatel práva.
+ Nad seznamem lze provádět filtrování a řazení a je možné vytvářet předfiltrovan
+é seznamy.
+ K defaultnímu seznamu se všemi logy byl vytvořen seznam s pouze chybovými
+ logy.
+\end_layout
+
+\begin_layout Standard
+K záložce aplikačních logů má přístup pouze administrátor.
+\end_layout
+
+\begin_layout Standard
+Salesforce neposkytuje žádný způsob, jakým vytvářet logy, různé projekty
+ si tak vytvýřejí své loggery.
+ Z toho důvodu bylo v rámci této práce využit open-source logger dostupný
+ na 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://gist.github.com/miragedeb/70d5b70a6f73c8530db7"
+literal "false"
+
+\end_inset
+
+.
+ (Mayank, 2015) Tento logger byl upraven, aby odpovídal stanrdům nových
+ verzí Salesforce a doplněn o podporů logů o severitě varování a debug.
+ Také bylo pozměněna logika pro ukládání logů do databáze tak, aby se jednotlivé
+ logy v rámci transakci neukládali postupně každý zvlášť, ale všechny najednou.
+ Jedná se o velmi jedoduchý logger s pouze jednou třídou, byl zvolen z toho
+ důvodu, aby šel jednoduše nahradit za jakýkoliv jiný logger, který by používala
+ cílová organizace.
+\end_layout
+
+\begin_layout Standard
+TODO SCR
 \end_layout
 
 \begin_layout Subsection
@@ -7196,6 +7245,13 @@ GARTNER, 2019.
  2018 [online].
  Dostupné z: https://www.gartner.com/en/documents/3984886/market-share-customer-ex
 perience-and-relationship-manage
+\end_layout
+
+\begin_layout Standard
+MAYANK, 2015.
+ ApexDebugLog [cit.
+ 2021-04-25].
+ Dostupné z: https://gist.github.com/miragedeb/70d5b70a6f73c8530db7
 \end_layout
 
 \begin_layout Standard

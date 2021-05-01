@@ -1,0 +1,38 @@
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+Author:       tomaschour
+Date:         2021-04-25
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Abra Integration Overview -->
+<template>
+    <lightning-card title={labels.abraIntegrationOverview} icon-name="utility:send">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item key={fieldDefinition.apiName} size="6" padding="around-small">
+                <p><lightning-formatted-date-time value={integrationOverviewDto.lastRunDatetime}
+                                                  year="2-digit"
+                                                  month="short"
+                                                  day="2-digit"
+                                                  hour="numeric"
+                                                  weekday="long"
+                                                  era="short"
+                ></lightning-formatted-date-time></p>
+            </lightning-layout-item>
+            <lightning-layout-item key={fieldDefinition.apiName} size="6" padding="around-small">
+                <p><lightning-formatted-date-time value={integrationOverviewDto.nextRunDatetime}
+                                                  year="2-digit"
+                                                  month="short"
+                                                  day="2-digit"
+                                                  hour="numeric"
+                                                  weekday="long"
+                                                  era="short"
+                ></lightning-formatted-date-time></p>
+            </lightning-layout-item>
+            <lightning-layout-item key={fieldDefinition.apiName} size="12" padding="around-small">
+
+            </lightning-layout-item>
+        </lightning-layout>
+
+
+    </lightning-card>
+</template>

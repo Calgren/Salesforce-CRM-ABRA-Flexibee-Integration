@@ -10,6 +10,7 @@
     <targetConfigs>
         <targetConfig targets="lightning__AppPage">
             <property label="Abra Entity API name" name="abraEntityApiName" type="String" />
+            <property label="Abra Entity API name for schema" name="entityNameToGetSchemaFrom" type="String" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

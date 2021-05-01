@@ -13,6 +13,7 @@ import getAbraFields from '@salesforce/apex/AbraMappingManagementController.getA
 export default class AbraMappingManagement extends LightningElement {
 
     @api abraEntityApiName;
+    @api entityNameToGetSchemaFrom;
     @track sfscSObjectName;
     @track abraFieldOptions;
     @track mappingDtos;
