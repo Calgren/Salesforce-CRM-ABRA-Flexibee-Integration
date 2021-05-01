@@ -135,7 +135,7 @@ Analýza a implementace Salesforce CRM s integrací na účetní systém pro st�
 
 \series default
 \lang czech
-Bakalářská Práce
+Bakalářská práce
 \end_layout
 
 \begin_layout Standard
@@ -517,6 +517,10 @@ API - application programming interface
 \end_layout
 
 \begin_layout Standard
+SSOT - single source of truth
+\end_layout
+
+\begin_layout Standard
 LEX - Lightning Experience
 \end_layout
 
@@ -555,12 +559,12 @@ nameref{sec:uvod}}
 
 \begin_layout Standard
 V posledních letech v České republice výrazně narůstá počet implementací
- CRM cloudových služeb (ČSÚ, 2016), (ČSÚ, 2019), (ČSÚ, 2021).
+ CRM cloudových služeb (ČSÚ, 2016; ČSÚ, 2019; ČSÚ, 2021).
  Největším cloudovým CRM řešením na světě je Salesforce CRM od Salesforce.com
  s podílem na trhu 19,5% (Gartner, 2019).
  Jednou velkou kapitolou během vývojové fáze implementace je integrace na
  ostatní systémy, které daná firma pro svou činnost a provoz používá.
- Integrace s ostatními systémy bývá naročná na analýzu i vývoj, protože
+ Integrace s ostatními systémy bývá náročná na analýzu i vývoj, protože
  musí běžet bezchybně, zvládat výkyvy v objemu dat i dočasné výpadky jednoho
  nebo obou systémů a zajistit bezpečnost přenosu.
  Jedna z nejčastějších integrací bývá na účetní systém.
@@ -622,14 +626,9 @@ nameref{sec:cile}}
 \end_layout
 
 \begin_layout Standard
-Cílem bakalářské práce je vytvořit business požadavky a na jejich základě
- navrhnout datový model, architekturu a webové služby pro obecně použitelnou
- integraci Salesforce Sales Cloud (dále jen SFSC) s účetním systémem ABRA
- Flexibee.
- Řešení je postaveno na standardním datovém modelu a automatizačních nástrojích
- SFSC s minimálními nutnýmy rozšířeními pro potřeby integrace.
- Součástí práce je také ověření funkčnosti pomocí testovacích dat a vytvoření
- regresních testů.
+Cílem bakalářské práce je definovat požadavky pro obecně použitelnou integraci
+ Salesforce Sales Cloud (dále jen SFSC) s účetním systémem ABRA Flexibee,
+ realizovat ji a testováním ověřit.
 \end_layout
 
 \begin_layout Standard
@@ -642,7 +641,7 @@ DC1: Analyzovat data, která účetní systém potřebuje získávat.
 \end_layout
 
 \begin_layout Itemize
-DC2: Zanalyzovat a popsat část standartního datového modelu SFSC obsahujícího
+DC2: Zanalyzovat a popsat část standardního datového modelu SFSC obsahujícího
  data potřebná pro účetní systém.
  
 \end_layout
@@ -729,8 +728,8 @@ nameref{sec:prinosy}}
 Přínosem práce má být zefektivnění a zlevnění vývojové fáze implementace
  SFSC s integrací na účetní systém ABRA Flexibee.
  Po úpravách zdrojového kódu lze tuto práci použít i pro integraci s jinými
- podobnými účetnímy systémy.
- Z důvodu využití standardních SFSC objektů a automatizančích nástrojů lze
+ podobnými účetními systémy.
+ Z důvodu využití standardních SFSC objektů a automatizačních nástrojů lze
  toto řešení implementovat bez dodatečných úprav v organizacích SFSC, které
  využívají standardní datový model.
 \end_layout
@@ -758,8 +757,9 @@ nameref{sec:omezeni}}
 \end_layout
 
 \begin_layout Standard
-Z důvodu využití standartních objektů nelze bez nutnosti úpravy kódu implementov
-at pro organizace SFSC, které využívají nestandardní datový model.
+Z důvodu využití standardních objektů nelze bez nutnosti změn v mapování
+ implementovat pro organizace SFSC, které využívají nestandardní datový
+ model.
  Ovládání skrze custom UI je omezeno pouze na Salesforce Lightning, použití
  v Classic není podporováno, i v něm ale lze využít datový model, automatizace
  a webové služby.
@@ -907,7 +907,7 @@ target "https://trailblazers.salesforce.com/answers"
 
 \end_inset
 
-, ovšem zde je nutno být opatrný a skeptický, jelikož se nejedná o officiální
+, ovšem zde je nutno být opatrný a skeptický, jelikož se nejedná o oficiální
  řešení problému a je nutné si navrhovaný postup ověřit i z jiného zdroje.
 \end_layout
 
@@ -928,8 +928,8 @@ Pro oblast designu UI vycházím hlavně ze standardů
 Salesforce Lightning Design System
 \shape default
  (Salesforce Lightning Design System , nedatováno), kde jsou k dispozici
- officiální nástroje, návody a blueprinty pro návrh a implementaci UI v
- prostředí Salesforce Lightning.
+ oficiální nástroje, návody a blueprinty pro návrh a implementaci UI v prostředí
+ Salesforce Lightning.
 \end_layout
 
 \begin_layout Section
@@ -939,7 +939,7 @@ Teoretická východiska práce
 \begin_layout Standard
 Účelem této sekce práce je popsat teoretické podklady a vysvětlit základní
  termíny, na jejichž základě bude implementováno řešení v praktické části.
- První část se zabývá informačními systémemy Salesforce CRM a ABRA Flexibee,
+ První část se zabývá informačními systémy Salesforce CRM a ABRA Flexibee,
  jejich představením a základními charakteristikami.
  Další části se zabývají integrací dat mezi systémy, způsoby a technologiemi,
  kterými ji lze docílit.
@@ -1003,7 +1003,7 @@ Sales Cloud - Zahrnuje podporu procesů spjatých s managementem obchodních
 
 \begin_layout Itemize
 Service Cloud - Podporuje procesy pro řízení zákaznického servisu - dotazy,
- reklamace, sttížnosti, zpětná vazba apod.
+ reklamace, stížnosti, zpětná vazba apod.
 \end_layout
 
 \begin_layout Itemize
@@ -1092,7 +1092,7 @@ Master-Detail je striktnější formou relace, která poskytuje funkcionality
  navíc.
  Umožňuje na rodiči vytvářet tzv.
  roll-up summary fields, které poskytují kalkulaci SUM, AVG, MIN, MAX z
- dceřinných záznamů.
+ dceřiných záznamů.
  Master-Detail ovlivňuje i CRUD práva na dceřinnou entitu - přístup na rodiče
  uerčuje přístup na dceřinnou entitu.
  Používá se pro vytváření M:N relací skrze junction tabulku.
@@ -1119,7 +1119,7 @@ APEX
 \end_layout
 
 \begin_layout Standard
-APEX je objektově orientovaný programovací jazyk, který byl vyvinut přimo
+APEX je objektově orientovaný programovací jazyk, který byl vyvinut přímo
  pro platformu Salesforce.
  Má syntaxe podobné jazyku Java a využívá se pro psaní logiky všech server
  - side operací.
@@ -1220,7 +1220,7 @@ Jelikož Salesforce organizace je součástí multitenantního prostředí - sku
  k výkyvům výkonu, Salesforce vynucuje limity pro operace v rámci jedné
  transakce, které čerpají serverové zdroje, které nesmějí jednotlivé organizace
  překročit.
- Operace která takový limit překročí je ukončena vyjímkou.
+ Operace která takový limit překročí je ukončena výjimkou.
  Při psaní kódu a vytváření automatizací je tedy potřeba aby byla daná operace
  co nejvíce optimalizovaná.
  Některé limity se liší pro synchronní a asynchronní operace.
@@ -1512,7 +1512,7 @@ Všechny součásti systému (datový model, profily, triggery, automatizace,
  řešení, v produkčním prostředí zakázáno a proto musí být tato metadata
  vytvořena na nižším prostředí (sandbox, developer edition) a následně zmigrován
 a do produkce.
- Existuje několik základních způsoby nazení: (Kratochvíl, 2019)
+ Existuje několik základních způsobů nasazení: (Kratochvíl, 2019)
 \end_layout
 
 \begin_layout Itemize
@@ -1534,14 +1534,14 @@ Unmanaged package - Je balíček metadat, který je vytvořený v libovolném
 Managed package - Podobný jako unmanaged package s tím rozdílem, že jde
  o closed source, po nainstalování balíčku, nemá uživatel možnost zobrazit
  ani upravovat daná metadata.
- Použivá se pro distribuci placených funkcionalit nezávislými vývojářskými
+ Používá se pro distribuci placených funkcionalit nezávislými vývojářskými
  společnostmi nebo Salesforce partnery.
 \end_layout
 
 \begin_layout Itemize
 Metadata API - Rozhraní, které umžňuje CRUD nad metadata soubory v daném
- prostředí, narozdíl od change setů umožňuje použít jako zdroj souborů i
- jiné možnosti než Salesforce organizaci - např.
+ prostředí, na rozdíl od change setů umožňuje použít jako zdroj souborů
+ i jiné možnosti než Salesforce organizaci - např.
  lokální strom souborů, nebo verzovací systém.
  K využití Metadata API se používají další nástroje, které soubory zpracují
  a odešlou HTPP request - např.
@@ -1576,9 +1576,15 @@ REST API
 
 \begin_layout Standard
 FlexiBee obsahuje rozhraní REST API pro integraci s externími informačními
- systémy, poskytuje pro něj přehlednou dokumentaci, která je dotupná na
- : https://intercom.help/podpora-flexi/cs/collections/2592813-dokumentace-rest-ap
-i .
+ systémy, poskytuje pro něj přehlednou dokumentaci, která je dostupná na
+ : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://intercom.help/podpora-flexi/cs/collections/2592813-dokumentace-rest-api"
+
+\end_inset
+
+ .
  Rozhraní podporuje všechny CRUD operace a základním formátem dat pro komunikaci
  je JSON a XML, mimo to dokáže importovat a exportovat data i v CSV a XLS.
 \end_layout
@@ -1608,14 +1614,14 @@ FlexiBee má možnost implementace WebHooks, kdy se HTTP POST request posílá
  odpovědět se status kódem 2xx.
  Ideální implementací je pak, že subscriber odpoví úspěšným statusem 2xx
  okamžitě poté, co obdrží zprávu se změnami a samotné jejich zpracování
- probíhá asynchroně.
+ probíhá asynchronně.
  (Abra, Dokumentace REST API).
 \end_layout
 
 \begin_layout Standard
 V případě výše zmíněného navrhovaného způsobu implementace WebHooks podotýkám,
  že je nutné ošetřit případ, kdy subscriber odpoví úspěšným statusem a pak
- dojde k chybě v asynchroním zpracování dat.
+ dojde k chybě v asynchronním zpracování dat.
  V takovém případě je nutné, aby se daný systém dotázal dodatečně na data,
  která nedokázal zpracovat, zalogoval chybu a takový záznam označil, pokud
  je ani po dodatečném dotazu nelze zpracovat, aby nebyla porušována integrita
@@ -1720,7 +1726,7 @@ Typy datové integrace podle spouštěče
 Přenos dat v informačním systému může být iniciován na základě různých typů
  spouštěčů.
  Každý druh spouštěče je vhodný pro jiný případ užití a lze je v rámci informačn
-ího dystému kombinovat.
+ího systému kombinovat.
 \end_layout
 
 \begin_layout Standard
@@ -1732,7 +1738,7 @@ O událostí řízenou integraci jde v případě, že přenos dat je spouštěn
  předem definovanou událostí (event).
  Může jít o kliknutí uživatelem na tlačítko, načtení čipové karty.
  Na událost z výchozího systému je vždy navázána událost v cílových systémech.
- Používá se především v případech, kdy nedochází ve výchozím sýstému ke
+ Používá se především v případech, kdy nedochází ve výchozím systému ke
  změně v datech, ale chceme z něj pouze dát vědět jinému systému, že má
  něco udělat.
 \end_layout
@@ -1771,8 +1777,8 @@ Request-Delayed Response: Asynchronní způsob request-response, žadatel pošle
 
 \begin_layout Itemize
 Data Enrichment: Výchozí systém vyšle neúplnou zprávu (například pouze identifik
-ační číslo objednávky) a cílové systémy se poté samostnatně dotazují na
- pro ně relevantní data.
+ační číslo objednávky) a cílové systémy se poté samostatně dotazují na pro
+ ně relevantní data.
 \end_layout
 
 \begin_layout Standard
@@ -2007,7 +2013,7 @@ NF4 Podpora Salesforce LEX
 \begin_inset Text
 
 \begin_layout Plain Layout
-F5 Možnost okamžitého spuštení synchronizace skrze UI
+F5 Možnost okamžitého spuštění synchronizace skrze UI
 \end_layout
 
 \end_inset
@@ -2144,7 +2150,7 @@ Aplikace bude nabízet přehled aktuálního nastavení synchronizace včetně
 \end_layout
 
 \begin_layout Subsubsection
-F5 Možnost okamžitého spuštení synchronizace skrze UI
+F5 Možnost okamžitého spuštění synchronizace skrze UI
 \end_layout
 
 \begin_layout Standard
@@ -2175,7 +2181,7 @@ Je nutné zabezpečit aby pouze určití uživatelé měli k aplikaci přístup 
  čtení a úpravu dat.
  Budou tři úrovně přístupu: nemá přístup k aplikaci vůbec, přístup pro čtení
  dat a spouštění synchronizace a přístup pro čtení, úpravu dat a spuštění
- syncrhonizace.
+ synchronizace.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2234,7 +2240,7 @@ NF5 Škálovatelnost
 \begin_layout Standard
 Aplikace bude umožňovat škálovatelnost pro synchronizaci dalších entit a
  atributů jež nejsou pokryty v aktuálním rozsahu práce.
- Dále musí umožňovat škálovatelnost překladů viz NF3 a možnost rožšíření
+ Dále musí umožňovat škálovatelnost překladů viz NF3 a možnost rozšíření
  o synchronizaci dat z ABRA Flexibee do SFSC, což není v rozsahu této práce.
 \end_layout
 
@@ -2278,7 +2284,7 @@ Standardní uživatel
 \end_layout
 
 \begin_layout Standard
-Slouží pro bežné uživatele aplikace.
+Slouží pro běžné uživatele aplikace.
  Takový uživatel si může zobrazit aktuální nastavení aplikace.
  Z důvodu, aby v případě chybějících dat v cílovém systému mohl identifikovat
  to, jestli se stala chyba během jejich přenosu, nebo jestli se tato data
@@ -2305,7 +2311,7 @@ Salesforce CRM systém
 
 \begin_layout Standard
 Nejedná se o roli pro uživatele, ale jde o systémového aktéra, který zajišťuje
- automatické spouštění syncrhonizace dat.
+ automatické spouštění synchronizace dat.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3939,7 +3945,7 @@ e, Docs What are Custom Metadata Types?) a Custom Settings (Salesforce,
 
 \begin_layout Standard
 Custom Metadata jsou kustomizovatelné entity, jejichž obsah je nasaditelný
- spoelečně se samotnou aplikací.
+ společně se samotnou aplikací.
  Jsou vhodné pro uchovávání mapování, whitelist seznamů a master dat jako
  jsou například hodnoty daňových sazeb.
  (Salesforce, Docs What are Custom Metadata Types?)
@@ -3949,7 +3955,7 @@ Custom Metadata jsou kustomizovatelné entity, jejichž obsah je nasaditelný
 Custom Settings jsou kustomizovatelné entity jejichž obsah je nutné po vytvoření
  vyplnit uživatelem nebo automatizovaným procesem.
  Používají se pro hodnoty, které mění chování systémů a aplikací (parametrizace)
- a ve vyjímečných případech pro uchování přístupových udajů pro integraci
+ a ve výjimečných případech pro uchování přístupových údajů pro integraci
  s externím systémem.
  Custom settings také umožňují vytvoření záznamu, který je specifický pro
  konkrétního uživatele nebo skupinu uživatelů.
@@ -4281,7 +4287,7 @@ Struktura pro ukládání parametrizace
 \end_layout
 
 \begin_layout Standard
-Pro ukládání nastavení aplikace byly na základě dokumentace zvoleny hiearchické
+Pro ukládání nastavení aplikace byly na základě dokumentace zvoleny hierarchické
  custom settings s názvem 
 \series bold
 ABRA Flexi Data Integration Settings
@@ -4578,7 +4584,7 @@ Dále je potřeba na záznamu evidovat informaci o tom, jestli byl již exportov
  nebo ne.
  K tomuto účelu byl vytvořen na každém podporovaném SObjectu pro export
  atribut ABRA_Flexi_Data_Exported__c, datového typu boolean, který se po
- úspešném exportu nastaví na hodnotu 
+ úspěšném exportu nastaví na hodnotu 
 \begin_inset Quotes gld
 \end_inset
 
@@ -4615,7 +4621,7 @@ Mapování entit
 \end_layout
 
 \begin_layout Standard
-V následujícíh tabulkách je přehled mapování základních atributů pro objednávky
+V následujících tabulkách je přehled mapování základních atributů pro objednávky
  a faktury.
  Toto mapování lze měnit nebo rozšířit.
  Na objektu Account, který reprezentuje zákazníka musely být vytvořeny atributy
@@ -6125,7 +6131,7 @@ status open
 
 \begin_layout Plain Layout
 Následující tabulka zobrazuje obsah Permission Set Group pro standardního
- uživatele a společné skupiny pro Administrátora a systémováho uživatele.
+ uživatele a společné skupiny pro Administrátora a systémového uživatele.
 \end_layout
 
 \begin_layout Plain Layout
@@ -6777,7 +6783,7 @@ V execute metodě se poté volá implementace AbraSynchronizationInterface
  rozhraní pro konkrétní SObject, ve které dochází k odeslání dat a zpracování
  odpovědi - uložení vygenerovaného ABRA Flexi Id na záznamy a označení jako
  synchronizovaných v případě úspěšného vytvoření.
- Pokud ve kterékoliv fázi exportu dojde k vyjímce, je tato vyjímka zalogována.
+ Pokud ve kterékoliv fázi exportu dojde k výjimce, je tato výjimka zalogována.
 \end_layout
 
 \begin_layout Subsection
@@ -6885,8 +6891,8 @@ status open
 
 \begin_layout Standard
 Odpověď poté obsahuje ve stejném kořenovém atributu informaci o úspěšnosti
- zpracování, sumarizaci provedených operací - počeet vytvořených, aktualizovánýc
-h, vymázáných, vynecháných záznamů a kolik záznamů skončilo neuspěchem a
+ zpracování, sumarizaci provedených operací - počeet vytvořených, aktualizovanýc
+h, vymazaných, vynechaných záznamů a kolik záznamů skončilo neúspěchem a
  následně atribut s detailem výsledků (viz Výpis4)
 \begin_inset listings
 lstparams "numbers=left,showstringspaces=false,caption={JSON odpověď z ABRA Flexi},emph={subject,predicate,object},emphstyle={\color{blue}},frame=box,keywordstyle={\color{violet}},columns=fullflexible"
@@ -7029,7 +7035,7 @@ Pro autorizaci do externích systémů poskytuje Salesforce doporučuje využit�
  autentizace v jednom.
  Výhoda tohoto je, že nemusíme přístupové údaje ukládat někam mimo a nebo
  při nejhorším je držet v kódu.
- Salesforce také tyto přistupové údaje šifruje.
+ Salesforce také tyto přístupové údaje šifruje.
  (Salesforce, Docs Named Credentials)
 \end_layout
 
@@ -7076,13 +7082,12 @@ nInterface.
  V této vytvořené třídě je pak implementována metoda exportRecords, která
  obsahuje logiku pro přípravu dat, volání export HTPP dotazu, a zpracování
  výsledku.
- (viz Výpis5)
 \end_layout
 
 \begin_layout Standard
 Dále je potřeba pro danou entitu přidat instanci konfigurace batche do proměnné
  batchRunsConfigurations ve třídě AbraDataExportScheduler.
- (viz Výpis6)
+ (viz Výpis5)
 \begin_inset listings
 lstparams "numbers=left,showstringspaces=false,caption={Konfigurace exportu entit pro batch},emph={subject,predicate,object},emphstyle={\color{blue}},frame=box,keywordstyle={\color{violet}},columns=fullflexible"
 inline false
@@ -7136,7 +7141,7 @@ Také je vhodné přidat boolean atribut do ABRA Flexi Data Integration Settings
 
 \begin_layout Standard
 Daná entita musí mít alespoň jeden odpovídající záznam v ABRA Flexi Data
- Mappings, pokud takový záznam neexistuje, asyncrhonní process pro danou
+ Mappings, pokud takový záznam neexistuje, asynchronní process pro danou
  entitu skončí výjimkou.
 \end_layout
 
@@ -7222,7 +7227,7 @@ Komponenta pro mapování entit
 \begin_layout Standard
 Komponenta pro mapování entit se nazývá abraMappingManagement a je tvořena
  dynamickou tabulkou, která má čtyři sloupce pro výběr Salesforce atributu,
- Abra Flexi atributu a dvou přepínátek na aktivaci směru synchronizace.
+ ABRA Flexi atributu a dvou přepínačů na aktivaci směru synchronizace.
  Při načtení si komponenta vždy dynamicky načte názvy atributů na daném
  objektu v SFSC a ABRA Flexi, předejde se tak tomu, že by se uživatel v
  názvu atributu přepsal a nebo zvolil neexistující atribut.
@@ -7460,9 +7465,9 @@ literal "false"
  verzí Salesforce a doplněn o podporů logů o severitě varování a debug.
  Také bylo pozměněna logika pro ukládání logů do databáze tak, aby se jednotlivé
  logy v rámci transakci neukládali postupně každý zvlášť, ale všechny najednou.
- Jedná se o velmi jedoduchý logger s pouze jednou třídou, byl zvolen z toho
- důvodu, aby šel jednoduše nahradit za jakýkoliv jiný logger, který by používala
- cílová organizace.
+ Jedná se o velmi jednoduchý logger s pouze jednou třídou, byl zvolen z
+ toho důvodu, aby šel jednoduše nahradit za jakýkoliv jiný logger, který
+ by používala cílová organizace.
 \end_layout
 
 \begin_layout Standard
