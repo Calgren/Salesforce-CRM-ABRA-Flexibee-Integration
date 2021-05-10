@@ -23,6 +23,17 @@ private with sharing class CustomSettingsManagementControllerTest {
         System.assertEquals(ABRA_Flexi_Data_Integration_Settings__c.getOrgDefaults().Id, result.Id);
     }
 
+    /**
+     * @description Tests that null is returned when settings dont exist
+     */
+    @IsTest
+    private static void testGetSettings_nonExisting() {
+        Test.startTest();
+        ABRA_Flexi_Data_Integration_Settings__c result =
+                (ABRA_Flexi_Data_Integration_Settings__c) CustomSettingsManagementController.getSettings('ABRA_Flexi_Data_Integration_Settings__c');
+        Test.stopTest();
+        System.assertEquals(null, result);
+    }
 
 
     /**
@@ -61,6 +72,18 @@ private with sharing class CustomSettingsManagementControllerTest {
         System.assertEquals(abraSettingsOrgDefUserSpec.Id, result.Id);
     }
 
+    /**
+     * @description Tests that null is returned when settings dont exist
+     */
+    @IsTest
+    private static void testGetSettings_null() {
+        Test.startTest();
+        ABRA_Flexi_Data_Integration_Settings__c result =
+                (ABRA_Flexi_Data_Integration_Settings__c) CustomSettingsManagementController.getSettingsForSpecificUser('ABRA_Flexi_Data_Integration_Settings__c');
+        Test.stopTest();
+        System.assertEquals(null, result);
+    }
+
 
     /**
      * @description Tests that org defaults settings are returned when there are no user specific
@@ -76,6 +99,22 @@ private with sharing class CustomSettingsManagementControllerTest {
                 (ABRA_Flexi_Data_Integration_Settings__c) CustomSettingsManagementController.getSettingsForSpecificUser('ABRA_Flexi_Data_Integration_Settings__c');
         Test.stopTest();
         System.assertEquals(ABRA_Flexi_Data_Integration_Settings__c.getOrgDefaults().Id, result.Id);
+    }
+
+    /**
+     * @description Tests that exception is thrown when null is provided
+     */
+    @IsTest
+    private static void testGetSettings_exception() {
+        Test.startTest();
+        try {
+            ABRA_Flexi_Data_Integration_Settings__c result =
+                    (ABRA_Flexi_Data_Integration_Settings__c) CustomSettingsManagementController.getSettingsForSpecificUser(null);
+            System.assert(false);
+        } catch(AuraHandledException e) {
+            //nothing to assert
+        }
+        Test.stopTest();
     }
 
     /**
@@ -131,6 +170,22 @@ private with sharing class CustomSettingsManagementControllerTest {
 
         ABRA_Flexi_Data_Integration_Settings__c updatedSettings = ABRA_Flexi_Data_Integration_Settings__c.getOrgDefaults();
         System.assertEquals('UpdatedName', updatedSettings.Company_Name__c);
+    }
+
+
+    /**
+    * @description Tests that org default settings are updated
+    */
+    @IsTest
+    private static void testSaveOrgDefaultSettings_exception() {
+        Test.startTest();
+        try {
+            CustomSettingsManagementController.saveOrgDefaultSettings(null);
+            System.assert(false);
+        } catch(AuraHandledException e) {
+            //nothing to assert
+        }
+        Test.stopTest();
     }
 
     /**
