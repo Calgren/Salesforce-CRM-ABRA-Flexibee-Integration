@@ -2379,8 +2379,8 @@ Případy užití
 
 \begin_layout Standard
 Podle požadavků a identifikace aktérů byly navrženy a popsány případy užití.
- Následující diagram případů užití znázorňuje relace mezi aktéry a jednotlivými
- případy užití.
+ (viz tabulky 3,4,5,6,7,8) Diagram případů užití na obrázeku 2 znázorňuje
+ relace mezi aktéry a jednotlivými případy užití.
 \end_layout
 
 \begin_layout Standard
@@ -2587,8 +2587,8 @@ Uživatel klikne na záložku pro nastavení aplikace
 \end_layout
 
 \begin_layout Enumerate
-Načte a zobrazí se aktuální nastavení aplikace a mapovaní z metadat rozdělených
- do jednotlivých sekcí podle entit
+Systém načte a zobrazí aktuální nastavení aplikace a mapovaní z metadat
+ rozdělených do jednotlivých sekcí podle entit
 \end_layout
 
 \begin_layout Enumerate
@@ -2596,7 +2596,7 @@ Uživatel klikne na konkrétní podzáložku
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí přehled nastavení a mapování podle vybrané sekce
+Systém zobrazí uživateli přehled nastavení a mapování podle vybrané sekce
 \end_layout
 
 \end_inset
@@ -2624,11 +2624,11 @@ Během načítání metadat dojde k chybě
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí chybová hláška
+Systém zobrazí uživateli chybová hláška
 \end_layout
 
 \begin_layout Enumerate
-Chyba se zaloguje do aplikačních logů
+Systém zaloguje chybu do aplikačních logů
 \end_layout
 
 \end_inset
@@ -2815,7 +2815,7 @@ Uživatel klikne na záložku pro Aplikační logy
 \end_layout
 
 \begin_layout Enumerate
-Načte se a zobrazí seznam všech logů
+Systém načte a zobrazí seznam všech logů
 \end_layout
 
 \begin_layout Enumerate
@@ -2823,7 +2823,7 @@ Uživatel vybere úroveň logů
 \end_layout
 
 \begin_layout Enumerate
-Zobrazí se pouze logy z vybrané úrovně
+Systém zobrazí se pouze logy z vybrané úrovně
 \end_layout
 
 \begin_layout Enumerate
@@ -2831,7 +2831,7 @@ Uživatel klikne na sloupec podle kterého se mají záznamy seřadit
 \end_layout
 
 \begin_layout Enumerate
-Záznamy se seřadí sestupně / vzestupně podle vybraného sloupce
+Systém seřadí záznamy sestupně / vzestupně podle vybraného sloupce
 \end_layout
 
 \begin_layout Enumerate
@@ -2839,7 +2839,7 @@ Uživatel klikne na číslo konkrétního logu
 \end_layout
 
 \begin_layout Enumerate
-Načtě se a zobrazí detail daného záznamu
+Systém načtě a zobrazí detail daného záznamu
 \end_layout
 
 \end_inset
@@ -3025,7 +3025,7 @@ Uživatel klikne na záložku pro nastavení aplikace
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí pole pro výběr entity k namapování 
+Systém zobrazí uživateli pole pro výběr entity k namapování 
 \end_layout
 
 \begin_layout Enumerate
@@ -3033,7 +3033,7 @@ Uživatel vybere entitu
 \end_layout
 
 \begin_layout Enumerate
-Zobrazí se možnost přidat atributy
+Systém zobrazí možnost přidat atributy
 \end_layout
 
 \begin_layout Enumerate
@@ -3041,7 +3041,7 @@ Uživatel klikne na přidat atribut
 \end_layout
 
 \begin_layout Enumerate
-Načte se a zobrazí se seznam dostupných atributů k namapování s checkboxem
+Systém načte a zobrazí se seznam dostupných atributů k namapování s checkboxem
  pro aktivaci synchronizace daného atributu a pole pro název odpovídajícího
  atributu v systému ABRA Flexibee s převyplněnými hodnotami podle aktuálního
  nastavení
@@ -3060,11 +3060,7 @@ Uložit
 \end_layout
 
 \begin_layout Enumerate
-Metadata se uloží a uživateli se zobrazí hláška o úspěšném uložení
-\end_layout
-
-\begin_layout Enumerate
-Obrazovka se vrátí na výběr entity
+Systém uloží metadata a zobrazí uživateli hlášku o úspěšném uložení
 \end_layout
 
 \end_inset
@@ -3251,7 +3247,7 @@ Uživatel klikne na záložku pro nastavení aplikace
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí pole pro zadání intervalu synchronizace v minutách,
+Systém zobrazí uživateli pole pro zadání intervalu synchronizace v minutách,
  pole pro počet záznamů v jedné transakci a možnost vypnutí synchronizace
  jednotlivých objektů.
 \end_layout
@@ -3269,7 +3265,7 @@ Uložit
 \end_layout
 
 \begin_layout Enumerate
-Metadata se uloží a uživateli se zobrazí hláška o úspěšném uložení
+Systém uloží metadata a zobrazí uživateli hlášku o úspěšném uložení
 \end_layout
 
 \end_inset
@@ -3447,21 +3443,21 @@ Uběhne doba intervalu od poslední synchronizace
 \end_layout
 
 \begin_layout Enumerate
-Načte se nastavení synchronizace
+Systém načte nastavení synchronizace
 \end_layout
 
 \begin_layout Enumerate
-Paralelně jsou spouštěny synchronizace pro jednotlivé entity podle daného
+Systém paralelně spouští synchronizace pro jednotlivé entity podle daného
  nastavení
 \end_layout
 
 \begin_layout Enumerate
-Po dokončení synchronizace je zalogována informace o proběhnutí pro jednotlivé
+Po dokončení synchronizace systém zaloguje informace o proběhnutí pro jednotlivé
  entity
 \end_layout
 
 \begin_layout Enumerate
-Je naplánována další synchronizace podle daného intervalu
+Systém naplánuje další synchronizaci podle daného intervalu
 \end_layout
 
 \end_inset
@@ -3485,11 +3481,11 @@ Synchronizace je spuštěna uživatelem přes okamžitou synchronizaci
 \end_layout
 
 \begin_layout Enumerate
-Načte se nastavení synchronizace
+Systém načte nastavení synchronizace
 \end_layout
 
 \begin_layout Enumerate
-Paralelně jsou spouštěny synchronizace pro jednotlivé entity podle daného
+Systém paralelně spouští synchronizace pro jednotlivé entity podle daného
  nastavení
 \end_layout
 
@@ -3673,7 +3669,7 @@ Uživatel klikne na záložku pro nastavení aplikace
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí obrazovka s posledním a dalším časem synchronizace
+Systém zobrazí uživateli obrazovku s posledním a dalším časem synchronizace
  a tlačítkem pro okamžitou synchronizaci
 \end_layout
 
@@ -3682,11 +3678,11 @@ Uživatel klikne na tlačítko pro okamžitou synchronizaci
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí hláška o začátku sycnhronizace
+Systém uživateli zobrazí hlášku o začátku sycnhronizace
 \end_layout
 
 \begin_layout Enumerate
-Tlačítko je deaktivováno
+Systém tlačítko pro manuální synchronizaci deaktivuje
 \end_layout
 
 \end_inset
@@ -3714,7 +3710,7 @@ Synchronizace dat právě běží
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí obrazovka s posledním a dalším časem synchronizace
+Systém uživateli zobrazí obrazovku s posledním a dalším časem synchronizace
  a deaktivovaným tlačítkem pro okamžitou syncrhonizaci
 \end_layout
 
