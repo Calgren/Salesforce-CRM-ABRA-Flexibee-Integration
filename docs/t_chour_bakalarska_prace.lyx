@@ -710,11 +710,12 @@ Pro zpracování teoretické části práce byla provedena rešerše zdrojů, kt
  ABRA Flexibee, poté analyzoval část datového modelu SFSC, která je relevantní
  pro účetní systém, pomocí modelování zmapoval uchovávaná data v jednotlivých
  systémech a poté na základě komparace těchto modelů namapoval přenos dat
- mezi systémy, díky komparaci modelů je také zjištěno, jestli je potřeba
- datový model SFSC rozšířit.
+ mezi systémy.
+ Díky komparaci modelů je také zjištěno, jestli je potřeba datový model
+ SFSC rozšířit.
  Samotný vývoj webových služeb, uživatelské aplikace a vytvoření testů je
- pak dosaženo pomocí vlastních zkušeností a využitím získaných poznatků
- a best practices z teoretické části.
+ realizováno pomocí vlastních zkušeností a využitím získaných poznatků a
+ best practices z teoretické části.
 \end_layout
 
 \begin_layout Standard
@@ -873,7 +874,7 @@ Clean architecture: a craftsman's guide to software structure and design
 \shape default
 je teoretický souhrn z oblasti architektury a designu softwaru pro jeho
  jednoduchou čitelnost a škálovatelnost.
- Pokrývá jak funčkní, tak objektově orientované programování.
+ Pokrývá jak funkční, tak objektově orientované programování.
  Zabývá se vhodnosti použití dědičnosti, rozhraní a polymorphismem v určitých
  situacích, jak navrhovat strukturu dat pro přenos v rámci systému a mimo
  něj.
@@ -947,12 +948,19 @@ Salesforce Lightning Design System
  Salesforce Lightning.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Teoretická východiska práce
 \end_layout
 
 \begin_layout Standard
-Účelem této sekce práce je popsat teoretické podklady a vysvětlit základní
+Účelem této kapitoly práce je popsat teoretické podklady a vysvětlit základní
  termíny, na jejichž základě bude implementováno řešení v praktické části.
  První část se zabývá informačními systémy Salesforce CRM a ABRA Flexibee,
  jejich představením a základními charakteristikami.
@@ -1001,8 +1009,32 @@ Salesforce je nejrozšířenější cloudová platforma na světě, zaměřená 
 \end_layout
 
 \begin_layout Standard
-Salesforce je SaaS i PaaS zároveň, jelikož nabízí předem hotová řešení -
- viz.
+Salesforce je Saas
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+SaaS: Model distribuce a licencování aplikačního softwaru, kdy poskytovatel
+ cloudu spravuje aplikační software a zpřístupňuje jej svým zákazníkům skrze
+ internet na bázi průběžných plateb (subskripce).
+ (Salesfoce, What is Saas?)
+\end_layout
+
+\end_inset
+
+ i PaaS
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+PaaS: Soubor služeb a nástrojů, které poskytovatel cloudu nabízí svým zákazníkům
+ a vývojářům, kteří pomocí nich a s využitím infrastruktury poskytovatele,
+ který ji spravuje, vyvíjet nové aplikace.
+\end_layout
+
+\end_inset
+
+ zároveň, jelikož nabízí předem hotová řešení - viz.
  Sales Cloud, Marketing Cloud a další, tak umožňuje uživatelům vyvíjet své
  vlastní aplikace, což je i předmětem této práce.
 \end_layout
@@ -1047,7 +1079,7 @@ a další
 \end_layout
 
 \begin_layout Subsubsection
-Datový model
+Datový model Salesforce CRM
 \end_layout
 
 \begin_layout Standard
@@ -1231,18 +1263,18 @@ Omezení
 
 \begin_layout Standard
 Jelikož Salesforce organizace je součástí multitenantního prostředí - skupina
- organizací sdílí zdroje jednoho serveru (instance), tak aby nedocházelo
+ organizací sdílí zdroje jednoho serveru (instance) tak, aby nedocházelo
  k výkyvům výkonu, Salesforce vynucuje limity pro operace v rámci jedné
  transakce, které čerpají serverové zdroje, které nesmějí jednotlivé organizace
  překročit.
- Operace která takový limit překročí je ukončena výjimkou.
- Při psaní kódu a vytváření automatizací je tedy potřeba aby byla daná operace
- co nejvíce optimalizovaná.
+ Operace, která takový limit překročí, je ukončena výjimkou.
+ Při psaní kódu a vytváření automatizací logiky je tedy potřeba aby byla
+ daná operace co nejvíce optimalizovaná.
  Některé limity se liší pro synchronní a asynchronní operace.
 \end_layout
 
 \begin_layout Standard
-Mezi hlavní limity patří: 
+Hlavní limity platformy Salesforce jsou uvedeny v tabulce 1.
 \end_layout
 
 \begin_layout Standard
@@ -1519,8 +1551,8 @@ Customizace a nasazení do prostředí
 
 \begin_layout Standard
 Všechny součásti systému (datový model, profily, triggery, automatizace,
- UI, webové služby a další) jsou v Salesforce reprezentovány metadata soubory.
- Vytváření některých metadata souborů je, aby se předešlo rozbití současného
+ UI, webové služby a další) jsou v Salesforce reprezentovány soubory metadat.
+ Vytváření některých souborů metadat je, aby se předešlo požkození současného
  řešení, v produkčním prostředí zakázáno a proto musí být tato metadata
  vytvořena na nižším prostředí (sandbox, developer edition) a následně zmigrován
 a do produkce.
@@ -1678,7 +1710,7 @@ Konsolidace
 
 \begin_layout Standard
 Konsolidace dat je způsob integrace, kdy data získaná z několika různých
- zdrojů jsou převedena do jednotného formátu, očištěna od duplicit a nahrána
+ zdrojů, jsou převedena do jednotného formátu, očištěna od duplicit a nahrána
  do jednoho zdrojového systému / databáze.
  Cílem konsolidace je zredukovat počet různých míst, na kterém jsou data
  uložena a tím snížit nároky na úložný prostor a údržbu jejich integrity.
@@ -1736,7 +1768,7 @@ Typy datové integrace podle spouštěče
 
 \begin_layout Standard
 Přenos dat v informačním systému může být iniciován na základě různých typů
- spouštěčů.
+ spouštěčů (trigger).
  Každý druh spouštěče je vhodný pro jiný případ užití a lze je v rámci informačn
 ího systému kombinovat.
 \end_layout
@@ -1807,6 +1839,11 @@ Jedná se o dotazování žadatele poskytovatele v pravidelných časových inte
 
 \begin_layout Subsubsection
 Způsoby integrace dat
+\end_layout
+
+\begin_layout Standard
+V této kapitole jsou popsány různé způsoby a nástroje, jakými lze docílit
+ integrace dat mezi systémy.
 \end_layout
 
 \begin_layout Standard
@@ -1885,14 +1922,23 @@ Autorizace spočívá v přiřazení a ověření uživateli určitých oprávn�
  (Iacono, Gorski, 2019)
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Analýza požadavků
 \end_layout
 
 \begin_layout Standard
-Na základě rešerše a zkušeností s podobnými implementacemi byly definovány
+Následující kapitola definuje požadavky na aplikaci.
+ Na základě rešerše a zkušeností s podobnými implementacemi byly definovány
  požadavky na výsledné řešení.
- Požadavky jsou rozděleny do skupin na funkční a nefunkční.
+ Požadavky jsou rozděleny do skupin na funkční a nefunkční, jejich přehled
+ je v tabulce 2.
 \end_layout
 
 \begin_layout Standard
@@ -2101,7 +2147,7 @@ NF7 Nezávislost na licencích třetích stran a speciálních Salesforce licenc
 Funkční požadavky
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 F1 Automatická synchronizace uzavřených objednávek ze SFSC do ABRA Flexibee
 \end_layout
 
@@ -2112,7 +2158,7 @@ Aplikace bude umožňovat jednostranou synchronizaci uzavřených objednávek
  Data nebudou odesílána vícekrát, pokud nedojde k jejich změně.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 F2 Automatická synchronizace synchronizace faktur ze SFSC do ABRA Flexibee
 \end_layout
 
@@ -2123,7 +2169,7 @@ Společně s objednávkami bude aplikace synchronizovat všechny faktury, které
  do systému Flexibee, ale poté k ní přibyl další dokument.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 F3 Parametrizování synchronizace skrze UI
 \end_layout
 
@@ -2153,7 +2199,7 @@ Možnost vypnutí / zapnutí synchronizace
 Parametrizovat aplikaci budou moci jen uživatelé s příslušným oprávněním.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 F4 Přehled aktuálního nastavení synchronizace
 \end_layout
 
@@ -2162,7 +2208,7 @@ Aplikace bude nabízet přehled aktuálního nastavení synchronizace včetně
  mapování dat, času poslední proběhlé a následující synchronizace
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 F5 Možnost okamžitého spuštění synchronizace skrze UI
 \end_layout
 
@@ -2173,7 +2219,7 @@ V aplikaci bude možnost spustit synchronizaci okamžitě a nečekat tak na
  podle stávajícího nastavení.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 F6 Logování
 \end_layout
 
@@ -2185,7 +2231,7 @@ Aplikace bude zaznamenávat logy o všech chybách a proběhlých synchronizací
 Nefunkční požadavky
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF1 Zabezpečení přístupu k aplikaci
 \end_layout
 
@@ -2197,7 +2243,7 @@ Je nutné zabezpečit aby pouze určití uživatelé měli k aplikaci přístup 
  synchronizace.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF2 Zabezpečení přístupových údajů do systémů
 \end_layout
 
@@ -2206,7 +2252,7 @@ Přihlašovací údaje z externího systému musí být vhodně zabezpečena pro
  zneužití.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF3 Možnost lokalizace
 \end_layout
 
@@ -2218,7 +2264,7 @@ Všechen text, názvy entit a jejích atributů musí být možné lokalizovat d
  rozšiřitelná.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF4 Podpora Salesforce LEX
 \end_layout
 
@@ -2246,7 +2292,7 @@ Mozilla® Firefox®
 Apple® Safari®
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF5 Škálovatelnost
 \end_layout
 
@@ -2257,7 +2303,7 @@ Aplikace bude umožňovat škálovatelnost pro synchronizaci dalších entit a
  o synchronizaci dat z ABRA Flexibee do SFSC, což není v rozsahu této práce.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF6 Open-source
 \end_layout
 
@@ -2266,7 +2312,7 @@ Všechny části aplikace včetně datového modelu pro data a metadata budou
  open-source ve formátu SFDX.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF7 Nezávislost na licencích třetích stran a speciálních Salesforce licencích
 \end_layout
 
@@ -3682,6 +3728,13 @@ Uživateli se zobrazí obrazovka s posledním a dalším časem synchronizace
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -6376,6 +6429,13 @@ Apex Class Admin Permission Set
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Datová integrace
 \end_layout
@@ -7143,6 +7203,13 @@ Daná entita musí mít alespoň jeden odpovídající záznam v ABRA Flexi Data
  entitu skončí výjimkou.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Uživatelská aplikace
 \end_layout
@@ -7548,6 +7615,13 @@ Všechny UI texty jsou řešeny skrze custom labels.
  se určuje podle osobního nastavení konkrétního Salesforce uživatele.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Testování
 \end_layout
@@ -7590,9 +7664,9 @@ Uživatelské testy
 \begin_layout Standard
 Pro ověření uživatelské části aplikace byly podle případů užití navrženy
  a ověřeny testovací scénáře.
- Testování bylo prováděno ve verzi Salesforce Summer '21 Patch 4.4 reálným
- uživatelem, který pracuje v IT v prostředí Salesforce a byl seznámen s
- problémematikou aplikace.
+ Testování bylo prováděno ve verzi Salesforce Spring '21 reálným uživatelem,
+ který pracuje v IT v prostředí Salesforce a byl seznámen s problémematikou
+ aplikace.
  Aplikace byla v anglickém jazyce a byly použity browsery 
 \end_layout
 
@@ -10201,6 +10275,13 @@ Uživateli se zobrazí obrazovka s posledním a dalším časem synchronizace
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Distribuce
 \end_layout
@@ -10553,6 +10634,18 @@ a/sfdx_cli_reference/cli_reference_force_source.htm
 SALESFORCE [online]: Salesforce CLI [cit.
  2021-05-07].
  Dostupné z: https://developer.salesforce.com/tools/sfdxcli
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: What is SaaS? [cit.
+ 2021-05-07].
+ Dostupné z: https://www.salesforce.com/eu/learning-centre/tech/saas/
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: What is PaaS? [cit.
+ 2021-05-07].
+ Dostupné z: https://www.salesforce.com/eu/learning-centre/tech/paas/
 \end_layout
 
 \begin_layout Standard
