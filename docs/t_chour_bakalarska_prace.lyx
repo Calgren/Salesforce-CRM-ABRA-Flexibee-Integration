@@ -356,10 +356,10 @@ label{sec:Abstrakt}
 
 \begin_layout Standard
 Tato bakalářská práce se zabývá analýzou integrace dat mezi systémy Salesforce
- CRM a ABRA Flexi a návrhem obecně pužitelné aplikace pro dynamické nastavení
+ CRM a ABRA Flexi a návrhem obecně použitelné aplikace pro dynamické nastavení
  mapování dat mezi systémy, vypínání synchronizace podle jednotlivých entit
  a parametrizace integrace skrze uživatelské rozhraní.
- Aplikace byla navrhnuta a realizována jako open-source pomocí standardních
+ Aplikace byla navržena a realizována jako open-source pomocí standardních
  nástrojů Salesforce platformy s ohledem na budoucí rozšíření a snadné distribuc
 e pomocí Salesforce SFDX.
  
@@ -384,8 +384,8 @@ label{sec:Klíčová slova}
 \end_layout
 
 \begin_layout Standard
-Salesforce integrace dat, ABRA Flexibee integrace dat, Salesforce synchronizace
- dat, Abra Flexibee synchronizace dat, SFDX
+Salesforce integrace dat, ABRA Flexi integrace dat, SFDX, Salesforce open-source
+ aplikace
 \end_layout
 
 \begin_layout Standard
@@ -444,8 +444,8 @@ label{sec:Keywords}
 \end_layout
 
 \begin_layout Standard
-Salesforce data integration, ABRA Flexibee data integration, Salesforce
- data synchronization, Abra Flexibee data syncrhonization, SFDX
+Salesforce data integration, ABRA Flexi data integration, SFDX, Salesforce
+ open-souce application
 \end_layout
 
 \begin_layout Standard
