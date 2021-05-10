@@ -3443,21 +3443,21 @@ Uběhne doba intervalu od poslední synchronizace
 \end_layout
 
 \begin_layout Enumerate
-Načte se nastavení synchronizace
+Systém načte nastavení synchronizace
 \end_layout
 
 \begin_layout Enumerate
-Paralelně jsou spouštěny synchronizace pro jednotlivé entity podle daného
+Systém paralelně spouští synchronizace pro jednotlivé entity podle daného
  nastavení
 \end_layout
 
 \begin_layout Enumerate
-Po dokončení synchronizace je zalogována informace o proběhnutí pro jednotlivé
+Po dokončení synchronizace systém zaloguje informace o proběhnutí pro jednotlivé
  entity
 \end_layout
 
 \begin_layout Enumerate
-Je naplánována další synchronizace podle daného intervalu
+Systém naplánuje další synchronizaci podle daného intervalu
 \end_layout
 
 \end_inset
@@ -3481,11 +3481,11 @@ Synchronizace je spuštěna uživatelem přes okamžitou synchronizaci
 \end_layout
 
 \begin_layout Enumerate
-Načte se nastavení synchronizace
+Systém načte nastavení synchronizace
 \end_layout
 
 \begin_layout Enumerate
-Paralelně jsou spouštěny synchronizace pro jednotlivé entity podle daného
+Systém paralelně spouští synchronizace pro jednotlivé entity podle daného
  nastavení
 \end_layout
 
@@ -3669,7 +3669,7 @@ Uživatel klikne na záložku pro nastavení aplikace
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí obrazovka s posledním a dalším časem synchronizace
+Systém zobrazí uživateli obrazovku s posledním a dalším časem synchronizace
  a tlačítkem pro okamžitou synchronizaci
 \end_layout
 
@@ -3678,11 +3678,11 @@ Uživatel klikne na tlačítko pro okamžitou synchronizaci
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí hláška o začátku sycnhronizace
+Systém uživateli zobrazí hlášku o začátku sycnhronizace
 \end_layout
 
 \begin_layout Enumerate
-Tlačítko je deaktivováno
+Systém tlačítko pro manuální synchronizaci deaktivuje
 \end_layout
 
 \end_inset
@@ -3710,7 +3710,7 @@ Synchronizace dat právě běží
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí obrazovka s posledním a dalším časem synchronizace
+Systém uživateli zobrazí obrazovku s posledním a dalším časem synchronizace
  a deaktivovaným tlačítkem pro okamžitou syncrhonizaci
 \end_layout
 
@@ -3777,7 +3777,7 @@ Datový model ABRA Flexibee
 \end_layout
 
 \begin_layout Standard
-ABRA nabízí na jednom serveru spravovat více firem, pro integraci je tedy
+ABRA umožňuje na jednom serveru spravovat více firem, pro integraci je tedy
  nutné specifikovat pro jakou firmu má integrace fungovat.
 \end_layout
 
@@ -3844,6 +3844,8 @@ Datový model ABRA Flexi má již připravené entity pro objednávky, faktury
  a vydané objednávky.
  Z hlediska integrace dat z Salesforce Sales Cloud jsou relevantní pouze
  přijaté objednávky a vydané faktury.
+ Tabulka 9 znázorňuje názvy a API názvy pro jednotlivé relevantní entity
+ objednávek a faktur v ABRA Flexi.
 \end_layout
 
 \begin_layout Standard
@@ -4617,6 +4619,11 @@ Specifikuje API název firmy v ABRA Flexi, pro kterou se data mají synchronizov
 Propojení datových modelů a kustomizace
 \end_layout
 
+\begin_layout Standard
+Následující kapitola popisuje kustomizaci entit pro potřeby aplikace a specifiku
+je mapování atributů mezi objednávkou a fakturou mezi systémy.
+\end_layout
+
 \begin_layout Subsubsection
 Externí identifikátor a příznak pro export
 \end_layout
@@ -4671,7 +4678,7 @@ Mapování entit
 \end_layout
 
 \begin_layout Standard
-V následujících tabulkách je přehled mapování základních atributů pro objednávky
+V tabulkách 12 a 13 je přehled mapování základních atributů pro objednávky
  a faktury.
  Toto mapování lze měnit nebo rozšířit.
  Na objektu Account, který reprezentuje zákazníka musely být vytvořeny atributy
@@ -5740,8 +5747,8 @@ Entita pro aplikační logování
 
 \begin_layout Standard
 Salesforce neposkytuje žádný standardní SObject pro aplikační logy.
- Z toho důvodu byl vytvořen custom objekt Application_Log__c s následujícími
- atributy:
+ Z toho důvodu byl vytvořen custom objekt Application_Log__c s atributy
+ popsanými v tabulce 14.
 \begin_inset Float table
 placement H
 wide false
