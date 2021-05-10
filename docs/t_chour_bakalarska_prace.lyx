@@ -1901,6 +1901,7 @@ Všechny požadavky jsou následně samostatně popsány.
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2372,6 +2373,7 @@ UML Diagram případů užití
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2600,6 +2602,7 @@ Chyba se zaloguje do aplikačních logů
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2810,6 +2813,7 @@ Načtě se a zobrazí detail daného záznamu
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -3034,6 +3038,7 @@ Obrazovka se vrátí na výběr entity
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -3238,6 +3243,7 @@ Metadata se uloží a uživateli se zobrazí hláška o úspěšném uložení
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -3463,6 +3469,7 @@ Po dokončení synchronizace je zalogována informace o proběhnutí pro jednotl
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -9320,9 +9327,10 @@ Formulář se načte s daty uloženými v předchozím kroku
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9544,6 +9552,7 @@ Obrazovka se vrátí na výběr entity
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -9748,6 +9757,7 @@ Metadata se uloží a uživateli se zobrazí hláška o úspěšném uložení
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -9973,6 +9983,7 @@ Po dokončení synchronizace je zalogována informace o proběhnutí pro jednotl
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -10207,6 +10218,74 @@ target "https://github.com/Calgren/Salesforce-CRM-ABRA-Flexibee-Integration"
 
 \begin_layout Section
 Závěr
+\end_layout
+
+\begin_layout Standard
+Cílem této práce bylo analyzovat a navrhnout aplikaci pro integraci dat
+ mezi systémy Salesforce CRM a ABRA Flexi, která bude umožňovat dynamické
+ definování mapování atributů entit mezi oběma systémy, 
+\end_layout
+
+\begin_layout Standard
+Nejdřívě jsou v první části práce představeny oba systémy Salesforce CRM
+ a ABRA Flexi, jejich nástroje pro vývoj, datový mdoel a API.
+ Dále jsou v této části popsány různé způsoby a přístupy k datové integraci
+ v informačním systému.
+\end_layout
+
+\begin_layout Standard
+Po obecném seznámení se systémy a datovou integrací následuje definice funkčních
+ a nefunkčních požadavků, na jejich základě jsou navrženy připady užití
+ a role aktérů.
+ Následuje kapitola, která se zabývá analýzou datových modelů jednotlivých
+ systémů a jejich propojením v této čássti jsou také navrženy datové struktury
+ pro ukládání metadat a logů.
+ Dále byl doplněn datový model objednávek a faktur a definováno mapování
+ atributů pro tyto entity.
+\end_layout
+
+\begin_layout Standard
+Následuje kapitola, která představuje nástroje použité pro definici uživatelskýc
+h práv a jejich přiřazování.
+ Dále jsou pak navrženy konkrétní sady oprávnění pro administrátora a standardní
+ho uživatele.
+\end_layout
+
+\begin_layout Standard
+Po návrhu oprávnění byly pomocí jazyka Apex navrženy třídy a implementována
+ logika pro přenos dat mezi systémy a jeho automatizace.
+ Tato část definuje strukturu přenášených dat, jejich načítání a zpracování.
+ Také je zde implementováno logování pomocí open-source loggeru a specifikován
+ způsob autentizace do systému ABRA Flexi.
+\end_layout
+
+\begin_layout Standard
+Po implementace logiky pro přenos dat byla navržena aplikace s uživatelským
+ rozhraním pro nastavení mapování, parametrizaci a ovládání integrace.
+ Byla vytvořena ligthning aplikace a tři custom komponenty.
+ Tyto komponenty byly následně přidány do aplikce.
+ Dále byl vytvořen přehled logů.
+\end_layout
+
+\begin_layout Standard
+Další kapitola se zabýva ověřením funkčnosti aplikace a regresními testy.
+ Pro každou Apex třídu byla implementována testovací třída s jednotkovými
+ testy.
+ Pro testování uživatelské aplikace byli navrženy a provedeny testovací
+ scénáře.
+\end_layout
+
+\begin_layout Standard
+Poslední kapitola definuje, jakým způsobem lze vytvořenou aplikaci distribuovat
+ do jednotlivých Salesforce organizací.
+\end_layout
+
+\begin_layout Standard
+Výstupem práce je open-source aplikace pro integraci dat mezi Salesforce
+ CRM a ABRA Flexi, která splňuje požadavky definované v práci a využívá
+ standardní nástroje platformy Salesforce.
+ Aplikace byla řádně otestována a byly poskytnuty regresní testy pro ověření
+ funkčnosti v případě budoucích rozšíření.
 \end_layout
 
 \begin_layout Standard

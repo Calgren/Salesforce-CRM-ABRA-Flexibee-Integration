@@ -356,10 +356,10 @@ label{sec:Abstrakt}
 
 \begin_layout Standard
 Tato bakalářská práce se zabývá analýzou integrace dat mezi systémy Salesforce
- CRM a ABRA Flexi a návrhem obecně pužitelné aplikace pro dynamické nastavení
- mapování dat mezi systémy, vypínání synchronizace podle jednotlivých objektů
+ CRM a ABRA Flexi a návrhem obecně použitelné aplikace pro dynamické nastavení
+ mapování dat mezi systémy, vypínání synchronizace podle jednotlivých entit
  a parametrizace integrace skrze uživatelské rozhraní.
- Aplikace byla navrhnuta a realizována jako open-source pomocí standardních
+ Aplikace byla navržena a realizována jako open-source pomocí standardních
  nástrojů Salesforce platformy s ohledem na budoucí rozšíření a snadné distribuc
 e pomocí Salesforce SFDX.
  
@@ -384,8 +384,8 @@ label{sec:Klíčová slova}
 \end_layout
 
 \begin_layout Standard
-Salesforce integrace dat, ABRA Flexibee integrace dat, Salesforce synchronizace
- dat, Abra Flexibee synchronizace dat, SFDX
+Salesforce integrace dat, ABRA Flexi integrace dat, SFDX, Salesforce open-source
+ aplikace
 \end_layout
 
 \begin_layout Standard
@@ -414,7 +414,15 @@ label{sec:Abstract}
 \end_layout
 
 \begin_layout Standard
-This bachelor thesis
+This bachelor thesis deals with the analysis of data integration between
+ Salesforce CRM and ABRA Flexi systems and the design of a generally applicable
+ application for dynamic setting of data mappings between both systems.
+ It also provides functionality for disabling synchronization according
+ to individual entities and parameterization of integration through the
+ user interface.
+ The application was designed and implemented as open-source using standard
+ Salesforce platform tools with a future extensions and ease of distribution
+ through Salesforce SFDX in mind.
 \end_layout
 
 \begin_layout Standard
@@ -436,8 +444,8 @@ label{sec:Keywords}
 \end_layout
 
 \begin_layout Standard
-Salesforce data integration, ABRA Flexibee data integration, Salesforce
- data synchronization, Abra Flexibee data syncrhonization, SFDX
+Salesforce data integration, ABRA Flexi data integration, SFDX, Salesforce
+ open-souce application
 \end_layout
 
 \begin_layout Standard
@@ -9312,9 +9320,10 @@ Formulář se načte s daty uloženými v předchozím kroku
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9536,6 +9545,7 @@ Obrazovka se vrátí na výběr entity
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -9740,6 +9750,7 @@ Metadata se uloží a uživateli se zobrazí hláška o úspěšném uložení
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -9965,6 +9976,7 @@ Po dokončení synchronizace je zalogována informace o proběhnutí pro jednotl
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -10199,6 +10211,53 @@ target "https://github.com/Calgren/Salesforce-CRM-ABRA-Flexibee-Integration"
 
 \begin_layout Section
 Závěr
+\end_layout
+
+\begin_layout Standard
+Cílem této práce bylo analyzovat a navrhnout aplikaci pro integraci dat
+ mezi systémy Salesforce CRM a ABRA Flexi, která bude umožňovat dynamické
+ definování mapování atributů entit mezi oběma systémy, 
+\end_layout
+
+\begin_layout Standard
+Nejdřívě jsou v první části práce představeny oba systémy Salesforce CRM
+ a ABRA Flexi, jejich nástroje pro vývoj, datový mdoel a API.
+ Dále jsou v této části popsány různé způsoby a přístupy k datové integraci
+ v informačním systému.
+\end_layout
+
+\begin_layout Standard
+Po obecném seznámení se systémy a datovou integrací následuje definice funkčních
+ a nefunkčních požadavků, na jejich základě jsou navrženy připady užití
+ a role aktérů.
+ Následuje kapitola, která se zabývá analýzou datových modelů jednotlivých
+ systémů a jejich propojením v této čássti jsou také navrženy datové struktury
+ pro ukládání metadat a logů.
+ Dále byl doplněn datový model objednávek a faktur a definováno mapování
+ atributů pro tyto entity.
+\end_layout
+
+\begin_layout Standard
+Následuje kapitola, která představuje nástroje použité pro definici uživatelskýc
+h práv a jejich přiřazování.
+ Dále jsou pak navrženy konkrétní sady oprávnění pro administrátora a standardní
+ho uživatele.
+\end_layout
+
+\begin_layout Standard
+Po návrhu oprávnění byly pomocí jazyka Apex navrženy třídy a implementována
+ logika pro přenos dat mezi systémy a jeho automatizace.
+ Tato část definuje strukturu přenášených dat, jejich načítání a zpracování.
+ Také je zde implementováno logování pomocí open-source loggeru a specifikován
+ způsob autentizace do systému ABRA Flexi.
+\end_layout
+
+\begin_layout Standard
+Po implementace logiky pro přenos dat byla navržena aplikace s uživatelským
+ rozhraním pro nastavení mapování, parametrizaci a ovládání integrace.
+ Byla vytvořena ligthning aplikace a tři custom komponenty.
+ Tyto komponenty byly následně přidány do aplikce.
+ Dále byl vytvořen přehled logů.
 \end_layout
 
 \begin_layout Standard
