@@ -540,7 +540,15 @@ LEX - Lightning Experience
 \end_layout
 
 \begin_layout Standard
-LWC - lightning web components
+LWC - Lightning web components
+\end_layout
+
+\begin_layout Standard
+SaaS - Software as a service
+\end_layout
+
+\begin_layout Standard
+PaaS - Platform as a service
 \end_layout
 
 \begin_layout Standard
@@ -1030,6 +1038,7 @@ status open
 PaaS: Soubor služeb a nástrojů, které poskytovatel cloudu nabízí svým zákazníkům
  a vývojářům, kteří pomocí nich a s využitím infrastruktury poskytovatele,
  který ji spravuje, vyvíjet nové aplikace.
+ (Salesfoce, What is Paas?)
 \end_layout
 
 \end_inset
@@ -1219,15 +1228,15 @@ Workflow - jednoduchý automatizační nástroj, používající pouze jedno if
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Následující obrázek znázorňuje porovnání automatizačních nástrojů podle
- jednoduchosti na použití, škály případů použití, možnost narazení na limity
- a schopnost je obejít, škálovatelnosti, schopnosti daný nástroj debuggovat,
- uživatelské přívětivosti v případě chyby, možnosti testování daného nástroje,
- rychlosti exekuce, jednoduchosti nasazení a jak moc je nástroj odolný proti
- riziku, že kvůli němu rozbijem již existující funkcionalitu.
+Obrázek 1 znázorňuje porovnání automatizačních nástrojů podle jednoduchosti
+ na použití, škály případů použití, možnost narazení na limity a schopnost
+ je obejít, škálovatelnosti, schopnosti daný nástroj debuggovat, uživatelské
+ přívětivosti v případě chyby, možnosti testování daného nástroje, rychlosti
+ exekuce, jednoduchosti nasazení a jak moc je nástroj odolný proti riziku,
+ že kvůli němu rozbijem již existující funkcionalitu.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1698,6 +1707,13 @@ Integrace softwarového produktu je proces, kterým se softwarový produkt
  
 \shape default
 (Bruckner et al., 2012)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -4024,7 +4040,7 @@ Pro mapování byly na základě dokumentace využity Custom Metadata Types.
 \series bold
 ABRA Flexi Data Mappings 
 \series default
-s atributy popsanými v následující tabulce.
+s atributy popsanými v tabulce 10.
 \end_layout
 
 \begin_layout Standard
@@ -4344,7 +4360,7 @@ Pro ukládání nastavení aplikace byly na základě dokumentace zvoleny hierar
 \series bold
 ABRA Flexi Data Integration Settings
 \series default
- s atributy popsanými v následující tabulce.
+ s atributy popsanými v tabulce 11.
 \end_layout
 
 \begin_layout Standard
@@ -4705,8 +4721,8 @@ Mapování objednávky na objednavka-prijata
 \begin_inset Tabular
 <lyxtabular version="3" rows="15" columns="3">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="30text%">
-<column alignment="left" valignment="top" width="30text%">
+<column alignment="left" valignment="top" width="35text%">
+<column alignment="left" valignment="top" width="25text%">
 <column alignment="left" valignment="top" width="30text%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -5175,8 +5191,8 @@ Mapování faktury na faktura-vydana
 \begin_inset Tabular
 <lyxtabular version="3" rows="19" columns="3">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="30text%">
-<column alignment="left" valignment="top" width="30text%">
+<column alignment="left" valignment="top" width="47text%">
+<column alignment="left" valignment="top" width="22text%">
 <column alignment="left" valignment="top" width="30text%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -6455,6 +6471,19 @@ Diagram tříd
 \end_layout
 
 \begin_layout Standard
+Obrázek 4 znázorňuje UML diagram jejich tříd.
+ Je na něm vidět definice tříd logiky pro export dat, jejich atributů, metod
+ a vazeb mezi nimi.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -6464,7 +6493,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename /Users/tomaschour/Downloads/Class Diagram (1).png
-	height 80pheight%
+	height 85pheight%
 	rotateAngle 90
 
 \end_inset
@@ -7304,9 +7333,11 @@ Komponenta pro mapování entit se nazývá abraMappingManagement a je tvořena
  kterou chceme mapování tvořit a ze které entity se načítá schéma pro získání
  atributů.
  Pokud pro danou entitu neexistuje alespoň jeden záznam v mapování, musí
- uživatel vybrat SObject v Salesforce na který chce danou ABRA entitu namapovat.
+ uživatel vybrat SObject v Salesforce na který chce danou ABRA entitu namapovat
+ viz obrázek 6.
  Pokud již existuje alespoň jeden záznam mapování, je SObject automaticky
- přiřazen z onoho mapování a uživatel může rovnou mapování upravovat.
+ přiřazen z onoho mapování a uživatel může rovnou mapování upravovat viz
+ obrázek 7.
 \begin_inset Float figure
 placement H
 wide false
@@ -7377,7 +7408,8 @@ Komponenta pro mapování, pokud po výběru SObjectu nebo při existujícím ma
 \begin_layout Standard
 Je možné změnit SObject na který má být entita namapována, tato změna vymaže
  všechny stávající mapování pro danou entitu a uživatel může vytvořit nové
- záznamy s mapováním z jiného SObjectu.
+ záznamy s mapováním z jiného SObjectu, obrázek 8 zobrazuje, jak vypadá
+ potvrzovací okno pro vymazání mapování.
 \end_layout
 
 \begin_layout Standard
@@ -7385,7 +7417,7 @@ Je možné změnit SObject na který má být entita namapována, tato změna vy
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7420,7 +7452,7 @@ Komponenta pro parametrizaci aplikace
 
 \begin_layout Standard
 Komponenta pomocí které může uživatel upravovat parametry integrace se nazývá
- CustomSettingsManagement.
+ CustomSettingsManagement, je zobrazena na obrázku 9.
  Logika komponenty dynamicky načítá všechny atributy obsažené v ABRA Flexi
  Data Integration Settings custom settings a zobrazuje je ve správném html
  prvku pro vstup dat.
@@ -7465,7 +7497,7 @@ Komponenta pro úpravu parametrů v administrátorském módu
 
 \begin_layout Standard
 Pokud uživatel nemá právo na úpravu aplikace, komponenta se načte pouze
- v módu pro zobrazení.
+ v módu pro zobrazení viz obrázek 10.
 \begin_inset Float figure
 placement H
 wide false
@@ -7522,10 +7554,13 @@ Salesforce neposkytuje žádný způsob, jakým vytvářet logy, různé projekt
  si tak vytvýřejí své loggery.
  Z toho důvodu bylo v rámci této práce využit open-source logger dostupný
  na 
-\begin_inset CommandInset href
-LatexCommand href
-target "https://gist.github.com/miragedeb/70d5b70a6f73c8530db7"
-literal "false"
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://gist.github.com/miragedeb/70d5b70a6f73c8530db7
+\end_layout
 
 \end_inset
 
@@ -7540,11 +7575,16 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+Obrázek 11 zobrazuje seznam aplikačních logů seřazených podle jména vzestupně,
+ obrázek 12 pak zobrazuje detail logu po kliknutí na název logu v seznamu.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7578,7 +7618,7 @@ Stránka se seznamem logů
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -9068,22 +9108,54 @@ ABRA, nedatováno.
  [online].
  [cit.
  2021-03-09].
- Dostupné z: https://intercom.help/podpora-flexi/cs/collections/2592813-dokumenta
-ce-rest-api
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://intercom.help/podpora-flexi/cs/collections/2592813-dokumentace-rest-api
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 ABRA [online]: Dokumentace XML Schéma.
  [cit.
  2021-04-21].
- Dostupné z https://www.flexibee.eu/api/dokumentace/ref/xsd
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.flexibee.eu/api/dokumentace/ref/xsd
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 ABRA [online]: Dokumentace Autentizace.
  [cit.
  2021-04-21].
- Dostupné z: https://www.flexibee.eu/api/dokumentace/ref/login/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.flexibee.eu/api/dokumentace/ref/login/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9092,7 +9164,18 @@ IACONO, Luigi Lo a Peter Leo GORSKI, 2019.
  Future Internet [online].
  [cit.
  2021-03-11].
- Dostupné z: doi:10.3390/fi11030056
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+doi:10.3390/fi11030056
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9100,113 +9183,286 @@ SALESFORCE, nedatováno.
  Salesforce Developer Documentation [online].
  [cit.
  2021-03-12].
- Dostupné z: https://developer.salesforce.com/docs
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Profiles.
  [cit.
  2021-04-20].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta
-/securityImplGuide/admin_userprofiles.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta/securityImpl
+Guide/admin_userprofiles.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Permission Sets.
  [cit.
  2021-04-20].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta
-/securityImplGuide/perm_sets_overview.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta/securityImpl
+Guide/perm_sets_overview.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Custom Permissions.
  [cit.
  2021-04-20].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta
-/securityImplGuide/custom_perms_overview.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta/securityImpl
+Guide/custom_perms_overview.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Permission Set Groups.
  [cit.
  2021-04-20].
- Dostupné z: https://help.salesforce.com/articleView?id=sf.perm_set_groups.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://help.salesforce.com/articleView?id=sf.perm_set_groups.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Custom Settings.
  [cit.
  2021-04-20].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
-/apex_customsettings.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_customs
+ettings.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs What are Custom Metadata Types? [cit.
  2021-04-20].
- Dostupné z: https://help.salesforce.com/articleView?id=sf.custommetadatatypes_abou
-t.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://help.salesforce.com/articleView?id=sf.custommetadatatypes_about.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Apex Scheduler [cit.
  2021-04-20].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
-/apex_scheduler.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_schedul
+er.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Using Batch Apex [cit.
  2021-04-20].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
-/apex_batch_interface.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_batch_i
+nterface.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Named Credentials [cit.
  2021-04-20].
- Dostupné z: https://help.salesforce.com/articleView?id=sf.named_credentials_about.h
-tm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://help.salesforce.com/articleView?id=sf.named_credentials_about.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Lightning App Builder [cit.
  2021-04-25].
- Dostupné z: https://help.salesforce.com/articleView?id=sf.lightning_app_builder_ov
-erview.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://help.salesforce.com/articleView?id=sf.lightning_app_builder_overview.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Testing and Code Coverage [cit.
  2021-05-07].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
-/apex_code_coverage_intro.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_code_co
+verage_intro.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs source Commands [cit.
  2021-05-07].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.met
-a/sfdx_cli_reference/cli_reference_force_source.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_re
+ference/cli_reference_force_source.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Salesforce CLI [cit.
  2021-05-07].
- Dostupné z: https://developer.salesforce.com/tools/sfdxcli
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/tools/sfdxcli
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: What is SaaS? [cit.
  2021-05-07].
- Dostupné z: https://www.salesforce.com/eu/learning-centre/tech/saas/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.salesforce.com/eu/learning-centre/tech/saas/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: What is PaaS? [cit.
  2021-05-07].
- Dostupné z: https://www.salesforce.com/eu/learning-centre/tech/paas/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.salesforce.com/eu/learning-centre/tech/paas/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9214,23 +9470,56 @@ SALESFORCE.
  Execution Governors and Limits [online].
  [cit.
  2021-04-09].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
-/apex_gov_limits.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_lim
+its.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 GARTNER, 2019.
  Market Share: Customer Experience and Relationship Management, Worldwide,
  2018 [online].
- Dostupné z: https://www.gartner.com/en/documents/3984886/market-share-customer-ex
-perience-and-relationship-manage
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.gartner.com/en/documents/3984886/market-share-customer-experience-and-
+relationship-manage
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 MAYANK, 2015.
  ApexDebugLog [cit.
  2021-04-25].
- Dostupné z: https://gist.github.com/miragedeb/70d5b70a6f73c8530db7
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://gist.github.com/miragedeb/70d5b70a6f73c8530db7
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9238,7 +9527,18 @@ Anon, nedatováno.
  Salesforce Lightning Design System [online].
  [cit.
  2021-03-12].
- Dostupné z: https://www.lightningdesignsystem.com/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.lightningdesignsystem.com/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9246,7 +9546,18 @@ Anon, nedatováno.
  Firmy využívající cloudové CRM aplikace pro správu a využití informací
  o zákaznících [tabulka].
  22.12.2016.
- Dostupné z: https://www.czso.cz/documents/10180/32961948/06200516_104.pdf
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.czso.cz/documents/10180/32961948/06200516_104.pdf
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9254,7 +9565,18 @@ Anon, nedatováno.
  Firmy využívající cloudové CRM aplikace pro správu a využití informací
  o zákaznících, [tabulka].
  11.01.2019.
- Dostupné z: https://www.czso.cz/documents/10180/61601888/0620051843.pdf
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.czso.cz/documents/10180/61601888/0620051843.pdf
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9262,7 +9584,18 @@ Anon, nedatováno.
  Firmy využívající cloudové CRM aplikace pro správu a využití informací
  o zákaznících [tabulka].
  07.01.2021 .
- Dostupné z: https://www.czso.cz/documents/10180/122362688/06200520077.pdf
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.czso.cz/documents/10180/122362688/06200520077.pdf
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9270,8 +9603,19 @@ VONFANGE, M.
  a LAVIGNE, D, 2011.
  IT cost optimization through open source software.
  The Open Source Business Resource, , 5-10.
- Dostupné z: https://search-proquest-com.zdroje.vse.cz/scholarly-journals/cost-opti
-mization-through-open-source-software/docview/1695043191/se-2
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://search-proquest-com.zdroje.vse.cz/scholarly-journals/cost-optimization-thro
+ugh-open-source-software/docview/1695043191/se-2
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9279,7 +9623,18 @@ SALESFORCE EMEA, nedatováno.
  Customer 360 [online].
  [cit.
  2021-03-20].
- Dostupné z: https://www.salesforce.com/products/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.salesforce.com/products/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9287,7 +9642,18 @@ LIU, David.
  Clicks versus Code! [online].
  2018 [cit.
  2021-04-09].
- Dostupné z: https://www.sfdc99.com/2018/01/22/workflow-process-builder-flow-apex/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.sfdc99.com/2018/01/22/workflow-process-builder-flow-apex/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9295,7 +9661,18 @@ ABRA FLEXI S.R.O.
  ABRA Flexi [online].
  [cit.
  2021-04-09].
- Dostupné z: https://www.flexibee.eu/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.flexibee.eu/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9303,8 +9680,19 @@ SYSTEM ONLINE.
  ABRA FLEXIBEE [online].
  [cit.
  2021-04-09].
- Dostupné z: https://www.systemonline.cz/prehled-informacnich-systemu/ekonomicke-s
-ystemy/abra-flexibee-1.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.systemonline.cz/prehled-informacnich-systemu/ekonomicke-systemy/abra-f
+lexibee-1.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9312,7 +9700,18 @@ GUAY, Matthew.
  What are webhooks? [online].
  2020 [cit.
  2021-04-09].
- Dostupné z: https://zapier.com/blog/what-are-webhooks/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://zapier.com/blog/what-are-webhooks/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9320,7 +9719,18 @@ FOOTE, Keith D.
  The Fundamentals of Data Integration [online].
  2019 [cit.
  2021-04-09].
- Dostupné z: https://www.dataversity.net/the-fundamentals-of-data-integration/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.dataversity.net/the-fundamentals-of-data-integration/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9328,8 +9738,18 @@ HOHPE, Gregor.
  Conversation Patterns [online].
  2017 [cit.
  2021-04-09].
- Dostupné z: https://www.enterpriseintegrationpatterns.com/patterns/conversation/i
-ndex.html
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.enterpriseintegrationpatterns.com/patterns/conversation/index.html
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9337,7 +9757,18 @@ W3SCHOOLS.
  XML Schema Tutorial [online].
  [cit.
  2021-4-21].
- Dostupné z: https://www.w3schools.com/xml/schema_intro.asp
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.w3schools.com/xml/schema_intro.asp
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
