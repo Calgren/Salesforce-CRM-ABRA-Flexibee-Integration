@@ -7531,11 +7531,31 @@ Testování
 \end_layout
 
 \begin_layout Standard
-TODO
+Pro ověření funkčnosti a ověření funkčnosti při budoucích změnách byly napsáný
+ jednotkové Apex testy a navrženy uživatelské testovací scénáře.
 \end_layout
 
 \begin_layout Subsection
 Jednotkové testy
+\end_layout
+
+\begin_layout Standard
+Jednotkové testy v jazyce Apex slouží k ověření funkčností jednotlivých
+ tříd, metod a triggerů.
+ Salesforce požaduje jednotkovými testy alespoň 75% pokrytí veškeré logiky
+ v Apex třídách a triggerech.
+ (Salesforce, Docs Testing and Code Coverage)
+\end_layout
+
+\begin_layout Standard
+Pro každou třídu byla implmentována testovací třída s názvem [názevTřídyProLogik
+u]Test.
+ Testovací třída má několik testovacích metod pro každou metodu testované
+ třídy.
+ Tyto metody ověřují výsledek při úspěšném průběhu logiky, při chybných
+ datech a vyjímkách.
+ Pro testování logiky, která provádí dotazy a získává odpovědi z externího
+ systému ABRA Flexi byly vytvořeny mock třídy, které tyto odpovědi simulují.
 \end_layout
 
 \begin_layout Subsection
@@ -7729,6 +7749,13 @@ SALESFORCE [online]: Docs Lightning App Builder [cit.
  2021-04-25].
  Dostupné z: https://help.salesforce.com/articleView?id=sf.lightning_app_builder_ov
 erview.htm
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs Testing and Code Coverage [cit.
+ 2021-05-07].
+ Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
+/apex_code_coverage_intro.htm
 \end_layout
 
 \begin_layout Standard

@@ -1235,9 +1235,19 @@ Mezi hlavní limity patří:
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hlavní limity pro operace v Salesforce (Zdroj: (Salesforce, Execution Governors
+ and Limits)
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="3">
 <features tabularvalignment="middle">
@@ -1477,19 +1487,6 @@ Maximální počet SOQL dotazů
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Hlavní limity pro operace v Salesforce (Zdroj: (Salesforce, Execution Governors
- and Limits)
-\end_layout
 
 \end_inset
 
@@ -2365,6 +2362,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Zobrazení nastavení aplikace
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="2">
 <features tabularvalignment="middle">
@@ -2572,18 +2578,6 @@ Chyba se zaloguje do aplikačních logů
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Zobrazení nastavení aplikace 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -2596,6 +2590,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Zobrazení aplikačních logů
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -2785,18 +2788,6 @@ Načtě se a zobrazí detail daného záznamu
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Zobrazení aplikačních logů 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -2809,6 +2800,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Zadaní mapování atributů
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -3012,18 +3012,6 @@ Obrazovka se vrátí na výběr entity
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Zadaní mapování atributů 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -3036,6 +3024,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Parametrizace aplikace
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -3219,18 +3216,6 @@ Metadata se uloží a uživateli se zobrazí hláška o úspěšném uložení
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Parametrizace aplikace 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -3243,6 +3228,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Synchronizace dat
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="2">
 <features tabularvalignment="middle">
@@ -3447,18 +3441,6 @@ Po dokončení synchronizace je zalogována informace o proběhnutí pro jednotl
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Synchronizace dat
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -3471,6 +3453,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Manuální spuštění synchronizace dat
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="2">
 <features tabularvalignment="middle">
@@ -3663,18 +3654,6 @@ Uživateli se zobrazí obrazovka s posledním a dalším časem synchronizace
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Manuální spuštění synchronizace dat
-\end_layout
 
 \end_inset
 
@@ -6131,10 +6110,19 @@ status open
 
 \begin_layout Plain Layout
 Následující tabulka zobrazuje obsah Permission Set Group pro standardního
- uživatele a společné skupiny pro Administrátora a systémováho uživatele.
+ uživatele a společné skupiny pro Administrátora a systémového uživatele.
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Přehled oprávnění podle skupin uživatelů
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="3">
 <features tabularvalignment="middle">
@@ -6355,18 +6343,6 @@ Apex Class Admin Permission Set
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Přehled oprávnění podle skupin uživatelů
-\end_layout
 
 \end_inset
 
@@ -6783,7 +6759,7 @@ V execute metodě se poté volá implementace AbraSynchronizationInterface
  rozhraní pro konkrétní SObject, ve které dochází k odeslání dat a zpracování
  odpovědi - uložení vygenerovaného ABRA Flexi Id na záznamy a označení jako
  synchronizovaných v případě úspěšného vytvoření.
- Pokud ve kterékoliv fázi exportu dojde k vyjímce, je tato vyjímka zalogována.
+ Pokud ve kterékoliv fázi exportu dojde k výjimce, je tato výjimka zalogována.
 \end_layout
 
 \begin_layout Subsection
@@ -6891,8 +6867,8 @@ status open
 
 \begin_layout Standard
 Odpověď poté obsahuje ve stejném kořenovém atributu informaci o úspěšnosti
- zpracování, sumarizaci provedených operací - počeet vytvořených, aktualizovánýc
-h, vymázáných, vynecháných záznamů a kolik záznamů skončilo neuspěchem a
+ zpracování, sumarizaci provedených operací - počeet vytvořených, aktualizovanýc
+h, vymazaných, vynechaných záznamů a kolik záznamů skončilo neúspěchem a
  následně atribut s detailem výsledků (viz Výpis4)
 \begin_inset listings
 lstparams "numbers=left,showstringspaces=false,caption={JSON odpověď z ABRA Flexi},emph={subject,predicate,object},emphstyle={\color{blue}},frame=box,keywordstyle={\color{violet}},columns=fullflexible"
@@ -7035,7 +7011,7 @@ Pro autorizaci do externích systémů poskytuje Salesforce doporučuje využit�
  autentizace v jednom.
  Výhoda tohoto je, že nemusíme přístupové údaje ukládat někam mimo a nebo
  při nejhorším je držet v kódu.
- Salesforce také tyto přistupové údaje šifruje.
+ Salesforce také tyto přístupové údaje šifruje.
  (Salesforce, Docs Named Credentials)
 \end_layout
 
@@ -7082,13 +7058,12 @@ nInterface.
  V této vytvořené třídě je pak implementována metoda exportRecords, která
  obsahuje logiku pro přípravu dat, volání export HTPP dotazu, a zpracování
  výsledku.
- (viz Výpis5)
 \end_layout
 
 \begin_layout Standard
 Dále je potřeba pro danou entitu přidat instanci konfigurace batche do proměnné
  batchRunsConfigurations ve třídě AbraDataExportScheduler.
- (viz Výpis6)
+ (viz Výpis5)
 \begin_inset listings
 lstparams "numbers=left,showstringspaces=false,caption={Konfigurace exportu entit pro batch},emph={subject,predicate,object},emphstyle={\color{blue}},frame=box,keywordstyle={\color{violet}},columns=fullflexible"
 inline false
@@ -7142,7 +7117,7 @@ Také je vhodné přidat boolean atribut do ABRA Flexi Data Integration Settings
 
 \begin_layout Standard
 Daná entita musí mít alespoň jeden odpovídající záznam v ABRA Flexi Data
- Mappings, pokud takový záznam neexistuje, asyncrhonní process pro danou
+ Mappings, pokud takový záznam neexistuje, asynchronní process pro danou
  entitu skončí výjimkou.
 \end_layout
 
@@ -7214,8 +7189,8 @@ Abra Integration Settings
 
 \begin_layout Standard
 Stránka s nastaveními se skládá ze dvou sloupců, v levém sloupci jsou jednotlivé
- komponenty pro nastavení mapování a v pravém je pak komponenta pro parametrizac
-i aplikace.
+ komponenty pro nastavení mapování a v pravém jsou pak komponenty pro parametriz
+aci aplikace a manuálního spouštění exportu dat.
  Stránku lze upravovat, přidávat a odebírat její komponenty pomocí Salesforce
  App Builder.
  (Salesforce, Docs Lightning App Builder)
@@ -7228,7 +7203,7 @@ Komponenta pro mapování entit
 \begin_layout Standard
 Komponenta pro mapování entit se nazývá abraMappingManagement a je tvořena
  dynamickou tabulkou, která má čtyři sloupce pro výběr Salesforce atributu,
- Abra Flexi atributu a dvou přepínátek na aktivaci směru synchronizace.
+ ABRA Flexi atributu a dvou přepínačů na aktivaci směru synchronizace.
  Při načtení si komponenta vždy dynamicky načte názvy atributů na daném
  objektu v SFSC a ABRA Flexi, předejde se tak tomu, že by se uživatel v
  názvu atributu přepsal a nebo zvolil neexistující atribut.
@@ -7402,7 +7377,7 @@ Pokud uživatel nemá právo na úpravu aplikace, komponenta se načte pouze
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7466,9 +7441,9 @@ literal "false"
  verzí Salesforce a doplněn o podporů logů o severitě varování a debug.
  Také bylo pozměněna logika pro ukládání logů do databáze tak, aby se jednotlivé
  logy v rámci transakci neukládali postupně každý zvlášť, ale všechny najednou.
- Jedná se o velmi jedoduchý logger s pouze jednou třídou, byl zvolen z toho
- důvodu, aby šel jednoduše nahradit za jakýkoliv jiný logger, který by používala
- cílová organizace.
+ Jedná se o velmi jednoduchý logger s pouze jednou třídou, byl zvolen z
+ toho důvodu, aby šel jednoduše nahradit za jakýkoliv jiný logger, který
+ by používala cílová organizace.
 \end_layout
 
 \begin_layout Standard
@@ -7556,11 +7531,31 @@ Testování
 \end_layout
 
 \begin_layout Standard
-TODO
+Pro ověření funkčnosti a ověření funkčnosti při budoucích změnách byly napsáný
+ jednotkové Apex testy a navrženy uživatelské testovací scénáře.
 \end_layout
 
 \begin_layout Subsection
 Jednotkové testy
+\end_layout
+
+\begin_layout Standard
+Jednotkové testy v jazyce Apex slouží k ověření funkčností jednotlivých
+ tříd, metod a triggerů.
+ Salesforce požaduje jednotkovými testy alespoň 75% pokrytí veškeré logiky
+ v Apex třídách a triggerech.
+ (Salesforce, Docs Testing and Code Coverage)
+\end_layout
+
+\begin_layout Standard
+Pro každou třídu byla implmentována testovací třída s názvem [názevTřídyProLogik
+u]Test.
+ Testovací třída má několik testovacích metod pro každou metodu testované
+ třídy.
+ Tyto metody ověřují výsledek při úspěšném průběhu logiky, při chybných
+ datech a vyjímkách.
+ Pro testování logiky, která provádí dotazy a získává odpovědi z externího
+ systému ABRA Flexi byly vytvořeny mock třídy, které tyto odpovědi simulují.
 \end_layout
 
 \begin_layout Subsection
@@ -7754,6 +7749,13 @@ SALESFORCE [online]: Docs Lightning App Builder [cit.
  2021-04-25].
  Dostupné z: https://help.salesforce.com/articleView?id=sf.lightning_app_builder_ov
 erview.htm
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs Testing and Code Coverage [cit.
+ 2021-05-07].
+ Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
+/apex_code_coverage_intro.htm
 \end_layout
 
 \begin_layout Standard
