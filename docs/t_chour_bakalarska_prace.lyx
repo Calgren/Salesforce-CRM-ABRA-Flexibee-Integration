@@ -10206,11 +10206,81 @@ Distribuce
 \end_layout
 
 \begin_layout Standard
-TODO, kod dostupny na 
+Aplikace je uložena ve formátu SFDX na platfromě GitHub na adrese 
 \begin_inset CommandInset href
 LatexCommand href
 target "https://github.com/Calgren/Salesforce-CRM-ABRA-Flexibee-Integration"
 
+\end_inset
+
+, repozitář se jmenuje 
+\begin_inset Quotes gld
+\end_inset
+
+Salesforce-CRM-ABRA-Flexibee-Integration
+\begin_inset Quotes grd
+\end_inset
+
+ a verze určená pro instalaci do Salesforce organizací se nachází ve větvi
+ 
+\begin_inset Quotes gld
+\end_inset
+
+main
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Pro distribuci aplikace musí mít uživatel na své stanici nainstalovaný
+ Salesforce CLI.
+ (Salesforce, Salesforce CLI)
+\end_layout
+
+\begin_layout Standard
+Zdrojový kód ve fromátu SFDX může být přímo nahrán do prostředí Saleforce
+ určeného k vývoji skrze příkaz 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+force:source:push
+\end_layout
+
+\end_inset
+
+, pro nasazení do sandboxu nebo produkčního prostředí musí být zdrojový
+ kód zkonvertován do Metadata API formátu, to se provede pomocí 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+force:source:convert
+\end_layout
+
+\end_inset
+
+ a následně 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+force:source:deploy
+\end_layout
+
+\end_inset
+
+.
+ (Salesforce, Docs source Commands)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -10286,6 +10356,13 @@ Výstupem práce je open-source aplikace pro integraci dat mezi Salesforce
  standardní nástroje platformy Salesforce.
  Aplikace byla řádně otestována a byly poskytnuty regresní testy pro ověření
  funkčnosti v případě budoucích rozšíření.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10463,6 +10540,19 @@ SALESFORCE [online]: Docs Testing and Code Coverage [cit.
  2021-05-07].
  Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
 /apex_code_coverage_intro.htm
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs source Commands [cit.
+ 2021-05-07].
+ Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.met
+a/sfdx_cli_reference/cli_reference_force_source.htm
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Salesforce CLI [cit.
+ 2021-05-07].
+ Dostupné z: https://developer.salesforce.com/tools/sfdxcli
 \end_layout
 
 \begin_layout Standard

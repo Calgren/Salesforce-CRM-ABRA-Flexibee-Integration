@@ -1901,6 +1901,7 @@ Všechny požadavky jsou následně samostatně popsány.
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2372,6 +2373,7 @@ UML Diagram případů užití
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2600,6 +2602,7 @@ Chyba se zaloguje do aplikačních logů
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2810,6 +2813,7 @@ Načtě se a zobrazí detail daného záznamu
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -3034,6 +3038,7 @@ Obrazovka se vrátí na výběr entity
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -3238,6 +3243,7 @@ Metadata se uloží a uživateli se zobrazí hláška o úspěšném uložení
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -3463,6 +3469,7 @@ Po dokončení synchronizace je zalogována informace o proběhnutí pro jednotl
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -10199,14 +10206,73 @@ Distribuce
 \end_layout
 
 \begin_layout Standard
-TODO, kod dostupny na 
+Aplikace je uložena ve formátu SFDX na platfromě GitHub na adrese 
 \begin_inset CommandInset href
 LatexCommand href
 target "https://github.com/Calgren/Salesforce-CRM-ABRA-Flexibee-Integration"
 
 \end_inset
 
+, repozitář se jmenuje 
+\begin_inset Quotes gld
+\end_inset
 
+Salesforce-CRM-ABRA-Flexibee-Integration
+\begin_inset Quotes grd
+\end_inset
+
+ a verze určená pro instalaci do Salesforce organizací se nachází ve větvi
+ 
+\begin_inset Quotes gld
+\end_inset
+
+main
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Pro nainstalování aplikace musí mít uživatel na své stanici nainstalovaný
+ Salesforce CLI.
+ Zdrojový kód ve fromátu SFDX může být přímo nahrán do prostředí Saleforce
+ určeného k vývoji skrze příkaz 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+force:source:push
+\end_layout
+
+\end_inset
+
+, pro nasazení do sandboxu nebo produkčního prostředí musí být zdrojový
+ kód zkonvertován do Metadata API formátu, to se provede pomocí 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+force:source:convert
+\end_layout
+
+\end_inset
+
+ a následně 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+force:source:deploy
+\end_layout
+
+\end_inset
+
+.
+ (Salesforce, Docs source Commands)
 \end_layout
 
 \begin_layout Section
@@ -10258,6 +10324,34 @@ Po implementace logiky pro přenos dat byla navržena aplikace s uživatelským
  Byla vytvořena ligthning aplikace a tři custom komponenty.
  Tyto komponenty byly následně přidány do aplikce.
  Dále byl vytvořen přehled logů.
+\end_layout
+
+\begin_layout Standard
+Další kapitola se zabýva ověřením funkčnosti aplikace a regresními testy.
+ Pro každou Apex třídu byla implementována testovací třída s jednotkovými
+ testy.
+ Pro testování uživatelské aplikace byli navrženy a provedeny testovací
+ scénáře.
+\end_layout
+
+\begin_layout Standard
+Poslední kapitola definuje, jakým způsobem lze vytvořenou aplikaci distribuovat
+ do jednotlivých Salesforce organizací.
+\end_layout
+
+\begin_layout Standard
+Výstupem práce je open-source aplikace pro integraci dat mezi Salesforce
+ CRM a ABRA Flexi, která splňuje požadavky definované v práci a využívá
+ standardní nástroje platformy Salesforce.
+ Aplikace byla řádně otestována a byly poskytnuty regresní testy pro ověření
+ funkčnosti v případě budoucích rozšíření.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10435,6 +10529,13 @@ SALESFORCE [online]: Docs Testing and Code Coverage [cit.
  2021-05-07].
  Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
 /apex_code_coverage_intro.htm
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs source Commands [cit.
+ 2021-05-07].
+ Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.met
+a/sfdx_cli_reference/cli_reference_force_source.htm
 \end_layout
 
 \begin_layout Standard
