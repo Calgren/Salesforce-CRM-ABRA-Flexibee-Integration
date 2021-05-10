@@ -355,7 +355,14 @@ label{sec:Abstrakt}
 \end_layout
 
 \begin_layout Standard
-TODO
+Tato bakalářská práce se zabývá analýzou integrace dat mezi systémy Salesforce
+ CRM a ABRA Flexi a návrhem obecně pužitelné aplikace pro dynamické nastavení
+ mapování dat mezi systémy, vypínání synchronizace podle jednotlivých objektů
+ a parametrizace integrace skrze uživatelské rozhraní.
+ Aplikace byla navrhnuta a realizována jako open-source pomocí standardních
+ nástrojů Salesforce platformy s ohledem na budoucí rozšíření a snadné distribuc
+e pomocí Salesforce SFDX.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -378,7 +385,7 @@ label{sec:Klíčová slova}
 
 \begin_layout Standard
 Salesforce integrace dat, ABRA Flexibee integrace dat, Salesforce synchronizace
- dat, Abra Flexibee synchronizace dat
+ dat, Abra Flexibee synchronizace dat, SFDX
 \end_layout
 
 \begin_layout Standard
@@ -407,7 +414,7 @@ label{sec:Abstract}
 \end_layout
 
 \begin_layout Standard
-TODO
+This bachelor thesis
 \end_layout
 
 \begin_layout Standard
@@ -430,7 +437,7 @@ label{sec:Keywords}
 
 \begin_layout Standard
 Salesforce data integration, ABRA Flexibee data integration, Salesforce
- data synchronization, Abra Flexibee data syncrhonization
+ data synchronization, Abra Flexibee data syncrhonization, SFDX
 \end_layout
 
 \begin_layout Standard
@@ -7587,7 +7594,8 @@ Ověřuje načtení a zobrazení dat pro nastavení aplikace
 \end_layout
 
 \begin_layout Standard
-Prerekvizity: Uživatel je přihlášen a má otevřenou aplikaci 
+Prerekvizity: Uživatel je přihlášen jako administrátor a má otevřenou aplikaci
+ 
 \begin_inset Quotes gld
 \end_inset
 
@@ -7599,7 +7607,24 @@ ABRA Flexibee Integration
 \end_layout
 
 \begin_layout Standard
+Testovací data: 
+\end_layout
+
+\begin_layout Itemize
+nazevSpolecnosti: test
+\end_layout
+
+\begin_layout Itemize
+interval: 10
+\end_layout
+
+\begin_layout Itemize
+pocetZaznamu: 1
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -7620,9 +7645,9 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="20text%">
+<column alignment="center" valignment="top" width="15text%">
 <column alignment="left" valignment="top" width="40text%">
-<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="40text%">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -7642,7 +7667,7 @@ Popis kroku
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7679,11 +7704,20 @@ ABRA Integration Settings
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+Na pravé straně obrazovky se načte formulář s názvem 
+\begin_inset Quotes gld
+\end_inset
 
+ABRA Flexi Data Integration Settings
+\begin_inset Quotes grd
+\end_inset
+
+ a prázdnými vstupy pro název firmy, interval integrace, zapnutí synchronizace
+ objednávek a faktur a počet záznamů v jedné dávce.
 \end_layout
 
 \end_inset
@@ -7708,11 +7742,11 @@ Uživatel najede myší na ikonu nápovědy u vstupu pro počet záznamů v dáv
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Zobrazí se popup s textem nápovědy
 \end_layout
 
 \end_inset
@@ -7739,11 +7773,11 @@ Uživatel zadá {nazevSpolecnosti} do vstupu pro nazev spolecnost, {interval}
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Data jsou vyplněna v příslušných vstupech
 \end_layout
 
 \end_inset
@@ -7768,11 +7802,11 @@ Uživatel klikne na Save
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Zobrazí se hláška o úspěšném uložení
 \end_layout
 
 \end_inset
@@ -7797,11 +7831,11 @@ Uživatel provede znovunačtení stránky
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Formulář se načte s daty uloženými v předchozím kroku
 \end_layout
 
 \end_inset
@@ -7820,154 +7854,71 @@ Uživatel provede znovunačtení stránky
 \end_layout
 
 \begin_layout Standard
+2TC: Zobrazení aplikačních logů
+\end_layout
+
+\begin_layout Standard
+Ověřuje načtení a zobrazení aplikačních logů
+\end_layout
+
+\begin_layout Standard
+Prerekvizity: Uživatel je přihlášen jako administrátor a má otevřenou aplikaci
+ 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexibee Integration
+\begin_inset Quotes grd
+\end_inset
+
+, existují záznamy v aplikačních logách
+\end_layout
+
+\begin_layout Standard
+Testovací data: 
+\end_layout
+
+\begin_layout Itemize
+nazevLogu: a033N000003ljcb
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Testovací scénář - Zobrazení nastavení aplikace
+2TC kroky
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="3">
+<lyxtabular version="3" rows="5" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="15text%">
-<column alignment="left" valignment="middle" width="20page%">
-<column alignment="left" valignment="middle" width="10text%">
+<column alignment="left" valignment="top" width="40text%">
+<column alignment="left" valignment="top" width="40text%">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Identifikátor
+Pořadí kroku
 \end_layout
 
 \end_inset
 </cell>
-<cell multicolumn="1" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1TC
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Název
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Popis
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Prerekvizity
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7976,7 +7927,7 @@ Popis kroku
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7991,7 +7942,7 @@ Očekávaný výsledek
 \begin_inset Text
 
 \begin_layout Plain Layout
-Kroky
+1
 \end_layout
 
 \end_inset
@@ -7999,8 +7950,16 @@ Kroky
 <cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Enumerate
-y
+\begin_layout Plain Layout
+Uživatel klikne na záložku 
+\begin_inset Quotes gld
+\end_inset
+
+Application Logs
+\begin_inset Quotes grd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8008,33 +7967,74 @@ y
 <cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Enumerate
-Na pravé straně obrazovky se načte formulář s názvem 
+\begin_layout Plain Layout
+Zobrazí se seznam logů s nedávno zobrazenými logy.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel vybere zobrazení Error logů
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se seznam logů s vyfiltrovanými error logy.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel kline na název sloupce 
 \begin_inset Quotes gld
 \end_inset
 
-ABRA Flexi Data Integration Settings
+Created date
 \begin_inset Quotes grd
 \end_inset
 
- a prázdnými vstupy pro název firmy, interval integrace, zapnutí synchronizace
- objednávek a faktur a počet záznamů v jedné dávce.
+
 \end_layout
 
-\begin_layout Enumerate
-Zobrazí se popup s textem nápovědy
-\end_layout
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
 
-\begin_layout Enumerate
-Data jsou vyplněna v příslušných vstupech
-\end_layout
-
-\begin_layout Enumerate
-Zobrazí se hláška o úspěšném uložení
-\end_layout
-
-\begin_layout Enumerate
-Formulář se načte s daty uloženými v předchozím kroku
+\begin_layout Plain Layout
+Logy se seřadí podle datumu vytvoření sestupně
 \end_layout
 
 \end_inset
@@ -8045,7 +8045,7 @@ Formulář se načte s daty uloženými v předchozím kroku
 \begin_inset Text
 
 \begin_layout Plain Layout
-Testovací data
+4
 \end_layout
 
 \end_inset
@@ -8054,15 +8054,7 @@ Testovací data
 \begin_inset Text
 
 \begin_layout Plain Layout
-nazevSpolecnosti : test
-\end_layout
-
-\begin_layout Plain Layout
-interval: 10
-\end_layout
-
-\begin_layout Plain Layout
-pocetZaznamu: 1
+Uživatel klikne na název logu {nazevLogu}
 \end_layout
 
 \end_inset
@@ -8071,7 +8063,7 @@ pocetZaznamu: 1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Uživatel je přesměrován na stránku detailu logu
 \end_layout
 
 \end_inset
@@ -8090,7 +8082,44 @@ pocetZaznamu: 1
 \end_layout
 
 \begin_layout Standard
+3TC: Zadání a zobrazení mapování atributů
+\end_layout
+
+\begin_layout Standard
+Ověřuje zadávání a mapování atributů mezi systémy
+\end_layout
+
+\begin_layout Standard
+Prerekvizity: Uživatel je přihlášen a má otevřenou aplikaci 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexibee Integration
+\begin_inset Quotes grd
+\end_inset
+
+, v metadatech pro mapování není žádný záznam
+\end_layout
+
+\begin_layout Standard
+Testovací data: 
+\end_layout
+
+\begin_layout Itemize
+sfscField: Code__c
+\end_layout
+
+\begin_layout Itemize
+sfscObject: Order
+\end_layout
+
+\begin_layout Itemize
+abraAtribut: 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -8099,23 +8128,36 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Testovací scénář - Zobrazení aplikačních logů
+3TC kroky
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="2">
+<lyxtabular version="3" rows="10" columns="3">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="middle" width="50page%">
+<column alignment="center" valignment="top" width="15text%">
+<column alignment="left" valignment="top" width="40text%">
+<column alignment="left" valignment="top" width="40text%">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Identifikátor
+Pořadí kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Popis kroku
 \end_layout
 
 \end_inset
@@ -8124,7 +8166,7 @@ Identifikátor
 \begin_inset Text
 
 \begin_layout Plain Layout
-2UC
+Očekávaný výsledek
 \end_layout
 
 \end_inset
@@ -8135,81 +8177,82 @@ Identifikátor
 \begin_inset Text
 
 \begin_layout Plain Layout
-Název
+1
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Zobrazení aplikačních logů
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Cíl
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Zobrazení seznamu aplikačních logů rozděleného do sekcí podle úrovně s možností
- vyhledávání a seřazení podle datumu nebo abecedně
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Aktéři
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Administrátor aplikace
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Vstupní podmínky
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Uživatel je přihlášen a má otevřenou aplikaci 
+Uživatel klikne na záložku 
 \begin_inset Quotes gld
 \end_inset
 
-ABRA Flexibee Integration
+ABRA Integration Settings
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Na levé straně obrazovky se načte komponenta s názvem 
+\begin_inset Quotes gld
+\end_inset
+
+Mapping for objednavka-prijata
+\begin_inset Quotes grd
+\end_inset
+
+ s vstup pro výběr objektu pro mapování
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel vybere objekt {sfscObject}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nadpis komponenty se změní na 
+\begin_inset Quotes gld
+\end_inset
+
+Mapping for objednavka-prijata to {sfscObject}
+\begin_inset Quotes grd
+\end_inset
+
+ a zobrazí se tabulka s řádky pro mapping a tlačítko 
+\begin_inset Quotes gld
+\end_inset
+
+Add Attribute
 \begin_inset Quotes grd
 \end_inset
 
@@ -8224,7 +8267,24 @@ ABRA Flexibee Integration
 \begin_inset Text
 
 \begin_layout Plain Layout
-Výstupní podmínky
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikně na 
+\begin_inset Quotes gld
+\end_inset
+
+Add Attribute
+\begin_inset Quotes grd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8233,7 +8293,176 @@ Výstupní podmínky
 \begin_inset Text
 
 \begin_layout Plain Layout
-—————
+Přidá se prázdný řádek do tabulky pro mapování
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na 
+\begin_inset Quotes gld
+\end_inset
+
+Choose SObject Field
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se modal pro výběr sfsc atributu
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel vybere {sfscField} a klikne na 
+\begin_inset Quotes gld
+\end_inset
+
+Confirm
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+V tabulce je vybrán {sfscField}
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na dropdown pro výběr ABRA atributu
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Načtou se dostupné atributu pro objednavka-prijata
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel vybere {abraAtribut}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+V tabulce je vybrán {abraAtribut}
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na 
+\begin_inset Quotes gld
+\end_inset
+
+Save
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se hláška o úspěšném uložení
 \end_layout
 
 \end_inset
@@ -8244,7 +8473,119 @@ Výstupní podmínky
 \begin_inset Text
 
 \begin_layout Plain Layout
-Scénář
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel provede znovunačtení stránky
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formulář se načte s daty uloženými v předchozích krocích
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1TC: Zobrazení a uložení nastavení aplikace
+\end_layout
+
+\begin_layout Standard
+Ověřuje načtení a zobrazení dat pro nastavení aplikace
+\end_layout
+
+\begin_layout Standard
+Prerekvizity: Uživatel je přihlášen a má otevřenou aplikaci 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexibee Integration
+\begin_inset Quotes grd
+\end_inset
+
+, ABRA Flexi Data Integration Settings nejsou vyplněny
+\end_layout
+
+\begin_layout Standard
+Testovací data: 
+\end_layout
+
+\begin_layout Itemize
+nazevSpolecnosti: test
+\end_layout
+
+\begin_layout Itemize
+interval: 10
+\end_layout
+
+\begin_layout Itemize
+pocetZaznamu: 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+1TC kroky
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="15text%">
+<column alignment="left" valignment="top" width="40text%">
+<column alignment="left" valignment="top" width="40text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pořadí kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Popis kroku
 \end_layout
 
 \end_inset
@@ -8252,36 +8593,706 @@ Scénář
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Enumerate
-Uživatel klikne na záložku pro Aplikační logy
+\begin_layout Plain Layout
+Očekávaný výsledek
 \end_layout
 
-\begin_layout Enumerate
-Načte se a zobrazí seznam všech logů
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
 \end_layout
 
-\begin_layout Enumerate
-Uživatel vybere úroveň logů
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na záložku 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Integration Settings
+\begin_inset Quotes grd
+\end_inset
+
+
 \end_layout
 
-\begin_layout Enumerate
-Zobrazí se pouze logy z vybrané úrovně
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Na pravé straně obrazovky se načte formulář s názvem 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexi Data Integration Settings
+\begin_inset Quotes grd
+\end_inset
+
+ a prázdnými vstupy pro název firmy, interval integrace, zapnutí synchronizace
+ objednávek a faktur a počet záznamů v jedné dávce.
 \end_layout
 
-\begin_layout Enumerate
-Uživatel klikne na sloupec podle kterého se mají záznamy seřadit
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
 \end_layout
 
-\begin_layout Enumerate
-Záznamy se seřadí sestupně / vzestupně podle vybraného sloupce
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel najede myší na ikonu nápovědy u vstupu pro počet záznamů v dávce
 \end_layout
 
-\begin_layout Enumerate
-Uživatel klikne na číslo konkrétního logu
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se popup s textem nápovědy
 \end_layout
 
-\begin_layout Enumerate
-Načtě se a zobrazí detail daného záznamu
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel zadá {nazevSpolecnosti} do vstupu pro nazev spolecnost, {interval}
+ do vstupu pro interval, {pocetZaznamu} do vstupu pro počet záznamů a zaškrtne
+ synchronizaci objednávek
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data jsou vyplněna v příslušných vstupech
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na Save
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se hláška o úspěšném uložení
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel provede znovunačtení stránky
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formulář se načte s daty uloženými v předchozím kroku
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1TC: Zobrazení a uložení nastavení aplikace
+\end_layout
+
+\begin_layout Standard
+Ověřuje načtení a zobrazení dat pro nastavení aplikace
+\end_layout
+
+\begin_layout Standard
+Prerekvizity: Uživatel je přihlášen a má otevřenou aplikaci 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexibee Integration
+\begin_inset Quotes grd
+\end_inset
+
+, ABRA Flexi Data Integration Settings nejsou vyplněny
+\end_layout
+
+\begin_layout Standard
+Testovací data: 
+\end_layout
+
+\begin_layout Itemize
+nazevSpolecnosti: test
+\end_layout
+
+\begin_layout Itemize
+interval: 10
+\end_layout
+
+\begin_layout Itemize
+pocetZaznamu: 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+1TC kroky
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="15text%">
+<column alignment="left" valignment="top" width="40text%">
+<column alignment="left" valignment="top" width="40text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pořadí kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Popis kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Očekávaný výsledek
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na záložku 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Integration Settings
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Na pravé straně obrazovky se načte formulář s názvem 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexi Data Integration Settings
+\begin_inset Quotes grd
+\end_inset
+
+ a prázdnými vstupy pro název firmy, interval integrace, zapnutí synchronizace
+ objednávek a faktur a počet záznamů v jedné dávce.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel najede myší na ikonu nápovědy u vstupu pro počet záznamů v dávce
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se popup s textem nápovědy
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel zadá {nazevSpolecnosti} do vstupu pro nazev spolecnost, {interval}
+ do vstupu pro interval, {pocetZaznamu} do vstupu pro počet záznamů a zaškrtne
+ synchronizaci objednávek
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data jsou vyplněna v příslušných vstupech
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na Save
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se hláška o úspěšném uložení
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel provede znovunačtení stránky
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formulář se načte s daty uloženými v předchozím kroku
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1TC: Zobrazení a uložení nastavení aplikace
+\end_layout
+
+\begin_layout Standard
+Ověřuje načtení a zobrazení dat pro nastavení aplikace
+\end_layout
+
+\begin_layout Standard
+Prerekvizity: Uživatel je přihlášen a má otevřenou aplikaci 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexibee Integration
+\begin_inset Quotes grd
+\end_inset
+
+, ABRA Flexi Data Integration Settings nejsou vyplněny
+\end_layout
+
+\begin_layout Standard
+Testovací data: 
+\end_layout
+
+\begin_layout Itemize
+nazevSpolecnosti: test
+\end_layout
+
+\begin_layout Itemize
+interval: 10
+\end_layout
+
+\begin_layout Itemize
+pocetZaznamu: 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+1TC kroky
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="15text%">
+<column alignment="left" valignment="top" width="40text%">
+<column alignment="left" valignment="top" width="40text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pořadí kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Popis kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Očekávaný výsledek
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na záložku 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Integration Settings
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Na pravé straně obrazovky se načte formulář s názvem 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexi Data Integration Settings
+\begin_inset Quotes grd
+\end_inset
+
+ a prázdnými vstupy pro název firmy, interval integrace, zapnutí synchronizace
+ objednávek a faktur a počet záznamů v jedné dávce.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel najede myší na ikonu nápovědy u vstupu pro počet záznamů v dávce
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se popup s textem nápovědy
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel zadá {nazevSpolecnosti} do vstupu pro nazev spolecnost, {interval}
+ do vstupu pro interval, {pocetZaznamu} do vstupu pro počet záznamů a zaškrtne
+ synchronizaci objednávek
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data jsou vyplněna v příslušných vstupech
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na Save
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se hláška o úspěšném uložení
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel provede znovunačtení stránky
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formulář se načte s daty uloženými v předchozím kroku
 \end_layout
 
 \end_inset
@@ -8527,7 +9538,7 @@ Obrazovka se vrátí na výběr entity
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8731,7 +9742,7 @@ Metadata se uloží a uživateli se zobrazí hláška o úspěšném uložení
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8956,7 +9967,7 @@ Po dokončení synchronizace je zalogována informace o proběhnutí pro jednotl
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
