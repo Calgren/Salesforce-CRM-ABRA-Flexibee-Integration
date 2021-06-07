@@ -85,6 +85,22 @@
 \begin_body
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align center
 
@@ -344,6 +360,205 @@ status open
 
 
 \backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{
+\backslash
+fill}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection*{Prohlášení} 
+\backslash
+label{sec:Prohlášení}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Prohlašuji, že jsem bakalářskou práci Analýza a implementace Salesforce
+ CRM s integrací na účetní systém pro střední firmu nebo neziskovou organizaci
+ vypracoval samostatně za použití v práci uvedených pramenů a literatury.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\family sans
+\series medium
+\size large
+\lang english
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="70text%">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+V Praze dne 9.
+ května 2021
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.............................................
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series medium
+\size large
+\lang english
+\begin_inset VSpace 2mm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tomáš Chour
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 subsection*{Abstrakt} 
 \backslash
 label{sec:Abstrakt}
@@ -355,7 +570,14 @@ label{sec:Abstrakt}
 \end_layout
 
 \begin_layout Standard
-TODO
+Tato bakalářská práce se zabývá analýzou integrace dat mezi systémy Salesforce
+ CRM a ABRA Flexi a návrhem obecně použitelné aplikace pro dynamické nastavení
+ mapování dat mezi systémy, vypínání synchronizace podle jednotlivých entit
+ a parametrizace integrace skrze uživatelské rozhraní.
+ Aplikace byla navržena a realizována jako open-source pomocí standardních
+ nástrojů Salesforce platformy s ohledem na budoucí rozšíření a snadné distribuc
+e pomocí Salesforce SFDX.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -377,12 +599,28 @@ label{sec:Klíčová slova}
 \end_layout
 
 \begin_layout Standard
-Salesforce integrace dat, ABRA Flexibee integrace dat, Salesforce synchronizace
- dat, Abra Flexibee synchronizace dat
+Salesforce integrace dat, ABRA Flexi integrace dat, SFDX, Salesforce open-source
+ aplikace
 \end_layout
 
 \begin_layout Standard
 \begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
 \end_inset
 
 
@@ -407,7 +645,15 @@ label{sec:Abstract}
 \end_layout
 
 \begin_layout Standard
-TODO
+This bachelor thesis deals with the analysis of data integration between
+ Salesforce CRM and ABRA Flexi systems and the design of a generally applicable
+ application for dynamic setting of data mappings between both systems.
+ It also provides functionality for disabling synchronization according
+ to individual entities and parameterization of integration through the
+ user interface.
+ The application was designed and implemented as open-source using standard
+ Salesforce platform tools with a future extensions and ease of distribution
+ through Salesforce SFDX in mind.
 \end_layout
 
 \begin_layout Standard
@@ -429,8 +675,8 @@ label{sec:Keywords}
 \end_layout
 
 \begin_layout Standard
-Salesforce data integration, ABRA Flexibee data integration, Salesforce
- data synchronization, Abra Flexibee data syncrhonization
+Salesforce data integration, ABRA Flexi data integration, SFDX, Salesforce
+ open-souce application
 \end_layout
 
 \begin_layout Standard
@@ -447,6 +693,8 @@ status open
 \begin_layout Plain Layout
 
 
+\backslash
+thispagestyle{empty} 
 \backslash
 tableofcontents 
 \backslash
@@ -525,7 +773,15 @@ LEX - Lightning Experience
 \end_layout
 
 \begin_layout Standard
-LWC - lightning web components
+LWC - Lightning web components
+\end_layout
+
+\begin_layout Standard
+SaaS - Software as a service
+\end_layout
+
+\begin_layout Standard
+PaaS - Platform as a service
 \end_layout
 
 \begin_layout Standard
@@ -695,11 +951,12 @@ Pro zpracování teoretické části práce byla provedena rešerše zdrojů, kt
  ABRA Flexibee, poté analyzoval část datového modelu SFSC, která je relevantní
  pro účetní systém, pomocí modelování zmapoval uchovávaná data v jednotlivých
  systémech a poté na základě komparace těchto modelů namapoval přenos dat
- mezi systémy, díky komparaci modelů je také zjištěno, jestli je potřeba
- datový model SFSC rozšířit.
+ mezi systémy.
+ Díky komparaci modelů je také zjištěno, jestli je potřeba datový model
+ SFSC rozšířit.
  Samotný vývoj webových služeb, uživatelské aplikace a vytvoření testů je
- pak dosaženo pomocí vlastních zkušeností a využitím získaných poznatků
- a best practices z teoretické části.
+ realizováno pomocí vlastních zkušeností a využitím získaných poznatků a
+ best practices z teoretické části.
 \end_layout
 
 \begin_layout Standard
@@ -858,7 +1115,7 @@ Clean architecture: a craftsman's guide to software structure and design
 \shape default
 je teoretický souhrn z oblasti architektury a designu softwaru pro jeho
  jednoduchou čitelnost a škálovatelnost.
- Pokrývá jak funčkní, tak objektově orientované programování.
+ Pokrývá jak funkční, tak objektově orientované programování.
  Zabývá se vhodnosti použití dědičnosti, rozhraní a polymorphismem v určitých
  situacích, jak navrhovat strukturu dat pro přenos v rámci systému a mimo
  něj.
@@ -932,12 +1189,19 @@ Salesforce Lightning Design System
  Salesforce Lightning.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Teoretická východiska práce
 \end_layout
 
 \begin_layout Standard
-Účelem této sekce práce je popsat teoretické podklady a vysvětlit základní
+Účelem této kapitoly práce je popsat teoretické podklady a vysvětlit základní
  termíny, na jejichž základě bude implementováno řešení v praktické části.
  První část se zabývá informačními systémy Salesforce CRM a ABRA Flexibee,
  jejich představením a základními charakteristikami.
@@ -986,8 +1250,33 @@ Salesforce je nejrozšířenější cloudová platforma na světě, zaměřená 
 \end_layout
 
 \begin_layout Standard
-Salesforce je SaaS i PaaS zároveň, jelikož nabízí předem hotová řešení -
- viz.
+Salesforce je Saas
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+SaaS: Model distribuce a licencování aplikačního softwaru, kdy poskytovatel
+ cloudu spravuje aplikační software a zpřístupňuje jej svým zákazníkům skrze
+ internet na bázi průběžných plateb (subskripce).
+ (Salesfoce, What is Saas?)
+\end_layout
+
+\end_inset
+
+ i PaaS
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+PaaS: Soubor služeb a nástrojů, které poskytovatel cloudu nabízí svým zákazníkům
+ a vývojářům, kteří pomocí nich a s využitím infrastruktury poskytovatele,
+ který ji spravuje, vyvíjet nové aplikace.
+ (Salesfoce, What is Paas?)
+\end_layout
+
+\end_inset
+
+ zároveň, jelikož nabízí předem hotová řešení - viz.
  Sales Cloud, Marketing Cloud a další, tak umožňuje uživatelům vyvíjet své
  vlastní aplikace, což je i předmětem této práce.
 \end_layout
@@ -1032,7 +1321,7 @@ a další
 \end_layout
 
 \begin_layout Subsubsection
-Datový model
+Datový model Salesforce CRM
 \end_layout
 
 \begin_layout Standard
@@ -1172,15 +1461,15 @@ Workflow - jednoduchý automatizační nástroj, používající pouze jedno if
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Následující obrázek znázorňuje porovnání automatizačních nástrojů podle
- jednoduchosti na použití, škály případů použití, možnost narazení na limity
- a schopnost je obejít, škálovatelnosti, schopnosti daný nástroj debuggovat,
- uživatelské přívětivosti v případě chyby, možnosti testování daného nástroje,
- rychlosti exekuce, jednoduchosti nasazení a jak moc je nástroj odolný proti
- riziku, že kvůli němu rozbijem již existující funkcionalitu.
+Obrázek 1 znázorňuje porovnání automatizačních nástrojů podle jednoduchosti
+ na použití, škály případů použití, možnost narazení na limity a schopnost
+ je obejít, škálovatelnosti, schopnosti daný nástroj debuggovat, uživatelské
+ přívětivosti v případě chyby, možnosti testování daného nástroje, rychlosti
+ exekuce, jednoduchosti nasazení a jak moc je nástroj odolný proti riziku,
+ že kvůli němu rozbijem již existující funkcionalitu.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1216,18 +1505,18 @@ Omezení
 
 \begin_layout Standard
 Jelikož Salesforce organizace je součástí multitenantního prostředí - skupina
- organizací sdílí zdroje jednoho serveru (instance), tak aby nedocházelo
+ organizací sdílí zdroje jednoho serveru (instance) tak, aby nedocházelo
  k výkyvům výkonu, Salesforce vynucuje limity pro operace v rámci jedné
  transakce, které čerpají serverové zdroje, které nesmějí jednotlivé organizace
  překročit.
- Operace která takový limit překročí je ukončena výjimkou.
- Při psaní kódu a vytváření automatizací je tedy potřeba aby byla daná operace
- co nejvíce optimalizovaná.
+ Operace, která takový limit překročí, je ukončena výjimkou.
+ Při psaní kódu a vytváření automatizací logiky je tedy potřeba aby byla
+ daná operace co nejvíce optimalizovaná.
  Některé limity se liší pro synchronní a asynchronní operace.
 \end_layout
 
 \begin_layout Standard
-Mezi hlavní limity patří: 
+Hlavní limity platformy Salesforce jsou uvedeny v tabulce 1.
 \end_layout
 
 \begin_layout Standard
@@ -1235,9 +1524,19 @@ Mezi hlavní limity patří:
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hlavní limity pro operace v Salesforce (Zdroj: (Salesforce, Execution Governors
+ and Limits)
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="3">
 <features tabularvalignment="middle">
@@ -1483,19 +1782,6 @@ Maximální počet SOQL dotazů
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Hlavní limity pro operace v Salesforce (Zdroj: (Salesforce, Execution Governors
- and Limits)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -1507,8 +1793,8 @@ Customizace a nasazení do prostředí
 
 \begin_layout Standard
 Všechny součásti systému (datový model, profily, triggery, automatizace,
- UI, webové služby a další) jsou v Salesforce reprezentovány metadata soubory.
- Vytváření některých metadata souborů je, aby se předešlo rozbití současného
+ UI, webové služby a další) jsou v Salesforce reprezentovány soubory metadat.
+ Vytváření některých souborů metadat je, aby se předešlo požkození současného
  řešení, v produkčním prostředí zakázáno a proto musí být tato metadata
  vytvořena na nižším prostředí (sandbox, developer edition) a následně zmigrován
 a do produkce.
@@ -1656,6 +1942,13 @@ Integrace softwarového produktu je proces, kterým se softwarový produkt
 (Bruckner et al., 2012)
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Typy datové integrace podle práce s daty
 \end_layout
@@ -1666,7 +1959,7 @@ Konsolidace
 
 \begin_layout Standard
 Konsolidace dat je způsob integrace, kdy data získaná z několika různých
- zdrojů jsou převedena do jednotného formátu, očištěna od duplicit a nahrána
+ zdrojů, jsou převedena do jednotného formátu, očištěna od duplicit a nahrána
  do jednoho zdrojového systému / databáze.
  Cílem konsolidace je zredukovat počet různých míst, na kterém jsou data
  uložena a tím snížit nároky na úložný prostor a údržbu jejich integrity.
@@ -1724,7 +2017,7 @@ Typy datové integrace podle spouštěče
 
 \begin_layout Standard
 Přenos dat v informačním systému může být iniciován na základě různých typů
- spouštěčů.
+ spouštěčů (trigger).
  Každý druh spouštěče je vhodný pro jiný případ užití a lze je v rámci informačn
 ího systému kombinovat.
 \end_layout
@@ -1795,6 +2088,11 @@ Jedná se o dotazování žadatele poskytovatele v pravidelných časových inte
 
 \begin_layout Subsubsection
 Způsoby integrace dat
+\end_layout
+
+\begin_layout Standard
+V této kapitole jsou popsány různé způsoby a nástroje, jakými lze docílit
+ integrace dat mezi systémy.
 \end_layout
 
 \begin_layout Standard
@@ -1873,14 +2171,23 @@ Autorizace spočívá v přiřazení a ověření uživateli určitých oprávn�
  (Iacono, Gorski, 2019)
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Analýza požadavků
 \end_layout
 
 \begin_layout Standard
-Na základě rešerše a zkušeností s podobnými implementacemi byly definovány
+Následující kapitola definuje požadavky na aplikaci.
+ Na základě rešerše a zkušeností s podobnými implementacemi byly definovány
  požadavky na výsledné řešení.
- Požadavky jsou rozděleny do skupin na funkční a nefunkční.
+ Požadavky jsou rozděleny do skupin na funkční a nefunkční, jejich přehled
+ je v tabulce 2.
 \end_layout
 
 \begin_layout Standard
@@ -1889,6 +2196,7 @@ Všechny požadavky jsou následně samostatně popsány.
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2088,7 +2396,7 @@ NF7 Nezávislost na licencích třetích stran a speciálních Salesforce licenc
 Funkční požadavky
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 F1 Automatická synchronizace uzavřených objednávek ze SFSC do ABRA Flexibee
 \end_layout
 
@@ -2099,7 +2407,7 @@ Aplikace bude umožňovat jednostranou synchronizaci uzavřených objednávek
  Data nebudou odesílána vícekrát, pokud nedojde k jejich změně.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 F2 Automatická synchronizace synchronizace faktur ze SFSC do ABRA Flexibee
 \end_layout
 
@@ -2110,7 +2418,7 @@ Společně s objednávkami bude aplikace synchronizovat všechny faktury, které
  do systému Flexibee, ale poté k ní přibyl další dokument.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 F3 Parametrizování synchronizace skrze UI
 \end_layout
 
@@ -2140,7 +2448,7 @@ Možnost vypnutí / zapnutí synchronizace
 Parametrizovat aplikaci budou moci jen uživatelé s příslušným oprávněním.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 F4 Přehled aktuálního nastavení synchronizace
 \end_layout
 
@@ -2149,7 +2457,7 @@ Aplikace bude nabízet přehled aktuálního nastavení synchronizace včetně
  mapování dat, času poslední proběhlé a následující synchronizace
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 F5 Možnost okamžitého spuštění synchronizace skrze UI
 \end_layout
 
@@ -2160,7 +2468,7 @@ V aplikaci bude možnost spustit synchronizaci okamžitě a nečekat tak na
  podle stávajícího nastavení.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 F6 Logování
 \end_layout
 
@@ -2172,7 +2480,7 @@ Aplikace bude zaznamenávat logy o všech chybách a proběhlých synchronizací
 Nefunkční požadavky
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF1 Zabezpečení přístupu k aplikaci
 \end_layout
 
@@ -2184,7 +2492,7 @@ Je nutné zabezpečit aby pouze určití uživatelé měli k aplikaci přístup 
  synchronizace.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF2 Zabezpečení přístupových údajů do systémů
 \end_layout
 
@@ -2193,7 +2501,7 @@ Přihlašovací údaje z externího systému musí být vhodně zabezpečena pro
  zneužití.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF3 Možnost lokalizace
 \end_layout
 
@@ -2205,7 +2513,7 @@ Všechen text, názvy entit a jejích atributů musí být možné lokalizovat d
  rozšiřitelná.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF4 Podpora Salesforce LEX
 \end_layout
 
@@ -2233,7 +2541,7 @@ Mozilla® Firefox®
 Apple® Safari®
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF5 Škálovatelnost
 \end_layout
 
@@ -2244,7 +2552,7 @@ Aplikace bude umožňovat škálovatelnost pro synchronizaci dalších entit a
  o synchronizaci dat z ABRA Flexibee do SFSC, což není v rozsahu této práce.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF6 Open-source
 \end_layout
 
@@ -2253,7 +2561,7 @@ Všechny části aplikace včetně datového modelu pro data a metadata budou
  open-source ve formátu SFDX.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 NF7 Nezávislost na licencích třetích stran a speciálních Salesforce licencích
 \end_layout
 
@@ -2320,8 +2628,8 @@ Případy užití
 
 \begin_layout Standard
 Podle požadavků a identifikace aktérů byly navrženy a popsány případy užití.
- Následující diagram případů užití znázorňuje relace mezi aktéry a jednotlivými
- případy užití.
+ (viz tabulky 3,4,5,6,7,8) Diagram případů užití na obrázeku 2 znázorňuje
+ relace mezi aktéry a jednotlivými případy užití.
 \end_layout
 
 \begin_layout Standard
@@ -2360,11 +2668,21 @@ UML Diagram případů užití
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Zobrazení nastavení aplikace
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="2">
 <features tabularvalignment="middle">
@@ -2518,8 +2836,8 @@ Uživatel klikne na záložku pro nastavení aplikace
 \end_layout
 
 \begin_layout Enumerate
-Načte a zobrazí se aktuální nastavení aplikace a mapovaní z metadat rozdělených
- do jednotlivých sekcí podle entit
+Systém načte a zobrazí aktuální nastavení aplikace a mapovaní z metadat
+ rozdělených do jednotlivých sekcí podle entit
 \end_layout
 
 \begin_layout Enumerate
@@ -2527,7 +2845,7 @@ Uživatel klikne na konkrétní podzáložku
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí přehled nastavení a mapování podle vybrané sekce
+Systém zobrazí uživateli přehled nastavení a mapování podle vybrané sekce
 \end_layout
 
 \end_inset
@@ -2555,29 +2873,17 @@ Během načítání metadat dojde k chybě
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí chybová hláška
+Systém zobrazí uživateli chybová hláška
 \end_layout
 
 \begin_layout Enumerate
-Chyba se zaloguje do aplikačních logů
+Systém zaloguje chybu do aplikačních logů
 \end_layout
 
 \end_inset
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Zobrazení nastavení aplikace 
-\end_layout
 
 \end_inset
 
@@ -2591,11 +2897,21 @@ Případ užití - Zobrazení nastavení aplikace
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Zobrazení aplikačních logů
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -2748,7 +3064,7 @@ Uživatel klikne na záložku pro Aplikační logy
 \end_layout
 
 \begin_layout Enumerate
-Načte se a zobrazí seznam všech logů
+Systém načte a zobrazí seznam všech logů
 \end_layout
 
 \begin_layout Enumerate
@@ -2756,7 +3072,7 @@ Uživatel vybere úroveň logů
 \end_layout
 
 \begin_layout Enumerate
-Zobrazí se pouze logy z vybrané úrovně
+Systém zobrazí se pouze logy z vybrané úrovně
 \end_layout
 
 \begin_layout Enumerate
@@ -2764,7 +3080,7 @@ Uživatel klikne na sloupec podle kterého se mají záznamy seřadit
 \end_layout
 
 \begin_layout Enumerate
-Záznamy se seřadí sestupně / vzestupně podle vybraného sloupce
+Systém seřadí záznamy sestupně / vzestupně podle vybraného sloupce
 \end_layout
 
 \begin_layout Enumerate
@@ -2772,25 +3088,13 @@ Uživatel klikne na číslo konkrétního logu
 \end_layout
 
 \begin_layout Enumerate
-Načtě se a zobrazí detail daného záznamu
+Systém načtě a zobrazí detail daného záznamu
 \end_layout
 
 \end_inset
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Zobrazení aplikačních logů 
-\end_layout
 
 \end_inset
 
@@ -2804,11 +3108,21 @@ Případ užití - Zobrazení aplikačních logů
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Zadaní mapování atributů
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -2960,7 +3274,7 @@ Uživatel klikne na záložku pro nastavení aplikace
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí pole pro výběr entity k namapování 
+Systém zobrazí uživateli pole pro výběr entity k namapování 
 \end_layout
 
 \begin_layout Enumerate
@@ -2968,7 +3282,7 @@ Uživatel vybere entitu
 \end_layout
 
 \begin_layout Enumerate
-Zobrazí se možnost přidat atributy
+Systém zobrazí možnost přidat atributy
 \end_layout
 
 \begin_layout Enumerate
@@ -2976,7 +3290,7 @@ Uživatel klikne na přidat atribut
 \end_layout
 
 \begin_layout Enumerate
-Načte se a zobrazí se seznam dostupných atributů k namapování s checkboxem
+Systém načte a zobrazí se seznam dostupných atributů k namapování s checkboxem
  pro aktivaci synchronizace daného atributu a pole pro název odpovídajícího
  atributu v systému ABRA Flexibee s převyplněnými hodnotami podle aktuálního
  nastavení
@@ -2995,29 +3309,13 @@ Uložit
 \end_layout
 
 \begin_layout Enumerate
-Metadata se uloží a uživateli se zobrazí hláška o úspěšném uložení
-\end_layout
-
-\begin_layout Enumerate
-Obrazovka se vrátí na výběr entity
+Systém uloží metadata a zobrazí uživateli hlášku o úspěšném uložení
 \end_layout
 
 \end_inset
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Zadaní mapování atributů 
-\end_layout
 
 \end_inset
 
@@ -3031,11 +3329,21 @@ Případ užití - Zadaní mapování atributů
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Parametrizace aplikace
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -3188,7 +3496,7 @@ Uživatel klikne na záložku pro nastavení aplikace
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí pole pro zadání intervalu synchronizace v minutách,
+Systém zobrazí uživateli pole pro zadání intervalu synchronizace v minutách,
  pole pro počet záznamů v jedné transakci a možnost vypnutí synchronizace
  jednotlivých objektů.
 \end_layout
@@ -3206,25 +3514,13 @@ Uložit
 \end_layout
 
 \begin_layout Enumerate
-Metadata se uloží a uživateli se zobrazí hláška o úspěšném uložení
+Systém uloží metadata a zobrazí uživateli hlášku o úspěšném uložení
 \end_layout
 
 \end_inset
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Parametrizace aplikace 
-\end_layout
 
 \end_inset
 
@@ -3238,11 +3534,21 @@ Případ užití - Parametrizace aplikace
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Synchronizace dat
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="2">
 <features tabularvalignment="middle">
@@ -3386,21 +3692,21 @@ Uběhne doba intervalu od poslední synchronizace
 \end_layout
 
 \begin_layout Enumerate
-Načte se nastavení synchronizace
+Systém načte nastavení synchronizace
 \end_layout
 
 \begin_layout Enumerate
-Paralelně jsou spouštěny synchronizace pro jednotlivé entity podle daného
+Systém paralelně spouští synchronizace pro jednotlivé entity podle daného
  nastavení
 \end_layout
 
 \begin_layout Enumerate
-Po dokončení synchronizace je zalogována informace o proběhnutí pro jednotlivé
+Po dokončení synchronizace systém zaloguje informace o proběhnutí pro jednotlivé
  entity
 \end_layout
 
 \begin_layout Enumerate
-Je naplánována další synchronizace podle daného intervalu
+Systém naplánuje další synchronizaci podle daného intervalu
 \end_layout
 
 \end_inset
@@ -3424,11 +3730,11 @@ Synchronizace je spuštěna uživatelem přes okamžitou synchronizaci
 \end_layout
 
 \begin_layout Enumerate
-Načte se nastavení synchronizace
+Systém načte nastavení synchronizace
 \end_layout
 
 \begin_layout Enumerate
-Paralelně jsou spouštěny synchronizace pro jednotlivé entity podle daného
+Systém paralelně spouští synchronizace pro jednotlivé entity podle daného
  nastavení
 \end_layout
 
@@ -3447,18 +3753,6 @@ Po dokončení synchronizace je zalogována informace o proběhnutí pro jednotl
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Synchronizace dat
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -3466,11 +3760,21 @@ Případ užití - Synchronizace dat
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Případ užití - Manuální spuštění synchronizace dat
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="2">
 <features tabularvalignment="middle">
@@ -3614,7 +3918,7 @@ Uživatel klikne na záložku pro nastavení aplikace
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí obrazovka s posledním a dalším časem synchronizace
+Systém zobrazí uživateli obrazovku s posledním a dalším časem synchronizace
  a tlačítkem pro okamžitou synchronizaci
 \end_layout
 
@@ -3623,11 +3927,11 @@ Uživatel klikne na tlačítko pro okamžitou synchronizaci
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí hláška o začátku sycnhronizace
+Systém uživateli zobrazí hlášku o začátku sycnhronizace
 \end_layout
 
 \begin_layout Enumerate
-Tlačítko je deaktivováno
+Systém tlačítko pro manuální synchronizaci deaktivuje
 \end_layout
 
 \end_inset
@@ -3655,8 +3959,8 @@ Synchronizace dat právě běží
 \end_layout
 
 \begin_layout Enumerate
-Uživateli se zobrazí obrazovka s posledním a dalším časem synchronizace
- a deaktivovaným tlačítkem pro okamžitou syncrhonizaci
+Systém uživateli zobrazí obrazovku s posledním a dalším časem synchronizace
+ a deaktivovaným tlačítkem pro okamžitou synchronizaci
 \end_layout
 
 \end_inset
@@ -3669,18 +3973,13 @@ Uživateli se zobrazí obrazovka s posledním a dalším časem synchronizace
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Případ užití - Manuální spuštění synchronizace dat
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -3727,7 +4026,7 @@ Datový model ABRA Flexibee
 \end_layout
 
 \begin_layout Standard
-ABRA nabízí na jednom serveru spravovat více firem, pro integraci je tedy
+ABRA umožňuje na jednom serveru spravovat více firem, pro integraci je tedy
  nutné specifikovat pro jakou firmu má integrace fungovat.
 \end_layout
 
@@ -3794,6 +4093,8 @@ Datový model ABRA Flexi má již připravené entity pro objednávky, faktury
  a vydané objednávky.
  Z hlediska integrace dat z Salesforce Sales Cloud jsou relevantní pouze
  přijaté objednávky a vydané faktury.
+ Tabulka 9 znázorňuje názvy a API názvy pro jednotlivé relevantní entity
+ objednávek a faktur v ABRA Flexi.
 \end_layout
 
 \begin_layout Standard
@@ -3972,7 +4273,7 @@ Pro mapování byly na základě dokumentace využity Custom Metadata Types.
 \series bold
 ABRA Flexi Data Mappings 
 \series default
-s atributy popsanými v následující tabulce.
+s atributy popsanými v tabulce 10.
 \end_layout
 
 \begin_layout Standard
@@ -4292,7 +4593,7 @@ Pro ukládání nastavení aplikace byly na základě dokumentace zvoleny hierar
 \series bold
 ABRA Flexi Data Integration Settings
 \series default
- s atributy popsanými v následující tabulce.
+ s atributy popsanými v tabulce 11.
 \end_layout
 
 \begin_layout Standard
@@ -4567,6 +4868,11 @@ Specifikuje API název firmy v ABRA Flexi, pro kterou se data mají synchronizov
 Propojení datových modelů a kustomizace
 \end_layout
 
+\begin_layout Standard
+Následující kapitola popisuje kustomizaci entit pro potřeby aplikace a specifiku
+je mapování atributů mezi objednávkou a fakturou mezi systémy.
+\end_layout
+
 \begin_layout Subsubsection
 Externí identifikátor a příznak pro export
 \end_layout
@@ -4621,7 +4927,7 @@ Mapování entit
 \end_layout
 
 \begin_layout Standard
-V následujících tabulkách je přehled mapování základních atributů pro objednávky
+V tabulkách 12 a 13 je přehled mapování základních atributů pro objednávky
  a faktury.
  Toto mapování lze měnit nebo rozšířit.
  Na objektu Account, který reprezentuje zákazníka musely být vytvořeny atributy
@@ -4648,11 +4954,11 @@ Mapování objednávky na objednavka-prijata
 \begin_inset Tabular
 <lyxtabular version="3" rows="15" columns="3">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="50text%">
-<column alignment="center" valignment="top" width="20text%">
-<column alignment="center" valignment="top" width="30text%">
+<column alignment="left" valignment="top" width="35text%">
+<column alignment="left" valignment="top" width="25text%">
+<column alignment="left" valignment="top" width="30text%">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4661,7 +4967,7 @@ SFSC API název
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4670,7 +4976,7 @@ ABRA Flexi API název
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4681,7 +4987,7 @@ Popis
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4690,7 +4996,7 @@ ABRA_Flexi_Id__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4699,7 +5005,7 @@ id
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4710,7 +5016,7 @@ Id v systému ABRA Flexi
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4719,7 +5025,7 @@ OrderReferenceNumber
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4728,7 +5034,7 @@ kod
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4739,7 +5045,7 @@ Interní číslo
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4748,7 +5054,7 @@ OrderReferenceNumber
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4757,7 +5063,7 @@ varSym
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4768,7 +5074,7 @@ Variabilní symbol
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4777,7 +5083,7 @@ CreatedDate
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4786,7 +5092,7 @@ datVyst
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4797,7 +5103,7 @@ Datum vystavení
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4806,7 +5112,7 @@ EndDate
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4815,7 +5121,7 @@ datTermin
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4826,7 +5132,7 @@ Termín
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4835,7 +5141,7 @@ EffectiveDate
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4844,7 +5150,7 @@ datReal
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4855,7 +5161,7 @@ Realizováno
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4864,7 +5170,7 @@ Description
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4873,7 +5179,7 @@ popis
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4884,7 +5190,7 @@ Popis
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4893,7 +5199,7 @@ Account.Name
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4902,7 +5208,7 @@ nazFirmy
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4913,7 +5219,7 @@ Název firmy nebo jméno osoby
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4922,7 +5228,7 @@ BillingAddress.Street
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4931,7 +5237,7 @@ ulice
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4942,7 +5248,7 @@ Ulice
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4951,7 +5257,7 @@ BillingAddress.City
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4960,7 +5266,7 @@ mesto
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4971,7 +5277,7 @@ Město
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4980,7 +5286,7 @@ BillingAddress.PostalCode
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4989,7 +5295,7 @@ psc
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5000,7 +5306,7 @@ PSČ
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5009,7 +5315,7 @@ Account.Identification_Number__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5018,7 +5324,7 @@ ic
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5029,7 +5335,7 @@ IČO
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5038,7 +5344,7 @@ Account.VAT_Number__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5047,7 +5353,7 @@ dic
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5058,7 +5364,7 @@ DIČ
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5067,7 +5373,7 @@ TotalAmount
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5076,7 +5382,7 @@ sumOsvMen
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5118,11 +5424,11 @@ Mapování faktury na faktura-vydana
 \begin_inset Tabular
 <lyxtabular version="3" rows="19" columns="3">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="50text%">
-<column alignment="center" valignment="top" width="20text%">
-<column alignment="center" valignment="top" width="30text%">
+<column alignment="left" valignment="top" width="47text%">
+<column alignment="left" valignment="top" width="22text%">
+<column alignment="left" valignment="top" width="30text%">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5131,7 +5437,7 @@ SFSC API název
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5140,7 +5446,7 @@ ABRA Flexi API název
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5151,7 +5457,7 @@ Popis
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5160,7 +5466,7 @@ ABRA_Flexi_Id__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5169,7 +5475,7 @@ id
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5180,7 +5486,7 @@ Id v systému ABRA Flexi
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5189,7 +5495,7 @@ Code__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5198,7 +5504,7 @@ kod
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5209,7 +5515,7 @@ kód faktury
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5218,7 +5524,7 @@ Type__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5227,7 +5533,7 @@ typDokl
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5238,7 +5544,7 @@ typ dokladu
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5247,7 +5553,7 @@ Reference_Order__r.OrderReferenceNumber
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5256,7 +5562,7 @@ cisObj
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5267,7 +5573,7 @@ cisObj
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5276,7 +5582,7 @@ Due_Date__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5285,7 +5591,7 @@ datSplat
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5296,7 +5602,7 @@ datum splatnosti
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5305,7 +5611,7 @@ Issue_Date__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5314,7 +5620,7 @@ datVyst
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5325,7 +5631,7 @@ datum vystavení
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5334,7 +5640,7 @@ Description__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5343,7 +5649,7 @@ popis
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5354,7 +5660,7 @@ popis
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5363,7 +5669,7 @@ Total_Amount_With_Tax__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5372,7 +5678,7 @@ sumCelkemMen
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5383,7 +5689,7 @@ Celková suma včetně DPH v měně dokladu.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5392,7 +5698,7 @@ Total_Amount__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5401,7 +5707,7 @@ sumCelkZaklMen
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5412,7 +5718,7 @@ Celková suma všech základů v základní sazbě DPH.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5421,7 +5727,7 @@ Total_Tax_Amount__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5430,7 +5736,7 @@ sumDphZaklMen
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5441,7 +5747,7 @@ Celková částka DPH v základní sazbě DPH v měně dokladu.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5450,7 +5756,7 @@ Billing_Account__r.Name
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5459,7 +5765,7 @@ nazFirmy
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5470,7 +5776,7 @@ Název firmy nebo jméno osoby
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5479,7 +5785,7 @@ Reference_Order__r.BillingAddress.Street
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5488,7 +5794,7 @@ ulice
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5499,7 +5805,7 @@ Ulice
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5508,7 +5814,7 @@ Reference_Order__r.BillingAddress.City
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5517,7 +5823,7 @@ mesto
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5528,7 +5834,7 @@ Město
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5537,7 +5843,7 @@ Reference_Order__r.BillingAddress.PostalCode
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5546,7 +5852,7 @@ psc
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5557,7 +5863,7 @@ PSČ
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5566,7 +5872,7 @@ Billing_Account__r.Identification_Number__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5575,7 +5881,7 @@ ic
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5586,7 +5892,7 @@ IČO
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5595,7 +5901,7 @@ Billing_Account__r.VAT_Number__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5604,7 +5910,7 @@ dic
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5615,7 +5921,7 @@ DIČ
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5624,7 +5930,7 @@ Date_of_Taxable_Supply__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5633,7 +5939,7 @@ duzpPuv
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5644,7 +5950,7 @@ Datum uskutečnění zdanitelného plnění
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5653,7 +5959,7 @@ Status__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5662,7 +5968,7 @@ stavUhrK
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5690,8 +5996,8 @@ Entita pro aplikační logování
 
 \begin_layout Standard
 Salesforce neposkytuje žádný standardní SObject pro aplikační logy.
- Z toho důvodu byl vytvořen custom objekt Application_Log__c s následujícími
- atributy:
+ Z toho důvodu byl vytvořen custom objekt Application_Log__c s atributy
+ popsanými v tabulce 14.
 \begin_inset Float table
 placement H
 wide false
@@ -5711,12 +6017,12 @@ Specifikace atributů Application Log SObjectu
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="4">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5725,7 +6031,7 @@ Název
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5734,7 +6040,7 @@ API název
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5743,7 +6049,7 @@ Datový typ
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5754,7 +6060,7 @@ Popis
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5763,7 +6069,7 @@ Created Date
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5772,7 +6078,7 @@ CreatedDate
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5781,7 +6087,7 @@ Datetime
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5792,7 +6098,7 @@ Datum a čas vytvoření
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5801,7 +6107,7 @@ Apex Class
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5810,7 +6116,7 @@ Apex_Class__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5819,7 +6125,7 @@ Text(255)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5830,7 +6136,7 @@ Zdrojová třída logu
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5839,7 +6145,7 @@ Method
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5848,7 +6154,7 @@ Method__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5857,7 +6163,7 @@ Text(255)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5868,7 +6174,7 @@ Zdrojová metoda logu
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5877,7 +6183,7 @@ Severity
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5886,7 +6192,7 @@ Severity__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5895,7 +6201,7 @@ Picklist
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5906,7 +6212,7 @@ Vážnost logu (ERROR, WARNING, DEBUG, INFO)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5915,7 +6221,7 @@ Message
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5924,7 +6230,7 @@ Message__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5933,7 +6239,7 @@ Long(131072)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5944,7 +6250,7 @@ Hlavní obsah logu nebo zprává vyjímky
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5953,7 +6259,7 @@ Record Id
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5962,7 +6268,7 @@ Record_Id__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5971,7 +6277,7 @@ Id
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5982,7 +6288,7 @@ Saleforce Id pro logy, které se týkají konkrétního záznamu
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5991,7 +6297,7 @@ Stack Trace
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6000,7 +6306,7 @@ Stack_Trace__c
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6009,7 +6315,7 @@ Long(32000)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6040,9 +6346,10 @@ Výsledný datový model Salesforce CRM
 \end_layout
 
 \begin_layout Standard
-Následující obrázek znázorňuje vazby v SFSC mezi jednotlivými entitami,
+Následující obrázek 3 znázorňuje vazby v SFSC mezi jednotlivými entitami,
  které jsou relevantní pro tuto práci.
  Neobsahuje metadatové objekty pro mapování a parametry.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -6130,19 +6437,28 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-Následující tabulka zobrazuje obsah Permission Set Group pro standardního
- uživatele a společné skupiny pro Administrátora a systémového uživatele.
+Tabulka 15 zobrazuje obsah Permission Set Group pro standardního uživatele
+ a společné skupiny pro Administrátora a systémového uživatele.
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Přehled oprávnění podle skupin uživatelů
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="3">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="20page%">
-<column alignment="center" valignment="top" width="25page%">
-<column alignment="center" valignment="top" width="25page%">
+<column alignment="left" valignment="top" width="25page%">
+<column alignment="left" valignment="top" width="25page%">
+<column alignment="left" valignment="top" width="25page%">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6151,7 +6467,7 @@ Oblast oprávnění
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6164,7 +6480,7 @@ Standardní uživatel
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6179,7 +6495,7 @@ Administrátor aplikace a systémový uživatel
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6188,7 +6504,7 @@ Objednávky
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6197,7 +6513,7 @@ Order Standard Permission Set
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6208,7 +6524,7 @@ Order Admin Permission Set
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6217,7 +6533,7 @@ Faktury
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6226,7 +6542,7 @@ Invoice Standard Permission Set
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6237,7 +6553,7 @@ Invoice Admin Permission Set
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6246,7 +6562,7 @@ Právo na administrátorský přístup do aplikace
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6255,7 +6571,7 @@ Právo na administrátorský přístup do aplikace
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6266,7 +6582,7 @@ ABRA Flexi App Admin (Custom Permission)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6277,7 +6593,7 @@ ABRA Flexi Data Mappings
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6286,7 +6602,7 @@ True
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6297,7 +6613,7 @@ True
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6306,7 +6622,7 @@ Aplikační logy
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6315,7 +6631,7 @@ Application Log Standard Permission Set
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6326,7 +6642,7 @@ Application Log Admin Permission Set
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6335,7 +6651,7 @@ Apex třídy
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6344,7 +6660,7 @@ Apex Class Standard Permission Set
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6361,18 +6677,13 @@ Apex Class Admin Permission Set
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Přehled oprávnění podle skupin uživatelů
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -6393,6 +6704,19 @@ Diagram tříd
 \end_layout
 
 \begin_layout Standard
+Obrázek 4 znázorňuje UML diagram jejich tříd.
+ Je na něm vidět definice tříd logiky pro export dat, jejich atributů, metod
+ a vazeb mezi nimi.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -6402,7 +6726,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename /Users/tomaschour/Downloads/Class Diagram (1).png
-	height 80pheight%
+	height 85pheight%
 	rotateAngle 90
 
 \end_inset
@@ -6425,7 +6749,7 @@ UML diagram tříd logiky datové integrace
 \end_layout
 
 \begin_layout Subsection
-Automatizace
+Automatizace datové integrace
 \end_layout
 
 \begin_layout Standard
@@ -7145,6 +7469,13 @@ Daná entita musí mít alespoň jeden odpovídající záznam v ABRA Flexi Data
  entitu skončí výjimkou.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Uživatelská aplikace
 \end_layout
@@ -7213,8 +7544,8 @@ Abra Integration Settings
 
 \begin_layout Standard
 Stránka s nastaveními se skládá ze dvou sloupců, v levém sloupci jsou jednotlivé
- komponenty pro nastavení mapování a v pravém je pak komponenta pro parametrizac
-i aplikace.
+ komponenty pro nastavení mapování a v pravém jsou pak komponenty pro parametriz
+aci aplikace a manuálního spouštění exportu dat.
  Stránku lze upravovat, přidávat a odebírat její komponenty pomocí Salesforce
  App Builder.
  (Salesforce, Docs Lightning App Builder)
@@ -7235,9 +7566,11 @@ Komponenta pro mapování entit se nazývá abraMappingManagement a je tvořena
  kterou chceme mapování tvořit a ze které entity se načítá schéma pro získání
  atributů.
  Pokud pro danou entitu neexistuje alespoň jeden záznam v mapování, musí
- uživatel vybrat SObject v Salesforce na který chce danou ABRA entitu namapovat.
+ uživatel vybrat SObject v Salesforce na který chce danou ABRA entitu namapovat
+ viz obrázek 6.
  Pokud již existuje alespoň jeden záznam mapování, je SObject automaticky
- přiřazen z onoho mapování a uživatel může rovnou mapování upravovat.
+ přiřazen z onoho mapování a uživatel může rovnou mapování upravovat viz
+ obrázek 7.
 \begin_inset Float figure
 placement H
 wide false
@@ -7308,7 +7641,8 @@ Komponenta pro mapování, pokud po výběru SObjectu nebo při existujícím ma
 \begin_layout Standard
 Je možné změnit SObject na který má být entita namapována, tato změna vymaže
  všechny stávající mapování pro danou entitu a uživatel může vytvořit nové
- záznamy s mapováním z jiného SObjectu.
+ záznamy s mapováním z jiného SObjectu, obrázek 8 zobrazuje, jak vypadá
+ potvrzovací okno pro vymazání mapování.
 \end_layout
 
 \begin_layout Standard
@@ -7316,7 +7650,7 @@ Je možné změnit SObject na který má být entita namapována, tato změna vy
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7351,7 +7685,7 @@ Komponenta pro parametrizaci aplikace
 
 \begin_layout Standard
 Komponenta pomocí které může uživatel upravovat parametry integrace se nazývá
- CustomSettingsManagement.
+ CustomSettingsManagement, je zobrazena na obrázku 9.
  Logika komponenty dynamicky načítá všechny atributy obsažené v ABRA Flexi
  Data Integration Settings custom settings a zobrazuje je ve správném html
  prvku pro vstup dat.
@@ -7396,12 +7730,12 @@ Komponenta pro úpravu parametrů v administrátorském módu
 
 \begin_layout Standard
 Pokud uživatel nemá právo na úpravu aplikace, komponenta se načte pouze
- v módu pro zobrazení.
+ v módu pro zobrazení viz obrázek 10.
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7453,10 +7787,13 @@ Salesforce neposkytuje žádný způsob, jakým vytvářet logy, různé projekt
  si tak vytvýřejí své loggery.
  Z toho důvodu bylo v rámci této práce využit open-source logger dostupný
  na 
-\begin_inset CommandInset href
-LatexCommand href
-target "https://gist.github.com/miragedeb/70d5b70a6f73c8530db7"
-literal "false"
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://gist.github.com/miragedeb/70d5b70a6f73c8530db7
+\end_layout
 
 \end_inset
 
@@ -7471,11 +7808,16 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+Obrázek 11 zobrazuje seznam aplikačních logů seřazených podle jména vzestupně,
+ obrázek 12 pak zobrazuje detail logu po kliknutí na název logu v seznamu.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7509,7 +7851,7 @@ Stránka se seznamem logů
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -7550,20 +7892,1228 @@ Všechny UI texty jsou řešeny skrze custom labels.
  se určuje podle osobního nastavení konkrétního Salesforce uživatele.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Testování
 \end_layout
 
 \begin_layout Standard
-TODO
+Pro ověření funkčnosti a ověření funkčnosti při budoucích změnách byly napsáný
+ jednotkové Apex testy a navrženy uživatelské testovací scénáře.
 \end_layout
 
 \begin_layout Subsection
 Jednotkové testy
 \end_layout
 
+\begin_layout Standard
+Jednotkové testy v jazyce Apex slouží k ověření funkčností jednotlivých
+ tříd, metod a triggerů.
+ Salesforce požaduje jednotkovými testy alespoň 75% pokrytí veškeré logiky
+ v Apex třídách a triggerech.
+ (Salesforce, Docs Testing and Code Coverage)
+\end_layout
+
+\begin_layout Standard
+Pro každou třídu byla implmentována testovací třída s názvem [názevTřídyProLogik
+u]Test.
+ Testovací třída má několik testovacích metod pro každou metodu testované
+ třídy.
+ Tyto metody ověřují výsledek při úspěšném průběhu logiky, při chybných
+ datech a vyjímkách.
+ Pro testování logiky, která provádí dotazy a získává odpovědi z externího
+ systému ABRA Flexi byly vytvořeny mock třídy, které tyto odpovědi simulují.
+ Tyto testy by neměly být měněny pokud nedojde ve změně stávájící logiky.
+ Zároveň také jejich výsledky musí být úspešné při rozšíření logiky.
+\end_layout
+
 \begin_layout Subsection
 Uživatelské testy
+\end_layout
+
+\begin_layout Standard
+Pro ověření uživatelské části aplikace byly podle případů užití navrženy
+ a ověřeny testovací scénáře.
+ Testování bylo prováděno ve verzi Salesforce Spring '21 reálným uživatelem,
+ který pracuje v IT v prostředí Salesforce a byl seznámen s problémematikou
+ aplikace.
+ Aplikace byla v anglickém jazyce a byly použity browsery 
+\end_layout
+
+\begin_layout Subsubsection
+Testovací scénáře
+\end_layout
+
+\begin_layout Standard
+Tato kapitola definuje testovací scénáře pro testy oživatelského rozhraní.
+\end_layout
+
+\begin_layout Subsubsection*
+1TC: Zobrazení a uložení nastavení aplikace
+\end_layout
+
+\begin_layout Standard
+Ověřuje načtení a zobrazení dat pro nastavení aplikace
+\end_layout
+
+\begin_layout Standard
+Prerekvizity: Uživatel je přihlášen jako administrátor a má otevřenou aplikaci
+ 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexibee Integration
+\begin_inset Quotes grd
+\end_inset
+
+, ABRA Flexi Data Integration Settings nejsou vyplněny
+\end_layout
+
+\begin_layout Standard
+Testovací data: 
+\end_layout
+
+\begin_layout Itemize
+nazevSpolecnosti: test
+\end_layout
+
+\begin_layout Itemize
+interval: 10
+\end_layout
+
+\begin_layout Itemize
+pocetZaznamu: 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+Tabulka 16 specifikuje jednotlivé kroky pro testovací scénář 1TC
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+1TC kroky
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="15text%">
+<column alignment="left" valignment="top" width="40text%">
+<column alignment="left" valignment="top" width="40text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pořadí kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Popis kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Očekávaný výsledek
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na záložku 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Integration Settings
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Na pravé straně obrazovky se načte formulář s názvem 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexi Data Integration Settings
+\begin_inset Quotes grd
+\end_inset
+
+ a prázdnými vstupy pro název firmy, interval integrace, zapnutí synchronizace
+ objednávek a faktur a počet záznamů v jedné dávce.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel najede myší na ikonu nápovědy u vstupu pro počet záznamů v dávce
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se popup s textem nápovědy
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel zadá {nazevSpolecnosti} do vstupu pro nazev spolecnost, {interval}
+ do vstupu pro interval, {pocetZaznamu} do vstupu pro počet záznamů a zaškrtne
+ synchronizaci objednávek
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data jsou vyplněna v příslušných vstupech
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na Save
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se hláška o úspěšném uložení
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel provede znovunačtení stránky
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formulář se načte s daty uloženými v předchozím kroku
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+2TC: Zobrazení aplikačních logů
+\end_layout
+
+\begin_layout Standard
+Ověřuje načtení a zobrazení aplikačních logů
+\end_layout
+
+\begin_layout Standard
+Prerekvizity: Uživatel je přihlášen jako administrátor a má otevřenou aplikaci
+ 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexibee Integration
+\begin_inset Quotes grd
+\end_inset
+
+, existují záznamy v aplikačních logách
+\end_layout
+
+\begin_layout Standard
+Testovací data: 
+\end_layout
+
+\begin_layout Itemize
+nazevLogu: a033N000003ljcb
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+Tabulka 17 specifikuje jednotlivé kroky pro testovací scénář 2TC
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2TC kroky
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="15text%">
+<column alignment="left" valignment="top" width="40text%">
+<column alignment="left" valignment="top" width="40text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pořadí kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Popis kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Očekávaný výsledek
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na záložku 
+\begin_inset Quotes gld
+\end_inset
+
+Application Logs
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se seznam logů s nedávno zobrazenými logy.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel vybere zobrazení Error logů
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se seznam logů s vyfiltrovanými error logy.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel kline na název sloupce 
+\begin_inset Quotes gld
+\end_inset
+
+Created date
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Logy se seřadí podle datumu vytvoření sestupně
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na název logu {nazevLogu}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel je přesměrován na stránku detailu logu
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+3TC: Zadání a zobrazení mapování atributů
+\end_layout
+
+\begin_layout Standard
+Ověřuje zadávání a mapování atributů mezi systémy
+\end_layout
+
+\begin_layout Standard
+Prerekvizity: Uživatel je přihlášen a má otevřenou aplikaci 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexibee Integration
+\begin_inset Quotes grd
+\end_inset
+
+, v metadatech pro mapování není žádný záznam
+\end_layout
+
+\begin_layout Standard
+Testovací data: 
+\end_layout
+
+\begin_layout Itemize
+sfscField: Code__c
+\end_layout
+
+\begin_layout Itemize
+sfscObject: Order
+\end_layout
+
+\begin_layout Itemize
+abraAtribut: kod
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+Tabulka 18 specifikuje jednotlivé kroky pro testovací scénář 3TC
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+3TC kroky
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="15text%">
+<column alignment="left" valignment="top" width="40text%">
+<column alignment="left" valignment="top" width="40text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pořadí kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Popis kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Očekávaný výsledek
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na záložku 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Integration Settings
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Na levé straně obrazovky se načte komponenta s názvem 
+\begin_inset Quotes gld
+\end_inset
+
+Mapping for objednavka-prijata
+\begin_inset Quotes grd
+\end_inset
+
+ s vstup pro výběr objektu pro mapování
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel vybere objekt {sfscObject}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nadpis komponenty se změní na 
+\begin_inset Quotes gld
+\end_inset
+
+Mapping for objednavka-prijata to {sfscObject}
+\begin_inset Quotes grd
+\end_inset
+
+ a zobrazí se tabulka s řádky pro mapping a tlačítko 
+\begin_inset Quotes gld
+\end_inset
+
+Add Attribute
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikně na 
+\begin_inset Quotes gld
+\end_inset
+
+Add Attribute
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Přidá se prázdný řádek do tabulky pro mapování
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na 
+\begin_inset Quotes gld
+\end_inset
+
+Choose SObject Field
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se modal pro výběr sfsc atributu
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel vybere {sfscField} a klikne na 
+\begin_inset Quotes gld
+\end_inset
+
+Confirm
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+V tabulce je vybrán {sfscField}
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na dropdown pro výběr ABRA atributu
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Načtou se dostupné atributu pro objednavka-prijata
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel vybere {abraAtribut}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+V tabulce je vybrán {abraAtribut}
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na 
+\begin_inset Quotes gld
+\end_inset
+
+Save
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se hláška o úspěšném uložení
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel provede znovunačtení stránky
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formulář se načte s daty uloženými v předchozích krocích
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+4TC: Manuální spuštění synchronizace dat
+\end_layout
+
+\begin_layout Standard
+Ověřuje načtení poslední a další synchronizace dat a manuálního spuštění
+\end_layout
+
+\begin_layout Standard
+Prerekvizity: Uživatel je přihlášen a má otevřenou aplikaci 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexibee Integration
+\begin_inset Quotes grd
+\end_inset
+
+, ABRA Flexi Data Integration Settings jsou vyplněny, synchronizace dat
+ proběhla v minulosti a je naplánována další, synchronizace dat aktuálně
+ neprobíhá
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+Tabulka 19 specifikuje jednotlivé kroky pro testovací scénář 4TC
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+4TC kroky
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="15text%">
+<column alignment="left" valignment="top" width="40text%">
+<column alignment="left" valignment="top" width="40text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pořadí kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Popis kroku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Očekávaný výsledek
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na záložku 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Integration Settings
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Na pravé straně obrazovky se načte komponenta s názvem 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexi Integration Overview
+\begin_inset Quotes grd
+\end_inset
+
+ s informací o datu a času poslední proběhlé synchronizace, časem další
+ naplánované a aktivním tlačítkem pro okamžité spuštění synchronizace.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel klikne na tlačítko pro okamžitou synchronizaci.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zobrazí se hláška o naplánování synchronizace a tlačítko je deaktivováno.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uživatel provede znovunačtení stránky
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Na pravé straně obrazovky se načte komponenta s názvem 
+\begin_inset Quotes gld
+\end_inset
+
+ABRA Flexi Integration Overview
+\begin_inset Quotes grd
+\end_inset
+
+ s informací o datu a času poslední proběhlé synchronizace, časem další
+ naplánované a s neaktivním tlačítkem pro okamžité spuštění synchronizace.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Výsledky testů
+\end_layout
+
+\begin_layout Standard
+Spuštění a vyhodnocení všech jednotkových testů proběhlo úspěšně.
+ Uživatelské testy probíhaly ve dvou kolech ve kterých byly vždy provedeny
+ všechny scénáře.
+ Během prvního kola byla odhalena chyba v 3TC v 1.
+ kroku, kdy se nenačetl vstup pro výběr entity, tato chyba byla opravena
+ a v druhém kole byl scénář úspěšně dokončen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -7571,11 +9121,81 @@ Distribuce
 \end_layout
 
 \begin_layout Standard
-TODO, kod dostupny na 
+Aplikace je uložena ve formátu SFDX na platfromě GitHub na adrese 
 \begin_inset CommandInset href
 LatexCommand href
 target "https://github.com/Calgren/Salesforce-CRM-ABRA-Flexibee-Integration"
 
+\end_inset
+
+, repozitář se jmenuje 
+\begin_inset Quotes gld
+\end_inset
+
+Salesforce-CRM-ABRA-Flexibee-Integration
+\begin_inset Quotes grd
+\end_inset
+
+ a verze určená pro instalaci do Salesforce organizací se nachází ve větvi
+ 
+\begin_inset Quotes gld
+\end_inset
+
+main
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Pro distribuci aplikace musí mít uživatel na své stanici nainstalovaný
+ Salesforce CLI.
+ (Salesforce, Salesforce CLI)
+\end_layout
+
+\begin_layout Standard
+Zdrojový kód ve fromátu SFDX může být přímo nahrán do prostředí Saleforce
+ určeného k vývoji skrze příkaz 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+force:source:push
+\end_layout
+
+\end_inset
+
+, pro nasazení do sandboxu nebo produkčního prostředí musí být zdrojový
+ kód zkonvertován do Metadata API formátu, to se provede pomocí 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+force:source:convert
+\end_layout
+
+\end_inset
+
+ a následně 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+force:source:deploy
+\end_layout
+
+\end_inset
+
+.
+ (Salesforce, Docs source Commands)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -7583,6 +9203,81 @@ target "https://github.com/Calgren/Salesforce-CRM-ABRA-Flexibee-Integration"
 
 \begin_layout Section
 Závěr
+\end_layout
+
+\begin_layout Standard
+Cílem této práce bylo analyzovat a navrhnout aplikaci pro integraci dat
+ mezi systémy Salesforce CRM a ABRA Flexi, která bude umožňovat dynamické
+ definování mapování atributů entit mezi oběma systémy, 
+\end_layout
+
+\begin_layout Standard
+Nejdříve jsou v první části práce představeny oba systémy Salesforce CRM
+ a ABRA Flexi, jejich nástroje pro vývoj, datový model a API.
+ Dále jsou v této části popsány různé způsoby a přístupy k datové integraci
+ v informačním systému.
+\end_layout
+
+\begin_layout Standard
+Po obecném seznámení se systémy a datovou integrací následuje definice funkčních
+ a nefunkčních požadavků, na jejich základě jsou navrženy případy užití
+ a role aktérů.
+ Následuje kapitola, která se zabývá analýzou datových modelů jednotlivých
+ systémů a jejich propojením v této kapitole jsou také navrženy datové struktury
+ pro ukládání metadat a logů.
+ Dále byl doplněn datový model objednávek a faktur a definováno mapování
+ atributů pro tyto entity.
+\end_layout
+
+\begin_layout Standard
+Následuje kapitola, která představuje nástroje použité pro definici uživatelskýc
+h práv a jejich přiřazování.
+ Dále jsou pak navrženy konkrétní sady oprávnění pro administrátora a standardní
+ho uživatele.
+\end_layout
+
+\begin_layout Standard
+Po návrhu oprávnění byly pomocí jazyka Apex navrženy třídy a implementována
+ logika pro přenos dat mezi systémy a jeho automatizace.
+ Tato část definuje strukturu přenášených dat, jejich načítání a zpracování.
+ Také je zde implementováno logování pomocí open-source loggeru a specifikován
+ způsob autentizace do systému ABRA Flexi.
+\end_layout
+
+\begin_layout Standard
+Po implementace logiky pro přenos dat byla navržena aplikace s uživatelským
+ rozhraním pro nastavení mapování, parametrizaci a ovládání integrace.
+ Byla vytvořena ligthning aplikace a tři custom komponenty.
+ Tyto komponenty byly následně přidány do aplikace.
+ Dále byl vytvořen přehled logů.
+\end_layout
+
+\begin_layout Standard
+Další kapitola se zabývá ověřením funkčnosti aplikace a regresními testy.
+ Pro každou Apex třídu byla implementována testovací třída s jednotkovými
+ testy.
+ Pro testování uživatelské aplikace byli navrženy a provedeny testovací
+ scénáře.
+\end_layout
+
+\begin_layout Standard
+Poslední kapitola definuje, jakým způsobem lze vytvořenou aplikaci distribuovat
+ do jednotlivých Salesforce organizací.
+\end_layout
+
+\begin_layout Standard
+Výstupem práce je open-source aplikace pro integraci dat mezi Salesforce
+ CRM a ABRA Flexi, která splňuje požadavky definované v práci a využívá
+ standardní nástroje platformy Salesforce.
+ Aplikace byla řádně otestována a byly poskytnuty regresní testy pro ověření
+ funkčnosti v případě budoucích rozšíření.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7646,22 +9341,54 @@ ABRA, nedatováno.
  [online].
  [cit.
  2021-03-09].
- Dostupné z: https://intercom.help/podpora-flexi/cs/collections/2592813-dokumenta
-ce-rest-api
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://intercom.help/podpora-flexi/cs/collections/2592813-dokumentace-rest-api
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 ABRA [online]: Dokumentace XML Schéma.
  [cit.
  2021-04-21].
- Dostupné z https://www.flexibee.eu/api/dokumentace/ref/xsd
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.flexibee.eu/api/dokumentace/ref/xsd
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 ABRA [online]: Dokumentace Autentizace.
  [cit.
  2021-04-21].
- Dostupné z: https://www.flexibee.eu/api/dokumentace/ref/login/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.flexibee.eu/api/dokumentace/ref/login/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7670,7 +9397,18 @@ IACONO, Luigi Lo a Peter Leo GORSKI, 2019.
  Future Internet [online].
  [cit.
  2021-03-11].
- Dostupné z: doi:10.3390/fi11030056
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+doi:10.3390/fi11030056
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7678,81 +9416,286 @@ SALESFORCE, nedatováno.
  Salesforce Developer Documentation [online].
  [cit.
  2021-03-12].
- Dostupné z: https://developer.salesforce.com/docs
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Profiles.
  [cit.
  2021-04-20].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta
-/securityImplGuide/admin_userprofiles.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta/securityImpl
+Guide/admin_userprofiles.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Permission Sets.
  [cit.
  2021-04-20].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta
-/securityImplGuide/perm_sets_overview.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta/securityImpl
+Guide/perm_sets_overview.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Custom Permissions.
  [cit.
  2021-04-20].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta
-/securityImplGuide/custom_perms_overview.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta/securityImpl
+Guide/custom_perms_overview.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Permission Set Groups.
  [cit.
  2021-04-20].
- Dostupné z: https://help.salesforce.com/articleView?id=sf.perm_set_groups.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://help.salesforce.com/articleView?id=sf.perm_set_groups.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Custom Settings.
  [cit.
  2021-04-20].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
-/apex_customsettings.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_customs
+ettings.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs What are Custom Metadata Types? [cit.
  2021-04-20].
- Dostupné z: https://help.salesforce.com/articleView?id=sf.custommetadatatypes_abou
-t.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://help.salesforce.com/articleView?id=sf.custommetadatatypes_about.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Apex Scheduler [cit.
  2021-04-20].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
-/apex_scheduler.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_schedul
+er.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Using Batch Apex [cit.
  2021-04-20].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
-/apex_batch_interface.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_batch_i
+nterface.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Named Credentials [cit.
  2021-04-20].
- Dostupné z: https://help.salesforce.com/articleView?id=sf.named_credentials_about.h
-tm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://help.salesforce.com/articleView?id=sf.named_credentials_about.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 SALESFORCE [online]: Docs Lightning App Builder [cit.
  2021-04-25].
- Dostupné z: https://help.salesforce.com/articleView?id=sf.lightning_app_builder_ov
-erview.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://help.salesforce.com/articleView?id=sf.lightning_app_builder_overview.htm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs Testing and Code Coverage [cit.
+ 2021-05-07].
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_code_co
+verage_intro.htm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Docs source Commands [cit.
+ 2021-05-07].
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_re
+ference/cli_reference_force_source.htm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: Salesforce CLI [cit.
+ 2021-05-07].
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/tools/sfdxcli
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: What is SaaS? [cit.
+ 2021-05-07].
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.salesforce.com/eu/learning-centre/tech/saas/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+SALESFORCE [online]: What is PaaS? [cit.
+ 2021-05-07].
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.salesforce.com/eu/learning-centre/tech/paas/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7760,23 +9703,56 @@ SALESFORCE.
  Execution Governors and Limits [online].
  [cit.
  2021-04-09].
- Dostupné z: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode
-/apex_gov_limits.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_lim
+its.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 GARTNER, 2019.
  Market Share: Customer Experience and Relationship Management, Worldwide,
  2018 [online].
- Dostupné z: https://www.gartner.com/en/documents/3984886/market-share-customer-ex
-perience-and-relationship-manage
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.gartner.com/en/documents/3984886/market-share-customer-experience-and-
+relationship-manage
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 MAYANK, 2015.
  ApexDebugLog [cit.
  2021-04-25].
- Dostupné z: https://gist.github.com/miragedeb/70d5b70a6f73c8530db7
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://gist.github.com/miragedeb/70d5b70a6f73c8530db7
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7784,7 +9760,18 @@ Anon, nedatováno.
  Salesforce Lightning Design System [online].
  [cit.
  2021-03-12].
- Dostupné z: https://www.lightningdesignsystem.com/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.lightningdesignsystem.com/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7792,7 +9779,18 @@ Anon, nedatováno.
  Firmy využívající cloudové CRM aplikace pro správu a využití informací
  o zákaznících [tabulka].
  22.12.2016.
- Dostupné z: https://www.czso.cz/documents/10180/32961948/06200516_104.pdf
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.czso.cz/documents/10180/32961948/06200516_104.pdf
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7800,7 +9798,18 @@ Anon, nedatováno.
  Firmy využívající cloudové CRM aplikace pro správu a využití informací
  o zákaznících, [tabulka].
  11.01.2019.
- Dostupné z: https://www.czso.cz/documents/10180/61601888/0620051843.pdf
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.czso.cz/documents/10180/61601888/0620051843.pdf
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7808,7 +9817,18 @@ Anon, nedatováno.
  Firmy využívající cloudové CRM aplikace pro správu a využití informací
  o zákaznících [tabulka].
  07.01.2021 .
- Dostupné z: https://www.czso.cz/documents/10180/122362688/06200520077.pdf
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.czso.cz/documents/10180/122362688/06200520077.pdf
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7816,8 +9836,19 @@ VONFANGE, M.
  a LAVIGNE, D, 2011.
  IT cost optimization through open source software.
  The Open Source Business Resource, , 5-10.
- Dostupné z: https://search-proquest-com.zdroje.vse.cz/scholarly-journals/cost-opti
-mization-through-open-source-software/docview/1695043191/se-2
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://search-proquest-com.zdroje.vse.cz/scholarly-journals/cost-optimization-thro
+ugh-open-source-software/docview/1695043191/se-2
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7825,7 +9856,18 @@ SALESFORCE EMEA, nedatováno.
  Customer 360 [online].
  [cit.
  2021-03-20].
- Dostupné z: https://www.salesforce.com/products/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.salesforce.com/products/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7833,7 +9875,18 @@ LIU, David.
  Clicks versus Code! [online].
  2018 [cit.
  2021-04-09].
- Dostupné z: https://www.sfdc99.com/2018/01/22/workflow-process-builder-flow-apex/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.sfdc99.com/2018/01/22/workflow-process-builder-flow-apex/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7841,7 +9894,18 @@ ABRA FLEXI S.R.O.
  ABRA Flexi [online].
  [cit.
  2021-04-09].
- Dostupné z: https://www.flexibee.eu/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.flexibee.eu/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7849,8 +9913,19 @@ SYSTEM ONLINE.
  ABRA FLEXIBEE [online].
  [cit.
  2021-04-09].
- Dostupné z: https://www.systemonline.cz/prehled-informacnich-systemu/ekonomicke-s
-ystemy/abra-flexibee-1.htm
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.systemonline.cz/prehled-informacnich-systemu/ekonomicke-systemy/abra-f
+lexibee-1.htm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7858,7 +9933,18 @@ GUAY, Matthew.
  What are webhooks? [online].
  2020 [cit.
  2021-04-09].
- Dostupné z: https://zapier.com/blog/what-are-webhooks/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://zapier.com/blog/what-are-webhooks/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7866,7 +9952,18 @@ FOOTE, Keith D.
  The Fundamentals of Data Integration [online].
  2019 [cit.
  2021-04-09].
- Dostupné z: https://www.dataversity.net/the-fundamentals-of-data-integration/
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.dataversity.net/the-fundamentals-of-data-integration/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7874,8 +9971,18 @@ HOHPE, Gregor.
  Conversation Patterns [online].
  2017 [cit.
  2021-04-09].
- Dostupné z: https://www.enterpriseintegrationpatterns.com/patterns/conversation/i
-ndex.html
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.enterpriseintegrationpatterns.com/patterns/conversation/index.html
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7883,7 +9990,18 @@ W3SCHOOLS.
  XML Schema Tutorial [online].
  [cit.
  2021-4-21].
- Dostupné z: https://www.w3schools.com/xml/schema_intro.asp
+ Dostupné z: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.w3schools.com/xml/schema_intro.asp
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
